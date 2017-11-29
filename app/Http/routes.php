@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('Admin.Home_Page', ['title' => 'dsafas']);
 });
+
+
+Route::resource('Admin/Goods', 'Admin\GoodsController');
