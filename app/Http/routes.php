@@ -12,6 +12,7 @@
  */
 
 Route::get('/', function () {
+
 //	 return 1111;
     return views('Admin.Home_Page', ['title' => '后台主页']);
 
@@ -22,4 +23,21 @@ Route::get('tclass','Admin\TclassController@index');
 Route::get('/',function()
 {
     return 123456;
+
+    return view('Admin.Home_Page', ['title' => '后台首页']);
+
 });
+
+Route::resource('Admin/Goods', 'Admin\GoodsController');
+
+Route::get('admin/login', 'Admin\Login\LoginController@login');
+Route::post('admin/dologin', 'Admin\Login\LoginController@doLogin');
+Route::get('admin/yzm', 'Admin\Login\LoginController@yzm');
+Route::get('/code/captcha/{tmp}', 'Admin\Login\LoginController@captcha');
+//后台广告管理控制器
+Route::resource('/admin/ad', 'Admin\AdController');
+//后台轮播图管理控制器
+Route::resource('/admin/slid', 'Admin\SlidController');
+
+//前台首页
+Route::resource('/home/index', 'Home\IndexController');
