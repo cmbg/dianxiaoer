@@ -1,4 +1,4 @@
-@extends('Admin.Layouts.layout');
+@extends('Admin.Layouts.layout')
 
 @section('content')
 
@@ -138,11 +138,7 @@
                                                                             data-dt-idx="5" tabindex="0">5</a></li>
                                             <li class="paginate_button "><a href="#" aria-controls="example1"
                                                                             data-dt-idx="6" tabindex="0">6</a></li>
-                                            <li class="paginate_button next" id="example1_next"><a href="#"
-                                                                                                   aria-controls="example1"
-                                                                                                   data-dt-idx="7"
-                                                                                                   tabindex="0">Next</a>
-                                            </li>
+                                            <li class="paginate_button next" id="example1_next"><a href="#"></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -15,5 +15,9 @@ Route::get('/', function () {
     return view('Admin.Home_Page', ['title' => 'dsafas']);
 });
 
-
 Route::resource('Admin/Goods', 'Admin\GoodsController');
+
+Route::get('admin/login', 'Admin\Login\LoginController@login');
+Route::post('admin/dologin', 'Admin\Login\LoginController@doLogin');
+Route::get('admin/yzm', 'Admin\Login\LoginController@yzm');
+Route::get('/code/captcha/{tmp}', 'Admin\Login\LoginController@captcha');
