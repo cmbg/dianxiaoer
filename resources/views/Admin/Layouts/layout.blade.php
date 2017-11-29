@@ -528,15 +528,13 @@
         </section>
         <!-- /.sidebar -->
     </aside>
-    <div class="content-wrapper">
 
+    <div class="content-wrapper" style="min-height: 916px;">
 
-    @yield('content')
+        @yield('content')
 
+    </div>
 
-
-
-    </div>>
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.4.0
@@ -748,7 +746,7 @@
 
 <script>
     $.ajaxSetup({
-        headers:{
+        headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });

@@ -12,5 +12,13 @@
  */
 
 Route::get('/', function () {
-    return view('Admin.Home_Page', ['title' => 'dsafas']);
+    return view('Admin.Home_Page', ['title' => '后台首页']);
 });
+
+//后台广告管理控制器
+Route::resource('/admin/ad','Admin\AdController');
+//后台轮播图管理控制器
+Route::resource('/admin/slid','Admin\SlidController');
+
+//前台首页
+Route::resource('/home/index','Home\IndexController');
