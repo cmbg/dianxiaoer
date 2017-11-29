@@ -12,5 +12,14 @@
  */
 
 Route::get('/', function () {
-    return view('Admin.Home_Page', ['title' => 'dsafas']);
+//	 return 1111;
+    return views('Admin.Home_Page', ['title' => '后台主页']);
+
+});
+
+Route::get('tclass','Admin\TclassController@index');
+
+Route::get('/',function()
+{
+    return 123456;
 });
