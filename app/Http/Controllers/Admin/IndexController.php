@@ -16,8 +16,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return 111;
-//        return view('Admin.index',['title'=>'用户列表页']);
+//            return 111;
+        return view('Admin.type.index',['title'=>'用户列表页']);
     }
 
     /**
@@ -27,7 +27,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+//        return view('Admin.Type.list',['title'=>'用户列表页']);
     }
 
     /**

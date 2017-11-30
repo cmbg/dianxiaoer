@@ -14,19 +14,13 @@
 Route::get('/', function () {
 
 //	 return 1111;
-    return views('Admin.Home_Page', ['title' => '后台主页']);
+    return view('Admin.Home_Page', ['title' => '后台主页']);
 
 });
 
 Route::get('tclass','Admin\TclassController@index');
 
-Route::get('/',function()
-{
-    return 123456;
-
-    return view('Admin.Home_Page', ['title' => '后台首页']);
-
-});
+Route::get('Admin/index','Admin\IndexController@index');
 
 Route::resource('Admin/Goods', 'Admin\GoodsController');
 
