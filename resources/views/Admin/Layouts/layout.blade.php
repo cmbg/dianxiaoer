@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> {{ config('app.name')}}-{{$title}}</title>
     <!-- Tell the browser to be responsive to screen width -->
@@ -750,9 +749,10 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
 </script>
-
 @yield('ajax');
+@yield('status')
+@yield('ondblclick')
+
 </body>
 </html>

@@ -962,28 +962,28 @@
                                                                         <div class="wpb_revslider_element wpb_content_element">
                                                                             <div id="main-slider"
                                                                                  class="fullwidthbanner-container"
-                                                                                 style="position:relative; width:100%; height:auto; margin-top:0px; margin-bottom:0px">
+                                                                                 style="position:relative; width:100%; height:559px; margin-top:0px; margin-bottom:0px">
                                                                                 <div class="module slideshow no-margin">
                                                                                     <div class="item">
                                                                                         <a href="simple_product.html"><img
-                                                                                                    src="images/1903/slider2.jpg"
+                                                                                                    src="{{asset('uploads')}}/{{$data1[0]->apic}}"
                                                                                                     alt="slider1"
                                                                                                     class="img-responsive"
-                                                                                                    height="559"></a>
+                                                                                                    style="height:559px"></a>
                                                                                     </div>
                                                                                     <div class="item">
                                                                                         <a href="simple_product.html"><img
-                                                                                                    src="images/1903/01_index_v1.jpg"
+                                                                                                    src="{{asset('uploads')}}/{{$data1[1]->apic}}"
                                                                                                     alt="slider2"
                                                                                                     class="img-responsive"
-                                                                                                    height="559"></a>
+                                                                                                    style="height:559px"></a>
                                                                                     </div>
                                                                                     <div class="item">
                                                                                         <a href="simple_product.html"><img
-                                                                                                    src="images/1903/slider3.jpg"
+                                                                                                    src="{{asset('uploads')}}/{{$data1[2]->apic}}"
                                                                                                     alt="slider3"
                                                                                                     class="img-responsive"
-                                                                                                    height="559"></a>
+                                                                                                    style="height:559px"></a>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="loadeding"></div>
@@ -998,12 +998,12 @@
                                                                 <div class="wpb_wrapper">
                                                                     <div class="banner">
                                                                         <a href="#" class="banner1">
-                                                                            <img src="images/1903/banner3.jpg"
+                                                                            <img src="{{asset('uploads')}}/{{$data5[0]->apic}}"
                                                                                  alt="banner" title="banner"/>
                                                                         </a>
 
                                                                         <a href="#" class="banner2">
-                                                                            <img src="images/1903/banner4.jpg"
+                                                                            <img src="{{asset('uploads')}}/{{$data4[0]->apic}}"
                                                                                  alt="banner" title="banner"/>
                                                                         </a>
                                                                     </div>
@@ -1021,7 +1021,7 @@
                                                                     <a href="#" target="_self"
                                                                        class="vc_single_image-wrapper vc_box_border_grey">
                                                                         <img class="vc_single_image-img"
-                                                                             src="images/1903/banner1.jpg" width="193"
+                                                                             src="{{asset('uploads')}}/{{$data2[0]->apic}}" width="193"
                                                                              height="352" alt="banner1"
                                                                              title="banner1"/>
                                                                     </a>
@@ -1033,7 +1033,7 @@
                                                                     <a href="#" target="_self"
                                                                        class="vc_single_image-wrapper vc_box_border_grey">
                                                                         <img class="vc_single_image-img"
-                                                                             src="images/1903/banner2.jpg" width="193"
+                                                                             src="{{asset('uploads')}}/{{$data3[0]->apic}}" width="193"
                                                                              height="175" alt="banner2"
                                                                              title="banner2"/>
                                                                     </a>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Home;
-
+use App\Http\Models\Ad;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +16,14 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('Home.Index.index');
+        $data1 = Ad::where('posit','1')->where('astatus','0')->paginate(3);
+        $data2 = Ad::where('posit','2')->where('astatus','0')->paginate(1);
+        $data3 = Ad::where('posit','3')->where('astatus','0')->paginate(1);
+        $data4 = Ad::where('posit','4')->where('astatus','0')->paginate(1);
+        $data5 = Ad::where('posit','5')->where('astatus','0')->paginate(1);
+
+//        return view('Home.Index.index',['data1' => $data1]);
+        return view('Home.Index.index',compact('data1','data2','data3','data4','data5'));
     }
 
     /**
@@ -26,7 +33,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**

@@ -23,8 +23,9 @@ Route::get('admin/yzm', 'Admin\Login\LoginController@yzm');
 Route::get('/code/captcha/{tmp}', 'Admin\Login\LoginController@captcha');
 //后台广告管理控制器
 Route::resource('/admin/ad', 'Admin\AdController');
-//后台轮播图管理控制器
-Route::resource('/admin/slid', 'Admin\SlidController');
+//ajax请求数据广告
+Route::post('/admin/ad/ajaxStatus','Admin\AdAjaxController@ajaxStatus');
+Route::post('/admin/ad/ajaxName','Admin\AdAjaxController@ajaxName');
 
 //前台首页
 Route::resource('/home/index', 'Home\IndexController');
