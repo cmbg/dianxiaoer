@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Login;
+use App\Http\Models\User;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 require_once app_path().'\Org\code\Code.class.php';
@@ -13,9 +17,11 @@ use Gregwar\Captcha\PhraseBuilder;
 class LoginController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * 作用：后台登录界面
+     * @author : 宋寿强
+     * @date:    2017-11-29  10:32
+     * @param Request $request 请求对象
+     * @return 登录成功返回到后台主页，登录失败返回到登录页
      */
 
     public function login()
@@ -59,6 +65,61 @@ class LoginController extends Controller
     public function  dologin(Request $request)
     {
         $input = $request->except('_token');
-        dd($input);
+        
+//
+//        dd($code);
+        
+//        dd($input);
+        $rule = [
+            'uname'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:5,20',
+            "password"=>'required|between:3,20',
+            'code'=>"required"
+        ];
+        $mess = [
+            'uname.required'=>'必须输入用户名',
+            'uname.regex'=>'用户名必须是汉字字母下划线',
+            'uname.between'=>'用户名必须在5到20位之间',
+            'password.required'=>'必须输入密码',
+            'password.between'=>'密码必须在5到20位之间',
+            'code.required'=>'必须输入验证码'
+//            'code.integer'=>'验证码错误'
+
+        ];
+        //判断输入的验证码和原来系统生成的验证比较 strtolower 把内容全部转为小写
+
+        $validator =  Validator::make($input,$rule,$mess);
+        //如果表单验证失败 passes()
+        if ($validator->fails()) {
+            return redirect('admin/login')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        // 验证验证码是否正确
+       if( $input['code'] !=  Session::get('code')) {
+           return redirect('admin/login')->with('errors','验证码错误');
+          }
+
+        // 判断是否有此用户
+        $user = User::where('uname',$input['uname'])->first();
+          //dd($user);
+          if(!$user){
+              return redirect('admin/login')->with('errors','用户名不存在');
+          }
+          // dd($user);
+          //判断密码是否正确
+          if(Crypt::decrypt($user->password) != trim($input['password']) ){
+             return redirect('admin/login')->with('errors','密码不正确');
+         }
+                   // dd(111);
+
+         Session::put('user',$user);
+         // return " 11111";
+         return redirect('admin/user');
+    }
+    public function crypt()
+    {
+      $str = '123456';
+      $cry = Crypt::encrypt($str);
+      return $cry;
     }
 }
