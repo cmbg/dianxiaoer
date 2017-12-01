@@ -3,6 +3,10 @@
 Homestead.yaml
 Homestead.json
 .env
+<<<<<<< HEAD
 .idea
 composer.lock
 
+=======
+.idea
+>>>>>>> origin/User
