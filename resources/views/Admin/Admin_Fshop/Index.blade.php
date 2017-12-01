@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            广告管理
+            鱼塘管理
             <small>列表</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li><a href="#">广告管理</a></li>
+            <li><a href="#">鱼塘管理</a></li>
             <li class="active">列表</li>
         </ol>
     </section>
@@ -20,7 +20,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <small class="box-title">左边第一个广告位</small>
+                        <small class="box-title">鱼塘列表,在这里你可以看到一些关于鱼塘的信息.</small>
                         <small id="info"></small>
 
                     </div>
@@ -49,12 +49,12 @@
                                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                                 colspan="1"
                                                 aria-label="Platform(s): activate to sort column ascending">
-                                                广告标题
+                                                鱼塘标题
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                                 colspan="1"
                                                 aria-label="Engine version: activate to sort column ascending">
-                                                广告图片
+                                                鱼塘图片
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                                 colspan="1"
@@ -90,9 +90,9 @@
                                                         </button>
                                                     @endif
                                                 </td>
-                                                <td>
-                                                    <a href="{{url('admin/ad/'.$v->adv_id.'/edit')}}">编辑</a>
-                                                    <a href="javascript:;" onclick="sendBtn('{{url('/admin/ad/'.$v->adv_id)}}');" >删除</a>
+                                                <td><a href="ad/{{$v->adv_id}}/edit">编辑</a>
+                                                    {{--<a href="ad/{{$v->adv_id}}">删除</a>--}}
+                                                    <a href="" onclick="sendBtn('ad/{{$v->adv_id}}');" >删除</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -100,12 +100,12 @@
                                         <script>
                                             function sendBtn(node) {
                                                 var url = node;
-                                                console.log(url);
+//                                                console.log(url);
                                                 /*得到href的值*/
-//                                                $.ajax({
-//                                                    url: url, /*url也可以是json之类的文件等等*/
-//                                                    type: 'delete', /*DELETE、POST */
-//                                                })
+                                                $.ajax({
+                                                    url: url, /*url也可以是json之类的文件等等*/
+                                                    type: 'delete', /*DELETE、POST */
+                                                })
                                             };
                                         </script>
 

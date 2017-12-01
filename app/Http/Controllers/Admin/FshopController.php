@@ -2,39 +2,38 @@
 
 namespace App\Http\Controllers\Admin;
 
-
-use App\Http\Models\Ad;
 use Illuminate\Http\Request;
-use Intervention\Image\ImageManagerStatic as Image;
+use App\Http\Models\Fshop;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdController extends Controller
+class FshopController extends Controller
 {
     /**
-     * 查看广告列表页面
+     * 查看鱼塘列表页面
      *
-     * @return /admin/ad
+     * @return /admin/fshop
      */
     public function index()
     {
-        $data1 = Ad::orderby('adv_id','asc')->where('posit',1)->paginate(3);
-//        dd($data);
-        return view('Admin.Admin_Ad.Ad', ['title' => '广告显示','data1'=>$data1]);
+        $data = Fshop::orderby('id','asc')->paginate(3);
+        dd($data);
+//        return view('Admin.Admin_Fshop.index', ['title' => '鱼塘显示','data1'=>$data1]);
+        return view('Admin.Admin_Fshop.index', ['title' => '鱼塘显示']);
     }
 
     /**
-     * 广告添加页面
+     * 鱼塘添加页面
      *
      * @return /admin/ad/create
      */
     public function create()
     {
-        return view('Admin.Admin_Ad.Add', ['title' => '广告添加']);
+        return view('Admin.Admin_Fshop.Create', ['title' => '鱼塘添加']);
     }
 
     /**
-     * 执行广告添加
+     * 执行鱼塘添加
      *
      * @param  post方式
      * @return /admin/ad
@@ -48,7 +47,7 @@ class AdController extends Controller
             'apic' => 'required|image',
             'posit'=> 'required'
         ], ['acustomer.required' => '客户信息必须填写',
-            'atitle.required' => '广告标题必须填写',
+            'atitle.required' => '鱼塘标题必须填写',
             'aurl.required' => '跳转地址必须填写',
             'apic.required' => '图片必须上传',
             'apic.image' => '请选择张图片才好',
@@ -111,7 +110,7 @@ class AdController extends Controller
     }
 
     /**
-     * 显示编辑页面
+     * 显示编辑鱼塘
      *
      * @param  int  $id
      * @return /admin/ad/{$id}/edit
@@ -119,11 +118,11 @@ class AdController extends Controller
     public function edit($id)
     {
         $data = Ad::find($id);
-        return view('Admin.Admin_Ad.Edit', ['title' => '广告编辑','data'=>$data]);
+        return view('Admin.Admin_Ad.Edit', ['title' => '鱼塘编辑','data'=>$data]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * 执行更新鱼塘操作
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -145,21 +144,21 @@ class AdController extends Controller
     }
 
     /**
-     * 删除一个广告.
+     * 删除一个鱼塘.
      *
      * @param  int  $id
-     * @return /admin/ad/id
+     * @return /admin/fshop/id
      */
     public function destroy($id)
     {
 //        return '执行删除';
         $data = Ad::find($id);
         $res = $data->delete();
-        return $res;
-//        if ($res) {
-//            return redirect('/admin/user/index')->with(['info' => '删除成功']);
-//        } else {
-//            return back()->with(['info' => '删除失败']);
-//        }
+        if ($res) {
+            return redirect('/admin/user/index')->with(['info' => '删除成功']);
+        } else {
+            return back()->with(['info' => '删除失败']);
+        }
     }
+
 }
