@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> {{ config('app.name')}}-{{$title}}</title>
     <!-- Tell the browser to be responsive to screen width -->
@@ -30,6 +29,9 @@
     <link rel="stylesheet" href="{{ asset('/Admin/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{ asset('/Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
+
+
     <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -747,16 +749,20 @@
 @section('js')
 
 @show
-<script src="{{asset('/layer/layer.js')}}"></script>
+<script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
 <script>
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
 </script>
 
 @yield('ajax');
+@yield('status')
+@yield('ondblclick')
+
+
+
 </body>
 </html>

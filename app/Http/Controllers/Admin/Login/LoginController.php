@@ -1,6 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Login;
+
+
+use App\Http\Controllers\Controller;
+require_once app_path() . '\Org\code\Code.class.php';
+use App\Org\code\Code;
+use Gregwar\Captcha\CaptchaBuilder;
+use Gregwar\Captcha\PhraseBuilder;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 require_once app_path().'\Org\code\Code.class.php';
@@ -9,6 +17,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Gregwar\Captcha\CaptchaBuilder;
 use Gregwar\Captcha\PhraseBuilder;
+
 
 class LoginController extends Controller
 {
@@ -21,6 +30,9 @@ class LoginController extends Controller
     public function login()
     {
         //
+
+
+
         return view('Admin/Admin_Login/login');
     }
 
@@ -56,7 +68,11 @@ class LoginController extends Controller
     }
 
 
+    public function dologin(Request $request)
+
+
     public function  dologin(Request $request)
+
     {
         $input = $request->except('_token');
         dd($input);
