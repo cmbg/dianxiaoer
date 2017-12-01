@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('Admin/Goods', 'Admin\GoodsController');
+Route::post('Admin/Ajax','Admin\GoodsController@ajax');
 
 Route::get('admin/login', 'Admin\Login\LoginController@login');
 Route::post('admin/dologin', 'Admin\Login\LoginController@doLogin');
