@@ -6,21 +6,21 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 >
-        后台用户管理
+        前台用户管理
         <small>列表</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li><a href="#">后台用户管理</a></li>
+        <li><a href="#">前台用户管理</a></li>
         <li class="active">列表</li>
       </ol>
     </section>       
     <section class="content">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">后台用户列表,在这里显示后台所有用户</h3>
+              <h3 class="box-title">前台用户列表,在这里显示前台所有用户</h3>
             </div>
-            <form action="{{url('admin/adminuser')}}" method="get">
+            <form action="{{url('admin/homeuser')}}" method="get">
                 <table class="search_tab">
                     <tr>
                     <th style="width:100px;"></th>
@@ -78,15 +78,15 @@
                     </td>
                     <td><?php
                               if ($v->identity == '1'){
-                                 echo '超级管理员';
+                                 echo '鱼塘塘主';
                               } else if($v->identity == '2') {
-                                 echo '普通管理员';
+                                 echo '普通用户';
                               } 
                             ?>
                     </td>
                   <td>
-                      <a href="{{url('admin/adminuser'.'/'.$v->uid)}}">详细</a>
-                      <a href="{{url('admin/adminuser/'.$v->uid.'/edit')}}">修改</a>
+                      <a href="{{url('admin/homeuser'.'/'.$v->uid)}}">详细</a>
+                      <a href="{{url('admin/homeuser/'.$v->uid.'/edit')}}">修改</a>
                       <a href="javascript:;" onclick="userDel({{$v->uid}})">删除</a>
                   </td>
                 </tr>
@@ -109,7 +109,7 @@
             </div>
           </div>          
           
-          <input type="button" class="btn btn-primary" value="添加用户" onclick="location='adminuser/create'"/>
+          <input type="button" class="btn btn-primary" value="添加用户" onclick="location='homeuser/create'"/>
           <!-- /.box -->       
     </section>
     <!-- /.content -->
@@ -130,7 +130,7 @@
 //                如果用户发出删除请求，应该使用ajax向服务器发送删除请求
 //                $.get("请求服务器的路径","携带的参数", 获取执行成功后的额返回数据);
                 //admin/user/1
-                $.post("{{url('admin/adminuser')}}/"+uid,{"_method":"delete","_token":"{{csrf_token()}}"},function(data){
+                $.post("{{url('admin/homeuser')}}/"+uid,{"_method":"delete","_token":"{{csrf_token()}}"},function(data){
                     //alert(data);
 //                    data是json格式的字符串，在js中如何将一个json字符串变成json对象
                    //var res =  JSON.parse(data);

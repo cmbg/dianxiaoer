@@ -4,7 +4,7 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class AdminUser extends Model
 {
     //
     public $table = 'admin_users';

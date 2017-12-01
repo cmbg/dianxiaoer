@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Login;
-use App\Http\Models\User;
+namespace App\Http\Controllers\Admin;
+use App\Http\Models\AdminUser;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Input;
@@ -100,7 +100,7 @@ class LoginController extends Controller
           }
 
         // 判断是否有此用户
-        $user = User::where('uname',$input['uname'])->first();
+        $user = AdminUser::where('uname',$input['uname'])->first();
           //dd($user);
           if(!$user){
               return redirect('admin/login')->with('errors','用户名不存在');

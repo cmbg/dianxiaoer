@@ -5,12 +5,12 @@
     <section class="content-header">
             <h1>
                 用户管理
-                <small>添加</small>
+                <small>修改</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
                 <li><a href="#">用户管理</a></li>
-                <li class="active">添加</li>
+                <li class="active">修改</li>
             </ol>
         </section>
     <section class="content">
@@ -20,7 +20,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">用户管理，在这里您可以添加一些用户。</h3>
+                            <h3 class="box-title">后台用户管理，在这里您可以修改一些后台用户。</h3>
                                 @if (count($errors) > 0)
                               <ul>
                                   @if(is_object($errors))
@@ -35,14 +35,15 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->  
-                        <form role="form" action="{{ url('/admin/adminuser') }}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{{url('admin/adminuser/'.$user->uid)}}" method="post" enctype="multipart/form-data">
                           {{csrf_field()}}
+                          <input type="hidden" name="_method" value="put">
                             <div class="box-body">
                                              
                                
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">用户名：</label>
-                                    <input type="text" name="uname" value="" class="form-control" id="exampleInputEmail1" placeholder="请填入用户名">
+                                    <input type="text" name="uname" value="{{$user->uname}}" class="form-control" id="exampleInputEmail1" placeholder="请填入用户名">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">性别：</label>
@@ -55,20 +56,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">邮箱：</label>
-                                    <input type="email" name="email" value="" class="form-control" id="exampleInputEmail1" placeholder="请填入邮箱">
+                                    <input type="email" name="email" value="{{$user->email}}" class="form-control" id="exampleInputEmail1" placeholder="请填入邮箱">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">手机号：</label>
-                                    <input type="text" name="tel" value="" class="form-control" id="exampleInputEmail1" placeholder="请输入手机号">
+                                    <input type="text" name="tel" value="{{$user->tel}}" class="form-control" id="exampleInputEmail1" placeholder="请输入手机号">
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">密码：</label>
-                                    <input type="password" name="password" value="" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">确认密码：</label>
-                                    <input type="password" name="re_password" value="" class="form-control" id="exampleInputPassword1" placeholder="请保证两次密码输入一致">
-                                </div>
+                                
                                <!--  <div class="form-group">
                                     <label for="exampleInputFile">头像：</label>
                                     <input type="file" name="avatar" id="exampleInputFile">
@@ -77,8 +71,8 @@
                             <!-- /.box-body -->
 
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">添加</button>
-                                <input type="button" class="back " onclick="history.go(-1)" value="返回">
+                                <button type="submit" class="btn btn-primary">确认修改</button>
+                                 <input type="button" class="back " onclick="history.go(-1)" value="返回">
                             </div>
                         </form>
                     </div>

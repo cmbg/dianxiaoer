@@ -4,12 +4,12 @@
 
     <section class="content-header">
             <h1>
-                用户管理
+                前台用户管理
                 <small>添加</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-                <li><a href="#">用户管理</a></li>
+                <li><a href="#">前台用户管理</a></li>
                 <li class="active">添加</li>
             </ol>
         </section>
@@ -20,7 +20,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">用户管理，在这里您可以添加一些用户。</h3>
+                            <h3 class="box-title">前台用户管理，在这里您可以添加一些用户。</h3>
                                 @if (count($errors) > 0)
                               <ul>
                                   @if(is_object($errors))
@@ -35,7 +35,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->  
-                        <form role="form" action="{{ url('/admin/adminuser') }}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{{ url('/admin/homeuser') }}" method="post" enctype="multipart/form-data">
                           {{csrf_field()}}
                             <div class="box-body">
                                              
