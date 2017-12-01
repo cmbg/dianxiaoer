@@ -18,7 +18,6 @@ Route::get('/', function () {
 
 });
 
-//Route::resource('Admin/list','Admin\TclassController@index');
 
 Route::get('Admin/index','Admin\IndexController@index');
 //分类路由
@@ -27,7 +26,7 @@ Route::resource('Admin/Cate/list','Admin\Cate\CateController');
 
 //修改分类排序
 Route::post('Admin/Cate/changeorder','Admin\Cate\CateController@changeOrder');
-//Route::post('cate/changeorder','CateController@changeOrder');
+
 
 
 Route::resource('Admin/Goods', 'Admin\GoodsController');

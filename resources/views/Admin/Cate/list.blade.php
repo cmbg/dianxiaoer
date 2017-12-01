@@ -7,11 +7,7 @@
         <h1>分类管理</h1>
     </section>
 
-    <ul>
-        @if(session('msg'))
-            <li style="color:red">{{session('msg')}}</li>
-        @endif
-    </ul>
+
     <!-- Main content -->
     <section class="content">
         <div class="row">
@@ -50,6 +46,7 @@
                                         <td>{{$v->cate_view}}</td>
                                         <td>
                                             <a href="#">修改</a>
+                                            <a href="{{url('Admin/Cate/create')}}">添加</a>
                                             <a href="javascript:;" onclick="delCate(2)">删除</a>
                                         </td>
                                     </tr>
@@ -98,7 +95,7 @@
 
 @section('ajax');
     <script>
-
+    //排序
         function changeOrder(obj, cate_id){
             var cate_order = $(obj).val();
 //            console.log(cate_order);

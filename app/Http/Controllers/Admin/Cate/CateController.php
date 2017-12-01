@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Validator;
 
 class CateController extends Controller
 {
@@ -47,7 +47,7 @@ class CateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //获取所有的分类数据，返回到前台列表
 //        $cates = Cate::get();
@@ -63,11 +63,7 @@ class CateController extends Controller
 
 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //返回一级类
@@ -76,42 +72,36 @@ class CateController extends Controller
         return view('Admin.Cate.add',compact('cateOne','title'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //        1. 获取用户提交的表单数据
+        // 1. 获取用户提交的表单数据
 
-//        $input = $request->except('_token');
-////        dd($input);
+        $input = $request->except('_token');
+//        dd($input);
 //////        2. 表单验证
 ////
-//         $rule = [
-//             'cate_name'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:5,20',
-//////             "cate_pass"=>'required|between:3,20'
-//         ];
+         $rule = [
+             'cate_name'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:2,20',
+////
+         ];
 //////
 ////
-//         $mess = [
-//             'cate_name.required'=>'用户名必须输入',
-//             'cate_name.regex'=>'用户名必须汉字字母下划线',
-//             'cate_name.between'=>'用户名必须在5到20位之间',
-//             'cate_pass.required'=>'密码必须输入',
-//             'cate_pass.between'=>'密码必须在5到20位之间'
-//         ];
+         $mess = [
+             'cate_name.required'=>'类名必须输入',
+             'cate_name.regex'=>'类名必须汉字字母下划线',
+             'cate_name.between'=>'类名必须在2到20位之间',
+
+         ];
 //
 //////
-//         $validator = Validator::make($input,$rule,$mess);
-//         //如果表单验证失败 passes()
-//         if ($validator->fails()) {
-//             return redirect('Admin/Cate/create')
-//                 ->withErrors($validator)
-//                 ->withInput();
-//         }
+         $validator = Validator::make($input,$rule,$mess);
+         //如果表单验证失败 passes()
+         if ($validator->fails()) {
+             return redirect('/Admin/Cate/create')
+                 ->withErrors($validator)
+                 ->withInput();
+         }
 
 
 //        3. 执行添加操作
@@ -130,6 +120,7 @@ class CateController extends Controller
 //            return 111;
         }else{
             return redirect('/Admin/Cate/create')->with('msg','添加失败');
+//            return 111;
         }
     }
 
