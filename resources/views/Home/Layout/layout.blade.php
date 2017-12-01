@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Home</title>
+
+    <title>店小二</title>
     <meta charset="utf-8"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -28,6 +29,9 @@
     <link rel="stylesheet" href="{{asset('Home/css/app-orange.css')}}" id="theme_color"/>
     <link rel="stylesheet" href="" id="rtl"/>
     <link rel="stylesheet" href="{{asset('Home/css/app-responsive.css')}}"/>
+
+    <link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>
+
 </head>
 
 <body class="page page-id-6 home-style1">
@@ -42,7 +46,7 @@
                         <div class="widget text-2 widget_text pull-left">
                             <div class="widget-inner">
                                 <div class="textwidget">
-                                    <div class="call-us"><span>Call Us Now: </span>0123-444-666654123</div>
+                                    <div class="call-us"><span>欢迎致电: </span>0123-444-666654123</div>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +105,11 @@
 
                     <div class="wrap-myacc pull-right">
                         <div class="sidebar-account pull-left">
+<<<<<<< HEAD
                             <div class="account-title">My account</div>
+=======
+                            <div class="account-title">我的账户</div>
+>>>>>>> origin/niechencai
 
                             <div id="my-account" class="my-account">
                                 <div class="widget-1 widget-first widget nav_menu-4 widget_nav_menu">
@@ -109,18 +117,27 @@
                                         <ul id="menu-my-account" class="menu">
                                             <li class="menu-my-account">
                                                 <a class="item-link" href="my_account.html">
+<<<<<<< HEAD
                                                     <span class="menu-title">My Account</span>
+=======
+                                                    <span class="menu-title">我的账户</span>
+>>>>>>> origin/niechencai
                                                 </a>
                                             </li>
 
                                             <li class="menu-cart">
                                                 <a class="item-link" href="cart.html">
+<<<<<<< HEAD
                                                     <span class="menu-title">Cart</span>
+=======
+                                                    <span class="menu-title">购物车</span>
+>>>>>>> origin/niechencai
                                                 </a>
                                             </li>
 
                                             <li class="menu-checkout">
                                                 <a class="item-link" href="checkout.html">
+<<<<<<< HEAD
                                                     <span class="menu-title">Checkout</span>
                                                 </a>
                                             </li>
@@ -130,6 +147,12 @@
                                                     <span class="menu-title">Wishlist</span>
                                                 </a>
                                             </li>
+=======
+                                                    <span class="menu-title">我的订单</span>
+                                                </a>
+                                            </li>
+
+>>>>>>> origin/niechencai
                                         </ul>
                                     </div>
                                 </div>
@@ -142,7 +165,11 @@
                                                     <li>
                                                         <a href="javascript:void(0);" data-toggle="modal"
                                                            data-target="#login_form">
+<<<<<<< HEAD
                                                             <span>Login</span>
+=======
+                                                            <span>登录</span>
+>>>>>>> origin/niechencai
                                                         </a>
                                                         <span class="wg">Welcome Guest</span>
                                                     </li>
@@ -160,7 +187,11 @@
                                     <ul id="menu-checkout" class="menu">
                                         <li class="menu-checkout">
                                             <a class="item-link" href="checkout.html">
+<<<<<<< HEAD
                                                 <span class="menu-title">Checkout</span>
+=======
+                                                <span class="menu-title">我的订单</span>
+>>>>>>> origin/niechencai
                                             </a>
                                         </li>
                                     </ul>
@@ -391,28 +422,51 @@
 
                                     <div id="ResMenuprimary_menu" class="collapse menu-responsive-wrapper">
                                         <ul id="menu-primary-menu" class="etrostore_resmenu">
+<<<<<<< HEAD
                                             <li><a href="index.blade.php">Home</a></li>
                                             <li><a href="cart.html">Cart</a></li>
                                             <li><a href="checkout.html">Checkout</a></li>
+=======
+                                            <li><a href="index.blade.php">主页</a></li>
+                                            <li><a href="cart.html">详情页</a></li>
+                                            <li><a href="checkout.html">列表页</a></li>
+>>>>>>> origin/niechencai
                                             <li><a href="my_account.html">My Account</a></li>
                                             <li><a href="shop.html">Shop</a></li>
                                             <li><a href="simple_product.html">Simple Product</a></li>
                                             <li><a href="about_us.html">About Us</a></li>
                                             <li><a href="contact_us.html">Contact Us</a></li>
+<<<<<<< HEAD
+=======
+                                            <li><a href="{{asset('/home/sfshop')}}">开通鱼塘</a></li>
+                                            <li><a href="{{asset('/home/fshop')}}">我的鱼塘</a></li>
+>>>>>>> origin/niechencai
                                         </ul>
                                     </div>
                                 </div>
 
                                 <ul id="menu-primary-menu-1"
                                     class="nav nav-pills nav-mega etrostore-mega etrostore-menures">
+<<<<<<< HEAD
                                     <li><a href="index.blade.php">Home</a></li>
                                     <li><a href="cart.html">Cart</a></li>
+=======
+                                    <li><a href="index.blade.php">主页</a></li>
+                                    <li><a href="cart.html">购物车</a></li>
+>>>>>>> origin/niechencai
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="my_account.html">My Account</a></li>
                                     <li><a href="shop.html">Shop</a></li>
                                     <li><a href="simple_product.html">Simple Product</a></li>
+<<<<<<< HEAD
                                     <li><a href="about_us.html">About Us</a></li>
                                     <li><a href="contact_us.html">Contact Us</a></li>
+=======
+                                    <li><a href="about_us.html">关于我们</a></li>
+                                    <li><a href="contact_us.html">Contact Us</a></li>
+                                    <li><a href="{{asset('/home/sfshop')}}">开通鱼塘</a></li>
+                                    <li><a href="{{asset('/home/fshop')}}">我的鱼塘</a></li>
+>>>>>>> origin/niechencai
                                 </ul>
                             </div>
                         </nav>
@@ -695,336 +749,31 @@
             <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
                  class="vc_row wpb_row vc_row-fluid footer-style1 vc_row-no-padding">
                 <div class="container float wpb_column vc_column_container vc_col-sm-12">
-                    <div class="vc_column-inner ">
-                        <div class="wpb_wrapper">
-                            <div class="vc_row wpb_row vc_inner vc_row-fluid footer-top">
-                                <div class="wpb_column vc_column_container vc_col-sm-8">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="wpb_text_column wpb_content_element ">
-                                                <div class="wpb_wrapper">
-                                                    <div class="wrap-newletter">
-                                                        <h3>NEWSLETTER SIGNUP</h3>
+                    <img src="{{asset('/Home/images/guanfang.png')}}"
+                         style="width:1500px;">
 
-                                                        <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-275"
-                                                              method="post" data-id="275" data-name="">
-                                                            <div class="mc4wp-form-fields">
-                                                                <div class="newsletter-content">
-                                                                    <input type="email" class="newsletter-email"
-                                                                           name="EMAIL" placeholder="Your email"
-                                                                           required=""/>
-                                                                    <input class="newsletter-submit" type="submit"
-                                                                           value="Subscribe"/>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mc4wp-response"></div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    {{--关于我们--}}
+                    <div class="vc_wp_custommenu wpb_content_element wrap-cus">
+                        <div class="widget widget_nav_menu">
+                            <ul id="menu-infomation" class="menu">
 
-                                <div class="wpb_column vc_column_container vc_col-sm-4">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="wpb_raw_code wpb_content_element wpb_raw_html">
-                                                <div class="wpb_wrapper">
-                                                    <div class="shop-social">
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-facebook"></i>
-                                                                </a>
-                                                            </li>
+                                <li class="menu-about-us">
+                                    <a class="item-link" href="#">
+                                        <span class="menu-title">关于我们</span>
+                                    </a>
+                                </li>
+                                <li class="menu-about-us">
+                                    <a class="item-link" href="#">
+                                        <span class="menu-title">关于我们</span>
+                                    </a>
+                                </li>
 
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-twitter"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-google-plus"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-linkedin"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-pinterest-p"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="vc_row wpb_row vc_inner vc_row-fluid footer-bottom">
-                                <div class="item-res wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="wpb_text_column wpb_content_element ">
-                                                <div class="wpb_wrapper">
-                                                    <div class="ya-logo">
-                                                        <a href="#">
-                                                            <img src="images/icons/logo-footer.png" alt="logo"/>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="wpb_raw_code wpb_content_element wpb_raw_html">
-                                                <div class="wpb_wrapper">
-                                                    <div class="infomation">
-                                                        <p>
-                                                            Lorem Ipsum is simply dummy text of the printing and
-                                                            typesetting industry. Lorem Ipsum is simply dummy text of
-                                                            the printing and typesetting industry.
-                                                        </p>
-
-                                                        <div class="info-support">
-                                                            <ul>
-                                                                <li>No 1123, Marmora Road, Glasgow, D04 89GR.</li>
-                                                                <li>(801) 2345 - 6788 / (801) 2345 - 6789</li>
-                                                                <li><a href="mailto:contact@etrostore.com">support@etrostore.com</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="store">
-                                                            <a href="#">
-                                                                <img src="images/1903/app-store.png" alt="store"
-                                                                     title="store"/>
-                                                            </a>
-
-                                                            <a href="#">
-                                                                <img src="images/1903/google-store.png" alt="store"
-                                                                     title="store"/>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item-res wpb_column vc_column_container vc_col-sm-6 vc_col-lg-2 vc_col-md-2 vc_col-xs-12">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="vc_wp_custommenu wpb_content_element">
-                                                <div class="widget widget_nav_menu">
-                                                    <h2 class="widgettitle">Support</h2>
-
-                                                    <ul id="menu-support" class="menu">
-                                                        <li class="menu-product-support">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Product Support</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-pc-setup-support-services">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">PC Setup & Support Services</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-extended-service-plans">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Extended Service Plans</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-community">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Community</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-product-manuals">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Product Manuals</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-product-registration">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Product Registration</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item-res wpb_column vc_column_container vc_col-sm-6 vc_col-lg-2 vc_col-md-2 vc_col-xs-12">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="vc_wp_custommenu wpb_content_element">
-                                                <div class="widget widget_nav_menu">
-                                                    <h2 class="widgettitle">Your Links</h2>
-
-                                                    <ul id="menu-your-links" class="menu">
-                                                        <li class="menu-my-account">
-                                                            <a class="item-link" href="my_account.html">
-                                                                <span class="menu-title">My Account</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-order-tracking">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Order Tracking</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-watch-list">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Watch List</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-customer-service">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Customer Service</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-returns-exchanges">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Returns / Exchanges</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-faqs">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">FAQs</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-financing">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Financing</span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="menu-card">
-                                                            <a class="item-link" href="#">
-                                                                <span class="menu-title">Card</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item-res wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="wpb_raw_code wpb_content_element wpb_raw_html">
-                                                <div class="wpb_wrapper">
-                                                    <div class="sp-map">
-                                                        <div class="title">
-                                                            <h2>find a store</h2>
-                                                        </div>
-
-                                                        <img src="images/1903/map.jpg" alt="map" title="map"/>
-
-                                                        <a href="#" class="link-map">Store locator</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="vc_wp_custommenu wpb_content_element wrap-cus">
-                                <div class="widget widget_nav_menu">
-                                    <ul id="menu-infomation" class="menu">
-                                        <li class="menu-about-us">
-                                            <a class="item-link" href="about_us.html">
-                                                <span class="menu-title">About Us</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="menu-customer-service">
-                                            <a class="item-link" href="#">
-                                                <span class="menu-title">Customer Service</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="menu-privacy-policy">
-                                            <a class="item-link" href="#">
-                                                <span class="menu-title">Privacy Policy</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="menu-site-map">
-                                            <a class="item-link" href="#">
-                                                <span class="menu-title">Site Map</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="menu-orders-and-returns">
-                                            <a class="item-link" href="#">
-                                                <span class="menu-title">Orders and Returns</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="menu-contact-us">
-                                            <a class="item-link" href="contact_us.html">
-                                                <span class="menu-title">Contact Us</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="vc_row-full-width vc_clearfix"></div>
-        </div>
-
-        <div class="footer-copyright style1">
-            <div class="container">
-                <!-- Copyright text -->
-                <div class="copyright-text pull-left">
-                    <p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank"
-                                                                                 href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-                    </p>
-                </div>
-
-                <div class="sidebar-copyright pull-right">
-                    <div class="widget-1 widget-first widget text-4 widget_text">
-                        <div class="widget-inner">
-                            <div class="textwidget">
-                                <div class="payment">
-                                    <a href="#">
-                                        <img src="images/1903/paypal.png" alt="payment" title="payment"/>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </footer>
 </div>
@@ -1164,7 +913,7 @@
 <script type="text/javascript" src="{{asset('Home/js/plugins.js')}}"></script>
 <script type="text/javascript" src="{{asset('Home/js/megamenu.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('Home/js/main.min.js')}}"></script>
-
+<script src="{{asset('Home/layui/layui.js')}}"></script>
 <script type="text/javascript">
     var sticky_navigation_offset_top = $("#header .header-bottom").offset().top;
     var sticky_navigation = function () {

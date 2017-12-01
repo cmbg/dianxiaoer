@@ -23,8 +23,23 @@ Route::get('admin/yzm', 'Admin\Login\LoginController@yzm');
 Route::get('/code/captcha/{tmp}', 'Admin\Login\LoginController@captcha');
 //后台广告管理控制器
 Route::resource('/admin/ad', 'Admin\AdController');
+
 //后台轮播图管理控制器
 Route::resource('/admin/slid', 'Admin\SlidController');
 
 //前台首页
 Route::resource('/home/index', 'Home\IndexController');
+
+//ajax请求数据广告
+Route::post('/admin/ad/ajaxStatus', 'Admin\AdAjaxController@ajaxStatus');
+Route::post('/admin/ad/ajaxName', 'Admin\AdAjaxController@ajaxName');
+//后台鱼塘管理控制器
+Route::resource('/admin/fshop', 'Admin\FshopController');
+
+//前台首页
+Route::resource('/home/index', 'Home\IndexController');
+//前台申请开通鱼塘
+Route::get('/home/sfshop', 'Home\SfshopController@index');
+Route::post('/home/sfshop', 'Home\SfshopController@add');
+//前台鱼塘管理
+Route::resource('/home/fshop', 'Home\FshopController');
