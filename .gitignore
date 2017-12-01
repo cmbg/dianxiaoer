@@ -4,9 +4,14 @@ Homestead.yaml
 Homestead.json
 .env
 <<<<<<< HEAD
+<<<<<<< HEAD
 .idea
 composer.lock
 
 =======
 .idea
 >>>>>>> origin/User
+=======
+.idea
+
+>>>>>>> origin/bg

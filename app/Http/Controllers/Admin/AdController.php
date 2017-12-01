@@ -1,52 +1,21 @@
 <?php
 
+
 namespace App\Http\Controllers\Admin;
 
-
-use Illuminate\Http\Request;
 
 
 
 use App\Http\Models\Ad;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
->>>>>>> origin/niechencai
-use App\Http\Requests;
+//use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 
 class AdController extends Controller
 {
     /**
-
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('Admin.Admin_Ad.Ad', ['title' => '广告管理']);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-
      * 查看广告列表页面
      *
      * @return /admin/ad
@@ -58,6 +27,7 @@ class AdController extends Controller
         return view('Admin.Admin_Ad.Ad', ['title' => '广告显示','data1'=>$data1]);
     }
 
+
     /**
      * 广告添加页面
      *
@@ -67,6 +37,7 @@ class AdController extends Controller
     {
         return view('Admin.Admin_Ad.Add', ['title' => '广告添加']);
     }
+
 
     /**
      * 执行广告添加
@@ -90,12 +61,15 @@ class AdController extends Controller
             'posit.request' => '图片位置必须填写',
         ]);
 
+
         $data = $request->except('_token');
+
 
 //        $data['remember_token'] = str_random(50);
 //        $time = date('Y-m-d H:i:s');
 //        $data['created_at'] = $time;
 //        $data['updated_at'] = $time;
+
 
         if ($request->hasFile("apic")) {
             //获取上传信息
@@ -110,6 +84,7 @@ class AdController extends Controller
                 $file->move("./uploads/", $filename);
                 $data['apic'] = $filename;
 
+
                 //图片压缩
                 $img = Image::make("./uploads/" . $filename);
                 //执行等比缩放
@@ -118,10 +93,12 @@ class AdController extends Controller
                     $constraint->upsize();
                 })->save("./uploads/s_" . $filename);//保存
 
+
             }
         } else {
             $data['apic'] = 'default.jpg';
         }
+
 
         $adver = Ad::create($data);
         $res = $adver->save();
@@ -132,8 +109,8 @@ class AdController extends Controller
 //            return back();
             return '插入失败';
         }
-
     }
+
 
     /**
      * Display the specified resource.
@@ -146,16 +123,8 @@ class AdController extends Controller
         //
     }
 
-    /**
 
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    /**
      * 显示编辑页面
      *
      * @param  int  $id
@@ -165,8 +134,8 @@ class AdController extends Controller
     {
         $data = Ad::find($id);
         return view('Admin.Admin_Ad.Edit', ['title' => '广告编辑','data'=>$data]);
-
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -177,20 +146,6 @@ class AdController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-
 //        return '执行update';
         $data = $request->except('_token','_method','adv_id');
         $id = $request->input('adv_id');
@@ -202,7 +157,9 @@ class AdController extends Controller
             return back()->with(['info' => '更新失败']);
         }
 
+
     }
+
 
     /**
      * 删除一个广告.
@@ -221,6 +178,5 @@ class AdController extends Controller
 //        } else {
 //            return back()->with(['info' => '删除失败']);
 //        }
-
     }
 }

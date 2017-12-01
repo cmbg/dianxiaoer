@@ -17,10 +17,7 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-
-        return view('Home.Index.index');
-
+    public function index(){
         $data1 = Ad::where('posit','1')->where('astatus','0')->paginate(3);
         $data2 = Ad::where('posit','2')->where('astatus','0')->paginate(1);
         $data3 = Ad::where('posit','3')->where('astatus','0')->paginate(1);
