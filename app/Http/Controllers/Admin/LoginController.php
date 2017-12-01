@@ -114,7 +114,7 @@ class LoginController extends Controller
 
          Session::put('user',$user);
          // return " 11111";
-         return redirect('admin/user');
+         return redirect('admin/adminuser');
     }
     public function crypt()
     {
