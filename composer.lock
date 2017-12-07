@@ -226,7 +226,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gregwar/Captcha/zipball/b4f22bc4794b652fccefae5a5be9565305e11572",
+                "url": "https://files.phpcomposer.com/files/Gregwar/Captcha/b4f22bc4794b652fccefae5a5be9565305e11572.zip",
                 "reference": "b4f22bc4794b652fccefae5a5be9565305e11572",
                 "shasum": ""
             },
@@ -274,7 +274,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "url": "https://files.phpcomposer.com/files/guzzle/psr7/f5b8a8512e2b58b0071a7280e39f14f72e05d87c.zip",
                 "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
                 "shasum": ""
             },
@@ -339,7 +339,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/3603dbcc9a17d307533473246a6c58c31cf17919",
+                "url": "https://files.phpcomposer.com/files/Intervention/image/3603dbcc9a17d307533473246a6c58c31cf17919.zip",
                 "reference": "3603dbcc9a17d307533473246a6c58c31cf17919",
                 "shasum": ""
             },
@@ -554,7 +554,11 @@
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/johnlui/AliyunOSS/zipball/a8e1dd1c840e4441a513e6f2e8d4a2b9b52fa04e",
+=======
+                "url": "https://files.phpcomposer.com/files/johnlui/AliyunOSS/a8e1dd1c840e4441a513e6f2e8d4a2b9b52fa04e.zip",
+>>>>>>> origin/User
                 "reference": "a8e1dd1c840e4441a513e6f2e8d4a2b9b52fa04e",
                 "shasum": ""
             },
@@ -1170,7 +1174,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "url": "https://files.phpcomposer.com/files/php-fig/http-message/f6561bf28d520154e4b0ec72be95418abe6d9363.zip",
                 "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
                 "shasum": ""
             },

@@ -2,7 +2,7 @@
 
 @section('content')
  
-  
+    <script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 >
@@ -23,7 +23,7 @@
             <form action="{{url('admin/homeuser')}}" method="get">
                 <table class="search_tab">
                     <tr>
-                    <th style="width:100px;"></th>
+                    <th style="width:50px;"></th>
                     <th>
                         每页条数：
                         <select name="num">
@@ -39,9 +39,25 @@
                     </th>
                     <th width="70" class="tc">用户名:</th>
                     <td><input type="text" name="keywords1" value="{{$request->keywords1}}" placeholder="用户名"></td>
-                    <th width="70" class="tc">电话:</th>
+                   <!--  <th width="70" class="tc">用户身份:</th>
+                    <td><input type="text" name="keywords2" value="{{$request->keywords2}}" placeholder="用户身份"></td> -->
+                      <th width="70" class="tc">电话号:</th>
                     <td><input type="text" name="keywords2" value="{{$request->keywords2}}" placeholder="电话号"></td>
+                     <th>
+                        用户身份：
+                        <select name="identity">
+                            <option value="普通用户"
+                              @if($request['identity'] == '普通用户')  selected  @endif
+                            >普通用户
+                            </option>
+                            <option value="鱼塘塘主"
+                              @if($request['identity'] == '鱼塘塘主')  selected  @endif
+                            >鱼塘塘主
+                            </option>
+                        </select>
+                    </th>
                     <td  ><input type="submit"  value="查询" class="btn btn-primary"></td>
+                    <td><input type="button" class="btn btn-primary" value="清空查找条件" onclick="location='homeuser'"/></td>
                     </tr>
                 </table>
             </form>
@@ -51,7 +67,7 @@
                 
                 <thead>
                 <tr>
-                  <th>ID序号</th>
+                  <th >ID序号</th>
                   <th>用户名</th>
                   <th>电话</th>
                   <th>性别</th>
@@ -63,7 +79,7 @@
                 <tbody>   
                 @foreach($user as $k=>$v)             
                 <tr>
-                  <td class="tc">{{$v->uid}}</td>
+                  <td class="tc id">{{$v->uid}}</td>
                   <td class="tc">{{$v->uname}}</td>
                   <td class="tc award-name">{{$v->tel}}</td>
                   <td><?php
@@ -76,13 +92,12 @@
                               }
                             ?>
                     </td>
-                    <td><?php
-                              if ($v->identity == '1'){
-                                 echo '鱼塘塘主';
-                              } else if($v->identity == '2') {
-                                 echo '普通用户';
-                              } 
-                            ?>
+                    <td class="identitybtn">
+                    @if($v->identity == '0')
+                      <button type="button" class="btn bg-purple margin">普通用户</button>
+                      @else
+                      <button type="button" class="btn bg-olive btn-flat margin">鱼塘塘主</button>
+                      @endif
                     </td>
                   <td>
                       <a href="{{url('admin/homeuser'.'/'.$v->uid)}}">详细</a>
@@ -177,4 +192,32 @@
 <!-- page script -->
 
 <script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
+@stop
+@section("homeuserinfoidentity")
+    <script>
+        $(".identitybtn").on('click', function () {
+            var t = $(this);
+            var id = $(this).parent().find('.id').html();
+//            console.log(id);
+            $.ajax(
+                {
+                    url: '/admin/homeuserindex/ajaxIdentity',
+                    data: {id: id},
+                    type: 'post',
+                    success: function (data) {
+                       console.log(data);
+                        if (data.identity == 0) {
+                            t.html('<button type="button" class="btn bg-purple margin">普通用户</button>');
+                        } else {
+                            t.html('<button type="button" class="btn bg-olive btn-flat margin">鱼塘塘主</button>');
+                        }
+                    },
+                    error: function () {
+
+                    },
+                    dataType: 'json',
+                }
+            );
+        })
+    </script>
 @stop
