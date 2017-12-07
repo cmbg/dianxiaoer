@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Models\AdminUser;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -107,7 +107,10 @@ class LoginController extends Controller
           }
           // dd($user);
           //判断密码是否正确
-          if(Crypt::decrypt($user->password) != trim($input['password']) ){
+          // Hash::check("trim($input['password'])", $user->password)
+          $str = trim($input['password']);
+
+          if( Hash::check("$str", $user->password) != $input['password']){
              return redirect('admin/login')->with('errors','密码不正确');
          }
                    // dd(111);
@@ -116,10 +119,5 @@ class LoginController extends Controller
          // return " 11111";
          return redirect('admin/adminuser');
     }
-    public function crypt()
-    {
-      $str = '123456';
-      $cry = Crypt::encrypt($str);
-      return $cry;
-    }
+  
 }

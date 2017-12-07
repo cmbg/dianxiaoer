@@ -7,10 +7,38 @@ use App\Http\Models\HomeUser;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 class HomeUserController extends Controller
 {
+     public function upload(Request $request)
+        {
+//        获取客户端传过来的文件
+        $file = $request->file('file_upload');
+//        $file = $file[0];
+//        $file = $request->all();
+
+//        $file = $request->all();
+        // return ($file);  //F:\xampp\tmp\phpF443.tmp
+        if($file->isValid()){
+            //        获取文件上传对象的后缀名
+            $ext = $file->getClientOriginalExtension();
+            //生成一个唯一的文件名，保证所有的文件不重名
+            $newfile = time().rand(1000,9999).uniqid().'.'.$ext;
+            //设置上传文件的目录
+            $dirpath = public_path().'/uploads/';
+            //将文件移动到本地服务器的指定的位置，并以新文件名命名
+//            $file->move(移动到的目录, 新文件名);
+            $file->move($dirpath, $newfile);
+            //将文件移动到七牛云，并以新文件名命名
+            //\Storage::disk('qiniu')->writeStream('uploads/'.$newfile, fopen($file->getRealPath(), 'r'));
+            //将文件移动到阿里OSS
+//            OSS::upload($newfile,$file->getRealPath());
+
+            //将上传的图片名称返回到前台，目的是前台显示图片
+            return $newfile;
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,12 +52,20 @@ class HomeUserController extends Controller
                 //检测关键字
                 $uname = $request->input('keywords1');
                 $tel = $request->input('keywords2');
+                $identity = $request->input('identity');
+                // dd($identity);
                 //如果用户名不为空
                 if(!empty($uname)) {
                     $query->where('uname','like','%'.$uname.'%');
                 }
                 if(!empty($tel)) {
                     $query->where('tel','like','%'.$tel.'%');
+                }
+                if(!empty($identity) && ($identity == '鱼塘塘主')) {
+                    $query->where('identity','like','%'.'1'.'%');
+                }
+                 if(!empty($identity) && ($identity == '普通用户')){
+                    $query->where('identity','like','%'.'0'.'%');
                 }
             })
             ->paginate($request->input('num', 4));
@@ -59,9 +95,43 @@ class HomeUserController extends Controller
         //
          $input = Input::except('_token');
 
+ // 2. 表单验证
+        $rule = [
+            'uname'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:2,20',
+            "password"=>'required|between:6,20',
+            'sex'   =>'required',
+            're_password' => 'same:password',
+            'email'       => 'required|email',
+            'tel'       => 'required|size:11'
+        ];
+
+        $mess = [
+            'uname.required'=>'用户名必须输入',
+            'uname.regex'=>'用户名必须汉字字母下划线',
+            'uname.between'=>'用户名必须在2到20位之间',
+            'password.required'=>'密码必须输入',
+            'password.between'=>'密码必须在6到20位之间',
+            're_password.same'=>'两次密码输入不一致',
+            'email.email' => '不是正确的邮箱格式',
+            'email.required' => 'email必须输入',
+            'tel.required' => '电话号必须输入',
+            'tel.size' =>'电话号长度不对',
+            'sex.required' => '必须选择一个性别'
+
+        ];
+
+        $validator =  Validator::make($input,$rule,$mess);
+        //如果表单验证失败 passes()
+        if ($validator->fails()) {
+            return redirect('admin/homeuser/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+
           $user = new HomeUser();
          $user->uname = $input['uname'];
-         $user->password = Crypt::encrypt($input['password']);
+         $user->password = Hash::make($input['password']);
          $user->email = $input['email'];
          $user->tel = $input['tel'];
          $user->sex = $input['sex'];
@@ -120,7 +190,7 @@ class HomeUserController extends Controller
 
 //        2. 通过$request获取要修改的值
 
-       $input = $request->except('_token','_method');
+       $input = $request->except('_token','_method','file_upload');
         // $input = $request->only('uname','tel','sex','email','password');//数组
         //$input = $request->input('user_name');//字符串
 
@@ -132,9 +202,9 @@ class HomeUserController extends Controller
         // $res = $input->save();
 //        4. 根据更新是否成功，跳转页面
         if($res){
-            return redirect('admin/user');
+            return redirect('admin/homeuser');
         }else{
-            return redirect('admin/user/'.$user->uid.'/edit');
+            return redirect('admin/homeuser/'.$user->uid.'/edit');
         }
     }
 

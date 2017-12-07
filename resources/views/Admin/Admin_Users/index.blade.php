@@ -23,7 +23,7 @@
             <form action="{{url('admin/adminuser')}}" method="get">
                 <table class="search_tab">
                     <tr>
-                    <th style="width:100px;"></th>
+                    <th style="width:50px;"></th>
                     <th>
                         每页条数：
                         <select name="num">
@@ -39,9 +39,23 @@
                     </th>
                     <th width="70" class="tc">用户名:</th>
                     <td><input type="text" name="keywords1" value="{{$request->keywords1}}" placeholder="用户名"></td>
-                    <th width="70" class="tc">电话:</th>
+                    <th width="50" class="tc">电话:</th>
                     <td><input type="text" name="keywords2" value="{{$request->keywords2}}" placeholder="电话号"></td>
+                    <th>
+                        用户身份：
+                        <select name="identity">
+                            <option value="普通管理员"
+                              @if($request['identity'] == '普通管理员')  selected  @endif
+                            >普通管理员
+                            </option>
+                            <option value="超级管理员"
+                              @if($request['identity'] == '超级管理员')  selected  @endif
+                            >超级管理员
+                            </option>
+                        </select>
+                    </th>
                     <td  ><input type="submit"  value="查询" class="btn btn-primary"></td>
+                   <td><input type="button" class="btn btn-primary" value="清空查找条件" onclick="location='adminuser'"/></td>
                     </tr>
                 </table>
             </form>
@@ -79,7 +93,7 @@
                     <td><?php
                               if ($v->identity == '1'){
                                  echo '超级管理员';
-                              } else if($v->identity == '2') {
+                              } else if($v->identity == '0') {
                                  echo '普通管理员';
                               } 
                             ?>
@@ -110,6 +124,7 @@
           </div>          
           
           <input type="button" class="btn btn-primary" value="添加用户" onclick="location='adminuser/create'"/>
+          
           <!-- /.box -->       
     </section>
     <!-- /.content -->

@@ -6,10 +6,41 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Services\OSS;
 class AdminUserController extends Controller
 {
+
+      public function upload(Request $request)
+        {
+//        获取客户端传过来的文件
+        $file = $request->file('file_upload');
+//        $file = $file[0];
+//        $file = $request->all();
+
+//        $file = $request->all();
+        // return ($file);  //F:\xampp\tmp\phpF443.tmp
+        if($file->isValid()){
+            //        获取文件上传对象的后缀名
+            $ext = $file->getClientOriginalExtension();
+            //生成一个唯一的文件名，保证所有的文件不重名
+            $newfile = time().rand(1000,9999).uniqid().'.'.$ext;
+            //设置上传文件的目录
+            $dirpath = public_path().'/uploads/';
+            //将文件移动到本地服务器的指定的位置，并以新文件名命名
+//            $file->move(移动到的目录, 新文件名);
+            $file->move($dirpath, $newfile);
+            //将文件移动到七牛云，并以新文件名命名
+            //\Storage::disk('qiniu')->writeStream('uploads/'.$newfile, fopen($file->getRealPath(), 'r'));
+            //将文件移动到阿里OSS
+//            OSS::upload($newfile,$file->getRealPath());
+
+            //将上传的图片名称返回到前台，目的是前台显示图片
+            return $newfile;
+        }
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,12 +55,19 @@ class AdminUserController extends Controller
                 //检测关键字
                 $uname = $request->input('keywords1');
                 $tel = $request->input('keywords2');
+                  $identity = $request->input('identity');
                 //如果用户名不为空
                 if(!empty($uname)) {
                     $query->where('uname','like','%'.$uname.'%');
                 }
                 if(!empty($tel)) {
                     $query->where('tel','like','%'.$tel.'%');
+                }
+                if(!empty($identity) && ($identity == '超级管理员')) {
+                    $query->where('identity','like','%'.'1'.'%');
+                }
+                 if(!empty($identity) && ($identity == '普通管理员')){
+                    $query->where('identity','like','%'.'0'.'%');
                 }
             })
             ->paginate($request->input('num', 4));
@@ -56,7 +94,7 @@ class AdminUserController extends Controller
     public function store(Request $request)
     {
         //
-        $input = Input::except('_token');
+        $input = Input::except('_token','file_upload');
           // 2. 表单验证
         $rule = [
             'uname'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:2,20',
@@ -94,11 +132,13 @@ class AdminUserController extends Controller
 //        3. 执行添加操作
          $user = new AdminUser();
          $user->uname = $input['uname'];
-         $user->password = Crypt::encrypt($input['password']);
+         // die ($input['password']);
+         $user->password = Hash::make($input['password']);
+         // die($user->password);
          $user->email = $input['email'];
          $user->tel = $input['tel'];
          $user->sex = $input['sex'];
-         // $user->avatar = $input['avatar'];
+         $user->avatar = $input['art_thumb'];
          $res = $user->save();
 //        4. 判断是否添加成功
         if($res){
@@ -136,7 +176,7 @@ class AdminUserController extends Controller
     {
 //        1. 根据传过来的ID获取要修改的用户记录
         $user = AdminUser::find($uid);
-
+        // dd($user->sex);
 //        2.返回修改页面（带上要修改的用户记录）
         return view('Admin/Admin_Users/edit',compact('user'),['title'=>'用户修改页']);
     }
@@ -188,7 +228,7 @@ class AdminUserController extends Controller
 
 //        2. 通过$request获取要修改的值
 
-       $input = $request->except('_token','_method');
+       $input = $request->except('_token','_method','file_upload');
         // $input = $request->only('uname','tel','sex','email','password');//数组
         //$input = $request->input('user_name');//字符串
 

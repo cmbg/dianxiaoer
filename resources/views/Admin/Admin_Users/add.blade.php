@@ -1,7 +1,7 @@
 @extends('Admin.Layouts.layout')
 
 @section('content')
-
+     <script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
     <section class="content-header">
             <h1>
                 用户管理
@@ -35,7 +35,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->  
-                        <form role="form" action="{{ url('/admin/adminuser') }}" method="post" enctype="multipart/form-data">
+                        <form  id="art_form" role="form" action="{{ url('/admin/adminuser') }}" method="post" enctype="multipart/form-data">
                           {{csrf_field()}}
                             <div class="box-body">
                                              
@@ -69,10 +69,63 @@
                                     <label for="exampleInputPassword1">确认密码：</label>
                                     <input type="password" name="re_password" value="" class="form-control" id="exampleInputPassword1" placeholder="请保证两次密码输入一致">
                                 </div>
-                               <!--  <div class="form-group">
+                                <div class="form-group">
                                     <label for="exampleInputFile">头像：</label>
-                                    <input type="file" name="avatar" id="exampleInputFile">
-                                </div> -->
+                                    <input type="text" size="50" id="art_thumb" name="art_thumb">
+                                    <input id="file_upload" name="file_upload[]" type="file" multiple >
+                                    <br>
+                                     <img src="" id="img1" alt="" style="width:80px;height:80px">
+                                     <script type="text/javascript">
+                                          $(function () {
+                                            $("#file_upload").change(function () {
+
+                                                $('img1').show();
+                                                uploadImage();
+                                            });
+                                        });
+                                        function uploadImage() {
+                                            // 判断是否有选择上传文件
+                                            var imgPath = $("#file_upload").val();
+                                            if (imgPath == "") {
+                                                alert("请选择上传图片！");
+                                                return;
+                                            }
+                                            //判断上传文件的后缀名
+                                            var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+                                            if (strExtension != 'jpg' && strExtension != 'gif'
+                                                && strExtension != 'png' && strExtension != 'bmp') {
+                                                alert("请选择图片文件");
+                                                return;
+                                            }
+                                            // var formData = new FormData($('#art_form')[0]);
+                                            
+
+                                            var formData = new FormData();
+                                            formData.append('file_upload', $('#file_upload')[0].files[0]);
+                                            formData.append('_token', "{{csrf_token()}}");
+                                            console.log(formData);
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "/admin/upload",
+                                                data: formData,
+                                                async: true, //是否为同步异步 true 异步
+                                                cache: false, //缓存
+                                                contentType: false,
+                                                processData: false,
+                                                success: function(data) {
+                                                    $('#img1').attr('src','/uploads/'+data);
+                                                   // $('#img1').attr('src','http://p09v2gc7p.bkt.clouddn.com/uploads/'+data);
+                                                   // $('#img1').attr('src','http://project193.oss-cn-beijing.aliyuncs.com/'+data);
+                                                    $('#img1').show();
+                                                    $('#art_thumb').val('/uploads/'+data);
+                                                },
+                                                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                                    alert("上传失败，请检查网络后重试");
+                                                }
+                                            });
+                                        }
+                                        </script>
+                                </div>
                             </div>
                             <!-- /.box-body -->
 

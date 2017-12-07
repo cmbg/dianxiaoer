@@ -1,7 +1,7 @@
 @extends('Admin.Layouts.layout')
 
 @section('content')
-
+ <script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
     <section class="content-header">
             <h1>
                 前台用户管理
@@ -35,7 +35,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->  
-                        <form role="form" action="{{url('admin/user/'.$user->uid)}}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{{url('admin/homeuser/'.$user->uid)}}" method="post" enctype="multipart/form-data">
                           {{csrf_field()}}
                           <input type="hidden" name="_method" value="put">
                             <div class="box-body">
@@ -48,10 +48,12 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">性别：</label>
                                     <select name="sex" id="">
-                                        <option value="">全部</option>
-                                        <option value="w">女</option>
-                                        <option value="m">男</option>
+                                        
+                                         <option value="">全部</option>
+                                        <option value="w" @if($user->sex == 'w') selected @endif>女</option>
+                                         <option value="m"  @if($user->sex == 'm') selected @endif>男</option>
                                         <option value="x">保密</option>
+                                       
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -63,10 +65,63 @@
                                     <input type="text" name="tel" value="{{$user->tel}}" class="form-control" id="exampleInputEmail1" placeholder="请输入手机号">
                                 </div>
                                 
-                               <!--  <div class="form-group">
+                                <div class="form-group">
                                     <label for="exampleInputFile">头像：</label>
-                                    <input type="file" name="avatar" id="exampleInputFile">
-                                </div> -->
+                                    <input type="text" size="50" id="art_thumb" name="avatar">
+                                    <input id="file_upload" name="file_upload[]" type="file" multiple >
+                                    <br>
+                                     <img src="" id="img1" alt="" style="width:80px;height:80px">
+                                     <script type="text/javascript">
+                                          $(function () {
+                                            $("#file_upload").change(function () {
+
+                                                $('img1').show();
+                                                uploadImage();
+                                            });
+                                        });
+                                        function uploadImage() {
+                                            // 判断是否有选择上传文件
+                                            var imgPath = $("#file_upload").val();
+                                            if (imgPath == "") {
+                                                alert("请选择上传图片！");
+                                                return;
+                                            }
+                                            //判断上传文件的后缀名
+                                            var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+                                            if (strExtension != 'jpg' && strExtension != 'gif'
+                                                && strExtension != 'png' && strExtension != 'bmp') {
+                                                alert("请选择图片文件");
+                                                return;
+                                            }
+                                            // var formData = new FormData($('#art_form')[0]);
+                                            
+
+                                            var formData = new FormData();
+                                            formData.append('file_upload', $('#file_upload')[0].files[0]);
+                                            formData.append('_token', "{{csrf_token()}}");
+                                            // console.log(formData);
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "/admin/homeupload",
+                                                data: formData,
+                                                async: true, //是否为同步异步 true 异步
+                                                cache: false, //缓存
+                                                contentType: false,
+                                                processData: false,
+                                                success: function(data) {
+                                                    $('#img1').attr('src','/uploads/'+data);
+                                                   // $('#img1').attr('src','http://p09v2gc7p.bkt.clouddn.com/uploads/'+data);
+                                                   // $('#img1').attr('src','http://project193.oss-cn-beijing.aliyuncs.com/'+data);
+                                                    $('#img1').show();
+                                                    $('#art_thumb').val('/uploads/'+data);
+                                                },
+                                                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                                    alert("上传失败，请检查网络后重试");
+                                                }
+                                            });
+                                        }
+                                        </script>
+                                </div>
                             </div>
                             <!-- /.box-body -->
 

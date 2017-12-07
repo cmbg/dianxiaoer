@@ -761,7 +761,10 @@
 @yield('ajax');
 @yield('status')
 @yield('ondblclick')
-
+@yield('adminuserinfostatus')
+@yield('homeuserinfostatus')
+@yield('homeuserinfoidentity')
+@yield('adminuserinfoidentity')
 
 
 </body>
