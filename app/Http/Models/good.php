@@ -18,4 +18,20 @@ class good extends Model
 //    public $fillable = [];
     //不允许字段
     public $guarded  = [];
+
+    public function gpicinfo(){
+        //1) 要关联的模型 2) 外键
+        return $this -> hasOne('App\Http\Models\goodsdetail','gid','gid');
+    }
+    public function gpic(){
+        //1) 要关联的模型 2) 外键
+        return $this -> hasMany('App\Http\Models\gpic','gid','gid');
+    }
+    public function fishpond(){
+        return $this ->belongsTo('App\Http\Models\Fishpond','fid','id');
+    }
+    public function Cate(){
+        return $this -> belongsTo('App\Http\Models\Cate','tid','cate_id');
+    }
+
 }
