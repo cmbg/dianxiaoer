@@ -61,6 +61,7 @@ Route::post('Admin/Ajax','Admin\GoodsController@ajax');//点击上架下架状�
 //商品详情
 //Route::get('Admin/Goods/Details','Admin\DetailsController\sho');
 
+
 // 商品图片上传
 Route::post('Admin/Goods/upload', 'Admin\GoodsController@upload');//商品图片添加路由
 Route::get('Admin/Det/create/{id}', 'Admin\DetailsController@create');//添加详情页面
@@ -102,8 +103,6 @@ Route::get('home/goods/list', 'Home\Good_ListController@index');
 //后台登录中间件,请把所有后台的路由放在这里!注意删除路径里的admin 和命名空间里的Admin
 //Route::group(['middleware'=>'islogin','prefix'=>'admin','namespace'=>'Admin'],function (){
     //后台的后台用户管理
-    
-    
     Route::resource('admin/adminuser','Admin\AdminUserController');
     //后台的前台用户管理
     Route::resource('homeuser','HomeUserController');
@@ -169,8 +168,11 @@ Route::resource('/home/index', 'Home\IndexController');
 //前台个人中心
 Route::get('/home/my_account','Home\UserController@index');
 Route::post('/home/my_account','Home\UserController@update');
+//前台退出
+Route::get('home/logout','Home\UserController@logout');
 //前台个人中心的地址
-Route::get('home/my_address','Home\UserController@my_address');
+Route::get('home/address/moren/{id}','Home\AddressController@moren');
+Route::resource('home/address','Home\AddressController');
 //前台个人中心的修改密码
 Route::get('/home/my_password','Home\UserController@password');
 Route::post('/home/domy_password','Home\UserController@dopassword');

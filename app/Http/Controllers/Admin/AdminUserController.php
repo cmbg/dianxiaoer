@@ -12,14 +12,16 @@ use App\Services\OSS;
 use DB;
 class AdminUserController extends Controller
 {
-
-    public function upload(Request $request)
+    /**
+     * 图片上传处理(头像)
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+      public function upload(Request $request)
         {
 //        获取客户端传过来的文件
         $file = $request->file('file_upload');
 //        $file = $file[0];
-//        $file = $request->all();
-
 //        $file = $request->all();
         // return ($file);  //F:\xampp\tmp\phpF443.tmp
         if($file->isValid()){
@@ -43,14 +45,13 @@ class AdminUserController extends Controller
 
     }
     /**
-     * Display a listing of the resource.
-     *
+     * 
+     * 后台用户管理的首页  包括多条件查询(条件为用户名,电话,是超级管理员还是普通管理员)  分页
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        //
-        // return "1111";
+        
         $user = AdminUser::orderBy('uid','asc')
             ->where(function($query) use($request){
                 //检测关键字
@@ -70,35 +71,14 @@ class AdminUserController extends Controller
                  if(!empty($identity) && ($identity == '普通管理员')){
                     $query->where('identity','like','%'.'0'.'%');
                 }
-            })
-            ->paginate($request->input('num', 4));
-//        $data = AdminUser::with('role')->orderBy('uid','asc')
-//            ->where( )
-//            ->paginate($request->input('num', 2));
-//        dd($data);
-//        echo '<pre>';
-//        foreach ($data as $k=>$v){
-//            echo $v->uname;
-//            echo '<br>';
-//            foreach($v->role as $m=>$n){
-//                print($m['name']);
-//            }
-//            echo '<br>';
-//            echo '===============================';
-//            echo '<br>';
-//        }
-//        $data = AdminUser::with('role','permission')->get();
-//        $data = Role::with('permission')->get();
+            })->paginate($request->input('num', 5));
 
-//        dd($res);
-////        $data = AdminUser()
-//dd();
-//        dd($data);
         return view('Admin.Admin_Users.index',['title'=>'后台用户列表页','user'=>$user, 'request'=> $request]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 
+     * 点击首页的添加用户,跳转至添加后台用户页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -109,7 +89,7 @@ class AdminUserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 在添加后台用户页面添加完数据后,将表单提交至这个方法,进行表单验证,执行保存数据库操作,并判断是否成功
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -118,14 +98,15 @@ class AdminUserController extends Controller
     {
         //
         $input = Input::except('_token','file_upload');
-          // 2. 表单验证
+       
         $rule = [
             'uname'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:2,20',
             "password"=>'required|between:6,20',
             'sex'   =>'required',
             're_password' => 'same:password',
             'email'       => 'required|email',
-            'tel'       => 'required|size:11'
+            'tel'       => 'required|size:11',
+            'art_thumb' => 'required'
         ];
 
         $mess = [
@@ -139,25 +120,21 @@ class AdminUserController extends Controller
             'email.required' => 'email必须输入',
             'tel.required' => '电话号必须输入',
             'tel.size' =>'电话号长度不对',
-            'sex.required' => '必须选择一个性别'
-
+            'sex.required' => '必须选择一个性别',
+            'art_thumb.required' => '必须选择一个头像'
         ];
 
         $validator =  Validator::make($input,$rule,$mess);
-        //如果表单验证失败 passes()
+        //如果表单验证失败
         if ($validator->fails()) {
             return redirect('admin/adminuser/create')
                 ->withErrors($validator)
                 ->withInput();
         }
-
-
 //        3. 执行添加操作
          $user = new AdminUser();
-         $user->uname = $input['uname'];
-         // die ($input['password']);
+         $user->uname = $input['uname'];       
          $user->password = Hash::make($input['password']);
-         // die($user->password);
          $user->email = $input['email'];
          $user->tel = $input['tel'];
          $user->sex = $input['sex'];
@@ -171,26 +148,22 @@ class AdminUserController extends Controller
         }
     }
 
-        // return ($input);
     
 
     /**
-     * Display the specified resource.
+     * 点击后台用户管理首页的详细时跳转到这个方法,查找对应用户的详细信息,可进行身份,状态修改
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($uid)
     {
-        //
-        // return "11111";
         $user = AdminUser::find($uid);
-
         return view('Admin/Admin_Users/info',compact('user'),['title'=>'用户详情页']);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * 点击后台用户管理首页的修改时跳转到这个方法,将需要修改用户的数据提交至表单
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -199,13 +172,12 @@ class AdminUserController extends Controller
     {
 //        1. 根据传过来的ID获取要修改的用户记录
         $user = AdminUser::find($uid);
-        // dd($user->sex);
 //        2.返回修改页面（带上要修改的用户记录）
         return view('Admin/Admin_Users/edit',compact('user'),['title'=>'用户修改页']);
     }
 
     /**
-     * Update the specified resource in storage.
+     *对提交来的数据进行表单验证,通过后更新数据库,返回视图是否成功
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -215,7 +187,7 @@ class AdminUserController extends Controller
     {
              
         $input = Input::except('_token');
-          // 表单验证
+     
         $rule = [
             'uname'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:2,20',
             "password"=>'between:6,20',
@@ -237,31 +209,22 @@ class AdminUserController extends Controller
         ];
 
         $validator =  Validator::make($input,$rule,$mess);
-        //如果表单验证失败 passes()
+        //如果表单验证失败 
         if ($validator->fails()) {
             return redirect('admin/adminuser/'.$uid.'/edit')
                 ->withErrors($validator)
                 ->withInput();
         }
 
-
-
-        //        1. 通过id找到要修改那个用户
+        //  1. 通过id找到要修改那个用户
         $user = AdminUser::find($uid);
-
-//        2. 通过$request获取要修改的值
-
+        //  2. 通过$request获取要修改的值
        $input = $request->except('_token','_method','file_upload');
         // $input = $request->only('uname','tel','sex','email','password');//数组
         //$input = $request->input('user_name');//字符串
-
-        // dd($input);
-
-//        3. 使用模型的update进行更新
-//        $user->update(['user_name'=>'zhangsan']);
+        //  3. 使用模型的update进行更新
         $res = $user->update($input);
-        // $res = $input->save();
-//        4. 根据更新是否成功，跳转页面
+        //    4. 根据更新是否成功，跳转页面
         if($res){
             return redirect('admin/adminuser');
         }else{
@@ -270,7 +233,7 @@ class AdminUserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * 点击后台用户管理的删除,删除对应的用户信息
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -286,9 +249,6 @@ class AdminUserController extends Controller
             $data['error'] = 1;
             $data['msg'] ="删除失败";
         }
-
-//        return  json_encode($data);
-
         return $data;
     }
 

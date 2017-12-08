@@ -54,7 +54,7 @@
                                         <option value="">全部</option>
                                         <option value="w" @if($user->sex == 'w') selected @endif>女</option>
                                          <option value="m"  @if($user->sex == 'm') selected @endif>男</option>
-                                        <option value="x">保密</option>
+                                        <option value="x"  @if($user->sex == 'x') selected @endif>保密</option>
                                        
                                     </select>
                                 </div>
@@ -69,10 +69,10 @@
                                 
                                 <div class="form-group">
                                     <label for="exampleInputFile">头像：</label>
-                                    <input type="text" size="50" id="art_thumb" name="avatar">
+                                    <input type="text" size="50" id="art_thumb" name="avatar" value="{{$user->avatar}}">
                                     <input id="file_upload" name="file_upload[]" type="file" multiple >
                                     <br>
-                                     <img src="" id="img1" alt="" style="width:80px;height:80px">
+                                     <img src="{{$user->avatar}}" id="img1" alt="" style="width:80px;height:80px">
                                      <script type="text/javascript">
                                           $(function () {
                                             $("#file_upload").change(function () {

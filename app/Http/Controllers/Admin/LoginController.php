@@ -26,7 +26,6 @@ class LoginController extends Controller
 
     public function login()
     {
-        //
         return view('Admin/Admin_Login/login');
     }
 
@@ -65,11 +64,6 @@ class LoginController extends Controller
     public function  dologin(Request $request)
     {
         $input = $request->except('_token');
-        
-//
-//        dd($code);
-        
-//        dd($input);
         $rule = [
             'uname'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:5,20',
             "password"=>'required|between:3,20',
@@ -105,18 +99,12 @@ class LoginController extends Controller
           if(!$user){
               return redirect('admin/login')->with('errors','用户名不存在');
           }
-          // dd($user);
           //判断密码是否正确
-          // Hash::check("trim($input['password'])", $user->password)
           $str = trim($input['password']);
-
           if( Hash::check("$str", $user->password) != $input['password']){
              return redirect('admin/login')->with('errors','密码不正确');
          }
-                   // dd(111);
-
          Session::put('user',$user);
-         // return " 11111";
          return redirect('admin/adminuser');
     }
   

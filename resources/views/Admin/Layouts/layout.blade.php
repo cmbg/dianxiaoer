@@ -366,14 +366,14 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        <i class="fa fa-dashboard"></i> <span>用户管理</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                        <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                        <li ><a href="{{url('admin/adminuser')}}"><i class="fa fa-circle-o"></i> 后台用户管理</a></li>
+                        <li><a href="{{url('admin/homeuser')}}"><i class="fa fa-circle-o"></i> 前台用户管理</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
