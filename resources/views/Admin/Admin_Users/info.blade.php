@@ -2,7 +2,7 @@
 
 @section('content')
  
-  
+   <script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 >
@@ -33,7 +33,6 @@
                   <th>邮箱</th>
                   <th>性别</th>
                   <th>头像</th>
-                  <th>身份</th>
                   <th>状态</th>
                 </tr>
                 </thead>
@@ -41,7 +40,7 @@
                 <tbody>   
                            
                 <tr>
-                  <td class="tc">{{$user->uid}}</td>
+                  <td class="tc id">{{$user->uid}}</td>
                   <td class="tc">{{$user->uname}}</td>
                   <td class="tc award-name">{{$user->tel}}</td>
                   <td class="tc ">{{$user->email}}</td>
@@ -55,16 +54,8 @@
                               }
                             ?>
                     </td>
-                    <td class="tc ">{{$user->avatar}}</td>
-                    <td><?php
-                              if ($user->identity == '1'){
-                                 echo '超级管理员';
-                              } else if($user->identity == '2') {
-                                 echo '普通管理员';
-                              } 
-                            ?>
-                    </td>
-                  <td> @if($user->status == '1')
+                    <td class="tc "><img src="{{$user->avatar}}" style="width:80px;height:80px"></td>
+                  <td class="statusBtn"> @if($user->status == '1')
                       <button type="button" class="btn bg-purple margin">已禁用</button>
                       @else
                       <button type="button" class="btn bg-olive btn-flat margin">已启用</button>
@@ -94,34 +85,7 @@
 
                 </style>
                
-          <script>
-        $(".statusBtn").on('click', function () {
-            var t = $(this);
-            var id = $(this).parent().find('.id').html();
-//            console.log(id);
-            $.ajax(
-                {
-                    url: '/admin/ad/ajaxStatus',
-                    data: {id: uid},
-                    type: 'post',
-                    success: function (data) {
-//                        console.log(data);
-                        if (data.astatus == 1) {
-                            t.html('<button type="button" class="btn bg-olive bg-purple margin">已启用\n' +
-                                '                                                        </button>');
-                        } else {
-                            t.html('<button type="button" class="btn bg-olive btn-flat margin">已启用\n' +
-                                '                                                        </button>');
-                        }
-                    },
-                    error: function () {
-
-                    },
-                    dataType: 'json',
-                }
-            );
-        })
-    </script>
+         
        
 @stop
 @section('js')
@@ -142,4 +106,121 @@
 <!-- page script -->
 
 <script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
+@stop
+
+@section("adminuserinfoidentity")
+    <script>
+        $(".identitybtn").on('click', function () {
+            var t = $(this);
+            var id = $(this).parent().find('.id').html();
+//            console.log(id);
+            $.ajax(
+                {
+                    url: '/admin/adminuserindex/ajaxIdentity',
+                    data: {id: id},
+                    type: 'post',
+                    success: function (data) {
+                       console.log(data);
+                        if (data.identity == 0) {
+                            t.html('<button type="button" class="btn bg-purple margin">普通管理员</button>');
+                        } else {
+                            t.html('<button type="button" class="btn bg-olive btn-flat margin">超级管理员</button>');
+                        }
+                    },
+                    error: function () {
+
+                    },
+                    dataType: 'json',
+                }
+            );
+        })
+    </script>
+@stop
+
+@section("adminuserinfostatus")
+    <script>
+        $(".statusBtn").on('click', function () {
+            var t = $(this);
+            var id = $(this).parent().find('.id').html();
+//            console.log(id);
+            $.ajax(
+                {
+                    url: '/admin/adminuserinfo/ajaxStatus',
+                    data: {id: id},
+                    type: 'post',
+                    success: function (data) {
+                       console.log(data);
+                        if (data.status == 1) {
+                            t.html('<button type="button" class="btn bg-purple margin">已禁用</button>');
+                        } else {
+                            t.html('<button type="button" class="btn bg-olive btn-flat margin">已启用</button>');
+                        }
+                    },
+                    error: function () {
+
+                    },
+                    dataType: 'json',
+                }
+            );
+        })
+    </script>
+@stop
+
+@section("ondblclick")
+    <script>
+        $(".name").on('dblclick', fn1);
+
+        function fn1() {
+            var t = $(this);
+            var id = t.parent().find('.id').html();
+            var name = t.html();
+            var inp = $('<input type="text">');
+            inp.val(name);
+            t.html(inp);
+            inp.select();
+            t.unbind('dblclick');
+            inp.on('blur', function () {
+                var newName = $(this).val();
+                $.ajax({
+                    url: "{{ url('/admin/ad/ajaxName') }}",
+                    type: 'post',
+                    data: {id: id, name: newName},
+                    beforeSend: function () {
+                        $("#info").html('<span class="text-red"><i class="fa fa-fw fa-spin fa-circle-o-notch"></i>正在修改中...</span>');
+                        $("#info").show();
+                    },
+                    success: function (data) {
+//                        console.log(data);
+                        if (data.code == 0) {
+                            t.html(name);
+                            $("#info").html('<span class="text-red">用户名已经存在</span>');
+                            $("#info").show();
+                            $("#info").fadeOut(2000);
+                        } else if (data.code == 1) {
+                            t.html(newName);
+                            $("#info").html('<span class="text-red">修改成功</span>');
+                            $("#info").show();
+                            $("#info").fadeOut(2000);
+                        } else {
+                            t.html(name);
+                            $("#info").html('<span class="text-red">修改失败</span>');
+                            $("#info").show();
+                            $("#info").fadeOut(2000);
+                        }
+                        ;
+                        //添加事件。
+                        t.on('dblclick', fn1);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest.status);
+                        alert(XMLHttpRequest.readyState);
+                        alert(textStatus);
+                    },
+//                    timeout:1000,
+                    dataType: 'json'
+                });
+            });
+        }
+
+    </script>
 @stop

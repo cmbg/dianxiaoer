@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <title>店小二</title>
     <meta charset="utf-8"/>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <!-- GOOGLE WEB FONTS -->
     <link rel="stylesheet" href="{{asset('Home/css/font-awesome.min.css')}}">
-
     <!-- BOOTSTRAP 3.3.7 CSS -->
     <link rel="stylesheet" href="{{asset('Home/css/bootstrap.min.css')}}"/>
-
     <!-- SLICK v1.6.0 CSS -->
     <link rel="stylesheet" href="{{asset('Home/css/slick-1.6.0/slick.css')}}"/>
-
     <link rel="stylesheet" href="{{asset('Home/css/jquery.fancybox.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/yith-woocommerce-compare/colorbox.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/owl-carousel/owl.carousel.min.css')}}"/>
@@ -22,19 +17,13 @@
     <link rel="stylesheet" href="{{asset('Home/css/js_composer/js_composer.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/woocommerce/woocommerce.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/yith-woocommerce-wishlist/style.css')}}"/>
-
-
-    <link rel="stylesheet" href="{{asset('Home/css/yith-woocommerce-wishlist/style.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/custom.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/app-orange.css')}}" id="theme_color"/>
     <link rel="stylesheet" href="" id="rtl"/>
     <link rel="stylesheet" href="{{asset('Home/css/app-responsive.css')}}"/>
-
     <link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>
-
 </head>
-
-<body class="page page-id-6 home-style1">
+@yield('body')
 
 <div class="body-wrapper theme-clearfix">
     <header id="header" class="header header-style1">
@@ -105,11 +94,7 @@
 
                     <div class="wrap-myacc pull-right">
                         <div class="sidebar-account pull-left">
-<<<<<<< HEAD
-                            <div class="account-title">My account</div>
-=======
                             <div class="account-title">我的账户</div>
->>>>>>> origin/niechencai
 
                             <div id="my-account" class="my-account">
                                 <div class="widget-1 widget-first widget nav_menu-4 widget_nav_menu">
@@ -117,42 +102,22 @@
                                         <ul id="menu-my-account" class="menu">
                                             <li class="menu-my-account">
                                                 <a class="item-link" href="my_account.html">
-<<<<<<< HEAD
-                                                    <span class="menu-title">My Account</span>
-=======
                                                     <span class="menu-title">我的账户</span>
->>>>>>> origin/niechencai
                                                 </a>
                                             </li>
 
                                             <li class="menu-cart">
                                                 <a class="item-link" href="cart.html">
-<<<<<<< HEAD
-                                                    <span class="menu-title">Cart</span>
-=======
                                                     <span class="menu-title">购物车</span>
->>>>>>> origin/niechencai
                                                 </a>
                                             </li>
 
                                             <li class="menu-checkout">
                                                 <a class="item-link" href="checkout.html">
-<<<<<<< HEAD
-                                                    <span class="menu-title">Checkout</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="menu-wishlist">
-                                                <a class="item-link" href="#">
-                                                    <span class="menu-title">Wishlist</span>
-                                                </a>
-                                            </li>
-=======
                                                     <span class="menu-title">我的订单</span>
                                                 </a>
                                             </li>
 
->>>>>>> origin/niechencai
                                         </ul>
                                     </div>
                                 </div>
@@ -165,11 +130,7 @@
                                                     <li>
                                                         <a href="javascript:void(0);" data-toggle="modal"
                                                            data-target="#login_form">
-<<<<<<< HEAD
-                                                            <span>Login</span>
-=======
                                                             <span>登录</span>
->>>>>>> origin/niechencai
                                                         </a>
                                                         <span class="wg">Welcome Guest</span>
                                                     </li>
@@ -187,11 +148,7 @@
                                     <ul id="menu-checkout" class="menu">
                                         <li class="menu-checkout">
                                             <a class="item-link" href="checkout.html">
-<<<<<<< HEAD
-                                                <span class="menu-title">Checkout</span>
-=======
                                                 <span class="menu-title">我的订单</span>
->>>>>>> origin/niechencai
                                             </a>
                                         </li>
                                     </ul>
@@ -422,51 +379,18 @@
 
                                     <div id="ResMenuprimary_menu" class="collapse menu-responsive-wrapper">
                                         <ul id="menu-primary-menu" class="etrostore_resmenu">
-<<<<<<< HEAD
-                                            <li><a href="index.blade.php">Home</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-=======
-                                            <li><a href="index.blade.php">主页</a></li>
-                                            <li><a href="cart.html">详情页</a></li>
-                                            <li><a href="checkout.html">列表页</a></li>
->>>>>>> origin/niechencai
-                                            <li><a href="my_account.html">My Account</a></li>
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="simple_product.html">Simple Product</a></li>
-                                            <li><a href="about_us.html">About Us</a></li>
-                                            <li><a href="contact_us.html">Contact Us</a></li>
-<<<<<<< HEAD
-=======
-                                            <li><a href="{{asset('/home/sfshop')}}">开通鱼塘</a></li>
-                                            <li><a href="{{asset('/home/fshop')}}">我的鱼塘</a></li>
->>>>>>> origin/niechencai
+                                            @foreach($nav as $k=>$v)
+                                                <li><a href="{{asset($v->nlink)}}">{{$v->nname}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
 
                                 <ul id="menu-primary-menu-1"
                                     class="nav nav-pills nav-mega etrostore-mega etrostore-menures">
-<<<<<<< HEAD
-                                    <li><a href="index.blade.php">Home</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-=======
-                                    <li><a href="index.blade.php">主页</a></li>
-                                    <li><a href="cart.html">购物车</a></li>
->>>>>>> origin/niechencai
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="my_account.html">My Account</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="simple_product.html">Simple Product</a></li>
-<<<<<<< HEAD
-                                    <li><a href="about_us.html">About Us</a></li>
-                                    <li><a href="contact_us.html">Contact Us</a></li>
-=======
-                                    <li><a href="about_us.html">关于我们</a></li>
-                                    <li><a href="contact_us.html">Contact Us</a></li>
-                                    <li><a href="{{asset('/home/sfshop')}}">开通鱼塘</a></li>
-                                    <li><a href="{{asset('/home/fshop')}}">我的鱼塘</a></li>
->>>>>>> origin/niechencai
+                                    @foreach($nav as $k=>$v)
+                                        <li><a href="{{asset($v->nlink)}}">{{$v->nname}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </nav>
@@ -771,6 +695,19 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="vc_wp_custommenu wpb_content_element wrap-cus">
+                        <div class="widget widget_nav_menu">
+                            <ul id="menu-infomation" class="menu">
+                                @foreach($links as $k=>$v)
+                                <li class="menu-about-us">
+                                    <a class="item-link" href="{{$v->lurl}}">
+                                       <img style="height:31px;width:50px" src="{{$v->limg}}" />
+                                    </a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="vc_row-full-width vc_clearfix"></div>
@@ -894,63 +831,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="{{asset('Home/js/jquery/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/jquery/jquery-migrate.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/jquery/js.cookie.min.js')}}"></script>
 
-<!-- OPEN LIBS JS -->
-<script type="text/javascript" src="{{asset('Home/js/owl-carousel/owl.carousel.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/slick-1.6.0/slick.min.js')}}"></script>
-
-<script type="text/javascript" src="{{asset('Home/js/yith-woocommerce-compare/jquery.colorbox-min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/sw_core/isotope.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/sw_core/jquery.fancybox.pack.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/sw_woocommerce/category-ajax.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/sw_woocommerce/jquery.countdown.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/js_composer/js_composer_front.min.js')}}"></script>
-
-<script type="text/javascript" src="{{asset('Home/js/plugins.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/megamenu.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/main.min.js')}}"></script>
-<script src="{{asset('Home/layui/layui.js')}}"></script>
-<script type="text/javascript">
-    var sticky_navigation_offset_top = $("#header .header-bottom").offset().top;
-    var sticky_navigation = function () {
-        var scroll_top = $(window).scrollTop();
-        if (scroll_top > sticky_navigation_offset_top) {
-            $("#header .header-bottom").addClass("sticky-menu");
-            $("#header .header-bottom").css({"top": 0, "left": 0, "right": 0});
-        } else {
-            $("#header .header-bottom").removeClass("sticky-menu");
-        }
-    };
-    sticky_navigation();
-    $(window).scroll(function () {
-        sticky_navigation();
-    });
-
-    $(document).ready(function () {
-        $(".show-dropdown").each(function () {
-            $(this).on("click", function () {
-                $(this).toggleClass("show");
-                var $element = $(this).parent().find("> ul");
-                $element.toggle(300);
-            });
-        });
-    });
-</script>
-
-<!--[if gte IE 9]><!-->
-<script type="text/javascript">
-    var request, b = document.body, c = 'className', cs = 'customize-support',
-        rcs = new RegExp('(^|\\s+)(no-)?' + cs + '(\\s+|$)');
-    request = true;
-
-    b[c] = b[c].replace(rcs, ' ');
-    // The customizer requires postMessage and CORS (if the site is cross domain)
-    b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
-</script>
-<!--<![endif]-->
-</body>
-</html>
+@yield('js')

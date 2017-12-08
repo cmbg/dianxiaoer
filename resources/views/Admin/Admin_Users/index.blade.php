@@ -19,11 +19,14 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">后台用户列表,在这里显示后台所有用户</h3>
+                @if(session('info'))
+                    <small class="tishi"><span class="text-red">{{session('info')}}</span></small>
+                @endif
             </div>
             <form action="{{url('admin/adminuser')}}" method="get">
                 <table class="search_tab">
                     <tr>
-                    <th style="width:100px;"></th>
+                    <th style="width:50px;"></th>
                     <th>
                         每页条数：
                         <select name="num">
@@ -39,9 +42,10 @@
                     </th>
                     <th width="70" class="tc">用户名:</th>
                     <td><input type="text" name="keywords1" value="{{$request->keywords1}}" placeholder="用户名"></td>
-                    <th width="70" class="tc">电话:</th>
+                    <th width="50" class="tc">电话:</th>
                     <td><input type="text" name="keywords2" value="{{$request->keywords2}}" placeholder="电话号"></td>
-                    <td  ><input type="submit"  value="查询" class="btn btn-primary"></td>
+                    <td><input type="submit"  value="查询" class="btn btn-primary"></td>
+                   <td><input type="button" class="btn btn-primary" value="清空查找条件" onclick="location='adminuser'"/></td>
                     </tr>
                 </table>
             </form>
@@ -55,7 +59,6 @@
                   <th>用户名</th>
                   <th>电话</th>
                   <th>性别</th>
-                  <th>身份</th>
                   <th>操作</th>
                 </tr>
                 </thead>
@@ -76,18 +79,11 @@
                               }
                             ?>
                     </td>
-                    <td><?php
-                              if ($v->identity == '1'){
-                                 echo '超级管理员';
-                              } else if($v->identity == '2') {
-                                 echo '普通管理员';
-                              } 
-                            ?>
-                    </td>
                   <td>
                       <a href="{{url('admin/adminuser'.'/'.$v->uid)}}">详细</a>
                       <a href="{{url('admin/adminuser/'.$v->uid.'/edit')}}">修改</a>
                       <a href="javascript:;" onclick="userDel({{$v->uid}})">删除</a>
+                      <a href="{{url('admin/adminuser/auth'.'/'.$v->uid)}}" >授予角色</a>
                   </td>
                 </tr>
                 @endforeach
@@ -110,6 +106,7 @@
           </div>          
           
           <input type="button" class="btn btn-primary" value="添加用户" onclick="location='adminuser/create'"/>
+          
           <!-- /.box -->       
     </section>
     <!-- /.content -->
@@ -177,4 +174,7 @@
 <!-- page script -->
 
 <script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
+   <script>
+       $(".tishi   ").fadeOut(2000);
+   </script>
 @stop

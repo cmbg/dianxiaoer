@@ -4,6 +4,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
+
             鱼塘管理
             <small>列表</small>
         </h1>
@@ -11,6 +12,7 @@
             <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
             <li><a href="#">鱼塘管理</a></li>
             <li class="active">列表</li>
+
         </ol>
     </section>
 
@@ -20,14 +22,58 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <small class="box-title">鱼塘列表,在这里你可以看到一些关于鱼塘的信息.</small>
+
+                        <small class="box-title">在这里你可以看到一些关于鱼塘的信息.</small>
                         <small id="info"></small>
+
 
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-                            <div class="row">
+                            <div class="search-wrap">
+                                <div class="search-content">
+
+                                    <form action="{{url('admin/fishpond')}}" method="get">
+                                        <table class="search-tab">
+                                            <tr>
+                                                <th width="35">塘主:</th>
+                                                <td><input class="common-text" placeholder="名称关键字" name="uname" value="{{$request->uname}}"
+                                                           id="" type="text"></td>
+                                                <th width="55" >鱼塘名字:</th>
+                                                <td><input class="common-text" placeholder="关键字" name="fishpondname" value="{{$request->fishpondname}}"
+                                                           id="" type="text"></td>
+                                                <th>
+                                                    状态：
+                                                    <select name="status" id="">
+                                                        <option value="">全部</option>
+                                                        <option @if($request->status == 1)  selected  @endif value="1">已禁用</option>
+                                                        <option @if($request->status === "0")  selected  @endif value="0">已启用</option>
+                                                    </select>
+
+                                                </th>
+                                                <th>
+                                                    每页条数：
+                                                    <select name="num">
+                                                        <option value="5"
+                                                                @if($request['num'] == 5)  selected  @endif
+                                                        >5
+                                                        </option>
+                                                        <option value="10"
+                                                                @if($request['num'] == 10)  selected  @endif
+                                                        >10
+                                                        </option>
+                                                    </select>
+                                                </th>
+                                                <td width="10"></td>
+
+                                                <td><input class="btn btn-primary btn2" value="查询" type="submit"></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row" style="height:20px">
                                 <div class="col-sm-6"></div>
                                 <div class="col-sm-6"></div>
                             </div>
@@ -40,27 +86,21 @@
                                             <th class="sorting_asc" tabindex="0" aria-controls="example2"
                                                 rowspan="1" colspan="1" aria-sort="ascending"
                                                 aria-label="Rendering engine: activate to sort column descending">
+
                                                 序号
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                                 colspan="1" aria-label="Browser: activate to sort column ascending">
-                                                客户信息
+                                                塘主
+
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                            <th class="sorting text-red" tabindex="0" aria-controls="example2" rowspan="1"
                                                 colspan="1"
                                                 aria-label="Platform(s): activate to sort column ascending">
-                                                鱼塘标题
+
+                                                鱼塘名字
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                                colspan="1"
-                                                aria-label="Engine version: activate to sort column ascending">
-                                                鱼塘图片
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
-                                                colspan="1"
-                                                aria-label="CSS grade: activate to sort column ascending">
-                                                跳转地址
-                                            </th>
+
                                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                                 colspan="1"
                                                 aria-label="CSS grade: activate to sort column ascending">
@@ -70,45 +110,66 @@
                                                 colspan="1"
                                                 aria-label="CSS grade: activate to sort column ascending">
                                                 操作
+
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($data1 as $k=>$v)
                                             <tr role="row" class="odd">
-                                                <td class="id">{{$v->adv_id}}</td>
-                                                <td class="name">{{$v->acustomer}}</td>
-                                                <td>{{$v->atitle}}</td>
-                                                <td><img src="{{url('uploads/')}}/s_{{$v->apic}}" width="100px"></td>
-                                                <td>{{$v->aurl}}</td>
+                                                <td class="id">{{$v->id}}</td>
+                                                <td >{{$v->adminuser['uname']}}</td>
+                                                <td class="name" >{{$v->fishpondname}}</td>
                                                 <td class="statusBtn">
-                                                    @if($v->astatus == 1)
+                                                    @if($v->status == 1)
                                                         <button type="button" class="btn bg-purple margin">已禁用
                                                         </button>
-                                                    @else
-                                                        <button type="button" class="btn bg-olive btn-flat margin">已启用
+                                                    @elseif($v->status === 0)
+                                                        <button type="button" class="btn bg-olive margin">已启用
                                                         </button>
                                                     @endif
                                                 </td>
-                                                <td><a href="ad/{{$v->adv_id}}/edit">编辑</a>
-                                                    {{--<a href="ad/{{$v->adv_id}}">删除</a>--}}
-                                                    <a href="" onclick="sendBtn('ad/{{$v->adv_id}}');" >删除</a>
+                                                <td>
+                                                    {{--<a href="javascript:;" onclick="sendBtn('{{url('/admin/fishpond'.$v->id)}}');" >删除</a>--}}
+                                                    <a href="javascript:;" onclick="sendBtn({{$v->id}});">删除</a>
                                                 </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
                                         <script>
                                             function sendBtn(node) {
-                                                var url = node;
-//                                                console.log(url);
-                                                /*得到href的值*/
-                                                $.ajax({
-                                                    url: url, /*url也可以是json之类的文件等等*/
-                                                    type: 'delete', /*DELETE、POST */
-                                                })
-                                            };
-                                        </script>
+                                                //询问框
+                                                layer.confirm('您确认删除吗？', {
+                                                    btn: ['确认', '取消'] //按钮
+                                                }, function () {
+                                                    //如果用户发出删除请求，应该使用ajax向服务器发送删除请求
+                                                    //$.get("请求服务器的路径","携带的参数", 获取执行成功后的额返回数据);
+                                                    //admin/user/1
+                                                    $.post("{{url('admin/fishpond')}}/" + node, {
+                                                        "_method": "delete",
+                                                        {{--"_token": "{{csrf_token()}}"--}}
+                                                    }, function (data) {
+//                                                        console.log(data);
+                                                        //data是json格式的字符串，在js中如何将一个json字符串变成json对象
+                                                        //var res =  JSON.parse(data);
+                                                        //删除成功
+                                                        if (data.error == 0) {
+                                                            //console.log("错误号"+res.error);
+                                                            //console.log("错误信息"+res.msg);
+                                                            layer.msg(data.msg, {icon: 6});
+                                                            var t = setTimeout("location.href = location.href;", 1000);
+//                                                            location.href = location.href;
+                                                        } else {
+                                                            layer.msg(data.msg, {icon: 5});
+                                                            var t = setTimeout("location.href = location.href;", 1000);
+//                                                            location.href = location.href;
+                                                        }
+                                                    });
+                                                }, function () {
 
+                                                });
+                                            }
+                                        </script>
                                     </table>
                                 </div>
                             </div>
@@ -121,7 +182,7 @@
                                 <div class="col-sm-7">
                                     <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
                                         <div class="page_list">
-                                            {!! $data1->render() !!}
+                                            {!! $data1->appends($request->all())->render() !!}
                                         </div>
                                         {{--<style>--}}
                                         {{--.page_list ul li span {--}}
@@ -143,6 +204,7 @@
         <!-- /.row -->
     </section>
     <!-- /.content -->
+
 
 @stop
 
@@ -186,21 +248,21 @@
     <script src="{{ asset('/Admin/dist/js/demo.js') }}"></script>
 @stop
 
-@section("status")
+@section("fishpondstatus")
     <script>
         $(".statusBtn").on('click', function () {
             var t = $(this);
             var id = $(this).parent().find('.id').html();
-//            console.log(id);
+            console.log(id);
             $.ajax(
                 {
-                    url: '/admin/ad/ajaxStatus',
+                    url: '/admin/fishpond/ajaxStatus',
                     data: {id: id},
                     type: 'post',
                     success: function (data) {
-//                        console.log(data);
-                        if (data.astatus == 1) {
-                            t.html('<button type="button" class="btn bg-olive bg-purple margin">已启用\n' +
+                        console.log(data);
+                        if (data.status == 1) {
+                            t.html('<button type="button" class="btn bg-olive bg-purple margin">已禁用\n' +
                                 '                                                        </button>');
                         } else {
                             t.html('<button type="button" class="btn bg-olive btn-flat margin">已启用\n' +
@@ -208,7 +270,7 @@
                         }
                     },
                     error: function () {
-
+//
                     },
                     dataType: 'json',
                 }
@@ -217,7 +279,7 @@
     </script>
 @stop
 
-@section("ondblclick")
+@section("fishpondondblclick")
     <script>
         $(".name").on('dblclick', fn1);
 
@@ -233,7 +295,7 @@
             inp.on('blur', function () {
                 var newName = $(this).val();
                 $.ajax({
-                    url: "{{ url('/admin/ad/ajaxName') }}",
+                    url: "{{ url('/admin/fishpond/ajaxName') }}",
                     type: 'post',
                     data: {id: id, name: newName},
                     beforeSend: function () {

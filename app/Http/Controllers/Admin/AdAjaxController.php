@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class AdAjaxController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 修改广告的状态
      *
      * @return \Illuminate\Http\Response
      */
@@ -49,7 +49,7 @@ class AdAjaxController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 修改广告客户信息
      *
      * @return \Illuminate\Http\Response
      */

@@ -44,8 +44,9 @@
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-          <link rel="stylesheet" href="{{asset('admin/style/css/ch-ui.admin.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/style/css/ch-ui.admin.css')}}">
     <link rel="stylesheet" href="{{asset('admin/style/font/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/data/dateRange.css')}}"/>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -340,7 +341,7 @@
                 <div class="pull-left image">
                     <img src="{{ asset('/Admin/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                 </div>
-                <div class="pull-left info">
+                <div class="pull-left ">
                     <p>Alexander Pierce</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
@@ -524,11 +525,37 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                     </ul>
                 </li>
-                <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-table"></i> <span>角色管理</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{url('/admin/role')}}"><i class="fa fa-circle-o"></i>角色列表</a></li>
+                        <li><a href="{{url('/admin/role/create')}}"><i class="fa fa-circle-o"></i>添加角色</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-table"></i> <span>权限管理</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{url('/admin/permission')}}"><i class="fa fa-circle-o"></i>权限列表</a></li>
+                        <li><a href="{{url('/admin/permission/create')}}"><i class="fa fa-circle-o"></i>添加权限</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{url('/admin/order')}}"><i class="fa fa-book"></i> <span>订单管理</span></a></li>
                 <li class="header">LABELS</li>
-                <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+                <li><a href="{{url('/admin/fishpond')}}"><i class="fa fa-circle-o text-aqua"></i> <span>鱼塘管理</span></a></li>
+                <li><a href="{{url('/admin/ad')}}"><i class="fa fa-circle-o text-aqua"></i> <span>广告管理</span></a></li>
+                <li><a href="{{url('/admin/nav')}}"><i class="fa fa-circle-o text-red"></i> <span>导航栏</span></a></li>
+                <li><a href="{{url('/admin/links')}}"><i class="fa fa-circle-o text-yellow"></i> <span>友情链接</span></a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -759,9 +786,13 @@
 </script>
 
 @yield('ajax');
-@yield('status')
-@yield('ondblclick')
-
+@yield('adstatus')
+@yield('adondblclick')
+@yield('fishpondstatus')
+@yield('fishpondondblclick')
+@yield('navedit')
+@yield('linkslimg')
+@yield('linksupdatelimg')
 
 
 </body>
