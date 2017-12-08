@@ -4,12 +4,12 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HomeUser extends Model
+class Order extends Model
 {
     //
-    public $table = 'home_users';
-    public $primaryKey = 'uid';
+    //
+    public $table = 'order';
+    public $primaryKey = 'oid';
     public $guarded = [];
     public $timestamps = false;
 }
-

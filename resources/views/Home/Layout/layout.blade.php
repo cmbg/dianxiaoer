@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <title>店小二</title>
     <meta charset="utf-8"/>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <!-- GOOGLE WEB FONTS -->
     <link rel="stylesheet" href="{{asset('Home/css/font-awesome.min.css')}}">
-
     <!-- BOOTSTRAP 3.3.7 CSS -->
     <link rel="stylesheet" href="{{asset('Home/css/bootstrap.min.css')}}"/>
-
     <!-- SLICK v1.6.0 CSS -->
     <link rel="stylesheet" href="{{asset('Home/css/slick-1.6.0/slick.css')}}"/>
-
     <link rel="stylesheet" href="{{asset('Home/css/jquery.fancybox.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/yith-woocommerce-compare/colorbox.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/owl-carousel/owl.carousel.min.css')}}"/>
@@ -22,19 +17,14 @@
     <link rel="stylesheet" href="{{asset('Home/css/js_composer/js_composer.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/woocommerce/woocommerce.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/yith-woocommerce-wishlist/style.css')}}"/>
-
-
-    <link rel="stylesheet" href="{{asset('Home/css/yith-woocommerce-wishlist/style.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/custom.css')}}"/>
     <link rel="stylesheet" href="{{asset('Home/css/app-orange.css')}}" id="theme_color"/>
     <link rel="stylesheet" href="" id="rtl"/>
     <link rel="stylesheet" href="{{asset('Home/css/app-responsive.css')}}"/>
-
     <link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>
-
 </head>
 
-<body class="page page-id-6 home-style1">
+@yield('body')
 
 <div class="body-wrapper theme-clearfix">
     <header id="header" class="header header-style1">
@@ -59,13 +49,13 @@
                                             <li>
                                                 <a class="lang_sel_sel icl-en">
                                                     <img class="iclflag" title="English" alt="en"
-                                                         src="images/icons/en.png" width="18" height="12"/> English
+                                                         src="{{url('/Home/images/icons/en.png')}}" width="18" height="12"/> English
                                                 </a>
                                                 <ul>
                                                     <li class="icl-en">
                                                         <a href="#">
                                                             <img class="iclflag" title="English" alt="en"
-                                                                 src="images/icons/en.png" width="18" height="12"/>
+                                                                 src="{{url('/Home/images/icons/en.png')}}" width="18" height="12"/>
                                                             English
                                                         </a>
                                                     </li>
@@ -73,7 +63,7 @@
                                                     <li class="icl-ar">
                                                         <a href="#">
                                                             <img class="iclflag" title="Arabic" alt="ar"
-                                                                 src="images/icons/ar.png" width="18" height="12"/>
+                                                                 src="{{url('/Home/images/icons/ar.png')}}" width="18" height="12"/>
                                                             Arabic
                                                         </a>
                                                     </li>
@@ -105,11 +95,7 @@
 
                     <div class="wrap-myacc pull-right">
                         <div class="sidebar-account pull-left">
-<<<<<<< HEAD
-                            <div class="account-title">My account</div>
-=======
                             <div class="account-title">我的账户</div>
->>>>>>> origin/niechencai
 
                             <div id="my-account" class="my-account">
                                 <div class="widget-1 widget-first widget nav_menu-4 widget_nav_menu">
@@ -117,42 +103,22 @@
                                         <ul id="menu-my-account" class="menu">
                                             <li class="menu-my-account">
                                                 <a class="item-link" href="my_account.html">
-<<<<<<< HEAD
-                                                    <span class="menu-title">My Account</span>
-=======
                                                     <span class="menu-title">我的账户</span>
->>>>>>> origin/niechencai
                                                 </a>
                                             </li>
 
                                             <li class="menu-cart">
-                                                <a class="item-link" href="cart.html">
-<<<<<<< HEAD
-                                                    <span class="menu-title">Cart</span>
-=======
+                                                <a class="item-link" href="/cart">
                                                     <span class="menu-title">购物车</span>
->>>>>>> origin/niechencai
                                                 </a>
                                             </li>
 
                                             <li class="menu-checkout">
-                                                <a class="item-link" href="checkout.html">
-<<<<<<< HEAD
-                                                    <span class="menu-title">Checkout</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="menu-wishlist">
-                                                <a class="item-link" href="#">
-                                                    <span class="menu-title">Wishlist</span>
-                                                </a>
-                                            </li>
-=======
+                                                <a class="item-link" href="/order">
                                                     <span class="menu-title">我的订单</span>
                                                 </a>
                                             </li>
 
->>>>>>> origin/niechencai
                                         </ul>
                                     </div>
                                 </div>
@@ -165,11 +131,7 @@
                                                     <li>
                                                         <a href="javascript:void(0);" data-toggle="modal"
                                                            data-target="#login_form">
-<<<<<<< HEAD
-                                                            <span>Login</span>
-=======
                                                             <span>登录</span>
->>>>>>> origin/niechencai
                                                         </a>
                                                         <span class="wg">Welcome Guest</span>
                                                     </li>
@@ -186,12 +148,8 @@
                                 <div class="widget-inner">
                                     <ul id="menu-checkout" class="menu">
                                         <li class="menu-checkout">
-                                            <a class="item-link" href="checkout.html">
-<<<<<<< HEAD
-                                                <span class="menu-title">Checkout</span>
-=======
+                                            <a class="item-link" href="/order">
                                                 <span class="menu-title">我的订单</span>
->>>>>>> origin/niechencai
                                             </a>
                                         </li>
                                     </ul>
@@ -209,7 +167,7 @@
                     <!-- LOGO -->
                     <div class="etrostore-logo pull-left">
                         <a href="#">
-                            <img src="images/icons/logo-orange.png" alt="Shoopy">
+                            <img src="{{url('/Home/images/icons/logo-orange.png')}}" alt="Shoopy">
                         </a>
                     </div>
 
@@ -257,16 +215,17 @@
                                     <div class="top-minicart-icon pull-right">
                                         <i class="fa fa-shopping-cart"></i>
                                         <a class="cart-contents" href="cart.html" title="View your shopping cart">
-                                            <span class="minicart-number">2</span>
+                                            <span class="minicart-number">{{$count}}</span>
                                         </a>
                                     </div>
 
                                     <div class="wrapp-minicart">
                                         <div class="minicart-padding">
                                             <div class="number-item">
-                                                There are <span>items</span> in your cart
+                                                 {{--<span></span>--}}
+                                                你购物车里的物品
                                             </div>
-
+                                            @foreach( $carts as $cart)
                                             <ul class="minicart-content">
                                                 <li>
                                                     <a href="simple_product.html" class="product-image">
@@ -280,19 +239,20 @@
                                                     <div class="detail-item">
                                                         <div class="product-details">
                                                             <h4>
-                                                                <a class="title-item" href="simple_product.html">Veniam
-                                                                    Dolore</a>
+                                                                {{--<a class="title-item" href="simple_product.html">Veniam--}}
+                                                                    {{--Dolore</a>--}}
+                                                                <a href="simple_product.html">{{$cart->name}}</a>
                                                             </h4>
 
                                                             <div class="product-price">
 																	<span class="price">
 																		<span class="woocommerce-Price-amount amount">
-																			<span class="woocommerce-Price-currencySymbol">$</span>190.00
+																			<span class="woocommerce-Price-currencySymbol">$</span>{{$cart->price}}
 																		</span>
 																	</span>
 
                                                                 <div class="qty">
-                                                                    <span class="qty-number">1</span>
+                                                                    <span class="qty-number">{{$cart->qty}}</span>
                                                                 </div>
                                                             </div>
 
@@ -310,57 +270,17 @@
                                                     </div>
                                                 </li>
 
-                                                <li>
-                                                    <a href="simple_product.html" class="product-image">
-                                                        <img width="100" height="100" src="images/1903/22-150x150.jpg"
-                                                             class="attachment-100x100 size-100x100 wp-post-image"
-                                                             alt=""
-                                                             srcset="images/1903/22-150x150.jpg 150w, images/1903/22-300x300.jpg 300w, images/1903/22-180x180.jpg 180w, images/1903/22.jpg 600w"
-                                                             sizes="(max-width: 100px) 100vw, 100px"/>
-                                                    </a>
 
-                                                    <div class="detail-item">
-                                                        <div class="product-details">
-                                                            <h4>
-                                                                <a class="title-item" href="simple_product.html">Cleaner
-                                                                    with bag</a>
-                                                            </h4>
-
-                                                            <div class="product-price">
-																	<span class="price">
-																		<span class="woocommerce-Price-amount amount">
-																			<span class="woocommerce-Price-currencySymbol">$</span>350.00
-																		</span>
-																	</span>
-
-                                                                <div class="qty">
-                                                                    <span class="qty-number">1</span>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-action clearfix">
-                                                                <a href="#" class="btn-remove" title="Remove this item">
-                                                                    <span class="fa fa-trash-o"></span>
-                                                                </a>
-
-                                                                <a class="btn-edit" href="cart.html"
-                                                                   title="View your shopping cart">
-                                                                    <span class="fa fa-pencil"></span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
                                             </ul>
-
+                                            @endforeach
                                             <div class="cart-checkout">
                                                 <div class="price-total">
-                                                    <span class="label-price-total">Total</span>
+                                                    <span class="label-price-total">商品总价</span>
 
                                                     <span class="price-total-w">
 															<span class="price">
 																<span class="woocommerce-Price-amount amount">
-																	<span class="woocommerce-Price-currencySymbol">$</span>540.00
+																	<span class="woocommerce-Price-currencySymbol">$</span>{{$total}}
 																</span>
 															</span>
 														</span>
@@ -368,11 +288,11 @@
 
                                                 <div class="cart-links clearfix">
                                                     <div class="cart-link">
-                                                        <a href="cart.html" title="Cart">View Cart</a>
+                                                        <a href="/shop" title="Cart">继续购物</a>
                                                     </div>
 
                                                     <div class="checkout-link">
-                                                        <a href="checkout.html" title="Check Out">Check Out</a>
+                                                        <a href="/del" title="Check Out">清空购物车</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -422,180 +342,161 @@
 
                                     <div id="ResMenuprimary_menu" class="collapse menu-responsive-wrapper">
                                         <ul id="menu-primary-menu" class="etrostore_resmenu">
-<<<<<<< HEAD
-                                            <li><a href="index.blade.php">Home</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="/home/index">主页</a></li>
+                                            <li><a href="/cart">购物车</a></li>
                                             <li><a href="checkout.html">Checkout</a></li>
-=======
-                                            <li><a href="index.blade.php">主页</a></li>
-                                            <li><a href="cart.html">详情页</a></li>
-                                            <li><a href="checkout.html">列表页</a></li>
->>>>>>> origin/niechencai
                                             <li><a href="my_account.html">My Account</a></li>
                                             <li><a href="shop.html">Shop</a></li>
                                             <li><a href="simple_product.html">Simple Product</a></li>
-                                            <li><a href="about_us.html">About Us</a></li>
+                                            <li><a href="about_us.html">关于我们</a></li>
                                             <li><a href="contact_us.html">Contact Us</a></li>
-<<<<<<< HEAD
-=======
                                             <li><a href="{{asset('/home/sfshop')}}">开通鱼塘</a></li>
                                             <li><a href="{{asset('/home/fshop')}}">我的鱼塘</a></li>
->>>>>>> origin/niechencai
                                         </ul>
                                     </div>
                                 </div>
 
                                 <ul id="menu-primary-menu-1"
                                     class="nav nav-pills nav-mega etrostore-mega etrostore-menures">
-<<<<<<< HEAD
-                                    <li><a href="index.blade.php">Home</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-=======
-                                    <li><a href="index.blade.php">主页</a></li>
-                                    <li><a href="cart.html">购物车</a></li>
->>>>>>> origin/niechencai
+                                    <li><a href="/home/index">主页</a></li>
+                                    <li><a href="/cart">购物车</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="my_account.html">My Account</a></li>
                                     <li><a href="shop.html">Shop</a></li>
                                     <li><a href="simple_product.html">Simple Product</a></li>
-<<<<<<< HEAD
-                                    <li><a href="about_us.html">About Us</a></li>
-                                    <li><a href="contact_us.html">Contact Us</a></li>
-=======
                                     <li><a href="about_us.html">关于我们</a></li>
                                     <li><a href="contact_us.html">Contact Us</a></li>
                                     <li><a href="{{asset('/home/sfshop')}}">开通鱼塘</a></li>
                                     <li><a href="{{asset('/home/fshop')}}">我的鱼塘</a></li>
->>>>>>> origin/niechencai
                                 </ul>
                             </div>
                         </nav>
                     </div>
                     <!-- /Primary navbar -->
 
-                    <div class="top-form top-form-minicart etrostore-minicart pull-right">
-                        <div class="top-minicart-icon pull-right">
-                            <i class="fa fa-shopping-cart"></i>
-                            <a class="cart-contents" href="cart.html" title="View your shopping cart">
-                                <span class="minicart-number">2</span>
-                            </a>
-                        </div>
+                    {{--<div class="top-form top-form-minicart etrostore-minicart pull-right">--}}
+                        {{--<div class="top-minicart-icon pull-right">--}}
+                            {{--<i class="fa fa-shopping-cart"></i>--}}
+                            {{--<a class="cart-contents" href="cart.html" title="View your shopping cart">--}}
+                                {{--<span class="minicart-number">2</span>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
 
-                        <div class="wrapp-minicart">
-                            <div class="minicart-padding">
-                                <div class="number-item">
-                                    There are <span>items</span> in your cart
-                                </div>
+                        {{--<div class="wrapp-minicart">--}}
+                            {{--<div class="minicart-padding">--}}
+                                {{--<div class="number-item">--}}
+                                    {{--There are <span>items</span> in your cart--}}
+                                {{--</div>--}}
 
-                                <ul class="minicart-content">
-                                    <li>
-                                        <a href="simple_product.html" class="product-image">
-                                            <img width="100" height="100" src="images/1903/45-150x150.jpg"
-                                                 class="attachment-100x100 size-100x100 wp-post-image" alt=""
-                                                 srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"
-                                                 sizes="(max-width: 100px) 100vw, 100px"/>
-                                        </a>
+                                {{--<ul class="minicart-content">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="simple_product.html" class="product-image">--}}
+                                            {{--<img width="100" height="100" src="images/1903/45-150x150.jpg"--}}
+                                                 {{--class="attachment-100x100 size-100x100 wp-post-image" alt=""--}}
+                                                 {{--srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"--}}
+                                                 {{--sizes="(max-width: 100px) 100vw, 100px"/>--}}
+                                        {{--</a>--}}
 
-                                        <div class="detail-item">
-                                            <div class="product-details">
-                                                <h4>
-                                                    <a class="title-item" href="simple_product.html">Veniam Dolore</a>
-                                                </h4>
+                                        {{--<div class="detail-item">--}}
+                                            {{--<div class="product-details">--}}
+                                                {{--<h4>--}}
+                                                    {{--<a class="title-item" href="simple_product.html">Veniam Dolore</a>--}}
+                                                {{--</h4>--}}
 
-                                                <div class="product-price">
-														<span class="price">
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>190.00
-															</span>
-														</span>
+                                                {{--<div class="product-price">--}}
+														{{--<span class="price">--}}
+															{{--<span class="woocommerce-Price-amount amount">--}}
+																{{--<span class="woocommerce-Price-currencySymbol">$</span>190.00--}}
+															{{--</span>--}}
+														{{--</span>--}}
 
-                                                    <div class="qty">
-                                                        <span class="qty-number">1</span>
-                                                    </div>
-                                                </div>
+                                                    {{--<div class="qty">--}}
+                                                        {{--<span class="qty-number">1</span>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
 
-                                                <div class="product-action clearfix">
-                                                    <a href="#" class="btn-remove" title="Remove this item">
-                                                        <span class="fa fa-trash-o"></span>
-                                                    </a>
+                                                {{--<div class="product-action clearfix">--}}
+                                                    {{--<a href="#" class="btn-remove" title="Remove this item">--}}
+                                                        {{--<span class="fa fa-trash-o"></span>--}}
+                                                    {{--</a>--}}
 
-                                                    <a class="btn-edit" href="cart.html"
-                                                       title="View your shopping cart">
-                                                        <span class="fa fa-pencil"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                                    {{--<a class="btn-edit" href="cart.html"--}}
+                                                       {{--title="View your shopping cart">--}}
+                                                        {{--<span class="fa fa-pencil"></span>--}}
+                                                    {{--</a>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</li>--}}
 
-                                    <li>
-                                        <a href="simple_product.html" class="product-image">
-                                            <img width="100" height="100" src="images/1903/22-150x150.jpg"
-                                                 class="attachment-100x100 size-100x100 wp-post-image" alt=""
-                                                 srcset="images/1903/22-150x150.jpg 150w, images/1903/22-300x300.jpg 300w, images/1903/22-180x180.jpg 180w, images/1903/22.jpg 600w"
-                                                 sizes="(max-width: 100px) 100vw, 100px"/>
-                                        </a>
+                                    {{--<li>--}}
+                                        {{--<a href="simple_product.html" class="product-image">--}}
+                                            {{--<img width="100" height="100" src="images/1903/22-150x150.jpg"--}}
+                                                 {{--class="attachment-100x100 size-100x100 wp-post-image" alt=""--}}
+                                                 {{--srcset="images/1903/22-150x150.jpg 150w, images/1903/22-300x300.jpg 300w, images/1903/22-180x180.jpg 180w, images/1903/22.jpg 600w"--}}
+                                                 {{--sizes="(max-width: 100px) 100vw, 100px"/>--}}
+                                        {{--</a>--}}
 
-                                        <div class="detail-item">
-                                            <div class="product-details">
-                                                <h4>
-                                                    <a class="title-item" href="simple_product.html">Cleaner with
-                                                        bag</a>
-                                                </h4>
+                                        {{--<div class="detail-item">--}}
+                                            {{--<div class="product-details">--}}
+                                                {{--<h4>--}}
+                                                    {{--<a class="title-item" href="simple_product.html">Cleaner with--}}
+                                                        {{--bag</a>--}}
+                                                {{--</h4>--}}
 
-                                                <div class="product-price">
-														<span class="price">
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>350.00
-															</span>
-														</span>
+                                                {{--<div class="product-price">--}}
+														{{--<span class="price">--}}
+															{{--<span class="woocommerce-Price-amount amount">--}}
+																{{--<span class="woocommerce-Price-currencySymbol">$</span>350.00--}}
+															{{--</span>--}}
+														{{--</span>--}}
 
-                                                    <div class="qty">
-                                                        <span class="qty-number">1</span>
-                                                    </div>
-                                                </div>
+                                                    {{--<div class="qty">--}}
+                                                        {{--<span class="qty-number">1</span>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
 
-                                                <div class="product-action clearfix">
-                                                    <a href="#" class="btn-remove" title="Remove this item">
-                                                        <span class="fa fa-trash-o"></span>
-                                                    </a>
+                                                {{--<div class="product-action clearfix">--}}
+                                                    {{--<a href="#" class="btn-remove" title="Remove this item">--}}
+                                                        {{--<span class="fa fa-trash-o"></span>--}}
+                                                    {{--</a>--}}
 
-                                                    <a class="btn-edit" href="cart.html"
-                                                       title="View your shopping cart">
-                                                        <span class="fa fa-pencil"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                                    {{--<a class="btn-edit" href="cart.html"--}}
+                                                       {{--title="View your shopping cart">--}}
+                                                        {{--<span class="fa fa-pencil"></span>--}}
+                                                    {{--</a>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
 
-                                <div class="cart-checkout">
-                                    <div class="price-total">
-                                        <span class="label-price-total">Total</span>
+                                {{--<div class="cart-checkout">--}}
+                                    {{--<div class="price-total">--}}
+                                        {{--<span class="label-price-total">Total</span>--}}
 
-                                        <span class="price-total-w">
-												<span class="price">
-													<span class="woocommerce-Price-amount amount">
-														<span class="woocommerce-Price-currencySymbol">$</span>540.00
-													</span>
-												</span>
-											</span>
-                                    </div>
+                                        {{--<span class="price-total-w">--}}
+												{{--<span class="price">--}}
+													{{--<span class="woocommerce-Price-amount amount">--}}
+														{{--<span class="woocommerce-Price-currencySymbol">$</span>540.00--}}
+													{{--</span>--}}
+												{{--</span>--}}
+											{{--</span>--}}
+                                    {{--</div>--}}
 
-                                    <div class="cart-links clearfix">
-                                        <div class="cart-link">
-                                            <a href="cart.html" title="Cart">View Cart</a>
-                                        </div>
+                                    {{--<div class="cart-links clearfix">--}}
+                                        {{--<div class="cart-link">--}}
+                                            {{--<a href="cart.html" title="Cart">View Cart</a>--}}
+                                        {{--</div>--}}
 
-                                        <div class="checkout-link">
-                                            <a href="checkout.html" title="Check Out">Check Out</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                        {{--<div class="checkout-link">--}}
+                                            {{--<a href="checkout.html" title="Check Out">Check Out</a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                     <div class="mid-header pull-right">
                         <div class="widget sw_top">
@@ -894,63 +795,4 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="{{asset('Home/js/jquery/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/jquery/jquery-migrate.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/jquery/js.cookie.min.js')}}"></script>
-
-<!-- OPEN LIBS JS -->
-<script type="text/javascript" src="{{asset('Home/js/owl-carousel/owl.carousel.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/slick-1.6.0/slick.min.js')}}"></script>
-
-<script type="text/javascript" src="{{asset('Home/js/yith-woocommerce-compare/jquery.colorbox-min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/sw_core/isotope.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/sw_core/jquery.fancybox.pack.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/sw_woocommerce/category-ajax.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/sw_woocommerce/jquery.countdown.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/js_composer/js_composer_front.min.js')}}"></script>
-
-<script type="text/javascript" src="{{asset('Home/js/plugins.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/megamenu.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Home/js/main.min.js')}}"></script>
-<script src="{{asset('Home/layui/layui.js')}}"></script>
-<script type="text/javascript">
-    var sticky_navigation_offset_top = $("#header .header-bottom").offset().top;
-    var sticky_navigation = function () {
-        var scroll_top = $(window).scrollTop();
-        if (scroll_top > sticky_navigation_offset_top) {
-            $("#header .header-bottom").addClass("sticky-menu");
-            $("#header .header-bottom").css({"top": 0, "left": 0, "right": 0});
-        } else {
-            $("#header .header-bottom").removeClass("sticky-menu");
-        }
-    };
-    sticky_navigation();
-    $(window).scroll(function () {
-        sticky_navigation();
-    });
-
-    $(document).ready(function () {
-        $(".show-dropdown").each(function () {
-            $(this).on("click", function () {
-                $(this).toggleClass("show");
-                var $element = $(this).parent().find("> ul");
-                $element.toggle(300);
-            });
-        });
-    });
-</script>
-
-<!--[if gte IE 9]><!-->
-<script type="text/javascript">
-    var request, b = document.body, c = 'className', cs = 'customize-support',
-        rcs = new RegExp('(^|\\s+)(no-)?' + cs + '(\\s+|$)');
-    request = true;
-
-    b[c] = b[c].replace(rcs, ' ');
-    // The customizer requires postMessage and CORS (if the site is cross domain)
-    b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
-</script>
-<!--<![endif]-->
-</body>
-</html>
+@yield('js')
