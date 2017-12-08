@@ -19,6 +19,9 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">后台用户列表,在这里显示后台所有用户</h3>
+                @if(session('info'))
+                    <small class="tishi"><span class="text-red">{{session('info')}}</span></small>
+                @endif
             </div>
             <form action="{{url('admin/adminuser')}}" method="get">
                 <table class="search_tab">
@@ -69,7 +72,6 @@
                   <th>用户名</th>
                   <th>电话</th>
                   <th>性别</th>
-                  <th>身份</th>
                   <th>操作</th>
                 </tr>
                 </thead>
@@ -98,10 +100,12 @@
                               } 
                             ?>
                     </td>
+
                   <td>
                       <a href="{{url('admin/adminuser'.'/'.$v->uid)}}">详细</a>
                       <a href="{{url('admin/adminuser/'.$v->uid.'/edit')}}">修改</a>
                       <a href="javascript:;" onclick="userDel({{$v->uid}})">删除</a>
+                      <a href="{{url('admin/adminuser/auth'.'/'.$v->uid)}}" >授予角色</a>
                   </td>
                 </tr>
                 @endforeach
@@ -192,4 +196,7 @@
 <!-- page script -->
 
 <script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
+   <script>
+       $(".tishi   ").fadeOut(2000);
+   </script>
 @stop

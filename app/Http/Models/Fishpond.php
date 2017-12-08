@@ -20,9 +20,15 @@ class Fishpond extends Model
 
     //批量赋值属性
     public $guarded = ['_token'];
-    //设置关联~商品详情表
-    public function good(){
-        //1) 要关联的模型 2) 外键
-        return $this -> hasMany('App\Http\Models\good','fid','id');
+
+    //找关联用户表模型
+    public function adminuser()
+    {
+        return $this->belongsTo('App\Http\Models\Adminuser','uid','uid');
     }
+
+//    public function user()
+//    {
+//        return $this->hasMany('App\Http\Models\Adminuser','uid','uid');
+//    }
 }

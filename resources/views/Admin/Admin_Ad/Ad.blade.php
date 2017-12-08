@@ -4,7 +4,6 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-
             广告管理
             <small>列表</small>
         </h1>
@@ -12,21 +11,22 @@
             <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
             <li><a href="#">广告管理</a></li>
             <li class="active">列表</li>
-
         </ol>
     </section>
-
+    {{--轮播图--}}
     <!-- Main content -->
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-
-                        <small class="box-title">左边第一个广告位</small>
-                        <small id="info"></small>
-
-
+                        <a href="{{url('/admin/ad/create')}}"><button class="btn bg-olive  margin">添加
+                            </button></a>
+                        <small class="box-title">轮播图</small>
+                        <small class="info"></small>
+                        @if(session('info'))
+                            <small class="tishi"><span class="text-red">{{session('info')}}</span></small>
+                        @endif
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -47,7 +47,7 @@
 
                                                 序号
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                            <th class="sorting text-red" tabindex="0" aria-controls="example2" rowspan="1"
                                                 colspan="1" aria-label="Browser: activate to sort column ascending">
                                                 客户信息
 
@@ -71,6 +71,11 @@
                                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
                                                 colspan="1"
                                                 aria-label="CSS grade: activate to sort column ascending">
+                                                添加时间
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
                                                 状态
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
@@ -87,37 +92,25 @@
                                                 <td class="id">{{$v->adv_id}}</td>
                                                 <td class="name">{{$v->acustomer}}</td>
                                                 <td>{{$v->atitle}}</td>
-                                                <td><img src="{{url('uploads/')}}/s_{{$v->apic}}" width="100px"></td>
+                                                <td><img width="100px" src={{$v->apic}} ></td>
                                                 <td>{{$v->aurl}}</td>
+                                                <td>{{$v->atime}}</td>
                                                 <td class="statusBtn">
                                                     @if($v->astatus == 1)
                                                         <button type="button" class="btn bg-purple margin">已禁用
                                                         </button>
                                                     @else
-                                                        <button type="button" class="btn bg-olive btn-flat margin">已启用
+                                                        <button type="button" class="btn bg-olive  margin">已启用
                                                         </button>
                                                     @endif
                                                 </td>
                                                 <td>
                                                     <a href="{{url('admin/ad/'.$v->adv_id.'/edit')}}">编辑</a>
-                                                    <a href="javascript:;" onclick="sendBtn('{{url('/admin/ad/'.$v->adv_id)}}');" >删除</a>
+                                                    <a href="javascript:;" onclick="sendBtn({{$v->adv_id}});">删除</a>
                                                 </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
-                                        <script>
-                                            function sendBtn(node) {
-                                                var url = node;
-                                                console.log(url);
-                                                /*得到href的值*/
-//                                                $.ajax({
-//                                                    url: url, /*url也可以是json之类的文件等等*/
-//                                                    type: 'delete', /*DELETE、POST */
-//                                                })
-                                            };
-                                        </script>
-
-
                                     </table>
                                 </div>
                             </div>
@@ -137,7 +130,409 @@
                                         {{--padding: 6px 12px;--}}
                                         {{--}--}}
                                         {{--</style>--}}
->>>>>>> origin/niechencai
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+    {{--轮播图下侧广告位--}}
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <a href="{{url('/admin/ad/create')}}"><button class="btn bg-olive  margin">添加
+                            </button></a>
+                        <small class="box-title">轮播图下侧广告位</small>
+                        <small class="info"></small>
+                        @if(session('info'))
+                            <small class="tishi"><span class="text-red">{{session('info')}}</span></small>
+                        @endif
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                            <div class="row">
+                                <div class="col-sm-6"></div>
+                                <div class="col-sm-6"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="example2" class="table table-bordered table-hover dataTable"
+                                           role="grid" aria-describedby="example2_info">
+                                        <thead>
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example2"
+                                                rowspan="1" colspan="1" aria-sort="ascending"
+                                                aria-label="Rendering engine: activate to sort column descending">
+
+                                                序号
+                                            </th>
+                                            <th class="sorting text-red" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1" aria-label="Browser: activate to sort column ascending">
+                                                客户信息
+
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="Platform(s): activate to sort column ascending">
+
+                                                广告标题
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="Engine version: activate to sort column ascending">
+                                                广告图片
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                跳转地址
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                添加时间
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                状态
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                操作
+
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($data2 as $k=>$v)
+                                            <tr role="row" class="odd">
+                                                <td class="id">{{$v->adv_id}}</td>
+                                                <td class="name">{{$v->acustomer}}</td>
+                                                <td>{{$v->atitle}}</td>
+                                                <td><img width="100px" src={{$v->apic}}></td>
+                                                <td>{{$v->aurl}}</td>
+                                                <td>{{$v->atime}}</td>
+                                                <td class="statusBtn">
+                                                    @if($v->astatus == 1)
+                                                        <button type="button" class="btn bg-purple margin">已禁用
+                                                        </button>
+                                                    @else
+                                                        <button type="button" class="btn bg-olive margin">已启用
+                                                        </button>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a href="{{url('admin/ad/'.$v->adv_id.'/edit')}}">编辑</a>
+                                                    {{--<a href="{{url('admin/ad/rev/'.$v->adv_id)}}">编辑</a>--}}
+                                                    {{--                                                    <a href="javascript:;" onclick="sendBtn('{{url('/admin/ad/'.$v->adv_id)}}');" >删除</a>--}}
+                                                    <a href="javascript:;" onclick="sendBtn({{$v->adv_id}});">删除</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="dataTables_info" id="example2_info" role="status"
+                                         aria-live="polite">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                                        <div class="page_list">
+                                            {!! $data2->render() !!}
+                                        </div>
+                                        {{--<style>--}}
+                                        {{--.page_list ul li span {--}}
+                                        {{--padding: 6px 12px;--}}
+                                        {{--}--}}
+                                        {{--</style>--}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+    {{--轮播图右侧一广告位--}}
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <a href="{{url('/admin/ad/create')}}"><button class="btn bg-olive  margin">添加
+                            </button></a>
+                        <small class="box-title">轮播图右侧一广告位</small>
+                        <small class="info"></small>
+                        @if(session('info'))
+                            <small class="tishi"><span class="text-red">{{session('info')}}</span></small>
+                        @endif
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                            <div class="row">
+                                <div class="col-sm-6"></div>
+                                <div class="col-sm-6"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="example2" class="table table-bordered table-hover dataTable"
+                                           role="grid" aria-describedby="example2_info">
+                                        <thead>
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example2"
+                                                rowspan="1" colspan="1" aria-sort="ascending"
+                                                aria-label="Rendering engine: activate to sort column descending">
+
+                                                序号
+                                            </th>
+                                            <th class="sorting text-red" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1" aria-label="Browser: activate to sort column ascending">
+                                                客户信息
+
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="Platform(s): activate to sort column ascending">
+
+                                                广告标题
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="Engine version: activate to sort column ascending">
+                                                广告图片
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                跳转地址
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                添加时间
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                状态
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                操作
+
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($data3 as $k=>$v)
+                                            <tr role="row" class="odd">
+                                                <td class="id">{{$v->adv_id}}</td>
+                                                <td class="name">{{$v->acustomer}}</td>
+                                                <td>{{$v->atitle}}</td>
+                                                <td><img  style="width:100px" alt="图片未上传" src="{{$v->apic}}"/></td>
+                                                <td>{{$v->aurl}}</td>
+                                                <td>{{$v->atime}}</td>
+                                                <td class="statusBtn">
+                                                    @if($v->astatus == 1)
+                                                        <button type="button" class="btn bg-purple margin">已禁用
+                                                        </button>
+                                                    @else
+                                                        <button type="button" class="btn bg-olive  margin">已启用
+                                                        </button>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a href="{{url('admin/ad/'.$v->adv_id.'/edit')}}">编辑</a>
+                                                    <a href="javascript:;" onclick="sendBtn({{$v->adv_id}});">删除</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="dataTables_info" id="example2_info" role="status"
+                                         aria-live="polite">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                                        <div class="page_list">
+                                            {!! $data3->render() !!}
+                                        </div>
+                                        {{--<style>--}}
+                                        {{--.page_list ul li span {--}}
+                                        {{--padding: 6px 12px;--}}
+                                        {{--}--}}
+                                        {{--</style>--}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+    {{--轮播图右侧二广告位--}}
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <a href="{{url('/admin/ad/create')}}"><button class="btn bg-olive  margin">添加
+                            </button></a>
+                        <small class="box-title">轮播图右侧二广告位</small>
+                        <small class="info"></small>
+                        @if(session('info'))
+                            <small class="tishi"><span class="text-red">{{session('info')}}</span></small>
+                        @endif
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                            <div class="row">
+                                <div class="col-sm-6"></div>
+                                <div class="col-sm-6"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="example2" class="table table-bordered table-hover dataTable"
+                                           role="grid" aria-describedby="example2_info">
+                                        <thead>
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example2"
+                                                rowspan="1" colspan="1" aria-sort="ascending"
+                                                aria-label="Rendering engine: activate to sort column descending">
+
+                                                序号
+                                            </th>
+                                            <th class="sorting text-red" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1" aria-label="Browser: activate to sort column ascending">
+                                                客户信息
+
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="Platform(s): activate to sort column ascending">
+
+                                                广告标题
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="Engine version: activate to sort column ascending">
+                                                广告图片
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                跳转地址
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                添加时间
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                状态
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
+                                                colspan="1"
+                                                aria-label="CSS grade: activate to sort column ascending">
+                                                操作
+
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($data4 as $k=>$v)
+                                            <tr role="row" class="odd">
+                                                <td class="id">{{$v->adv_id}}</td>
+                                                <td class="name">{{$v->acustomer}}</td>
+                                                <td>{{$v->atitle}}</td>
+                                                <td><img width="100px" src={{$v->apic}}></td>
+                                                <td>{{$v->aurl}}</td>
+                                                <td>{{$v->atime}}</td>
+                                                <td class="statusBtn">
+                                                    @if($v->astatus == 1)
+                                                        <button type="button" class="btn bg-purple margin">已禁用
+                                                        </button>
+                                                    @else
+                                                        <button type="button" class="btn bg-olive  margin">已启用
+                                                        </button>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    {{--<a href="{{url('admin/ad/rev/'.$v->adv_id)}}">编辑</a>--}}
+                                                    <a href="{{url('admin/ad/'.$v->adv_id.'/edit')}}">编辑</a>
+                                                    {{--                                                    <a href="javascript:;" onclick="sendBtn('{{url('/admin/ad/'.$v->adv_id)}}');" >删除</a>--}}
+                                                    <a href="javascript:;" onclick="sendBtn({{$v->adv_id}});">删除</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="dataTables_info" id="example2_info" role="status"
+                                         aria-live="polite">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                                        <div class="page_list">
+                                            {!! $data4->render() !!}
+                                        </div>
+                                        {{--<style>--}}
+                                        {{--.page_list ul li span {--}}
+                                        {{--padding: 6px 12px;--}}
+                                        {{--}--}}
+                                        {{--</style>--}}
                                     </div>
                                 </div>
                             </div>
@@ -155,6 +550,41 @@
     <!-- /.content -->
 
 
+
+    <script>
+        function sendBtn(node) {
+            //询问框
+            layer.confirm('您确认删除吗？', {
+                btn: ['确认', '取消'] //按钮
+            }, function () {
+                //如果用户发出删除请求，应该使用ajax向服务器发送删除请求
+                //$.get("请求服务器的路径","携带的参数", 获取执行成功后的额返回数据);
+                //admin/user/1
+                $.post("{{url('admin/ad')}}/" + node, {
+                    "_method": "delete",
+                    {{--"_token": "{{csrf_token()}}"--}}
+                }, function (data) {
+//                                                        console.log(data);
+                    //data是json格式的字符串，在js中如何将一个json字符串变成json对象
+                    //var res =  JSON.parse(data);
+                    //删除成功
+                    if (data.error == 0) {
+                        //console.log("错误号"+res.error);
+                        //console.log("错误信息"+res.msg);
+                        layer.msg(data.msg, {icon: 6});
+                        var t = setTimeout("location.href = location.href;", 1000);
+//                                                            location.href = location.href;
+                    } else {
+                        layer.msg(data.msg, {icon: 5});
+                        var t = setTimeout("location.href = location.href;", 1000);
+//                                                            location.href = location.href;
+                    }
+                });
+            }, function () {
+
+            });
+        }
+    </script>
 @stop
 
 @section('js')
@@ -197,7 +627,7 @@
     <script src="{{ asset('/Admin/dist/js/demo.js') }}"></script>
 @stop
 
-@section("status")
+@section("adstatus")
     <script>
         $(".statusBtn").on('click', function () {
             var t = $(this);
@@ -211,7 +641,7 @@
                     success: function (data) {
 //                        console.log(data);
                         if (data.astatus == 1) {
-                            t.html('<button type="button" class="btn bg-olive bg-purple margin">已启用\n' +
+                            t.html('<button type="button" class="btn bg-olive bg-purple margin">已禁用\n' +
                                 '                                                        </button>');
                         } else {
                             t.html('<button type="button" class="btn bg-olive btn-flat margin">已启用\n' +
@@ -228,7 +658,10 @@
     </script>
 @stop
 
-@section("ondblclick")
+@section("adondblclick")
+    <script>
+        $(".tishi   ").fadeOut(2000);
+    </script>
     <script>
         $(".name").on('dblclick', fn1);
 
@@ -248,26 +681,26 @@
                     type: 'post',
                     data: {id: id, name: newName},
                     beforeSend: function () {
-                        $("#info").html('<span class="text-red"><i class="fa fa-fw fa-spin fa-circle-o-notch"></i>正在修改中...</span>');
-                        $("#info").show();
+                        $(".info").html('<span class="text-red"><i class="fa fa-fw fa-spin fa-circle-o-notch"></i>正在修改中...</span>');
+                        $(".info").show();
                     },
                     success: function (data) {
 //                        console.log(data);
                         if (data.code == 0) {
                             t.html(name);
-                            $("#info").html('<span class="text-red">用户名已经存在</span>');
-                            $("#info").show();
-                            $("#info").fadeOut(2000);
+                            $(".info").html('<span class="text-red">用户名已经存在</span>');
+                            $(".info").show();
+                            $(".info").fadeOut(2000);
                         } else if (data.code == 1) {
                             t.html(newName);
-                            $("#info").html('<span class="text-red">修改成功</span>');
-                            $("#info").show();
-                            $("#info").fadeOut(2000);
+                            $(".info").html('<span class="text-red">修改成功</span>');
+                            $(".info").show();
+                            $(".info").fadeOut(2000);
                         } else {
                             t.html(name);
-                            $("#info").html('<span class="text-red">修改失败</span>');
-                            $("#info").show();
-                            $("#info").fadeOut(2000);
+                            $(".info").html('<span class="text-red">修改失败</span>');
+                            $(".info").show();
+                            $(".info").fadeOut(2000);
                         }
                         ;
                         //添加事件。

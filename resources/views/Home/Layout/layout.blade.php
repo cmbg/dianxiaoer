@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>
     <script src="{{asset('Home/layui/layui.js')}}"></script>
 </head>
-
 @yield('body')
 
 <div class="body-wrapper theme-clearfix">
@@ -381,32 +380,19 @@
 
                                     <div id="ResMenuprimary_menu" class="collapse menu-responsive-wrapper">
                                         <ul id="menu-primary-menu" class="etrostore_resmenu">
-                                            <li><a href="index.blade.php">主页</a></li>
-                                            <li><a href="cart.html">购物车</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="my_account.html">My Account</a></li>
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="simple_product.html">Simple Product</a></li>
-                                            <li><a href="about_us.html">关于我们</a></li>
-                                            <li><a href="contact_us.html">Contact Us</a></li>
-                                            <li><a href="{{asset('/home/sfshop')}}">开通鱼塘</a></li>
-                                            <li><a href="{{asset('/home/fshop')}}">我的鱼塘</a></li>
+                                            @foreach($nav as $k=>$v)
+                                                <li><a href="{{asset($v->nlink)}}">{{$v->nname}}</a></li>
+                                            @endforeach
+
                                         </ul>
                                     </div>
                                 </div>
 
                                 <ul id="menu-primary-menu-1"
                                     class="nav nav-pills nav-mega etrostore-mega etrostore-menures">
-                                    <li><a href="index.blade.php">主页</a></li>
-                                    <li><a href="cart.html">购物车</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="my_account.html">My Account</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="simple_product.html">Simple Product</a></li>
-                                    <li><a href="about_us.html">关于我们</a></li>
-                                    <li><a href="contact_us.html">Contact Us</a></li>
-                                    <li><a href="{{asset('/home/sfshop')}}">开通鱼塘</a></li>
-                                    <li><a href="{{asset('/home/fshop')}}">我的鱼塘</a></li>
+                                    @foreach($nav as $k=>$v)
+                                        <li><a href="{{asset($v->nlink)}}">{{$v->nname}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </nav>
@@ -708,6 +694,19 @@
                                     </a>
                                 </li>
 
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vc_wp_custommenu wpb_content_element wrap-cus">
+                        <div class="widget widget_nav_menu">
+                            <ul id="menu-infomation" class="menu">
+                                @foreach($links as $k=>$v)
+                                <li class="menu-about-us">
+                                    <a class="item-link" href="{{$v->lurl}}">
+                                       <img style="height:31px;width:50px" src="{{$v->limg}}" />
+                                    </a>
+                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

@@ -15,6 +15,7 @@ return [
 
     'debug' => env('APP_DEBUG', false),
     'name' => '店小二',
+    'picurl' => 'http://cmbgl.oss-cn-beijing.aliyuncs.com',
 
     /*
     |--------------------------------------------------------------------------

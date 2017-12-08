@@ -117,27 +117,15 @@
                                                                                  class="fullwidthbanner-container"
                                                                                  style="position:relative; width:100%; height:352.8px; margin-top:0px; margin-bottom:0px">
                                                                                 <div class="module slideshow no-margin">
+                                                                                    @foreach($data1 as $k=>$v)
                                                                                     <div class="item">
-                                                                                        {{--<a href="simple_product.html"><img--}}
-                                                                                                    {{--src="{{asset('uploads')}}/{{$data1[0]->apic}}"--}}
-                                                                                                    {{--alt="slider1"--}}
-                                                                                                    {{--class="img-responsive"--}}
-                                                                                                    {{--style="height:352.8px"></a>--}}
+                                                                                        <a href="simple_product.html"><img
+                                                                                                    src="{{$v->apic}}"
+                                                                                                    alt="图片{{$k+1}}正在加载中..."
+                                                                                                    class="img-responsive"
+                                                                                                    style="height:352.8px;width:780px;"></a>
                                                                                     </div>
-                                                                                    <div class="item">
-                                                                                        {{--<a href="simple_product.html"><img--}}
-                                                                                                    {{--src="{{asset('uploads')}}/{{$data1[1]->apic}}"--}}
-                                                                                                    {{--alt="slider2"--}}
-                                                                                                    {{--class="img-responsive"--}}
-                                                                                                    {{--style="height:352.8px"></a>--}}
-                                                                                    </div>
-                                                                                    <div class="item">
-                                                                                        {{--<a href="simple_product.html"><img--}}
-                                                                                                    {{--src="{{asset('uploads')}}/{{$data1[2]->apic}}"--}}
-                                                                                                    {{--alt="slider3"--}}
-                                                                                                    {{--class="img-responsive"--}}
-                                                                                                    {{--style="height:352.8px"></a>--}}
-                                                                                    </div>
+                                                                                    @endforeach
                                                                                 </div>
                                                                                 <div class="loadeding"></div>
                                                                             </div>
@@ -149,15 +137,12 @@
                                                             <div class="wpb_raw_code wpb_content_element wpb_raw_html">
                                                                 <div class="wpb_wrapper">
                                                                     <div class="banner">
-                                                                        {{--<a href="#" class="banner1">--}}
-                                                                            {{--<img src="{{asset('uploads')}}/{{$data4[0]->apic}}"--}}
-                                                                                {{--style="height:175px" alt="banner" title="banner"/>--}}
-                                                                        {{--</a>--}}
-
-                                                                        {{--<a href="#" class="banner2">--}}
-                                                                            {{--<img src="{{asset('uploads')}}/{{$data5[0]->apic}}"--}}
-                                                                                 {{--style="height:175px" alt="banner" title="banner"/>--}}
-                                                                        {{--</a>--}}
+                                                                        @foreach($data2 as $k=>$v)
+                                                                        <a href="{{$v->aurl}}" class="banner{{$k+1}}">
+                                                                            <img src="{{$v->apic}}"
+                                                                                style="height:175px;width:388px;" alt="正在加载中..." title="{{$v->atitle}}"/>
+                                                                        </a>
+                                                                        @endforeach
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -170,26 +155,30 @@
                                                         <div class="wpb_wrapper">
                                                             <div class="wpb_single_image wpb_content_element vc_align_center vc_custom_1481518385054">
                                                                 <figure class="wpb_wrapper vc_figure">
-                                                                    {{--<a href="#" target="_self"--}}
-                                                                       {{--class="vc_single_image-wrapper vc_box_border_grey">--}}
-                                                                        {{--<img class="vc_single_image-img"--}}
-                                                                             {{--src="{{asset('uploads')}}/{{$data2[0]->apic}}"--}}
-                                                                             {{--style="width:193px;height:352px" alt="banner1"--}}
-                                                                             {{--title="banner1"/>--}}
-                                                                    {{--</a>--}}
+                                                                    @foreach($data3 as $k=>$v)
+                                                                    <a href="#" target="_self"
+                                                                       class="vc_single_image-wrapper vc_box_border_grey">
+                                                                        <img class="vc_single_image-img"
+                                                                             src="{{$v->apic}}"
+                                                                             style="width:193px;height:352px" alt="banner1"
+                                                                             title="banner1"/>
+                                                                    </a>
+                                                                    @endforeach
                                                                 </figure>
                                                             </div>
 
                                                             <div class="wpb_single_image wpb_content_element vc_align_center">
-                                                                <figure class="wpb_wrapper vc_figure">
-                                                                    {{--<a href="#" target="_self"--}}
-                                                                       {{--class="vc_single_image-wrapper vc_box_border_grey">--}}
-                                                                        {{--<img class="vc_single_image-img"--}}
-                                                                             {{--src="{{asset('uploads')}}/{{$data3[0]->apic}}"--}}
-                                                                             {{--style="width:193px;height:175px"--}}
-                                                                             {{--alt="banner2"--}}
-                                                                             {{--title="banner2"/>--}}
-                                                                    {{--</a>--}}
+                                                                 <figure class="wpb_wrapper vc_figure">
+                                                                    @foreach($data4 as $k=>$v)
+                                                                    <a href="#" target="_self"
+                                                                       class="vc_single_image-wrapper vc_box_border_grey">
+                                                                        <img class="vc_single_image-img"
+                                                                             src="{{$v->apic}}"
+                                                                             style="width:193px;height:175px"
+                                                                             alt="banner2"
+                                                                             title="banner2"/>
+                                                                    </a>
+                                                                    @endforeach
                                                                 </figure>
                                                             </div>
                                                         </div>

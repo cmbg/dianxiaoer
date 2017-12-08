@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers\Admin;
-
+use App\Http\Models\Role;
 use App\Http\Models\AdminUser;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Services\OSS;
+use DB;
 class AdminUserController extends Controller
 {
 
-      public function upload(Request $request)
+    public function upload(Request $request)
         {
 //        获取客户端传过来的文件
         $file = $request->file('file_upload');
@@ -71,6 +72,28 @@ class AdminUserController extends Controller
                 }
             })
             ->paginate($request->input('num', 4));
+//        $data = AdminUser::with('role')->orderBy('uid','asc')
+//            ->where( )
+//            ->paginate($request->input('num', 2));
+//        dd($data);
+//        echo '<pre>';
+//        foreach ($data as $k=>$v){
+//            echo $v->uname;
+//            echo '<br>';
+//            foreach($v->role as $m=>$n){
+//                print($m['name']);
+//            }
+//            echo '<br>';
+//            echo '===============================';
+//            echo '<br>';
+//        }
+//        $data = AdminUser::with('role','permission')->get();
+//        $data = Role::with('permission')->get();
+
+//        dd($res);
+////        $data = AdminUser()
+//dd();
+//        dd($data);
         return view('Admin.Admin_Users.index',['title'=>'后台用户列表页','user'=>$user, 'request'=> $request]);
     }
 
@@ -267,5 +290,57 @@ class AdminUserController extends Controller
 //        return  json_encode($data);
 
         return $data;
+    }
+
+    /**
+     * 返回给角色授权的页面
+     */
+
+    public function auth($id)
+    {
+//        return  \Route::current()->getActionName();
+        //获取当前用户
+        $user = AdminUser::find($id);
+        //获取所有的角色
+        $role = Role::get();
+//        dd($permissions);
+//        获取当前用户已经拥有的角色
+        $own_roles = DB::table('role_user')->where('user_id',$id)->lists('role_id');
+//        dd($own_permissions);
+        $title = '授予角色';
+        return view('Admin.Admin_Users.auth',compact('user','role','own_roles','title'));
+    }
+
+
+    /**
+     * 处理用户授权操作
+     */
+
+    public function doauth(Request $request)
+    {
+//        1 接收用户提交的所有数据
+        $input = $request->except('_token');
+//        dd($input);
+        DB::beginTransaction();
+        try{
+            //删除用户以前拥有的角色
+            DB::table('role_user')->where('user_id',$input['user_id'])->delete();
+            //给当前用户重新赋予角色
+//        2. 将授予的角色数据添加到role_user表中
+            if(isset($input['role_id'])){
+                foreach ($input['role_id'] as $k=>$v){
+                    DB::table('role_user')->insert(['user_id'=>$input['user_id'],'role_id'=>$v]);
+                }
+            }
+            $info = '授予角色成功';
+        }catch (Exception $e){
+            DB::rollBack();
+            $info = '授予角色失败';
+        }
+
+        DB::commit();
+
+        //添加成功后，跳转到列表页
+        return redirect('admin/adminuser')->with('info',$info);
     }
 }

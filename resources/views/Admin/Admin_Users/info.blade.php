@@ -33,7 +33,6 @@
                   <th>邮箱</th>
                   <th>性别</th>
                   <th>头像</th>
-                  <th>身份</th>
                   <th>状态</th>
                 </tr>
                 </thead>
@@ -56,6 +55,7 @@
                             ?>
                     </td>
                     <td class="tc "><img src="{{$user->avatar}}" style="width:80px;height:80px"></td>
+
                    <td class="identitybtn">
                     @if($user->identity == '0')
                       <button type="button" class="btn bg-purple margin">普通管理员</button>

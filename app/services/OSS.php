@@ -1,7 +1,7 @@
 <?php
 namespace App\Services;
 use JohnLui\AliyunOSS\AliyunOSS;
-class OSS  
+class OSS
 {
     private $ossClient;
     private static $bucketName;

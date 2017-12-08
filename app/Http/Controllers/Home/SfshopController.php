@@ -16,7 +16,7 @@ class SfshopController extends Controller
      */
     public function index()
     {
-        return view('Home.Home_Sfshop.Index');
+        return view('Home.Home_Sfshop.Index',['title'=>'开通鱼塘']);
     }
 
     /**

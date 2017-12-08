@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            广告管理
+            导航栏管理
             <small>编辑</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li><a href="#">广告管理</a></li>
+            <li><a href="#">导航栏管理</a></li>
             <li class="active">编辑</li>
         </ol>
     </section>
@@ -22,7 +22,7 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">广告管理,在这里你可以编辑修改.</h3>
+                        <h3 class="box-title">导航栏管理,在这里你可以编辑修改.</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -57,6 +57,7 @@
 
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">更新</button>
+                            <button type="button" onclick="history.go(-1)"  class="btn btn-primary">返回</button>
                         </div>
                     </form>
                 </div>

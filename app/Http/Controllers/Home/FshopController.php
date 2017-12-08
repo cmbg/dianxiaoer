@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Session;
 class FshopController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 塘主查看鱼塘列表内的商品页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -37,7 +37,7 @@ class FshopController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 塘主显示鱼塘内的商品添加页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -49,7 +49,7 @@ class FshopController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 塘主执行鱼塘的商品添加
      *
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
