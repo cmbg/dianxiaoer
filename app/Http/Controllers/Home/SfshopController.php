@@ -24,10 +24,12 @@ class SfshopController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add()
+    public function add(Request $request)
     {
-//        return '执行插入';
-        return redirect('/home/fshop');
+//        return 111;
+        $res = $request->exect();
+        return $res;
+//        return redirect'/home/fshop');
     }
 
 
