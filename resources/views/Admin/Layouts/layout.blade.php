@@ -32,7 +32,11 @@
     <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
 
 
-    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
+
+
+
+    {{--弹框--}}
+{{--    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">--}}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

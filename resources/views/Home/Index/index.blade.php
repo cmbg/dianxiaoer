@@ -328,7 +328,7 @@
                                                                         <div class="sale-off">-24%</div>
 
                                                                         <div class="product-countdown"
-                                                                             data-date="1519776000" data-price="$250"
+                                                                             data-date="1519775900" data-price="$250"
                                                                              data-starttime="1483747200"
                                                                              data-cdtime="1519776000"
                                                                              data-id="product_sw_countdown_02"></div>
@@ -343,6 +343,7 @@
                                                                                      src="images/1903/45-300x300.jpg"
                                                                                      class="attachment-shop_catalog size-shop_catalog wp-post-image"
                                                                                      alt=""
+                                                                                     {{--srcset="images/1903/45-300x300.jpg 300w"--}}
                                                                                      srcset="images/1903/45-300x300.jpg 300w, images/1903/45-150x150.jpg 150w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"
                                                                                      sizes="(max-width: 300px) 100vw, 300px"/>
                                                                             </div>
@@ -3858,4 +3859,67 @@
         </div>
     </div>
 
+@stop
+
+@section('js')
+<script type="text/javascript" src="{{asset('Home/js/jquery/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/jquery/jquery-migrate.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/jquery/js.cookie.min.js')}}"></script>
+
+<!-- OPEN LIBS JS -->
+<script type="text/javascript" src="{{asset('Home/js/owl-carousel/owl.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/slick-1.6.0/slick.min.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('Home/js/yith-woocommerce-compare/jquery.colorbox-min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/sw_core/isotope.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/sw_core/jquery.fancybox.pack.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/sw_woocommerce/category-ajax.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/sw_woocommerce/jquery.countdown.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/js_composer/js_composer_front.min.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('Home/js/plugins.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/megamenu.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/main.min.js')}}"></script>
+<script src="{{asset('Home/layui/layui.js')}}"></script>
+<script type="text/javascript">
+    var sticky_navigation_offset_top = $("#header .header-bottom").offset().top;
+    var sticky_navigation = function () {
+        var scroll_top = $(window).scrollTop();
+        if (scroll_top > sticky_navigation_offset_top) {
+            $("#header .header-bottom").addClass("sticky-menu");
+            $("#header .header-bottom").css({"top": 0, "left": 0, "right": 0});
+        } else {
+            $("#header .header-bottom").removeClass("sticky-menu");
+        }
+    };
+    sticky_navigation();
+    $(window).scroll(function () {
+        sticky_navigation();
+    });
+
+    $(document).ready(function () {
+        $(".show-dropdown").each(function () {
+            $(this).on("click", function () {
+                $(this).toggleClass("show");
+                var $element = $(this).parent().find("> ul");
+                $element.toggle(300);
+            });
+        });
+    });
+</script>
+
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">
+    var request, b = document.body, c = 'className', cs = 'customize-support',
+        rcs = new RegExp('(^|\\s+)(no-)?' + cs + '(\\s+|$)');
+    request = true;
+
+    b[c] = b[c].replace(rcs, ' ');
+    // The customizer requires postMessage and CORS (if the site is cross domain)
+    b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+</script>
+<!--<![endif]-->
+    </body>
+    </html>
 @stop

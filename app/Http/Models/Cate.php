@@ -11,19 +11,19 @@ class Cate extends Model
     public $guarded = [];
     public $timestamps = false;
 
-
-    public function tree()
-    {
-        $cates = $this->orderBy('cate_order', 'asc')->get();
-        //对分类数据进行格式化（排序、缩进）
-        return $this->getTree($cates, 0);
+    public function good(){
+        return $this -> hasOne('App\Http\Models\good','tid','cate_id');
     }
-
-
+    public static function tree()
+    {
+        $cates = self:: orderBy('cate_order', 'asc')->get();
+        //对分类数据进行格式化（排序、缩进）
+        return self:: getTree($cates, 0);
+    }
     /**
      * 对分类数据进行格式化（排序、缩进）
      */
-    public function getTree($Category, $pid)
+    public static function getTree($Category, $pid)
     {
         //存放最终结果的数组
         $arr = [];

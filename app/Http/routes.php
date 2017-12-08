@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -29,8 +28,6 @@ Route::resource('Admin/Cate/list','Admin\Cate\CateController');
 Route::post('Admin/Cate/changeorder','Admin\Cate\CateController@changeOrder');
 //Route::post('cate/changeorder','CateController@changeOrder');
 
-
-Route::resource('Admin/Goods', 'Admin\GoodsController');
 //后台登录界面
 Route::get('admin/login', 'Admin\LoginController@login');
 Route::post('admin/dologin', 'Admin\LoginController@doLogin');
@@ -44,6 +41,31 @@ Route::post('home/dologin', 'Home\LoginController@doLogin');
 Route::get('home/register','Home\LoginController@register');
 // Route::get('home/doregister','Home\LoginController@doregister');
 Route::post('home/doregister','Home\LoginController@doregister');
+//===========================================================================
+//商品管理路由
+Route::resource('Admin/Goods', 'Admin\GoodsController');
+Route::post('Admin/Ajax','Admin\GoodsController@ajax');//修改上架下架状态
+//商品详情
+Route::get('Admin/Goods/Details','Admin\DetailsController\sho')
+
+// 商品图片上传
+Route::post('Admin/Goods/upload', 'Admin\GoodsController@upload');//商品图片添加路由
+Route::get('Admin/Det/create/{id}', 'Admin\DetailsController@create');//添加详情页面
+Route::post('Admin/Det/upload', 'Admin\DetailsController@upload');//详情图片添加路由
+Route::post('Admin/Det/store/{id}', 'Admin\DetailsController@store');// 添加路由
+Route::get('Admin/Det/list/{id}', 'Admin\DetailsController@index'); // 浏览详情页浏览详情页
+Route::post('Admin/Det/uploadpic', 'Admin\DetailsController@uploadpic'); // 浏览详图片修改
+//
+
+////鱼塘添加商品
+//
+Route::resource('/home/fshop', 'Home\FshopController');
+//前台申请开通鱼塘
+Route::get('/home/sfshop', 'Home\SfshopController@index');
+Route::post('/home/sfshop', 'Home\SfshopController@add');
+//前台塘主对鱼塘商品管理
+
+//==============================================================================
 
 
 
