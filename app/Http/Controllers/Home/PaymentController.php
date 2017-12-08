@@ -1,19 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Home;
 
-
-use App\Http\Models\Tclass;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Validator;
-
-class TclassController extends Controller
+use Cart;
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,13 +16,13 @@ class TclassController extends Controller
      */
     public function index()
     {
-
-
-        $tclass = Tclass::orderBy('tid','asc')->get();
-//        dd($tclass);
-        $tclass = Tclass::orderBy('tid','asc')->paginate(2);
-//        return view('Admin.type.list',compact('tclass'));
-        return view('Admin.type.list',['data'=>$tclass]);
+        //购物车所有信息
+        $carts = Cart::content();
+        //总额 不含税
+        $total = Cart::subtotal();
+        //购物车商品数量
+        $count = Cart::count();
+        return view('Home.Home_Payment.payment',compact('count','carts','total'));
     }
 
     /**
@@ -36,13 +30,9 @@ class TclassController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-//        return 111;
-//        TclassController::get()  or all();
-//        $tclass = Tclass::orderBy('tid','asc')->get();
-//        dd($tclass);
-//        return view('Admin.type.list',['title'=>'用户列表页']);
+        //
     }
 
     /**

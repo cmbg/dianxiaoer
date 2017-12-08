@@ -15,16 +15,31 @@ Route::get('/', function () {
     return view('Admin.Home_Page', ['title' => '后台主页']);
 });
 
-//Route::resource('Admin/list','Admin\TclassController@index');
 
 Route::get('Admin/index','Admin\IndexController@index');
+
+
+
 //分类路由
-
 Route::resource('Admin/Cate/list','Admin\Cate\CateController');
-
 //修改分类排序
 Route::post('Admin/Cate/changeorder','Admin\Cate\CateController@changeOrder');
-//Route::post('cate/changeorder','CateController@changeOrder');
+
+//模块二 购物车相关路由  start
+
+Route::resource('shop', 'Home\ShopController');
+//Route::controller('shop', 'Home\ShopController');
+Route::get('/addcart/{id}', 'Home\ShopController@addcart');
+Route::get('/cart', 'Home\ShopController@cart')->name('cart');
+Route::get('/shop/removecart/{id}', 'Home\ShopController@getRemovecart');
+Route::get('/del', 'Home\ShopController@destroy');
+
+//订单路由
+Route::resource('order','Home\OrderController');
+//底单成功路由
+Route::resource('Home/payment','Home\PaymentController');
+
+Route::resource('Admin/Goods', 'Admin\GoodsController');
 
 //后台登录界面
 Route::get('admin/login', 'Admin\LoginController@login');
@@ -110,7 +125,6 @@ Route::resource('/admin/fishpond', 'Admin\FishpondController');
 Route::post('/admin/fishpond/ajaxStatus', 'Admin\FishpondAjaxController@ajaxStatus');
 Route::post('/admin/fishpond/ajaxName', 'Admin\FishpondAjaxController@ajaxName');
 
-
 //后台操作前台导航栏
 Route::resource('/admin/nav', 'Admin\NavController');
 Route::post('/admin/nav/ajaxLinks', 'Admin\NavAjaxController@ajaxLinks');
@@ -143,7 +157,6 @@ Route::get('/home/order', 'Home\OrderController@index');
 //前台申请开通鱼塘
 Route::get('/home/sfshop', 'Home\SfshopController@index');
 Route::post('/home/sfshop', 'Home\SfshopController@add');
-
 //前台塘主对鱼塘商品管理
 Route::resource('/home/fshop', 'Home\FshopController');
 

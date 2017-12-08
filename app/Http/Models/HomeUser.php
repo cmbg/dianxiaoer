@@ -12,3 +12,4 @@ class HomeUser extends Model
     public $guarded = [];
     public $timestamps = false;
 }
+
