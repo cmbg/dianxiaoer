@@ -133,24 +133,15 @@
                    //var res =  JSON.parse(data);
 //                    删除成功
                    if(data.error == 0){
-                       //console.log("错误号"+res.error);
-                       //console.log("错误信息"+res.msg);
                        layer.msg(data.msg, {icon: 6});
-//                       location.href = location.href;
                        var t=setTimeout("location.href = location.href;",2000);
                    }else{
                        layer.msg(data.msg, {icon: 5});
-
                        var t=setTimeout("location.href = location.href;",2000);
-                       //location.href = location.href;
                    }
-
-
                 });
-
-
             }, function(){
-
+            	
             });
         }
         

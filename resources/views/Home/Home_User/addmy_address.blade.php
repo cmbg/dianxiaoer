@@ -120,7 +120,6 @@ a:hover{color:#990000;}
 																}
 									Gid('s_county').setAttribute('name','showArea()');
 									</script>
-		<!-- <input type="text" class="input-text " name="billing_city" id="show" placeholder="" autocomplete="address-level2" value=showArea /> -->
 												</p>
 
 												<p class="form-row form-row form-row-wide address-field validate-required" id="billing_address_1_field">

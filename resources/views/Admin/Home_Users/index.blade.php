@@ -3,7 +3,6 @@
 @section('content')
  
     <script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 >
         前台用户管理
@@ -11,7 +10,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li><a href="#">前台用户管理</a></li>
+        <li><a href="{{url('admin/homeuser')}}">前台用户管理</a></li>
         <li class="active">列表</li>
       </ol>
     </section>       
@@ -39,8 +38,6 @@
                     </th>
                     <th width="70" class="tc">用户名:</th>
                     <td><input type="text" name="keywords1" value="{{$request->keywords1}}" placeholder="用户名"></td>
-                   <!--  <th width="70" class="tc">用户身份:</th>
-                    <td><input type="text" name="keywords2" value="{{$request->keywords2}}" placeholder="用户身份"></td> -->
                       <th width="70" class="tc">电话号:</th>
                     <td><input type="text" name="keywords2" value="{{$request->keywords2}}" placeholder="电话号"></td>
                      <th>
@@ -93,7 +90,7 @@
                             ?>
                     </td>
                     <td class="identitybtn">
-                    @if($v->identity == '0')
+                    @if($v->identity == '1')
                       <button type="button" class="btn bg-purple margin">普通用户</button>
                       @else
                       <button type="button" class="btn bg-olive btn-flat margin">鱼塘塘主</button>
@@ -140,27 +137,20 @@
 
             //询问框
             layer.confirm('您确认删除吗？', {
-                btn: ['确认','取消'] //按钮
+                btn: ['确认','取消'] 
             }, function(){
 //                如果用户发出删除请求，应该使用ajax向服务器发送删除请求
 //                $.get("请求服务器的路径","携带的参数", 获取执行成功后的额返回数据);
-                //admin/user/1
                 $.post("{{url('admin/homeuser')}}/"+uid,{"_method":"delete","_token":"{{csrf_token()}}"},function(data){
-                    //alert(data);
 //                    data是json格式的字符串，在js中如何将一个json字符串变成json对象
-                   //var res =  JSON.parse(data);
 //                    删除成功
                    if(data.error == 0){
-                       //console.log("错误号"+res.error);
-                       //console.log("错误信息"+res.msg);
                        layer.msg(data.msg, {icon: 6});
-//                       location.href = location.href;
                        var t=setTimeout("location.href = location.href;",2000);
                    }else{
                        layer.msg(data.msg, {icon: 5});
 
                        var t=setTimeout("location.href = location.href;",2000);
-                       //location.href = location.href;
                    }
 
 
@@ -198,7 +188,6 @@
         $(".identitybtn").on('click', function () {
             var t = $(this);
             var id = $(this).parent().find('.id').html();
-//            console.log(id);
             $.ajax(
                 {
                     url: '/admin/homeuserindex/ajaxIdentity',
@@ -206,7 +195,7 @@
                     type: 'post',
                     success: function (data) {
                        console.log(data);
-                        if (data.identity == 0) {
+                        if (data.identity == 1) {
                             t.html('<button type="button" class="btn bg-purple margin">普通用户</button>');
                         } else {
                             t.html('<button type="button" class="btn bg-olive btn-flat margin">鱼塘塘主</button>');

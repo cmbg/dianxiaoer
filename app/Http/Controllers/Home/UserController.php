@@ -15,8 +15,6 @@ class UserController extends Controller
     public function logout()
     {
         session()->flush();
-        // dd(session());
-        
        return redirect('home/login');
     }
 
@@ -44,45 +42,26 @@ class UserController extends Controller
         ];
 
         $validator =  Validator::make($input,$rule,$mess);
-        //如果表单验证失败 passes()
+        //如果表单验证失败 
         if ($validator->fails()) {
             return redirect('home/my_password')
                 ->withErrors($validator)
                 ->withInput();
         }
-
-        // return 11111;
         
          $old_password = $input['old_password'];
-         // return $old_password;
-        
-          // $hash = Hash::make($old_password);
-          // return $hash;
           $password = session()->get('user')->password;
-         // return $password;
-         // $user = HomeUser::find($password);
-         // dd(Hash::check("$old_password", $password));
           if(!Hash::check("$old_password", $password)){
              return redirect('home/my_password')->with('errors','登录密码不正确');
          }
-         // return 1111;
          $new_password = $input['new_password'];
          $hash = Hash::make($new_password);
-
           $uid = session()->get('user')->uid;
-         // return $uid;
          $user = HomeUser::find($uid);
          $res = $user->update(['password' => $hash]);
-         // dd( $res);
 //        4. 判断是否添加成功
-       // $b = session()->all();
-            // return ($b);
-        if($res){
-            // session()->push('user.password', $user);
-               
+        if($res){    
                session()->flush();
-                // $a = session()->all();
-                // dd($a);
             return redirect('home/login');
         }else{
             return redirect('home/my_account')->with('msg','添加失败');
@@ -139,8 +118,6 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
-
     public function index()
     {
       
@@ -157,34 +134,13 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
-        //
          $input = Input::except('_token');
           $input = $request->except('_token','_method','file_upload','save_account_details');
-          // return $input;
-         // $users =  $request->session()->get('user');
-         // $uid = $users->uid;
-         // return $uid;
-         // $user = HomeUser::find($uid);
-         // return $user;
-          // $user = new HomeUser();
-         // $user->nickname = $input['nickname'];
-     
-         // $user->email = $input['email'];
-         // $user->tel = $input['tel'];
-         // $user->sex = $input['sex'];
-         // $user->avatar = $input['avatar'];
-         
-         // $uid = $_SESSION['user']->uid;
          $uid = session()->get('user')->uid;
-         // return $uid;
          $user = HomeUser::find($uid);
          $res = $user->update($input);
-
-//        4. 判断是否添加成功
         if($res){
             Session::put('user',$user);
-            // $a = session()->all();
-            //     dd($a);
             return redirect('home/my_account')->with('msg','添加成功');
         }else{
             return redirect('home/my_account')->with('msg','添加失败');

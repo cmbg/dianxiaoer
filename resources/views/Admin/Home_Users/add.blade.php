@@ -69,10 +69,6 @@
                                     <label for="exampleInputPassword1">确认密码：</label>
                                     <input type="password" name="re_password" value="" class="form-control" id="exampleInputPassword1" placeholder="请保证两次密码输入一致">
                                 </div>
-                               <!--  <div class="form-group">
-                                    <label for="exampleInputFile">头像：</label>
-                                    <input type="file" name="avatar" id="exampleInputFile">
-                                </div> -->
                             </div>
                             <!-- /.box-body -->
 

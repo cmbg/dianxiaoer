@@ -46,7 +46,7 @@ Route::post('home/doregister','Home\LoginController@doregister');
 Route::resource('Admin/Goods', 'Admin\GoodsController');
 Route::post('Admin/Ajax','Admin\GoodsController@ajax');//修改上架下架状态
 //商品详情
-Route::get('Admin/Goods/Details','Admin\DetailsController\sho')
+// Route::get('Admin/Goods/Details','Admin\DetailsController\sho');
 
 // 商品图片上传
 Route::post('Admin/Goods/upload', 'Admin\GoodsController@upload');//商品图片添加路由

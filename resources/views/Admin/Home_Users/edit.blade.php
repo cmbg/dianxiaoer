@@ -9,7 +9,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-                <li><a href="#">前台用户管理</a></li>
+                <li><a href="{{url('admin/homeuser')}}">前台用户管理</a></li>
                 <li class="active">修改</li>
             </ol>
         </section>

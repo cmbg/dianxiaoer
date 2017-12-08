@@ -24,17 +24,13 @@ class AddressController extends Controller
         $a = Address::where('uid',$uid)->where('isStaAdd',2)->first()->update(['isStaAdd'=>1]);
         $res = $address1->update(['isStaAdd'=>2]);
         $address = Address::get()->where('uid',$uid)->where('isStaAdd',1);//普通地址
-        // $a = Address::get()->where('uid',$uid)->update(['isStaAdd'=>1]);
-        // $b = Address::get()->where('id',$id)->update(['isStaAdd'=>2]);
          $mraddress = Address::get()->where('uid',$uid)->where('isStaAdd',2);//默认地址
-        // dd($mraddress->name);
         $arr =[];
         foreach($mraddress as $v){
             $arr['name'] = $v->name;
             $arr['phone'] = $v->phone;
             $arr['address'] = $v->address;
             $arr['id'] = $v->id;
-        // dd($address);
          if($res){
             return redirect('home/address')->with(compact('arr','address'));
         }else{
@@ -50,7 +46,6 @@ class AddressController extends Controller
      */
     public function index()
     {
-        //
          $uid = session()->get('user')->uid;
         $address = Address::get()->where('uid',$uid)->where('isStaAdd',1);//普通地址
         $mraddress = Address::get()->where('uid',$uid)->where('isStaAdd',2);//默认地址
@@ -153,7 +148,6 @@ class AddressController extends Controller
      */
     public function destroy($id)
     {
-        //
           $res = Address::find($id)->delete();
         $data = [];
         if($res){
@@ -163,9 +157,6 @@ class AddressController extends Controller
             $data['error'] = 1;
             $data['msg'] ="删除失败";
         }
-
-//        return  json_encode($data);
-
         return $data;
     }
 }
