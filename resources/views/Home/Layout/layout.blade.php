@@ -50,13 +50,13 @@
                                             <li>
                                                 <a class="lang_sel_sel icl-en">
                                                     <img class="iclflag" title="English" alt="en"
-                                                         src="images/icons/en.png" width="18" height="12"/> English
+                                                         src="{{ asset('images/icons/en.png')}}" width="18" height="12"/> English
                                                 </a>
                                                 <ul>
                                                     <li class="icl-en">
                                                         <a href="#">
                                                             <img class="iclflag" title="English" alt="en"
-                                                                 src="images/icons/en.png" width="18" height="12"/>
+                                                                 src="{{ asset('images/icons/en.png')}}" width="18" height="12"/>
                                                             English
                                                         </a>
                                                     </li>
@@ -64,7 +64,7 @@
                                                     <li class="icl-ar">
                                                         <a href="#">
                                                             <img class="iclflag" title="Arabic" alt="ar"
-                                                                 src="images/icons/ar.png" width="18" height="12"/>
+                                                                 src="{{ asset('images/icons/ar.png')}}" width="18" height="12"/>
                                                             Arabic
                                                         </a>
                                                     </li>
@@ -168,7 +168,7 @@
                     <!-- LOGO -->
                     <div class="etrostore-logo pull-left">
                         <a href="#">
-                            <img src="images/icons/logo-orange.png" alt="Shoopy">
+                            <img src="{{ asset('images/icons/logo-orange.png')}}" alt="Shoopy">
                         </a>
                     </div>
 
@@ -229,7 +229,7 @@
                                             <ul class="minicart-content">
                                                 <li>
                                                     <a href="simple_product.html" class="product-image">
-                                                        <img width="100" height="100" src="images/1903/45-150x150.jpg"
+                                                        <img width="100" height="100" src="{{ asset('images/1903/45-150x150.jpg')}}"
                                                              class="attachment-100x100 size-100x100 wp-post-image"
                                                              alt=""
                                                              srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"
@@ -271,7 +271,7 @@
 
                                                 <li>
                                                     <a href="simple_product.html" class="product-image">
-                                                        <img width="100" height="100" src="images/1903/22-150x150.jpg"
+                                                        <img width="100" height="100" src="{{ asset('images/1903/22-150x150.jpg')}}"
                                                              class="attachment-100x100 size-100x100 wp-post-image"
                                                              alt=""
                                                              srcset="images/1903/22-150x150.jpg 150w, images/1903/22-300x300.jpg 300w, images/1903/22-180x180.jpg 180w, images/1903/22.jpg 600w"
@@ -430,7 +430,7 @@
                                 <ul class="minicart-content">
                                     <li>
                                         <a href="simple_product.html" class="product-image">
-                                            <img width="100" height="100" src="images/1903/45-150x150.jpg"
+                                            <img width="100" height="100" src="{{ asset('images/1903/45-150x150.jpg')}}"
                                                  class="attachment-100x100 size-100x100 wp-post-image" alt=""
                                                  srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"
                                                  sizes="(max-width: 100px) 100vw, 100px"/>
@@ -470,7 +470,7 @@
 
                                     <li>
                                         <a href="simple_product.html" class="product-image">
-                                            <img width="100" height="100" src="images/1903/22-150x150.jpg"
+                                            <img width="100" height="100" src="{{ asset('images/1903/22-150x150.jpg')}}"
                                                  class="attachment-100x100 size-100x100 wp-post-image" alt=""
                                                  srcset="images/1903/22-150x150.jpg 150w, images/1903/22-300x300.jpg 300w, images/1903/22-180x180.jpg 180w, images/1903/22.jpg 600w"
                                                  sizes="(max-width: 100px) 100vw, 100px"/>
@@ -583,7 +583,7 @@
                                         <div class="item-inner">
                                             <div class="image-client pull-left">
                                                 <a href="#" title="">
-                                                    <img width="127" height="127" src="images/1903/tm3.jpg"
+                                                    <img width="127" height="127" src="{{ asset('images/1903/tm3.jpg')}}"
                                                          class="attachment-thumbnail size-thumbnail wp-post-image"
                                                          alt=""/>
                                                 </a>
@@ -605,7 +605,7 @@
                                         <div class="item-inner">
                                             <div class="image-client pull-left">
                                                 <a href="#" title="">
-                                                    <img width="127" height="127" src="images/1903/tm1.png"
+                                                    <img width="127" height="127" src="{{ asset('images/1903/tm1.png')}}"
                                                          class="attachment-thumbnail size-thumbnail wp-post-image"
                                                          alt=""/>
                                                 </a>
@@ -632,7 +632,7 @@
                                         <div class="item-inner">
                                             <div class="image-client pull-left">
                                                 <a href="#" title="">
-                                                    <img width="127" height="127" src="images/1903/tm2.png"
+                                                    <img width="127" height="127" src="{{ asset('images/1903/tm2.png')}}"
                                                          class="attachment-thumbnail size-thumbnail wp-post-image"
                                                          alt=""/>
                                                 </a>
@@ -657,7 +657,7 @@
                                         <div class="item-inner">
                                             <div class="image-client pull-left">
                                                 <a href="#" title="">
-                                                    <img width="127" height="127" src="images/1903/tm3.jpg"
+                                                    <img width="127" height="127" src="{{ asset('images/1903/tm3.jpg')}}"
                                                          class="attachment-thumbnail size-thumbnail wp-post-image"
                                                          alt=""/>
                                                 </a>

@@ -78,7 +78,8 @@
                                                     aria-controls="example1" value="{{$request->gname}}"></label>
                                     </div>
                                 </div>
-                                <button class="col-sm-2 bt btn  btn-warning  ">查找</button>
+
+                                        <button class="col-sm-2 bt btn  btn-warning  ">查找</button>
                             </form>
                         </div>
                         <div class="row">
@@ -107,7 +108,8 @@
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
-                                        style="width: 100px; overflow:hidden;"">简介:
+                                        style="width: 100px; overflow:hidden;"
+
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
@@ -119,11 +121,29 @@
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
-                                        style="width: 112px;">类型:
+                                        style="width: 112px;">
+                                        <form action="{{url('/Admin/Goods')}}" method="get">
+                                        @if($request->type == 1)
+                                            <input style="display: none" type="text" name="type" value="0"></input>
+                                        @else
+                                                <input style="display: none" type="text" name="type" value="1"></input>
+
+                                        @endif
+                                            <button
+                                                    class=" btn btn-block btn-danger ">
+                                                <font><font>
+                                                        @if($request-> type == 1)
+                                                            后台
+                                                            @else
+                                                        鱼塘
+                                                            @endif
+                                                    </font></font>
+                                            </button>
+                                        </form>
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
-                                        style="width: 112px;">详情:
+                                        style="width: 112px; ">详情:
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
@@ -141,17 +161,21 @@
                                     <tr>
                                         <td rowspan="1" colspan="1">{{ $v->gid }} {{ $request['sx'] }} </td>
                                         <td rowspan="1" colspan="1">{{$v -> gname}}</td>
-                                        <td onclick=" " rowspan="1" colspan="1"><img style="width: 190px;" src="{{ $v->pic }}"></td>
+                                        <td onclick=" " rowspan="1" colspan="1"><img style="width: 100px;height: 190px"
+                                                                                     src="{{ $v->pic }}"></td>
                                         <td rowspan="1" colspan="1">{{$v->Cate->cate_name}}</td>
-                                        <td rowspan="1" >{{$v ->goodsDes}}</td>
+                                        <td rowspan="1">
+                                            <div style=" width:112px;overflow: hidden;">{{$v ->goodsDes}}</div>
+                                        </td>
                                         <td rowspan="1" colspan="1">{{$v ->price}}</td>
                                         <td rowspan="1" colspan="1">{{$v->uid}}</td>
                                         <td rowspan="1" colspan="1">
                                             <a href="{{url('Admin/Goods/'.$v->uid)}}">
                                                 @if($v->fid != 0)
-                                                <button type="button" class="cz bt btn btn-block btn-warning mouses">
-                                                    鱼塘详情
-                                                </button>
+                                                    <button type="button"
+                                                            class="cz bt btn btn-block btn-warning mouses">
+                                                        鱼塘详情
+                                                    </button>
                                                 @endif
 
                                             </a>
@@ -180,14 +204,6 @@
 
                                             <div style=" position:absolute;">
                                                 @if($v-> uid == 0)
-                                                <button type="button" class="cz bt btn btn-block btn-warning mouses">
-                                                    <font
-                                                            style="vertical-align: inherit;z-index:-1;"><font
-                                                                style="vertical-align: inherit; z-index:-1; ">操作</font></font>
-                                                </button>
-
-                                                <div style="width: 100%; display:none; position:absolute;top:0px; "
-                                                     class="mouse">
                                                     <button type="button"
                                                             class="cz bt btn btn-block btn-warning mouses">
                                                         <font
@@ -195,22 +211,32 @@
                                                                     style="vertical-align: inherit; z-index:-1; ">操作</font></font>
                                                     </button>
 
-                                                    <button type="button"
-                                                            class="cz btn btn-block btn-info margin:0px;"><font
-                                                                style="vertical-align: inherit; z-index:100;"><font
-                                                                    style="vertical-align: inherit;"><a
-                                                                        href="{{url('Admin/Goods/'.$v->gid.'/edit')}}" >
-                                                                    修改</a></font></font>
-                                                    </button>
-                                                    <button type="button"
-                                                            class="cz btn btn-block btn-danger margin:0px;"><font
-                                                                style="vertical-align: inherit; z-index:100;"><font
-                                                                    style="vertical-align: inherit;"><a
-                                                                        href="javascript:;" onclick="del({{$v->gid}})">
-                                                                    删除</a></font></font>
-                                                    </button>
-                                                    @endif
-                                                </div>
+                                                    <div style="width: 100%; display:none; position:absolute;top:0px; "
+                                                         class="mouse">
+                                                        <button type="button"
+                                                                class="cz bt btn btn-block btn-warning mouses">
+                                                            <font
+                                                                    style="vertical-align: inherit;z-index:-1;"><font
+                                                                        style="vertical-align: inherit; z-index:-1; ">操作</font></font>
+                                                        </button>
+
+                                                        <button type="button"
+                                                                class="cz btn btn-block btn-info margin:0px;"><font
+                                                                    style="vertical-align: inherit; z-index:100;"><font
+                                                                        style="vertical-align: inherit;"><a
+                                                                            href="{{url('Admin/Goods/'.$v->gid.'/edit')}}">
+                                                                        修改</a></font></font>
+                                                        </button>
+                                                        <button type="button"
+                                                                class="cz btn btn-block btn-danger margin:0px;"><font
+                                                                    style="vertical-align: inherit; z-index:100;"><font
+                                                                        style="vertical-align: inherit;"><a
+                                                                            href="javascript:;"
+                                                                            onclick="del({{$v->gid}})">
+                                                                        删除</a></font></font>
+                                                        </button>
+                                                        @endif
+                                                    </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -285,7 +311,7 @@
             var st = sj.attr('name')
             $.ajax({
                 url: "{{url('Admin/Ajax')}}",
-                data: {'gstatus': st, 'gid': gid},
+                data: {'gstatus': st, 'gid': gid, '_token': '{{csrf_token()}}'},
                 type: 'post',
                 success: function (data) {
                     if (data.err == 1) {
@@ -353,23 +379,23 @@
         });
 
         {{--function details(id) {--}}
-            {{--$.ajax({--}}
-                {{--url: '{{asset('Admin/Goods').'/'}} + id',--}}
-                {{--data: {id: id},--}}
-                {{--type: 'get',--}}
-                {{--success: function (data) {--}}
-                    {{--console.log(data);--}}
-                    {{--layer.open({--}}
-                        {{--type: 1,--}}
-                        {{--skin: 'layui-layer-rim', //加上边框--}}
-                        {{--area: ['520px', '640px'], //宽高--}}
-                        {{--content:""--}}
+        {{--$.ajax({--}}
+        {{--url: '{{asset('Admin/Goods').'/'}} + id',--}}
+        {{--data: {id: id},--}}
+        {{--type: 'get',--}}
+        {{--success: function (data) {--}}
+        {{--console.log(data);--}}
+        {{--layer.open({--}}
+        {{--type: 1,--}}
+        {{--skin: 'layui-layer-rim', //加上边框--}}
+        {{--area: ['520px', '640px'], //宽高--}}
+        {{--content:""--}}
 
-                    {{--})--}}
-                {{--},--}}
-                {{--datatype: 'json',--}}
+        {{--})--}}
+        {{--},--}}
+        {{--datatype: 'json',--}}
 
-            {{--});--}}
+        {{--});--}}
 
 
         {{--}--}}

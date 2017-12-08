@@ -65,7 +65,7 @@
 
 
                                         @foreach($data->gpic as $k => $v)
-                                            <input  type="text" class="pid" value="{{$v->gid}}">
+                                            <input style="display:none"   type="text" class="pid" value="{{$v->gid}}">
                                             <input style="display:none" type="text" value="{{$v->gpic}}" size="50"
                                                    id="art_thumb"
                                                    name="pic[]">

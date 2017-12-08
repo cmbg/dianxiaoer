@@ -25,12 +25,16 @@ class GoodsController extends Controller
     public function index(Request $request)
     {
         $gname = $request->input('gname');
+        $type = $request->input('type');
+        $a = $type ? '=' : '>';
         //查询数据库 获取
-        $data = good::with('Cate')
+        $data = good::where('fid',$a,0)->with('Cate')
             ->where('gname', 'like', '%' . $gname . '%')
             ->paginate($request->input('num'));
         $title = '商品列表页';
-        return view('Admin.Admin_Goods.admin_goods', compact('goods', 'title', 'request', 'data'));
+//        $data = $data[0];
+//        dd($data);
+        return view('Admin.Admin_Goods.admin_goods', compact( 'title', 'request', 'data'));
 
 
     }
@@ -46,6 +50,11 @@ class GoodsController extends Controller
 //        dd($data);
         return view('Admin.Admin_Goods.add_goods', ['title' => '商品添加页', 'data' => $data]);
     }
+
+    /**
+     * @param 图片上传
+     * @return  返回图片路径
+     */
 
     public function upload(Request $request)
     {

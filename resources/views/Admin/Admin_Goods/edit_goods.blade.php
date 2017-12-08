@@ -63,9 +63,9 @@
                                         <select name="tid" id="catid" class="required">
                                             @foreach($tree as $v)
                                                 @if($v->cate_id == $data->tid)
-                                                    <option selected value="27">{{$v->cate_names}}</option>
+                                                    <option selected value="{{$v->cate_id}}">{{$v->cate_names}}</option>
                                                 @else
-                                                    <option value="27">{{$v->cate_names}}</option>
+                                                    <option value="{{$v->cate_id}}">{{$v->cate_names}}</option>
                                                 @endif
                                             @endforeach
                                         </select>

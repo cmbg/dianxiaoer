@@ -44,9 +44,9 @@ Route::post('home/doregister','Home\LoginController@doregister');
 //===========================================================================
 //商品管理路由
 Route::resource('Admin/Goods', 'Admin\GoodsController');
-Route::post('Admin/Ajax','Admin\GoodsController@ajax');//修改上架下架状态
+Route::post('Admin/Ajax','Admin\GoodsController@ajax');//点击上架下架状态
 //商品详情
-Route::get('Admin/Goods/Details','Admin\DetailsController\sho')
+//Route::get('Admin/Goods/Details','Admin\DetailsController\sho');
 
 // 商品图片上传
 Route::post('Admin/Goods/upload', 'Admin\GoodsController@upload');//商品图片添加路由
@@ -64,10 +64,23 @@ Route::resource('/home/fshop', 'Home\FshopController');
 Route::get('/home/sfshop', 'Home\SfshopController@index');
 Route::post('/home/sfshop', 'Home\SfshopController@add');
 //前台塘主对鱼塘商品管理
+Route::post('home/fshop/upload', 'Home\FshopController@upload');
+Route::post('home/Ajax','Home\FshopController@ajax');//点击上架下架状态
+Route::get('home/Det/create/{id}', 'Home\DetController@create');//添加详情页面
+Route::post('home/Det/upload', 'home\DetController@upload');//详情图片添加路由
+Route::post('home/Det/store/{id}', 'Home\DetController@store');// 添加路由
+Route::get('home/Det/list/{id}', 'Home\DetController@index'); // 浏览详情页浏览详情页
+Route::post('home/Det/uploadpic', 'Home\DetController@uploadpic'); // 浏览详图片修改
+Route::post('home/Det/update', 'Home\DetController@update'); // 浏览详图片修改
+Route::get('home/Det/edit/{id}', 'Home\DetController@edit'); // 修改商品详情页面
 
 //==============================================================================
 
+//===============================
+    //前台商品展示
+Route::get('home/goods/list', 'Home\Good_ListController@index');
 
+//=================================
 
 //后台登录中间件,请把所有后台的路由放在这里!注意删除路径里的admin 和命名空间里的Admin
 Route::group(['middleware'=>'islogin','prefix'=>'admin','namespace'=>'Admin'],function (){
