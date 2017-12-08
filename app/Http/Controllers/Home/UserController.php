@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Http\Models\HomeUser;
+use App\Http\Models\Address;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Hash;
@@ -11,11 +12,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 class UserController extends Controller
 {
-    public function my_address()
+    public function logout()
     {
-        // return (1111);
-      return  view('Home/Home_User/my_address');
+        session()->flush();
+        // dd(session());
+        
+       return redirect('home/login');
     }
+
     /**
      * [dopassword description]
      * @param  Request $request [description]

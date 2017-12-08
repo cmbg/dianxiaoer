@@ -92,8 +92,11 @@ Route::resource('/home/index', 'Home\IndexController');
 //前台个人中心
 Route::get('/home/my_account','Home\UserController@index');
 Route::post('/home/my_account','Home\UserController@update');
+//前台退出
+Route::get('home/logout','Home\UserController@logout');
 //前台个人中心的地址
-Route::get('home/my_address','Home\UserController@my_address');
+Route::get('home/address/moren/{id}','Home\AddressController@moren');
+Route::resource('home/address','Home\AddressController');
 //前台个人中心的修改密码
 Route::get('/home/my_password','Home\UserController@password');
 Route::post('/home/domy_password','Home\UserController@dopassword');

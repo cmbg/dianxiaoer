@@ -4,6 +4,7 @@
 
 @stop
 @section('content')
+	
      <script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<div class="body-wrapper theme-clearfix">
 		<div class="listings-title">
@@ -53,15 +54,13 @@
 												</li>
 												
 												<li>
-													<a href="{{url('home/my_address')}}">地址</a>
+													<a href="{{url('home/address')}}">地址</a>
 												</li>
 												
-												<li>
-												   <a href="http://demo.smartaddons.com/templates/html/etrostore/account_details.html">账户详细资料</a>
-												</li>
+												
 												
 												<li>
-													<a href="create_account.html">退出</a>
+													<a href="{{url('home/logout')}}">退出</a>
 												</li>
 											</ul>
 										</nav>
