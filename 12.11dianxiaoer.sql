@@ -1,5 +1,6 @@
 /*
 Navicat MySQL Data Transfer
+
 Source Server         : localhost_3306
 Source Server Version : 50505
 Source Host           : localhost:3306
@@ -9,9 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-
-Date: 2017-12-08 20:51:34
-
+Date: 2017-12-11 09:38:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,18 +27,16 @@ CREATE TABLE `address` (
   `isStaAdd` tinyint(5) NOT NULL DEFAULT '1' COMMENT '是否默认地址  2为默认地址',
   `uid` int(11) unsigned NOT NULL COMMENT '前台用户id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of address
 -- ----------------------------
-
-INSERT INTO `address` VALUES ('1', '宋寿强', '15704619282', '江西省抚州市资溪县巴拉巴拉', '1', '2');
 INSERT INTO `address` VALUES ('3', '宋先生', '15704619282', '福建省南平市松源镇巴拉巴拉', '1', '2');
-INSERT INTO `address` VALUES ('4', '王先生', '15704619282', '江苏省盐城市合德镇哔哩哔哩', '1', '2');
-INSERT INTO `address` VALUES ('12', '宋先生', '15704619282', '河南省平顶山市鲁山县略略略', '2', '2');
-
+INSERT INTO `address` VALUES ('4', '王先生', '15704619282', '江苏省盐城市合德镇哔哩哔哩', '2', '2');
+INSERT INTO `address` VALUES ('12', '宋先生', '15704619282', '河南省平顶山市鲁山县略略略', '1', '2');
+INSERT INTO `address` VALUES ('14', '吴主席', '188888888', '黑龙江省哈尔滨市香坊区中央大街6号', '1', '2');
+INSERT INTO `address` VALUES ('15', '宋主席', '166666666', '黑龙江省哈尔滨市南岗区圣*索菲亚大教堂1号', '1', '2');
 
 -- ----------------------------
 -- Table structure for admin_users
@@ -58,17 +55,14 @@ CREATE TABLE `admin_users` (
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
-
 -- ----------------------------
 -- Records of admin_users
 -- ----------------------------
-
 INSERT INTO `admin_users` VALUES ('1', 'admin', '$2y$10$f7iJm0mkJWwAFffzdk4Q3eCgjKFWwLHRKPedaJcP4KrQE0q/K2V/G', '15704619282', '630350567@qq.com', '0', '1', 'm', '/uploads/151253117268205a2764e4897d1.jpg');
 INSERT INTO `admin_users` VALUES ('11', 'sssss123', '$2y$10$I4pU7DuCaqqAYGAqNBSY..8x1FExn4jx17UssKURVt0cfy7/Lbjqq', '15704619282', '630350567@qq.com', '0', '1', 'm', '/uploads/151272416196345a2a56c18a8c5.jpg');
 INSERT INTO `admin_users` VALUES ('12', 'qqqqq', '$2y$10$VzlSHHov6PUxXbCzsphho..JrVLg3tmjzT3idZyXgO5hgTa2/kqDW', '15704619287', '630350567278@qq.com', '0', '0', 'x', '/uploads/151272511998255a2a5a7f3f0de.jpg');
 INSERT INTO `admin_users` VALUES ('14', 'admin', '$2y$10$kcwdUVfP6LoQKXdyp3crruDUTsAZdPbn1FTB6s7S5pvZKSMIz4BMa', '15704619282', '123123123@qq.com', '0', '0', 'w', '/uploads/151272425950145a2a5723860e9.jpg');
 INSERT INTO `admin_users` VALUES ('15', 'qwert', '$2y$10$kIYZenHoX3McoNJFEFbs4O3kucenv4pJFcr1hkxs.ruPUEUqD1ZNG', '15704619282', '630350567@qq.com', '0', '0', 'w', '');
-
 
 -- ----------------------------
 -- Table structure for adver
@@ -84,14 +78,11 @@ CREATE TABLE `adver` (
   `astatus` varchar(255) NOT NULL DEFAULT '1' COMMENT '0:投放  1:下刊',
   `posit` tinyint(255) unsigned DEFAULT NULL COMMENT '投放位置',
   PRIMARY KEY (`adv_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
-
-
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of adver
 -- ----------------------------
-
 INSERT INTO `adver` VALUES ('32', '111', '0000-00-00 00:00:00', '111', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15125700866926.jpg', '3333', '0', '1');
 INSERT INTO `adver` VALUES ('33', '22', '0000-00-00 00:00:00', '6666', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127140106374.jpg', '22', '0', '1');
 INSERT INTO `adver` VALUES ('34', '111', '2017-12-08 06:30:17', '111', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127146177925.jpg', '3333', '0', '1');
@@ -101,7 +92,6 @@ INSERT INTO `adver` VALUES ('37', '111', '2017-12-08 09:03:17', '11111', 'http:/
 INSERT INTO `adver` VALUES ('38', '11111', '2017-12-08 09:03:35', '111', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127238137295.jpg', '3333', '0', '2');
 INSERT INTO `adver` VALUES ('39', '11111', '2017-12-08 09:08:56', '111', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127241277972.jpg', '3333', '0', '3');
 INSERT INTO `adver` VALUES ('40', '11111', '2017-12-08 09:09:45', '111', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127241762333.jpg', '3333', '0', '4');
-
 
 -- ----------------------------
 -- Table structure for assess
@@ -124,7 +114,6 @@ CREATE TABLE `assess` (
 -- ----------------------------
 
 -- ----------------------------
-
 -- Table structure for category
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
@@ -138,7 +127,7 @@ CREATE TABLE `category` (
   `cate_order` int(255) NOT NULL,
   `cate_pid` int(11) NOT NULL,
   PRIMARY KEY (`cate_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of category
@@ -164,9 +153,17 @@ INSERT INTO `category` VALUES ('114', '实木厨具', '实木厨具', '实木厨
 INSERT INTO `category` VALUES ('115', '二手汽车', '二手汽车', '二手汽车', '二手汽车', '0', '0', '0');
 INSERT INTO `category` VALUES ('116', '二手跑车', '二手跑车', '二手跑车', '二手跑车', '0', '0', '115');
 INSERT INTO `category` VALUES ('117', '二手SUV', '二手SUV', '二手SUV', '二手SUV', '0', '0', '115');
+INSERT INTO `category` VALUES ('119', '零食', '零食', '零食', '零食', '0', '0', '0');
+INSERT INTO `category` VALUES ('120', '休闲零食', '休闲零食', '休闲零食', '休闲零食', '0', '0', '119');
+INSERT INTO `category` VALUES ('121', '糕点饼干', '糕点饼干', '糕点饼干', '糕点饼干', '0', '0', '119');
+INSERT INTO `category` VALUES ('122', '游戏', '游戏', '游戏', '游戏', '0', '0', '0');
+INSERT INTO `category` VALUES ('123', '游戏账号', '游戏账号', '游戏账号', '游戏账号', '0', '0', '122');
+INSERT INTO `category` VALUES ('124', '游戏点卡', '游戏点卡', '游戏点卡', '游戏点卡', '0', '0', '122');
+INSERT INTO `category` VALUES ('125', '美妆', '美妆', '美妆', '美妆', '0', '0', '0');
+INSERT INTO `category` VALUES ('126', '护肤', '护肤', '护肤', '护肤', '0', '0', '125');
+INSERT INTO `category` VALUES ('127', '美发', '美发', '美发', '美发', '0', '0', '125');
 
 -- ----------------------------
-
 -- Table structure for cid
 -- ----------------------------
 DROP TABLE IF EXISTS `cid`;
@@ -218,11 +215,9 @@ CREATE TABLE `fishpond` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-
 -- ----------------------------
 -- Records of fishpond
 -- ----------------------------
-
 INSERT INTO `fishpond` VALUES ('1', '11', '鱼塘名字1', '1', '1');
 INSERT INTO `fishpond` VALUES ('2', '22', '鱼塘名字2', '0', '0');
 INSERT INTO `fishpond` VALUES ('6', '66', '鱼塘名字6', '0', '0');
@@ -250,19 +245,17 @@ CREATE TABLE `goods` (
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-
-INSERT INTO `goods` VALUES ('3', '33', '0', '图片1', '1', '0', '衣服1', '', '1');
-INSERT INTO `goods` VALUES ('4', '33', '0', '图片2', '1', '0', '衣服2', '', '2');
-INSERT INTO `goods` VALUES ('5', '33', '0', '图片3', '1', '0', '衣服3', '', '3');
-INSERT INTO `goods` VALUES ('10', '33', '0', '图片4', '2', '9999999999', '衣服14', 'dsfasdf', '0');
-INSERT INTO `goods` VALUES ('11', '0', '0', '图片5', '0', '0', '衣服5', '', '0');
+INSERT INTO `goods` VALUES ('3', '33', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127241762333.jpg', '1', '0', '衣服1', '', '1');
+INSERT INTO `goods` VALUES ('4', '33', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127140106374.jpg', '1', '0', '衣服2', '', '2');
+INSERT INTO `goods` VALUES ('5', '33', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127146177925.jpg', '1', '0', '衣服3', '', '3');
+INSERT INTO `goods` VALUES ('6', '33', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127241277972.jpg', '2', '9999999999', '衣服14', 'dsfasdf', '0');
+INSERT INTO `goods` VALUES ('7', '0', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/ad_15127231787186.jpg', '0', '0', '衣服5', '', '0');
 INSERT INTO `goods` VALUES ('12', '33', '0', '图片6', '1', '0', '衣服6', '', '0');
 INSERT INTO `goods` VALUES ('13', '0', '0', '图片7', '1', '0', '衣服7', '', '0');
 INSERT INTO `goods` VALUES ('14', '0', '0', '图片8', '0', '0', '衣服8', '', '0');
 INSERT INTO `goods` VALUES ('16', '0', '0', '图片9', '0', '0', '衣服9', '', '0');
 INSERT INTO `goods` VALUES ('23', '33', '0', '图片10', '0', '100', '手机10', 'rdtfyguhijklgrhedtjuygiu', '0');
-INSERT INTO `goods` VALUES ('24', '33', '0', '图片11', '0', '100', '手机', 'rdtfyguhijklgrhedtjuygiu粉色个人', '0');
-
+INSERT INTO `goods` VALUES ('24', '33', '0', '图片11', '0', '0', '手机', 'rdtfyguhijklgrhedtjuygiu粉色个人', '0');
 
 -- ----------------------------
 -- Table structure for goodsdetail
@@ -277,7 +270,7 @@ CREATE TABLE `goodsdetail` (
   `scl` int(11) unsigned DEFAULT NULL COMMENT '收藏数量',
   `content` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '宝贝介绍',
   `scc` int(10) unsigned DEFAULT NULL COMMENT '有无验证1有验证0无验证',
-  `count` int(11) DEFAULT NULL,
+  `count` int(11) DEFAULT NULL COMMENT '数量',
   `uid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -285,7 +278,6 @@ CREATE TABLE `goodsdetail` (
 -- ----------------------------
 -- Records of goodsdetail
 -- ----------------------------
-
 INSERT INTO `goodsdetail` VALUES ('1', '3', '1', '1', '1', '1', '1', '1', null, null);
 INSERT INTO `goodsdetail` VALUES ('2', null, null, null, null, '100', '<p><img src=\"/uploads/ueditor/php/upload/image/20171205/1512492995658831.jpeg\" title=\"1512492995658831.jpeg\" alt=\"p_001.jpg\"/>范德萨范德萨发撒的发生地方撒地方的撒&lt;p&gt;发生的发生的发生的发生大发是vasdfasdfasd</p>', '0', null, null);
 INSERT INTO `goodsdetail` VALUES ('3', null, null, null, null, '100', '<p><img src=\"/uploads/ueditor/php/upload/image/20171205/1512492995658831.jpeg\" title=\"1512492995658831.jpeg\" alt=\"p_001.jpg\"/>范德萨范德萨发撒的发生地方撒地方的撒&lt;p&gt;发生的发生的发/p&gt;但是发生大法师的法师</p>', '0', null, null);
@@ -297,7 +289,6 @@ INSERT INTO `goodsdetail` VALUES ('8', null, null, null, null, '100', '<p><img s
 INSERT INTO `goodsdetail` VALUES ('9', null, null, null, null, '100', '<p><img src=\"/uploads/ueditor/php/upload/image/20171205/1512492995658831.jpeg\" title=\"1512492995658831.jpeg\" alt=\"p_001.jpg\"/>范德萨范德萨发撒的发生地方撒地方的撒&lt;p&gt;发生的发生的发生的</p>', '0', null, null);
 INSERT INTO `goodsdetail` VALUES ('10', null, null, null, null, '100', '<p><img src=\"/uploads/ueditor/php/upload/image/20171205/1512492995658831.jpeg\" title=\"1512492995658831.jpeg\" alt=\"p_001.jpg\"/>范德萨范德萨发撒的发生地方撒地方的撒&lt;p&gt;发生的发生的发生的</p>', '0', null, null);
 INSERT INTO `goodsdetail` VALUES ('12', '3', null, null, null, '100', '<p>从V字形从V字形从V字形从V型注册vdgsdfsvs的个数地方撒打发点告诉vdsfsdfsda割发代首公司打和三大浩丰科技阿萨德&nbsp;</p>', '0', null, null);
-
 
 -- ----------------------------
 -- Table structure for goodstype
@@ -340,8 +331,6 @@ INSERT INTO `gpics` VALUES ('15', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/1512
 INSERT INTO `gpics` VALUES ('16', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15125544009962.jpg', '3');
 
 -- ----------------------------
-
-
 -- Table structure for home_users
 -- ----------------------------
 DROP TABLE IF EXISTS `home_users`;
@@ -359,14 +348,11 @@ CREATE TABLE `home_users` (
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
-
 -- ----------------------------
 -- Records of home_users
 -- ----------------------------
-
 INSERT INTO `home_users` VALUES ('1', 'admin111', '$2y$10$gcxrk39hW44.irRaXa2ZOuKG7apvHnSI0x6x8OxSu7mtAtTaz4f0O', 'w', '15704619282', '630350567@qq.com', '0', '1', '/uploads/151272516971755a2a5ab11c981.jpg', '啦啦啦1');
 INSERT INTO `home_users` VALUES ('2', 'admin', '$2y$10$PPPrRdqjALqb37F6fmmOiOg12zjx8zA61wixgeYz/8.CmVIVVqFFC', 'm', '15704619287', '630350567@qq.com', '0', '0', '/uploads/151261375472395a28a77aacbfe.jpg', 'fff');
-
 
 -- ----------------------------
 -- Table structure for links
@@ -380,8 +366,6 @@ CREATE TABLE `links` (
   PRIMARY KEY (`lid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
-
-
 -- ----------------------------
 -- Records of links
 -- ----------------------------
@@ -392,7 +376,6 @@ INSERT INTO `links` VALUES ('9', '优酷', 'http://www.youku.com', 'http://cmbgl
 INSERT INTO `links` VALUES ('10', '爱奇艺', 'http://www.iqiyi.com', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/links_151266754461335a297998e9511.jpg');
 INSERT INTO `links` VALUES ('11', '腾讯网', 'http://www.qq.com', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/links_151266776147915a297a7177772.jpg');
 INSERT INTO `links` VALUES ('12', 'hao123', 'http://www.hao123.com', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/links_151266789114615a297af3c3bd7.jpg');
-
 
 -- ----------------------------
 -- Table structure for loginhistory
@@ -442,7 +425,6 @@ CREATE TABLE `nav` (
   PRIMARY KEY (`nid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
-
 -- ----------------------------
 -- Records of nav
 -- ----------------------------
@@ -452,7 +434,6 @@ INSERT INTO `nav` VALUES ('3', '3', '开通鱼塘', '/home/sfshop');
 INSERT INTO `nav` VALUES ('4', '4', '购物车', '购物车');
 INSERT INTO `nav` VALUES ('5', '5', '我的订单', '我的订单');
 INSERT INTO `nav` VALUES ('6', '6', '我的信息', '我的信息');
-
 
 -- ----------------------------
 -- Table structure for order
@@ -476,32 +457,16 @@ CREATE TABLE `order` (
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-
-INSERT INTO `order` VALUES ('15127028095a2a0359', '60.00', '4', '0', '东北', '1', '0000-00-00 00:00:00', '12234567890', '', '', '');
-INSERT INTO `order` VALUES ('15127040305a2a081e', '59.70', '4', '0', '北京天安门壹号', '1', '2017-12-08 03:33:50', '12312312323', '王五', '是的发送到发顺丰', '支付宝');
-INSERT INTO `order` VALUES ('15127040675a2a0843', '59.70', '4', '0', '北京天安门壹号', '1', '2017-12-08 03:34:27', '12312312323', '王五', '是的发送到发顺丰', '支付宝');
-INSERT INTO `order` VALUES ('15127240015a2a5621', '19.90', '1', '0', '11', '1', '2017-12-08 09:06:41', '11', '11', '11', '货到付款');
-INSERT INTO `order` VALUES ('15127240515a2a5653', '19.90', '1', '0', '', '1', '2017-12-08 09:07:31', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127241645a2a56c4', '19.90', '1', '0', '', '1', '2017-12-08 09:09:25', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127242365a2a570c', '19.90', '1', '0', '', '1', '2017-12-08 09:10:36', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127244855a2a5805', '19.90', '1', '0', '', '1', '2017-12-08 09:14:45', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127245665a2a5856', '19.90', '1', '0', '', '1', '2017-12-08 09:16:06', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127246445a2a58a4', '19.90', '1', '0', '', '1', '2017-12-08 09:17:24', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127247085a2a58e4', '19.90', '1', '0', '', '1', '2017-12-08 09:18:28', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127247735a2a5925', '19.90', '1', '0', '', '1', '2017-12-08 09:19:33', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127248025a2a5942', '19.90', '1', '0', '', '1', '2017-12-08 09:20:02', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127248535a2a5975', '19.90', '1', '0', '', '1', '2017-12-08 09:20:54', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127250615a2a5a45', '19.90', '1', '0', '', '1', '2017-12-08 09:24:21', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127312455a2a726d', '19.90', '1', '0', '', '1', '2017-12-08 11:07:25', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127312565a2a7278', '19.90', '1', '0', '', '1', '2017-12-08 11:07:36', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127313425a2a72ce', '19.90', '1', '0', '', '1', '2017-12-08 11:09:02', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127318605a2a74d4', '29.80', '2', '0', '', '1', '2017-12-08 11:17:40', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127319275a2a7517', '29.80', '2', '0', '', '1', '2017-12-08 11:18:48', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127319575a2a7535', '29.80', '2', '0', '', '1', '2017-12-08 11:19:17', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127319965a2a755c', '29.80', '2', '0', '', '1', '2017-12-08 11:19:57', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127324295a2a770d', '29.80', '2', '0', '', '1', '2017-12-08 11:27:10', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127325615a2a7791', '29.80', '2', '0', '', '1', '2017-12-08 11:29:21', '', '', '', '货到付款');
-
+INSERT INTO `order` VALUES ('15128222695a2bd5fd', '9.90', '1', '0', '北京', '1', '2017-12-09 12:24:29', '123123123', '啦啦', '不要钱', '银行卡');
+INSERT INTO `order` VALUES ('15129042595a2d1643', '29.80', '2', '0', '北京市北京市宣武区天安门', '1', '2017-12-10 11:10:59', '13123131231', '你大爷', '噗噗噗噗噗噗', '支付宝');
+INSERT INTO `order` VALUES ('15129125905a2d36ce', '29.80', '3', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-10 01:29:50', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129172025a2d48d2', '29.80', '5', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-10 02:46:42', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129210825a2d57fa', '29.80', '2', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-10 03:51:22', '15704619282', '宋先生', '送一玩块花花', '支付宝');
+INSERT INTO `order` VALUES ('15129540355a2dd8b3', '9.90', '1', '0', '黑龙江省哈尔滨市南岗区圣*索菲亚大教堂1号', '1', '2017-12-11 01:00:35', '166666666', '宋主席', '', '银行卡');
+INSERT INTO `order` VALUES ('15129542815a2dd9a9', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:04:41', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129543085a2dd9c4', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:05:08', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129544205a2dda34', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:07:00', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129545885a2ddadc', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:09:48', '15704619282', '王先生', '', '货到付款');
 
 -- ----------------------------
 -- Table structure for orderdetail
@@ -514,53 +479,18 @@ CREATE TABLE `orderdetail` (
   `bprice` decimal(6,2) unsigned NOT NULL COMMENT '成交定价',
   `bcnt` int(255) unsigned NOT NULL COMMENT '购买数量',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
+) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of orderdetail
 -- ----------------------------
-
 INSERT INTO `orderdetail` VALUES ('12', '15127028095a2a0359', '2', '19.90', '1');
 INSERT INTO `orderdetail` VALUES ('13', '15127028095a2a0359', '1', '9.90', '2');
 INSERT INTO `orderdetail` VALUES ('14', '15127028095a2a0359', '3', '29.90', '1');
 INSERT INTO `orderdetail` VALUES ('15', '15127040085a2a0808', '2', '19.90', '1');
 INSERT INTO `orderdetail` VALUES ('16', '15127040085a2a0808', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('17', '15127040085a2a0808', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('18', '15127040305a2a081e', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('19', '15127040305a2a081e', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('20', '15127040305a2a081e', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('21', '15127040675a2a0843', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('22', '15127040675a2a0843', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('23', '15127040675a2a0843', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('24', '15127240015a2a5621', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('25', '15127240515a2a5653', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('26', '15127241645a2a56c4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('27', '15127242365a2a570c', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('28', '15127244855a2a5805', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('29', '15127245665a2a5856', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('30', '15127246445a2a58a4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('31', '15127247085a2a58e4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('32', '15127247735a2a5925', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('33', '15127248025a2a5942', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('34', '15127248535a2a5975', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('35', '15127250615a2a5a45', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('36', '15127312455a2a726d', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('37', '15127312565a2a7278', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('38', '15127313425a2a72ce', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('39', '15127318605a2a74d4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('40', '15127318605a2a74d4', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('41', '15127319275a2a7517', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('42', '15127319275a2a7517', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('43', '15127319575a2a7535', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('44', '15127319575a2a7535', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('45', '15127319965a2a755c', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('46', '15127319965a2a755c', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('47', '15127324295a2a770d', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('48', '15127324295a2a770d', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('49', '15127325615a2a7791', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('50', '15127325615a2a7791', '1', '9.90', '1');
-
+INSERT INTO `orderdetail` VALUES ('197', '15129545885a2ddadc', '1', '9.90', '1');
+INSERT INTO `orderdetail` VALUES ('198', '15129545885a2ddadc', '2', '19.90', '1');
 
 -- ----------------------------
 -- Table structure for par
@@ -659,8 +589,6 @@ INSERT INTO `role_user` VALUES ('2', '4');
 INSERT INTO `role_user` VALUES ('1', '2');
 
 -- ----------------------------
-
-
 -- Table structure for shop_cart
 -- ----------------------------
 DROP TABLE IF EXISTS `shop_cart`;

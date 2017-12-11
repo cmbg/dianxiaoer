@@ -20,24 +20,22 @@ Route::get('Admin/index','Admin\IndexController@index');
 
 
 
-//分类路由
-Route::resource('Admin/Cate/list','Admin\Cate\CateController');
-//修改分类排序
-Route::post('Admin/Cate/changeorder','Admin\Cate\CateController@changeOrder');
 
-//模块二 购物车相关路由  start
 
-Route::resource('shop', 'Home\ShopController');
-//Route::controller('shop', 'Home\ShopController');
-Route::get('/addcart/{id}', 'Home\ShopController@addcart');
-Route::get('/cart', 'Home\ShopController@cart')->name('cart');
-Route::get('/shop/removecart/{id}', 'Home\ShopController@getRemovecart');
-Route::get('/del', 'Home\ShopController@destroy');
+Route::resource('Admin/Cate/list','Admin\Cate\CateController'); //分类路由
+Route::post('Admin/Cate/changeorder','Admin\Cate\CateController@changeOrder');//修改分类排序
+
+// 购物车相关路由  start
+Route::resource('shop', 'Home\ShopController');//购物车控制器
+Route::get('/addcart/{id}', 'Home\ShopController@addcart');//添加购物车
+Route::get('/cart', 'Home\ShopController@cart')->name('cart');//跳转到购物车列表
+Route::get('/shop/removecart/{id}', 'Home\ShopController@getRemovecart');//删除商品
+Route::get('/del', 'Home\ShopController@destroy');//清空购物车路由
 
 //订单路由
-Route::resource('order','Home\OrderController');
-//底单成功路由
-Route::resource('Home/payment','Home\PaymentController');
+Route::resource('order','Home\OrderController');//订单路由
+Route::resource('Home/payment','Home\PaymentController');//订单成功路由
+Route::post('home/index','Home\PaymentController@fanhui'); //订单成功页面
 
 Route::resource('Admin/Goods', 'Admin\GoodsController');
 
@@ -106,7 +104,10 @@ Route::get('home/goods/list', 'Home\Good_ListController@index');
     Route::resource('admin/adminuser','Admin\AdminUserController');
     //后台的前台用户管理
     Route::resource('homeuser','HomeUserController');
-   
+Route::post('/admin/adminuserinfo/ajaxStatus', 'Admin\AdminUserInfoAjaxController@ajaxStatus');
+Route::post('/admin/homeuserinfo/ajaxStatus', 'Admin\HomeUserInfoAjaxController@ajaxStatus');
+Route::post('/admin/homeuserindex/ajaxIdentity', 'Admin\HomeUserInfoAjaxController@ajaxIdentity');
+Route::post('/admin/adminuserindex/ajaxIdentity', 'Admin\AdminUserInfoAjaxController@ajaxIdentity');
 //});
 
 

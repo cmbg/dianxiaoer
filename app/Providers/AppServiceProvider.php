@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Http\Models\Links;
 use App\Http\Models\Nav;
 use Illuminate\Support\ServiceProvider;
+use Cart;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,10 +16,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $links = Links::get();//友情链接
-        $nav = Nav::orderBy('paixu','asc')->get();//导航栏
-        view()->share('links', $links);
-        view()->share('nav', $nav);
+//        $carts = Cart::content();//购物车所有信息
+//        $total = Cart::subtotal();//总额 不含税
+//        $count = Cart::count();//购物车商品数量
+//        $links = Links::get();//友情链接
+//        $nav = Nav::orderBy('paixu','asc')->get();//导航栏
+//        view()->share('links', $links);
+//        view()->share('nav', $nav);
+//        view()->share('carts', $carts);
+//        view()->share('total', $total);
+//        view()->share('count', $count);
     }
 
     /**

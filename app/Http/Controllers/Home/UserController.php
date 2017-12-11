@@ -10,7 +10,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-class UserController extends Controller
+class UserController extends CommonController
 {
     public function logout()
     {

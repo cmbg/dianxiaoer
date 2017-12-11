@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Home;
+use App\Http\Models\Address;
 use App\Http\Models\Order;
 use App\Http\Models\OrderDetail;
 use Illuminate\Http\Request;
@@ -9,7 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Cart;
 
-class OrderController extends Controller
+class OrderController extends CommonController
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +19,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //购物车所有信息
-        $carts = Cart::content();
-        //总额 不含税
-        $total = Cart::subtotal();
-        //购物车商品数量
-        $count = Cart::count();
-        return view('Home.Home_order.order',compact('count','carts','total'));
+        $address = Address::where('isStaAdd','2')->take(1)->get();
+//        dd($address);
+
+        return view('Home.Home_order.order',compact('address'));
     }
 
     /**
@@ -34,7 +32,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('home/address');
     }
 
     /**
@@ -81,9 +80,11 @@ class OrderController extends Controller
         $order->oprice = $oprice;
         $order->ontime =  date('y-m-d h:i:s',time());
         $res = $order->save();
-//        dd($res);
+//        dd($order);
         if($res){
-            return redirect('/Home/payment');
+
+
+            return redirect('/Home/payment')->with('oid',$oid)->with('name',$or['name'])->with('tel', $or['tel'])->with('add',$or['add'])->with('des',$or['order_comments']);
 
         }
 

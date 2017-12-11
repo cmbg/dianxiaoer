@@ -119,11 +119,13 @@
                                             <form action="{{url('/admin/nav')}}" method="post" role="form"
                                                   enctype="multipart/form-data">
                                                 {{csrf_field()}}
+                                                <td></td>
                                                 <td>添加:</td>
                                                 <td><input type="text" name="nname" class="form-control"
                                                            id="exampleInputName1" value="" placeholder=""></td>
                                                 <td><input type="text" name="nlink" class="form-control"
                                                            id="exampleInputName1" value="" placeholder=""></td>
+
                                                 <td>
                                                     <button type="submit" class="btn btn-primary">确认添加</button>
                                                 </td>

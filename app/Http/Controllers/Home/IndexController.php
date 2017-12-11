@@ -3,16 +3,18 @@
 namespace App\Http\Controllers\Home;
 
 
+use App\Http\Controllers\Admin\GoodsController;
 use App\Http\Models\Ad;
 use App\Http\Models\Links;
 use App\Http\Models\Cate;
+use App\Http\Models\good;
 use Illuminate\Http\Request;
 use App\Http\Models\Nav;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Cart;
-class IndexController extends Controller
+
+class IndexController extends CommonController
 {
     /**
      * Display a listing of the resource.
@@ -26,12 +28,20 @@ class IndexController extends Controller
         $data3 = Ad::where('posit','3')->where('astatus','0')->take(1)->get();//右一
         $data4 = Ad::where('posit','4')->where('astatus','0')->take(1)->get();//右二
         $cates = Cate::get();
-        //购物车所有信息
-        $carts = Cart::content();
-        //总额 不含税
-        $total = Cart::subtotal();
-        //购物车商品数量
-        $count = Cart::count();
+
+        $goods = good::take(5)->get();
+//        $goods = good::take(5)->get();
+
+
+        $goods1 = good::take(2)->get();
+        $goods2 = good::take(2)->get();
+        $goods3 = good::take(5)->get();
+        $goods4 = good::take(2)->get();
+        $goods5 = good::take(6)->get();
+//        $goods2 = good::where('gid','5')->get();
+//        $goods3 = good::where('gid','6')->get();
+//        $goods4 = good::where('gid','7')->get();
+//        dd($goods2);
          $arr = [];
         foreach ($cates as $k => $v) {
             //如果是当前遍历的类是一级类
@@ -47,7 +57,7 @@ class IndexController extends Controller
             }
         }
         
-        return view('Home.Index.index',compact('data1','data2','data3','data4','arr','brr','count','carts','total'));
+        return view('Home.Index.index',compact('data1','data2','data3','data4','arr','brr','goods','goods1','goods2','goods3','goods4','goods5'));
     }
 
     /**

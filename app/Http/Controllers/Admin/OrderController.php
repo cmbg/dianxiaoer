@@ -28,11 +28,12 @@ class OrderController extends Controller
             $query->where('oid', 'like', '%' . $oid . '%');
 //            $query->where('status',$status);
             $query->where('status', 'like', '%' . $status . '%');
-            $query->whereBetween('ontime', [0, 0]);
+//            $query->whereBetween('ontime', [0, 0]);
         })->paginate($request->input('num', 5));
 //        dd($data);
 //        dd($data[0]->oid);
-//        dd($data[0]->adminuser->uname);
+//        dd($data[2]->adminuser->uname);
+//        dd($data[2]->adminuser['uname']);
         return view('Admin.Admin_Order.Index', ['title' => '订单列表', 'data' => $data,'request'=> $request]);
     }
 
