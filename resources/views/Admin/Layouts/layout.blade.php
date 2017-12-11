@@ -31,10 +31,6 @@
     <link rel="stylesheet" href="{{ asset('/Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
 
-
-
-
-
     {{--弹框--}}
 {{--    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">--}}
 
@@ -776,11 +772,6 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-
-@section('js')
-
-@show
-<script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
 <script>
     $.ajaxSetup({
         headers: {
@@ -789,6 +780,9 @@
     });
 </script>
 
+@section('js')
+@show
+@yield('myorder')
 @yield('ajax')
 @yield('adstatus')
 @yield('adondblclick')
@@ -801,10 +795,6 @@
 @yield('adminuserinfostatus')
 @yield('homeuserinfoidentity')
 @yield('homeuserinfostatus')
-
-
-
-
 
 </body>
 </html>

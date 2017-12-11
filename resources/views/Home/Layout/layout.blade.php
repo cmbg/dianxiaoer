@@ -21,8 +21,10 @@
     <link rel="stylesheet" href="{{asset('Home/css/app-orange.css')}}" id="theme_color"/>
     <link rel="stylesheet" href="" id="rtl"/>
     <link rel="stylesheet" href="{{asset('Home/css/app-responsive.css')}}"/>
-    <link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>
-    <script src="{{asset('Home/layui/layui.js')}}"></script>
+    {{--<link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>--}}
+    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
+    <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
+    {{--<script src="{{asset('Home/layui/layui.js')}}"></script>--}}
 </head>
 @yield('body')
 

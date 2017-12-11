@@ -78,9 +78,8 @@
                                  echo '保密';
                               }
                             ?>
-                    </td>
 
-
+                  </td>
                   <td>
                       <a href="{{url('admin/adminuser'.'/'.$v->uid)}}">详细</a>
                       <a href="{{url('admin/adminuser/'.$v->uid.'/edit')}}">修改</a>

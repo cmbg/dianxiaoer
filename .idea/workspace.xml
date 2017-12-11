@@ -23,6 +23,16 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
+      <file leaf-file-name="AppServiceProvider.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="42" />
+              <folding>
+                <element signature="e#33#59#0#PHP" expanded="true" />
+              </folding>
+=======
+<<<<<<< HEAD
       <file leaf-file-name="admin_goods.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Goods/admin_goods.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -54,10 +64,15 @@
               <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
 >>>>>>> origin/niechencai
               <folding />
+>>>>>>> origin/bg
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="Index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Sfshop/Index.blade.php">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="GoodsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php">
@@ -70,20 +85,23 @@
 =======
       <file leaf-file-name="Ad.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Ad/Ad.blade.php">
+>>>>>>> origin/bg
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="229" column="70" lean-forward="false" selection-start-line="229" selection-start-column="70" selection-end-line="229" selection-end-column="70" />
-              <folding>
-                <element signature="e#21815#21834#0#HTML" expanded="true" />
-                <element signature="e#0#40394#0#Blade" expanded="false" />
-              </folding>
+            <state relative-caret-position="297">
+              <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdController.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="297">
+              <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+              <folding />
+=======
             <state relative-caret-position="649">
               <caret line="47" column="43" lean-forward="false" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
               <folding>
@@ -102,6 +120,7 @@
                 <element signature="e#4428#4786#0#PHP" expanded="false" />
 >>>>>>> origin/niechencai
               </folding>
+>>>>>>> origin/bg
             </state>
           </provider>
         </entry>
@@ -306,12 +325,15 @@
         <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Ad/Add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Ad/Edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Ad/Ad.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Home/SfshopController.php" />
-        <option value="$PROJECT_DIR$/resources/views/Home/Home_Sfshop/Index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Home/Layout/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/resources/views/Home/Home_Sfshop/Index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Home/SfshopController.php" />
+=======
 >>>>>>> origin/niechencai
+>>>>>>> origin/bg
       </list>
     </option>
   </component>
@@ -328,6 +350,9 @@
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds" extendedState="7">
+=======
   <component name="ProjectFrameBounds" extendedState="6">
 <<<<<<< HEAD
     <option name="x" value="482" />
@@ -335,6 +360,7 @@
     <option name="width" value="939" />
     <option name="height" value="728" />
 =======
+>>>>>>> origin/bg
     <option name="x" value="342" />
     <option name="y" value="130" />
     <option name="width" value="842" />
@@ -360,8 +386,12 @@
 <<<<<<< HEAD
       <pane id="Scratches" />
 =======
+<<<<<<< HEAD
+      <pane id="Scratches" />
+=======
 >>>>>>> origin/niechencai
       <pane id="Scope" />
+>>>>>>> origin/bg
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -375,6 +405,9 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/bg
             <path>
               <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
               <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
@@ -394,6 +427,8 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
+=======
               <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -402,6 +437,7 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> origin/bg
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -414,6 +450,8 @@
             <path>
               <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
               <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
+=======
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Requests" type="2a2b976b:PhpTreeStructureProvider$1" />
@@ -421,6 +459,7 @@
             <path>
               <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
               <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> origin/bg
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -434,6 +473,8 @@
               <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
+=======
               <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -449,6 +490,7 @@
               <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> origin/bg
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -457,7 +499,11 @@
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
+              <item name="Home_Fshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+=======
               <item name="Home_Det" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> origin/bg
             </path>
             <path>
               <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
@@ -465,18 +511,27 @@
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
+              <item name="Home_Sfshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+=======
               <item name="Home_Fshop" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
 =======
 >>>>>>> origin/niechencai
+>>>>>>> origin/bg
           </expand>
           <select />
         </subPane>
       </pane>
 <<<<<<< HEAD
+      <pane id="Scope" />
+=======
+<<<<<<< HEAD
 =======
       <pane id="Scratches" />
 >>>>>>> origin/niechencai
+>>>>>>> origin/bg
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -539,11 +594,19 @@
       <workItem from="1512354988839" duration="48960000" />
       <workItem from="1512441626942" duration="104506000" />
       <workItem from="1512670070129" duration="30398000" />
+<<<<<<< HEAD
+      <workItem from="1512732097550" duration="2567000" />
+      <workItem from="1512735495985" duration="1284000" />
+=======
 >>>>>>> origin/niechencai
+>>>>>>> origin/bg
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="243269000" />
+=======
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="327861000" />
   </component>
@@ -565,13 +628,14 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 =======
     <option name="totallyTimeSpent" value="239418000" />
+>>>>>>> origin/bg
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22541603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2579425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -620,8 +684,12 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29159802" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25416037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22541603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 >>>>>>> origin/niechencai
+>>>>>>> origin/bg
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
@@ -656,6 +724,8 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/resources/public/third-party/video-js/video.dev.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -729,6 +799,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> origin/bg
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Links/Edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -777,9 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1539">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#1542#1617#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,8 +855,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-307">
           <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="25" />
+<<<<<<< HEAD
+=======
 >>>>>>> origin/niechencai
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -864,6 +935,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Models/Fshop.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-162">
@@ -879,12 +952,16 @@
         <state relative-caret-position="323">
           <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
 =======
+>>>>>>> origin/bg
     <entry file="file://$PROJECT_DIR$/app/Http/Models/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+<<<<<<< HEAD
+=======
 >>>>>>> origin/niechencai
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -914,22 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
           <caret line="30" column="42" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#46#74#0#PHP" expanded="false" />
-            <element signature="e#243#302#0#PHP" expanded="false" />
-            <element signature="e#1242#1313#0#PHP" expanded="false" />
-            <element signature="e#1318#1462#0#PHP" expanded="false" />
-            <element signature="e#1468#1626#0#PHP" expanded="false" />
-            <element signature="e#1631#1693#0#PHP" expanded="false" />
-            <element signature="e#1699#1795#0#PHP" expanded="false" />
-            <element signature="e#1800#2391#0#PHP" expanded="false" />
-            <element signature="e#2397#2493#0#PHP" expanded="false" />
-            <element signature="e#2677#2822#0#PHP" expanded="false" />
-            <element signature="e#2827#3485#0#PHP" expanded="false" />
-            <element signature="e#2913#3024#0#PHP" expanded="false" />
-            <element signature="e#3491#3587#0#PHP" expanded="false" />
-            <element signature="e#3588#3626#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -937,10 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="100" column="34" lean-forward="true" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
-          <folding>
-            <element signature="e#39#51#0#PHP" expanded="false" />
-            <element signature="e#103#244#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -948,8 +1005,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+<<<<<<< HEAD
+=======
 >>>>>>> origin/niechencai
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -963,6 +1023,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+<<<<<<< HEAD
+=======
 >>>>>>> origin/niechencai
           <folding />
         </state>
@@ -980,6 +1042,7 @@
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
 >>>>>>> origin/niechencai
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -993,8 +1056,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+<<<<<<< HEAD
+=======
 >>>>>>> origin/niechencai
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -1057,58 +1123,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2739">
           <caret line="131" column="52" lean-forward="true" selection-start-line="131" selection-start-column="52" selection-end-line="131" selection-end-column="52" />
-          <folding>
-            <marker date="1512706506418" expanded="true" signature="8274:8527" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="8543:9111" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="9131:10505" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="9132:9457" ph="//..." />
-            <marker date="1512706506418" expanded="true" signature="9536:9808" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="10089:10178" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="10573:10623" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="14705:15787" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="14727:15761" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="15053:15637" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="15144:15376" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="15180:15349" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="15384:15615" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="15420:15588" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="15680:15704" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="15919:18138" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="16213:18127" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="16234:18110" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="16501:16698" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="16747:17760" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="16838:17092" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="17120:17374" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="17382:17633" ph="..." />
-            <marker date="1512706506418" expanded="true" signature="17842:18018" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/s_ad_15126965933249.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/ad_15126965933249.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/uploads/s_links_151270762183475a2a16258dddc.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/s_ad_15126965933249.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/uploads/ad_15126965933249.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/uploads/s_links_151270762183475a2a16258dddc.jpg" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LinksAjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+<<<<<<< HEAD
+=======
           <folding>
             <element signature="e#214#863#0#PHP" expanded="false" />
 >>>>>>> origin/niechencai
           </folding>
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -1126,10 +1157,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1353">
           <caret line="319" column="22" lean-forward="false" selection-start-line="319" selection-start-column="22" selection-end-line="319" selection-end-column="22" />
+<<<<<<< HEAD
+=======
           <folding>
             <element signature="e#6383#6414#0#HTML" expanded="false" />
 >>>>>>> origin/niechencai
           </folding>
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -1143,6 +1177,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1434">
           <caret line="263" column="13" lean-forward="false" selection-start-line="263" selection-start-column="13" selection-end-line="263" selection-end-column="13" />
+<<<<<<< HEAD
+=======
 >>>>>>> origin/niechencai
           <folding />
         </state>
@@ -1154,6 +1190,7 @@
         <state relative-caret-position="19">
           <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -1166,6 +1203,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+<<<<<<< HEAD
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdRevController.php" />
+=======
           <folding>
             <element signature="e#208#282#0#PHP" expanded="false" />
             <element signature="e#1454#1529#0#PHP" expanded="false" />
@@ -1189,10 +1232,13 @@
         <state relative-caret-position="-323">
           <caret line="7" column="83" lean-forward="false" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
 =======
+>>>>>>> origin/bg
     <entry file="file://$PROJECT_DIR$/app/Http/Models/Ad.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+<<<<<<< HEAD
+=======
 >>>>>>> origin/niechencai
           <folding />
         </state>
@@ -1212,6 +1258,7 @@
         <state relative-caret-position="38">
           <caret line="2" column="19" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="19" />
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -1232,9 +1279,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
           <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding>
-            <element signature="e#262#299#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,20 +1286,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="86" column="48" lean-forward="false" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="48" />
-          <folding>
-            <element signature="e#211#272#0#PHP" expanded="false" />
-            <element signature="e#277#739#0#PHP" expanded="false" />
-            <element signature="e#745#822#0#PHP" expanded="false" />
-            <element signature="e#827#932#0#PHP" expanded="false" />
-            <element signature="e#938#1064#0#PHP" expanded="false" />
-            <element signature="e#1069#1783#0#PHP" expanded="false" />
-            <element signature="e#1789#1893#0#PHP" expanded="false" />
-            <element signature="e#1898#2073#0#PHP" expanded="false" />
-            <element signature="e#2079#2150#0#PHP" expanded="false" />
-            <element signature="e#2266#2384#0#PHP" expanded="false" />
-            <element signature="e#2884#2983#0#PHP" expanded="false" />
-            <element signature="e#2988#3349#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1263,8 +1293,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="343" column="40" lean-forward="true" selection-start-line="343" selection-start-column="40" selection-end-line="343" selection-end-column="40" />
+<<<<<<< HEAD
+=======
 >>>>>>> origin/niechencai
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -1278,6 +1311,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
           <caret line="73" column="25" lean-forward="true" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+<<<<<<< HEAD
+=======
 >>>>>>> origin/niechencai
           <folding />
         </state>
@@ -1297,6 +1332,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -1318,11 +1354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="382" column="11" lean-forward="false" selection-start-line="382" selection-start-column="11" selection-end-line="382" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#21771#0#Blade" expanded="false" />
-            <element signature="e#19890#21762#0#HTML" expanded="false" />
-            <marker date="1512721660282" expanded="true" signature="20120:20130" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1330,31 +1361,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-139">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="24" />
-          <folding>
-            <element signature="e#46#70#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="47" column="43" lean-forward="false" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
-          <folding>
-            <element signature="e#46#69#0#PHP" expanded="true" />
-            <element signature="e#279#338#0#PHP" expanded="false" />
-            <element signature="e#910#976#0#PHP" expanded="false" />
-            <element signature="e#981#1081#0#PHP" expanded="false" />
-            <element signature="e#1087#1166#0#PHP" expanded="false" />
-            <element signature="e#1171#2649#0#PHP" expanded="false" />
-            <element signature="e#2655#2747#0#PHP" expanded="false" />
-            <element signature="e#2752#2932#0#PHP" expanded="false" />
-            <element signature="e#2938#3065#0#PHP" expanded="false" />
-            <element signature="e#3070#4331#0#PHP" expanded="false" />
-            <element signature="e#3156#3310#0#PHP" expanded="false" />
-            <element signature="e#4338#4423#0#PHP" expanded="false" />
-            <element signature="e#4428#4786#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1362,10 +1368,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="62" column="118" lean-forward="false" selection-start-line="62" selection-start-column="118" selection-end-line="62" selection-end-column="118" />
+<<<<<<< HEAD
+=======
           <folding>
             <element signature="e#0#6634#0#Blade" expanded="false" />
           </folding>
 >>>>>>> origin/niechencai
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -1388,14 +1397,22 @@
 =======
         <state relative-caret-position="368">
           <caret line="61" column="117" lean-forward="false" selection-start-line="61" selection-start-column="117" selection-end-line="61" selection-end-column="117" />
-          <folding>
-            <element signature="e#0#6296#0#Blade" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Ad/Ad.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Fshop/List.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Layout/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="389" column="35" lean-forward="false" selection-start-line="389" selection-start-column="35" selection-end-line="389" selection-end-column="35" />
+=======
         <state relative-caret-position="270">
           <caret line="229" column="70" lean-forward="false" selection-start-line="229" selection-start-column="70" selection-end-line="229" selection-end-column="70" />
           <folding>
@@ -1428,14 +1445,32 @@
         <state relative-caret-position="341">
           <caret line="91" column="54" lean-forward="false" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
           <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Sfshop/Index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Index/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1212">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="42" />
           <folding>
+<<<<<<< HEAD
+            <element signature="e#33#59#0#PHP" expanded="true" />
+=======
             <marker date="1512726277793" expanded="false" signature="231:242" ph="..." />
             <marker date="1512726277793" expanded="false" signature="974:989" ph="..." />
 >>>>>>> origin/niechencai
@@ -1460,33 +1495,69 @@
           <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding>
             <element signature="e#45#70#0#PHP" expanded="true" />
+>>>>>>> origin/bg
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdController.php">
+=======
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Goods/add_goods.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="76" column="67" lean-forward="true" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
 =======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/SfshopController.php">
+>>>>>>> origin/bg
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="18" column="56" lean-forward="false" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="47" column="43" lean-forward="false" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Fshop/List.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Ad/Ad.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="229" column="70" lean-forward="false" selection-start-line="229" selection-start-column="70" selection-end-line="229" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/Fishpond.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/Fshop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-145">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/FshopController.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Home/Layout/layout.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/SfshopController.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+          <folding />
+=======
         <state relative-caret-position="378">
           <caret line="389" column="35" lean-forward="false" selection-start-line="389" selection-start-column="35" selection-end-line="389" selection-end-column="35" />
 >>>>>>> origin/niechencai
@@ -1550,13 +1621,14 @@
             <element signature="e#46#69#0#PHP" expanded="true" />
 >>>>>>> origin/niechencai
           </folding>
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Sfshop/Index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        <state relative-caret-position="297">
+          <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
           <folding />
         </state>
       </provider>

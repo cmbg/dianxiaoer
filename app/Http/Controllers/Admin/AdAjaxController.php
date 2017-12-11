@@ -69,10 +69,10 @@ class AdAjaxController extends Controller
             $res = $data->update(['acustomer' => $name]);
 //            echo $res;
             if ($res) {
-//////                1.表示成功。
+//                1.表示成功。
                 return response()->json(['code' => 1]);
             } else {
-//////                2.表示失败。
+//                2.表示失败。
                 return response()->json(['code' => 2]);
             }
         }

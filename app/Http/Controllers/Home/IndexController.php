@@ -30,8 +30,6 @@ class IndexController extends CommonController
         $cates = Cate::get();
         $goods = good::take(5)->get();
 //        $goods = good::take(5)->get();
-
-
         $goods1 = good::take(2)->get();
         $goods2 = good::take(2)->get();
         $goods3 = good::take(5)->get();
@@ -40,7 +38,7 @@ class IndexController extends CommonController
 //        dd($goods2);
         //购物车所有信息
 
-         $arr = [];
+        $arr = [];
         foreach ($cates as $k => $v) {
             //如果是当前遍历的类是一级类
             if ($v->cate_pid == 0) {
@@ -56,6 +54,7 @@ class IndexController extends CommonController
         }
         
         return view('Home.Index.index',compact('data1','data2','data3','data4','arr','brr','goods','goods1','goods2','goods3','goods4','goods5'));
+
     }
 
     /**

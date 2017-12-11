@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends CommonController
 {
+
     /**
      * Display a listing of the resource.
      *显示订单页面
@@ -20,9 +21,7 @@ class OrderController extends CommonController
     {
         $address = Address::where('isStaAdd','2')->take(1)->get();
 //        dd($address);
-
         return view('Home.Home_order.order',compact('address'));
-       
     }
 
     /**
@@ -32,12 +31,11 @@ class OrderController extends CommonController
      */
     public function create()
     {
-
         return view('home/address');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 把生成的订单插入数据库
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -92,7 +90,7 @@ class OrderController extends CommonController
     }
 
     /**
-     * Display the specified resource.
+     * 显示我的订单
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
