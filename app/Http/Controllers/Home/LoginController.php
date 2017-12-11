@@ -14,7 +14,7 @@ use App\Http\Controllers\Controller;
 use Gregwar\Captcha\CaptchaBuilder;
 use Gregwar\Captcha\PhraseBuilder;
 
-class LoginController extends Controller
+class LoginController extends CommonController
 {
     /**
      * 作用：后台登录界面
@@ -34,110 +34,102 @@ class LoginController extends Controller
     {
         $input = $request->except('_token');
         
-//
-//        dd($code);
-        
-//        dd($input);
+        $str = $input['login'];
+       // dd($str);
+      if(preg_match_all('/^((13[0-9])|(15[^4,\\D])|(18[0,0-9])|(17[0,0-9]))\\d{8}$/', $str, $phone)){
+          if(!empty($phone)){
         $rule = [
-            'uname'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:4,20',
-            "password"=>'required|between:3,20'
-          
+            'login'=>'required',
+            "password"=>'required|between:6,20'
         ];
         $mess = [
-            'uname.required'=>'必须输入用户名',
-            'uname.regex'=>'用户名必须是汉字字母下划线',
-            'uname.between'=>'用户名必须在5到20位之间',
+            'login.required'=>'必须输入用户名或者邮箱或者手机号',
             'password.required'=>'必须输入密码',
-            'password.between'=>'密码必须在3到20位之间'
-          
-//            'code.integer'=>'验证码错误'
-
+            'password.between'=>'密码必须在6到20位之间'
         ];
-        //判断输入的验证码和原来系统生成的验证比较 strtolower 把内容全部转为小写
-
         $validator =  Validator::make($input,$rule,$mess);
-        //如果表单验证失败 passes()
         if ($validator->fails()) {
             return redirect('home/login')
                 ->withErrors($validator)
                 ->withInput();
         }
-  
-
         // 判断是否有此用户
-        $user = HomeUser::where('uname',$input['uname'])->first();
-          //dd($user);
+        $user = HomeUser::where('tel',$phone['0'])->first();
           if(!$user){
               return redirect('home/login')->with('errors','用户名不存在');
           }
-          // dd($user);
           //判断密码是否正确
-          // Hash::check("trim($input['password'])", $user->password)
           $str = $input['password'];
-          // $hash = Hash::make($str);
           if( Hash::check("$str", $user->password)){
-            // dd( $str);
             Session::put('user',$user);
-            return redirect('home/my_account');
+            return redirect('home/index');
             
          }
          return redirect('home/login')->with('errors','密码不正确');
-
-     
-    }
-    public function register()
-    {
-        return view('Home/Home_Login/register');
-    }
-    public function doregister(Request $request)
-    {
-        $input = $request->except('_token');
+         }
+        }else if(preg_match_all('/[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}/', $str, $email)){
+             if(!empty($email)){
         $rule = [
-            'uname'=>'required|regex:/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u|between:5,20',
-            "password"=>'required|between:5,20',
-            're_password' => 'same:password'
+            'login'=>'required|email',
+            "password"=>'required|between:6,20'
         ];
         $mess = [
-            'uname.required'=>'必须输入用户名',
-            'uname.regex'=>'用户名必须是汉字字母下划线',
-            'uname.between'=>'用户名必须在5到20位之间',
+            'login.required'=>'请正确输入邮箱',
+            'login.email' => '邮箱格式不正确',
             'password.required'=>'必须输入密码',
-            'password.between'=>'密码必须在5到20位之间',
-            're_password.same' => '两次密码必须一致'
-//            'code.integer'=>'验证码错误'
-
+            'password.between'=>'密码必须在6到20位之间'
         ];
-        //判断输入的验证码和原来系统生成的验证比较 strtolower 把内容全部转为小写
-
         $validator =  Validator::make($input,$rule,$mess);
-        //如果表单验证失败 passes()
         if ($validator->fails()) {
-            return redirect('home/register')
+            return redirect('home/login')
                 ->withErrors($validator)
                 ->withInput();
         }
-
         // 判断是否有此用户
-        $user = HomeUser::where('uname',$input['uname'])->first();
-          //dd($user);
-          if($user){
-              return redirect('home/register')->with('errors','用户名已存在');
+        $user = HomeUser::where('email',$email)->first();
+          if(!$user){
+              return redirect('home/login')->with('errors','用户名不存在');
           }
-
-          // dd($user);
-
-        //        3. 执行添加操作
-         $user = new HomeUser();
-         $user->uname = $input['uname'];
-         // die ($input['password']);
-         $user->password = Hash::make($input['password']);
-        // die($user->password);
-         // $user->avatar = $input['avatar'];
-         $res = $user->save();
-          if($res){
-            return redirect('home/login')->with('msg','注册成功');
-             }else{
-            return redirect('home/register')->with('msg','注册失败');
-            }
-    }   
-}
+          //判断密码是否正确
+          $str = $input['password'];
+          if( Hash::check("$str", $user->password)){
+            Session::put('user',$user);
+            return redirect('home/index');
+         }
+         return redirect('home/login')->with('errors','密码不正确');
+        }
+      }else if(preg_match_all('/^[\x{4e00}-\x{9fa5}A-Za-z0-9_]+$/u', $str, $uname)){
+         if(!empty($uname)){
+        $rule = [
+            'login'=>'required',
+            "password"=>'required|between:6,20'
+        ];
+        $mess = [
+            'login.required'=>'必须输入用户名或邮箱或手机号',
+            'password.required'=>'必须输入密码',
+            'password.between'=>'密码必须在6到20位之间'
+        ];
+        $validator =  Validator::make($input,$rule,$mess);
+        if ($validator->fails()) {
+            return redirect('home/login')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        // 判断是否有此用户
+        $user = HomeUser::where('uname',$uname)->first();
+          if(!$user){
+              return redirect('home/login')->with('errors','用户名不存在');
+          }
+          //判断密码是否正确
+          $str = $input['password'];
+          if( Hash::check("$str", $user->password)){
+            Session::put('user',$user);
+            return redirect('home/index');
+         }
+         return redirect('home/login')->with('errors','密码不正确');
+         }
+           
+        }
+     
+    }
+  }

@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Cart;
 
-class ShopController extends Controller
+class ShopController extends CommonController
 {
     /**
      * Display a listing of the resource.

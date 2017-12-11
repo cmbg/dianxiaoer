@@ -12,7 +12,7 @@ use App\Http\Models\Nav;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Cart;
-class IndexController extends Controller
+class IndexController extends CommonController
 {
     /**
      * Display a listing of the resource.
@@ -27,11 +27,7 @@ class IndexController extends Controller
         $data4 = Ad::where('posit','4')->where('astatus','0')->take(1)->get();//右二
         $cates = Cate::get();
         //购物车所有信息
-        $carts = Cart::content();
-        //总额 不含税
-        $total = Cart::subtotal();
-        //购物车商品数量
-        $count = Cart::count();
+      
          $arr = [];
         foreach ($cates as $k => $v) {
             //如果是当前遍历的类是一级类
@@ -47,7 +43,7 @@ class IndexController extends Controller
             }
         }
         
-        return view('Home.Index.index',compact('data1','data2','data3','data4','arr','brr','count','carts','total'));
+        return view('Home.Index.index',compact('data1','data2','data3','data4','arr','brr'));
     }
 
     /**

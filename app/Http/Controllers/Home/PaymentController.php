@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Cart;
-class PaymentController extends Controller
+
+class PaymentController extends CommonController
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +16,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //购物车所有信息
-        $carts = Cart::content();
-        //总额 不含税
-        $total = Cart::subtotal();
-        //购物车商品数量
-        $count = Cart::count();
-        return view('Home.Home_Payment.payment',compact('count','carts','total'));
+        return view('Home.Home_Payment.payment');
     }
 
     /**

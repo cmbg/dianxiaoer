@@ -797,6 +797,12 @@
 @yield('navedit')
 @yield('linkslimg')
 @yield('linksupdatelimg')
+@yield('adminuserinfoidentity')
+@yield('adminuserinfostatus')
+@yield('homeuserinfoidentity')
+@yield('homeuserinfostatus')
+
+
 
 
 </body>

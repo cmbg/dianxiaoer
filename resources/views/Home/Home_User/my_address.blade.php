@@ -88,8 +88,6 @@
 											<div class="u-column1 col-1 woocommerce-Address addresses">
 												<header class="woocommerce-Address-title title">
 													<h3>邮寄地址</h3>
-													<a href="{{url('home/address/create')}}" class="edit">添加</a>
-													<br>
 													<a href="{{url('home/address/'.$v['id'].'/edit')}}" class="edit">编辑</a>
 													<br>
 													<a href="javascript:;" onclick="userDel({{$v['id']}})" class="edit">删除</a>

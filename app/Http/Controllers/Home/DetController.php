@@ -14,7 +14,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class DetController extends Controller
+class DetController extends CommonController
 {
     /**
      * Display a listing of the resource.

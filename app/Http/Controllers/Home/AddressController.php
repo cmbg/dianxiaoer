@@ -11,7 +11,7 @@ use App\Http\Requests;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-class AddressController extends Controller
+class AddressController extends CommonController
 {
     /**
      * [moren description]默认地址为1,普通地址为2,点击页面的设置默认地址,传入id,修改默认状态
@@ -57,8 +57,17 @@ class AddressController extends Controller
             $arr['address'] = $v->address;
             $arr['id'] = $v->id;
         }
-        // dd($address);
-      return  view('Home/Home_User/my_address',compact('arr','address'));
+        // dd($mraddress->isEmpty());
+        if($mraddress->isEmpty() && $address->isEmpty()){
+
+            // return view('Home/Home_User/addmy_address',compact('uid'));
+             return redirect('home/address/create');
+        }else{
+              // return redirect('home/address');
+              // return(111111);
+               return  view('Home/Home_User/my_address',compact('arr','address'));
+        }
+   
     }
 
     /**
@@ -88,11 +97,19 @@ class AddressController extends Controller
         $data->name = $input['name'];
         $data->phone = $input['phone'];
         $data->uid = $uid;
-        $data->isStaAdd = 1;
+        $mraddress = Address::get()->where('uid',$uid)->where('isStaAdd',2);
+        // dd($mraddress->isEmpty());
+        if($mraddress->isEmpty()){
+             $data->isStaAdd = 2;
+        }else{
+             $data->isStaAdd = 1;
+        }
+       
         $str = $input['s_province'] . $input['s_city'].$input['s_county'].$input['address'];
         $data->address = $str ;
          $res = $data->save();
          // dd($res);
+         
           if($res){
             // return (11111);
             return redirect('home/address')->with('msg','添加成功');

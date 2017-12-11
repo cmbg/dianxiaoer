@@ -148,7 +148,7 @@
                                         @foreach($data as $k=>$v)
                                             <tr role="row" class="odd">
                                                 <td class="id">{{$v->oid}}</td>
-                                                <td>{{$v->adminuser->uname}}</td>
+                                                <td>{{$v->adminuser['uname']}}</td>
                                                 <td>{{$v->name}}</td>
                                                 <td>{{$v->tel}}</td>
                                                 <td>{{$v->add}}</td>

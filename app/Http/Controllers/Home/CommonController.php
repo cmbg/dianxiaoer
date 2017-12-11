@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Providers;
+namespace App\Http\Controllers\Home;
 
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use App\Http\Models\Links;
 use App\Http\Models\Nav;
-use Illuminate\Support\ServiceProvider;
 use Cart;
-class AppServiceProvider extends ServiceProvider
+
+class CommonController extends Controller
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function __construct()
     {
         $carts = Cart::content();//购物车所有信息
         $total = Cart::subtotal();//总额 不含税
@@ -27,13 +26,4 @@ class AppServiceProvider extends ServiceProvider
         view()->share('count', $count);
     }
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
 }

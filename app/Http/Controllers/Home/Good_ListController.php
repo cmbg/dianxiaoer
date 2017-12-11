@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class Good_ListController extends Controller
+class Good_ListController extends CommonController
 {
     /**
      * 获取所有商品进行展示
