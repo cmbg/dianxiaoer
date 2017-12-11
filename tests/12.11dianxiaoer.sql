@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-12-11 09:38:13
+Date: 2017-12-11 10:57:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,8 +32,8 @@ CREATE TABLE `address` (
 -- ----------------------------
 -- Records of address
 -- ----------------------------
-INSERT INTO `address` VALUES ('3', '宋先生', '15704619282', '福建省南平市松源镇巴拉巴拉', '1', '2');
-INSERT INTO `address` VALUES ('4', '王先生', '15704619282', '江苏省盐城市合德镇哔哩哔哩', '2', '2');
+INSERT INTO `address` VALUES ('3', '宋先生', '15704619282', '福建省南平市松源镇巴拉巴拉', '2', '2');
+INSERT INTO `address` VALUES ('4', '王先生', '15704619282', '江苏省盐城市合德镇哔哩哔哩', '1', '2');
 INSERT INTO `address` VALUES ('12', '宋先生', '15704619282', '河南省平顶山市鲁山县略略略', '1', '2');
 INSERT INTO `address` VALUES ('14', '吴主席', '188888888', '黑龙江省哈尔滨市香坊区中央大街6号', '1', '2');
 INSERT INTO `address` VALUES ('15', '宋主席', '166666666', '黑龙江省哈尔滨市南岗区圣*索菲亚大教堂1号', '1', '2');
@@ -467,6 +467,8 @@ INSERT INTO `order` VALUES ('15129542815a2dd9a9', '29.80', '2', '0', '江苏省�
 INSERT INTO `order` VALUES ('15129543085a2dd9c4', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:05:08', '15704619282', '王先生', '', '货到付款');
 INSERT INTO `order` VALUES ('15129544205a2dda34', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:07:00', '15704619282', '王先生', '', '货到付款');
 INSERT INTO `order` VALUES ('15129545885a2ddadc', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:09:48', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129610015a2df3e9', '49.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 02:56:42', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129610285a2df404', '49.80', '3', '0', '福建省南平市松源镇巴拉巴拉', '1', '2017-12-11 02:57:08', '15704619282', '宋先生', '', '货到付款');
 
 -- ----------------------------
 -- Table structure for orderdetail
@@ -479,7 +481,7 @@ CREATE TABLE `orderdetail` (
   `bprice` decimal(6,2) unsigned NOT NULL COMMENT '成交定价',
   `bcnt` int(255) unsigned NOT NULL COMMENT '购买数量',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of orderdetail
@@ -491,6 +493,10 @@ INSERT INTO `orderdetail` VALUES ('15', '15127040085a2a0808', '2', '19.90', '1')
 INSERT INTO `orderdetail` VALUES ('16', '15127040085a2a0808', '1', '9.90', '2');
 INSERT INTO `orderdetail` VALUES ('197', '15129545885a2ddadc', '1', '9.90', '1');
 INSERT INTO `orderdetail` VALUES ('198', '15129545885a2ddadc', '2', '19.90', '1');
+INSERT INTO `orderdetail` VALUES ('199', '15129610015a2df3e9', '2', '19.90', '1');
+INSERT INTO `orderdetail` VALUES ('200', '15129610015a2df3e9', '3', '29.90', '1');
+INSERT INTO `orderdetail` VALUES ('201', '15129610285a2df404', '2', '19.90', '2');
+INSERT INTO `orderdetail` VALUES ('202', '15129610285a2df404', '3', '29.90', '1');
 
 -- ----------------------------
 -- Table structure for par
