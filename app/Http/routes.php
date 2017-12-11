@@ -51,9 +51,33 @@ Route::post('Admin/Ajax', 'Admin\GoodsController@ajax');
 //前台登录界面
 Route::get('home/login', 'Home\LoginController@login');
 Route::post('home/dologin', 'Home\LoginController@doLogin');
-Route::get('home/register', 'Home\LoginController@register');
-// Route::get('home/doregister','Home\LoginController@doregister');
-Route::post('home/doregister', 'Home\LoginController@doregister');
+
+//前台注册界面
+Route::get('home/register','Home\LoginController@register');
+Route::post('home/doregister','Home\LoginController@doregister');
+
+//注册模块，发送短信和邮件
+Route::get('phoneregister','Home\RegisterController@PhoneRegister');
+Route::post('sendcode','Home\RegisterController@sendCode');
+Route::post('phoneregisters','Home\RegisterController@doPhoneRegister');
+
+//使用邮箱注册的路由
+Route::get('emailregister','Home\RegisterController@EmailRegister');
+Route::post('emailregister','Home\RegisterController@doEmailRegister');
+//邮件注册激活路由
+Route::get('active','Home\RegisterController@active');
+
+//忘记密码
+Route::get('forget','Home\RegisterController@forget');
+//发送忘记密码邮件
+Route::post('doforget','Home\RegisterController@doforget');
+
+
+//找回密码页面
+Route::get('reset','Home\RegisterController@reset');
+//重置密码
+Route::post('doreset','Home\RegisterController@doreset');
+
 //===========================================================================
 //商品管理路由
 Route::resource('Admin/Goods', 'Admin\GoodsController');
@@ -104,17 +128,12 @@ Route::get('home/goods/det/{id}','Home\Good_ListController@show');
 
 //后台登录中间件,请把所有后台的路由放在这里!注意删除路径里的admin 和命名空间里的Admin
 //Route::group(['middleware'=>'islogin','prefix'=>'admin','namespace'=>'Admin'],function (){
-<<<<<<< HEAD
 //后台的后台用户管理
 Route::resource('admin/adminuser', 'Admin\AdminUserController');
 //后台的前台用户管理
 Route::resource('homeuser', 'HomeUserController');
-=======
-    //后台的后台用户管理
-    Route::resource('admin/adminuser','Admin\AdminUserController');
-    //后台的前台用户管理
-    Route::resource('homeuser','HomeUserController');
->>>>>>> origin/xiaonan
+
+Route::resource('admin/homeuser','Admin\HomeUserController');
 Route::post('/admin/adminuserinfo/ajaxStatus', 'Admin\AdminUserInfoAjaxController@ajaxStatus');
 Route::post('/admin/homeuserinfo/ajaxStatus', 'Admin\HomeUserInfoAjaxController@ajaxStatus');
 Route::post('/admin/homeuserindex/ajaxIdentity', 'Admin\HomeUserInfoAjaxController@ajaxIdentity');

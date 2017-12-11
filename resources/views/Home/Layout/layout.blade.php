@@ -102,7 +102,7 @@
                                     <div class="widget-inner">
                                         <ul id="menu-my-account" class="menu">
                                             <li class="menu-my-account">
-                                                <a class="item-link" href="my_account.html">
+                                                <a class="item-link" href="{{url('/home/my_account')}}">
                                                     <span class="menu-title">我的账户</span>
                                                 </a>
                                             </li>
@@ -118,28 +118,16 @@
                                                     <span class="menu-title">我的订单</span>
                                                 </a>
                                             </li>
-
+                                            <li>
+                                                <a class="item-link" href="{{url('/home/login')}}" >
+                                                     <span class="menu-title">登录</span>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <div class="widget-2 widget-last widget sw_top-4 sw_top">
-                                    <div class="widget-inner">
-                                        <div class="top-login">
-                                            <div class="div-logined">
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0);" data-toggle="modal"
-                                                           data-target="#login_form">
-                                                            <span>登录</span>
-                                                        </a>
-                                                        <span class="wg">Welcome Guest</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
 

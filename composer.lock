@@ -615,10 +615,14 @@
             "dist": {
                 "type": "zip",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/johnlui/AliyunOSS/zipball/a8e1dd1c840e4441a513e6f2e8d4a2b9b52fa04e",
 =======
                 "url": "https://files.phpcomposer.com/files/johnlui/AliyunOSS/a8e1dd1c840e4441a513e6f2e8d4a2b9b52fa04e.zip",
 >>>>>>> origin/xiaonan
+=======
+                "url": "https://files.phpcomposer.com/files/johnlui/AliyunOSS/a8e1dd1c840e4441a513e6f2e8d4a2b9b52fa04e.zip",
+>>>>>>> origin/User
                 "reference": "a8e1dd1c840e4441a513e6f2e8d4a2b9b52fa04e",
                 "shasum": ""
             },
@@ -1556,8 +1560,11 @@
             "dist": {
                 "type": "zip",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/console/zipball/a54fb931b2fd0a9ed4041cb5fcb1b86208e52682",
 =======
+=======
+>>>>>>> origin/User
                 "url": "https://files.phpcomposer.com/files/symfony/console/a54fb931b2fd0a9ed4041cb5fcb1b86208e52682.zip",
 >>>>>>> origin/xiaonan
                 "reference": "a54fb931b2fd0a9ed4041cb5fcb1b86208e52682",
@@ -1673,8 +1680,11 @@
             "dist": {
                 "type": "zip",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/debug/zipball/38fdc933c76508356d2594fad3cc2a5a7b0e1ef3",
 =======
+=======
+>>>>>>> origin/User
                 "url": "https://files.phpcomposer.com/files/symfony/debug/38fdc933c76508356d2594fad3cc2a5a7b0e1ef3.zip",
 >>>>>>> origin/xiaonan
                 "reference": "38fdc933c76508356d2594fad3cc2a5a7b0e1ef3",
@@ -1898,8 +1908,11 @@
             "dist": {
                 "type": "zip",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/http-foundation/zipball/45a228eaab08b9d927d8ec896b377028ab235906",
 =======
+=======
+>>>>>>> origin/User
                 "url": "https://files.phpcomposer.com/files/symfony/http-foundation/45a228eaab08b9d927d8ec896b377028ab235906.zip",
 >>>>>>> origin/xiaonan
                 "reference": "45a228eaab08b9d927d8ec896b377028ab235906",
@@ -1958,8 +1971,11 @@
             "dist": {
                 "type": "zip",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/http-kernel/zipball/e9650aa03564a753ab5c0889d7c0a513de562f0d",
 =======
+=======
+>>>>>>> origin/User
                 "url": "https://files.phpcomposer.com/files/symfony/http-kernel/e9650aa03564a753ab5c0889d7c0a513de562f0d.zip",
 >>>>>>> origin/xiaonan
                 "reference": "e9650aa03564a753ab5c0889d7c0a513de562f0d",
@@ -2261,8 +2277,11 @@
             "dist": {
                 "type": "zip",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/routing/zipball/52739044d32e390fc233e38ad504c590f454d067",
 =======
+=======
+>>>>>>> origin/User
                 "url": "https://files.phpcomposer.com/files/symfony/routing/52739044d32e390fc233e38ad504c590f454d067.zip",
 >>>>>>> origin/xiaonan
                 "reference": "52739044d32e390fc233e38ad504c590f454d067",
@@ -3252,8 +3271,11 @@
             "dist": {
                 "type": "zip",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/1ce90ba27c42e4e44e6d8458241466380b51fa16",
 =======
+=======
+>>>>>>> origin/User
                 "url": "https://files.phpcomposer.com/files/sebastianbergmann/php-token-stream/1ce90ba27c42e4e44e6d8458241466380b51fa16.zip",
 >>>>>>> origin/xiaonan
                 "reference": "1ce90ba27c42e4e44e6d8458241466380b51fa16",
@@ -3805,8 +3827,11 @@
             "dist": {
                 "type": "zip",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/symfony/yaml/zipball/36353762fdca3a0ecdce4640764efc885df979f6",
 =======
+=======
+>>>>>>> origin/User
                 "url": "https://files.phpcomposer.com/files/symfony/yaml/36353762fdca3a0ecdce4640764efc885df979f6.zip",
 >>>>>>> origin/xiaonan
                 "reference": "36353762fdca3a0ecdce4640764efc885df979f6",

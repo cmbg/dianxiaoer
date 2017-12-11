@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Cart;
 
 class OrderController extends CommonController
 {
@@ -23,6 +22,7 @@ class OrderController extends CommonController
 //        dd($address);
 
         return view('Home.Home_order.order',compact('address'));
+       
     }
 
     /**

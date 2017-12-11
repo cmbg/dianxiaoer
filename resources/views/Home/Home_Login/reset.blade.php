@@ -26,12 +26,12 @@
 				<div class="login-banner-bg"><span></span><img src="{{url('home/images/big.jpg')}}" /></div>
 				<div class="login-box">
 
-							<h3 class="title">登录商城</h3>
+							<h3 class="title">修改密码</h3>
 
 							<div class="clear"></div>
 						
 						<div class="login-form">
-						  <form action="{{url('home/dologin')}}" method="post" >
+						  <form action="{{url('doreset')}}" method="post" >
 						  		{{csrf_field()}}
 						  			@if (count($errors) > 0)
 									<div class="alert alert-danger">
@@ -48,33 +48,28 @@
 								@endif
 							   <div class="user-name">
 								    <label for="user"><i class="am-icon-user"></i></label>
-								    <input type="text" name="login" id="user" value="" placeholder="用户名|邮箱|手机号">
+								    <input type="text" name="email" id="user" value="{{$uname}}" placeholder="请输入要找回的账号">
                 		 		</div>
      							<div class="user-pass">
 								    <label for="password"><i class="am-icon-lock"></i></label>
 								    <input type="password" name="password" id="password" placeholder="请输入密码">
 			                	 </div>
-			              
+			              		<div class="user-pass">
+								    <label for="password"><i class="am-icon-lock"></i></label>
+								    <input type="password" name="re_password" id="password" placeholder="请确认输入密码">
+			                	 </div>
 			           </div>
             
             <div class="login-links">
-                <label for="remember-me"><input id="remember-me" type="checkbox">记住密码</label>
-								<a href="{{asset('forget')}}" class="am-fr">忘记密码</a>
-								<a href="{{asset('phoneregister')}}" class="zcnext am-fr am-btn-default">注册</a>
+          
+								<a href="{{asset('home/login')}}" class="zcnext am-fr am-btn-default">返回</a>
 								<br />
             </div>
 								<div class="am-cf">
-									<input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm">
+									<input type="submit" name="" value="确认修改密码" class="am-btn am-btn-primary am-btn-sm">
 								</div>
 								</form>
-						<div class="partner">		
-								<h3>合作账号</h3>
-							<div class="am-btn-group">
-								<li><a href="#"><i class="am-icon-qq am-icon-sm"></i><span>QQ登录</span></a></li>
-								<li><a href="#"><i class="am-icon-weibo am-icon-sm"></i><span>微博登录</span> </a></li>
-								<li><a href="#"><i class="am-icon-weixin am-icon-sm"></i><span>微信登录</span> </a></li>
-							</div>
-						</div>	
+					
 
 				</div>
 			</div>

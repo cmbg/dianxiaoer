@@ -7,7 +7,6 @@ use App\Http\Models\Links;
 use App\Http\Models\Nav;
 use Illuminate\Support\ServiceProvider;
 use Cart;
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,7 +18,6 @@ class AppServiceProvider extends ServiceProvider
     {
         $data = Cate::tree();
         view()->share('data', $data);
-
     }
 
     /**

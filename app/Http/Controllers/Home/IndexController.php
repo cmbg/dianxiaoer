@@ -13,7 +13,7 @@ use App\Http\Models\Nav;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Cart;
 class IndexController extends CommonController
 {
     /**
@@ -37,10 +37,9 @@ class IndexController extends CommonController
         $goods3 = good::take(5)->get();
         $goods4 = good::take(2)->get();
         $goods5 = good::take(6)->get();
-//        $goods2 = good::where('gid','5')->get();
-//        $goods3 = good::where('gid','6')->get();
-//        $goods4 = good::where('gid','7')->get();
 //        dd($goods2);
+        //购物车所有信息
+
          $arr = [];
         foreach ($cates as $k => $v) {
             //如果是当前遍历的类是一级类

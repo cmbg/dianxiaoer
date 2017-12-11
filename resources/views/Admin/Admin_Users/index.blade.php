@@ -44,12 +44,7 @@
                     <td><input type="text" name="keywords1" value="{{$request->keywords1}}" placeholder="用户名"></td>
                     <th width="50" class="tc">电话:</th>
                     <td><input type="text" name="keywords2" value="{{$request->keywords2}}" placeholder="电话号"></td>
-<<<<<<< HEAD
                     <td><input type="submit"  value="查询" class="btn btn-primary"></td>
-=======
-
-                    <td  ><input type="submit"  value="查询" class="btn btn-primary"></td>
->>>>>>> origin/xiaonan
                    <td><input type="button" class="btn btn-primary" value="清空查找条件" onclick="location='adminuser'"/></td>
                     </tr>
                 </table>
@@ -83,12 +78,9 @@
                                  echo '保密';
                               }
                             ?>
-<<<<<<< HEAD
-                  </td>
-=======
                     </td>
 
->>>>>>> origin/xiaonan
+
                   <td>
                       <a href="{{url('admin/adminuser'.'/'.$v->uid)}}">详细</a>
                       <a href="{{url('admin/adminuser/'.$v->uid.'/edit')}}">修改</a>
