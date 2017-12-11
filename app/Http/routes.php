@@ -77,13 +77,6 @@ Route::get('reset','Home\RegisterController@reset');
 //重置密码
 Route::post('doreset','Home\RegisterController@doreset');
 
-
-
-
-
-
-
-
 //===========================================================================
 //商品管理路由
 Route::resource('Admin/Goods', 'Admin\GoodsController');

@@ -151,9 +151,9 @@ class RegisterController extends Controller
                $m->to($res->email)->subject('注册邮箱激活!');
            });
 
-sleep(200);
-           return redirect('phoneregister',);
-           // setTimeout("location.href = phoneregister;",2000);
+				sleep(5000);
+           return redirect('/phoneregister');
+          
 
        }else{
            return back();
@@ -212,8 +212,8 @@ sleep(200);
 
             $m->to($res->email, $res->uname)->subject('用户密码找回!');
         });
-
-        return '修改密码邮件已经发送成功，请登录邮箱修改您的密码';
+        sleep(5000);
+        return redirect('/forget');
 
     }
 

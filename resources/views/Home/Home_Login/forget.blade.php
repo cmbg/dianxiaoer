@@ -13,6 +13,8 @@
 		<!-- <link rel="stylesheet" href="{{asset('home/css/amazeui.min.css')}}"/> -->
 		<link rel="stylesheet" href="{{asset('home/css/amazeui.min.css')}}"/>
 		<link href="{{asset('home/css/dlstyle.css')}}" rel="stylesheet" type="text/css">
+		<script src="{{asset('home/js/jquery.min.js')}}"></script>
+			<script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
 	</head>
 
 	<body>
@@ -59,7 +61,7 @@
 								<br />
             </div>
 								<div class="am-cf">
-									<input type="submit" name="" value="立即找回" class="am-btn am-btn-primary am-btn-sm">
+									<input type="submit" name="" value="立即找回" onclick="tishi()" class="am-btn am-btn-primary am-btn-sm">
 								</div>
 								</form>
 					
@@ -92,28 +94,20 @@
 						</div>
 					</div>
 					<script>
-		function sendcode(){
-//		    1. 获取要发送的手机号
-			$phone = $('[name="tel"]').val();
-			// alert($phone);
-
-//			2. 向服务器的发送短信的接口发送ajax请求
-
-			$.post("{{url('sendcode')}}",{'phone':$phone,'_token':'{{csrf_token()}}'},function(data){
-				console.log(data);
-
-				var obj = JSON.parse(data);
-				if(obj.status == 0){
-					// dd(1111);
-                    layer.msg(obj.message, {icon: 6,area: ['100px', '80px']});
-
-				}else{
-                    layer.msg(obj.message, {icon: 5,area: ['100px', '80px']});
-				}
-
-
-			})
-		}
+		
+		function tishi(){
+		layer.open({
+			  type: 1
+			  ,offset: 't' //具体配置参考：offset参数项
+			  ,content: '<div style="padding: 20px 80px;">请您进入您的登录邮箱进行验证</div>'
+			  ,btn: '关闭全部'
+			  ,btnAlign: 'c' //按钮居中
+			  ,shade: 0 //不显示遮罩
+			  ,yes: function(){
+			    layer.closeAll();
+			  }
+			});
+	}
 	</script>
 	</body>
 

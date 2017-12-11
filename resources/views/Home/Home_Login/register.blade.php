@@ -161,7 +161,7 @@
 		layer.open({
 			  type: 1
 			  ,offset: 't' //具体配置参考：offset参数项
-			  ,content: '<div style="padding: 20px 80px;">请您进入您注册的邮箱先行进行激活</div>'
+			  ,content: '<div style="padding: 20px 80px;">请您进入您注册的邮箱进行找回密码链接</div>'
 			  ,btn: '关闭全部'
 			  ,btnAlign: 'c' //按钮居中
 			  ,shade: 0 //不显示遮罩
