@@ -57,19 +57,12 @@ class AdminUserController extends Controller
                 //检测关键字
                 $uname = $request->input('keywords1');
                 $tel = $request->input('keywords2');
-                  $identity = $request->input('identity');
                 //如果用户名不为空
                 if(!empty($uname)) {
                     $query->where('uname','like','%'.$uname.'%');
                 }
                 if(!empty($tel)) {
                     $query->where('tel','like','%'.$tel.'%');
-                }
-                if(!empty($identity) && ($identity == '超级管理员')) {
-                    $query->where('identity','like','%'.'1'.'%');
-                }
-                 if(!empty($identity) && ($identity == '普通管理员')){
-                    $query->where('identity','like','%'.'0'.'%');
                 }
             })->paginate($request->input('num', 5));
 

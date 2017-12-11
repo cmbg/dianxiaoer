@@ -789,7 +789,7 @@
     });
 </script>
 
-@yield('ajax');
+@yield('ajax')
 @yield('adstatus')
 @yield('adondblclick')
 @yield('fishpondstatus')
@@ -797,6 +797,10 @@
 @yield('navedit')
 @yield('linkslimg')
 @yield('linksupdatelimg')
+@yield('adminuserinfoidentity')
+@yield('adminuserinfostatus')
+@yield('homeuserinfoidentity')
+@yield('homeuserinfostatus')
 
 
 </body>

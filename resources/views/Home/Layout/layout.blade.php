@@ -176,26 +176,20 @@
                             <div class="widget-inner">
                                 <div class="top-form top-search">
                                     <div class="topsearch-entry">
-                                        <form method="get" action="">
+                                        <form action="{{url('home/goods/list')}}" method="get" action="">
                                             <div>
-                                                <input type="text" value="" name="s"
-                                                       placeholder="Enter your keyword...">
+                                                <input type="text" value="" name="gname"
+                                                       placeholder="商品名...">
                                                 <div class="cat-wrapper">
                                                     <label class="label-search">
-                                                        <select name="search_category" class="s1_option">
-                                                            <option value="">All Categories</option>
-                                                            <option value="8">Computers & Laptops</option>
-                                                            <option value="13">Computers & Networking</option>
-                                                            <option value="14">Smartphones & Tablet</option>
-                                                            <option value="15">Home Furniture</option>
-                                                            <option value="16">Home Appliances</option>
-                                                            <option value="17">Electronic Component</option>
-                                                            <option value="18">Household Goods</option>
-                                                            <option value="32">Appliances</option>
-                                                            <option value="49">Accessories</option>
-                                                            <option value="51">Electronics</option>
-                                                            <option value="78">Televisions</option>
-                                                            <option value="80">Cameras & Accessories</option>
+                                                        <select name="cate" class="s1_option">
+                                                            <option value="">|---请选择---|</option>
+                                                            @foreach($data as $v)
+                                                                @if($v->cate_pid != 0)
+                                                            <option value="{{$v->cate_id}}">{{$v->cate_keywords}}</option>
+                                                                @endif
+                                                                @endforeach
+
                                                         </select>
                                                     </label>
                                                 </div>

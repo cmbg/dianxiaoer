@@ -28,12 +28,10 @@ class GoodsController extends Controller
         $type = $request->input('type');
         $a = $type ? '=' : '>';
         //查询数据库 获取
-        $data = good::where('fid',$a,0)->with('Cate')
+        $data = good::where('fid',"$a", 0)->with('Cate')//注意单信号不解析
             ->where('gname', 'like', '%' . $gname . '%')
             ->paginate($request->input('num'));
         $title = '商品列表页';
-//        $data = $data[0];
-//        dd($data);
         return view('Admin.Admin_Goods.admin_goods', compact( 'title', 'request', 'data'));
 
 
@@ -80,12 +78,12 @@ class GoodsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except('_token');
+        $data = $request->except('_token','file_upload');
         $rule = [
             'tid' => 'required',
             'gname' => 'required',
             'price' => 'required|regex:/[0-9]/',
-            'goodsDes' => 'required|between:20,200',
+            'goodsDes' => 'required|min:20|max:200',
             'gstatus' => 'required',
             'pic' => 'required',
 
@@ -97,7 +95,8 @@ class GoodsController extends Controller
             'price.regex' => '价格你输入有误',
             'gname.required' => '请填写商品名称',
             'goodsDes.required' => '请正确填写简介',
-            'goodsDes.between' => '简介过于简短',
+            'goodsDes.min' => '简介过于简短',
+            'goodsDes.max' => '简介过长',
             'gstatus.required' => '请选择商品的状态',
             'pic.required' => '不能没有图片啊!!!',
         ];
@@ -110,17 +109,12 @@ class GoodsController extends Controller
                 ->withInput();
 
         }
-
-        $good = new good();
-        $good->tid = $data['tid'];
-        $good->gname = $data['gname'];
-        $good->pic = $data['pic'];
-        $good->price = $data['price'];
-        $good->goodsDes = $data['goodsDes'];
-        $good->gstatus = $data['gstatus'];
-        $res = $good->save();
+        $data['uid'] = 0;
+        $data['fid'] = 0;
+        $res = good::create($data);
+        $gid = $res->gid;
         if ($res) {
-            return redirect('Admin/Goods')->with('msg', '添加成功');
+            return redirect('Admin/Det/create'.'/'.$gid)->with('msg', '添加成功');
         } else {
             return redirect('Admin/Goods/create')->with('msg', '添加失败');
         }
