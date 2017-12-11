@@ -1,7 +1,7 @@
 ﻿/*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
+Source Server         : liubaogen
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : dianxiaoer
@@ -10,7 +10,8 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-12-11 09:36:50
+Date: 2017-12-11 10:57:29
+
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,10 +25,10 @@ CREATE TABLE `address` (
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL COMMENT '收货人',
   `phone` char(30) COLLATE utf8_unicode_ci NOT NULL COMMENT '电话',
   `address` char(30) COLLATE utf8_unicode_ci NOT NULL COMMENT '地址',
-  `isStaAdd` tinyint(5) NOT NULL DEFAULT '2' COMMENT '是否默认地址  2为默认地址',
+  `isStaAdd` tinyint(5) NOT NULL DEFAULT '1' COMMENT '是否默认地址  2为默认地址',
   `uid` int(11) unsigned NOT NULL COMMENT '前台用户id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of address
@@ -36,14 +37,7 @@ INSERT INTO `address` VALUES ('1', '宋寿强', '15704619282', '江西省抚州�
 INSERT INTO `address` VALUES ('3', '宋先生', '15704619282', '福建省南平市松源镇巴拉巴拉', '1', '2');
 INSERT INTO `address` VALUES ('4', '王先生', '15704619282', '江苏省盐城市合德镇哔哩哔哩', '1', '2');
 INSERT INTO `address` VALUES ('12', '宋先生', '15704619282', '河南省平顶山市鲁山县略略略', '2', '2');
-INSERT INTO `address` VALUES ('13', '聂先生', '15704619282', '湖北省省直辖县级行政单位天门市哔哩哔哩', '2', '6');
-INSERT INTO `address` VALUES ('16', '哔哩哔哩先生', '15704619282', '江西省南昌市龙津镇哔哩哔哩', '1', '8');
-INSERT INTO `address` VALUES ('17', '巴拉巴拉先生', '15704619282', '浙江省湖州市南浔区巴拉巴拉', '1', '8');
-INSERT INTO `address` VALUES ('18', '啪啪啪先生', '15704619282', '福建省南平市政和县屁屁屁', '2', '8');
-INSERT INTO `address` VALUES ('20', '爱波波先生', '15704619282', '江西省景德镇市昌江区哔哩哔哩', '1', '9');
-INSERT INTO `address` VALUES ('21', '吴南', '15704619282', '江西省九江市都昌县三里屯', '1', '9');
-INSERT INTO `address` VALUES ('22', '聂先生', '15704619282', '湖北省省直辖县级行政单位天门市聂先生', '2', '9');
-INSERT INTO `address` VALUES ('23', 'admin', '15704619282', '福建省南平市政和县123141', '2', '10');
+
 
 -- ----------------------------
 -- Table structure for admin_users
@@ -211,7 +205,7 @@ CREATE TABLE `fishpond` (
   `unum` int(11) unsigned NOT NULL COMMENT '鱼塘人数',
   `status` int(11) unsigned NOT NULL COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of fishpond
@@ -237,23 +231,84 @@ CREATE TABLE `goods` (
   `gname` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '商品名称',
   `goodsDes` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '商品描述',
   `uid` int(11) NOT NULL COMMENT '用户id',
+  `focus` int(11) DEFAULT NULL,
   PRIMARY KEY (`gid`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('3', '33', '0', '图片1', '1', '0', '衣服1', '', '1');
-INSERT INTO `goods` VALUES ('4', '33', '0', '图片2', '1', '0', '衣服2', '', '2');
-INSERT INTO `goods` VALUES ('5', '33', '0', '图片3', '1', '0', '衣服3', '', '3');
-INSERT INTO `goods` VALUES ('10', '33', '0', '图片4', '2', '9999999999', '衣服14', 'dsfasdf', '0');
-INSERT INTO `goods` VALUES ('11', '0', '0', '图片5', '0', '0', '衣服5', '', '0');
-INSERT INTO `goods` VALUES ('12', '33', '0', '图片6', '1', '0', '衣服6', '', '0');
-INSERT INTO `goods` VALUES ('13', '0', '0', '图片7', '1', '0', '衣服7', '', '0');
-INSERT INTO `goods` VALUES ('14', '0', '0', '图片8', '0', '0', '衣服8', '', '0');
-INSERT INTO `goods` VALUES ('16', '0', '0', '图片9', '0', '0', '衣服9', '', '0');
-INSERT INTO `goods` VALUES ('23', '33', '0', '图片10', '0', '100', '手机10', 'rdtfyguhijklgrhedtjuygiu', '0');
-INSERT INTO `goods` VALUES ('24', '33', '0', '图片11', '0', '100', '手机', 'rdtfyguhijklgrhedtjuygiu粉色个人', '0');
+INSERT INTO `goods` VALUES ('25', '106', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127418828449.jpg', '1', '100', '上衣~', '二十多突然反悔就OK记录卡是搭建符大是大非发的', '0', null);
+INSERT INTO `goods` VALUES ('26', '106', '2', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127420647620.jpg', '1', '200', '内衣', '来自火星的衣服~ 只有想不到没有~ 没有的~~~~~~~~~~~~', '0', null);
+INSERT INTO `goods` VALUES ('27', '106', '3', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127423447477.jpg', '0', '100', '连衣裙', '最美的衣服~ 来时店小二~  我们的~~~~~~~好', '0', null);
+INSERT INTO `goods` VALUES ('29', '110', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127457938588.jpg', '0', '1200', '没有', '到返回sad货款纠纷哈速度快两极分化发货撒大健康合法 发送肯德基', '2', null);
+INSERT INTO `goods` VALUES ('30', '110', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127466327529.jpg', '0', '19', 'meiun', 'FDAOSDIHFOIASD SD HVAdlsfkjhasdkjf hasdfhkjasd ckxzhvk jsadf', '0', null);
+INSERT INTO `goods` VALUES ('31', '104', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127476172551.jpg', '0', '10002', 'fsadifhsaodif ', 'fjksdahjch kxhc zhxcv kzhv ', '0', null);
+INSERT INTO `goods` VALUES ('32', '101', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128047775463.jpg', '0', '199', '多功能', '啊4535324657687978978743524325787坡六65786785653525868708765314355486806987453524896898765357489806987643567476898765367857978655', '0', null);
+INSERT INTO `goods` VALUES ('33', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128051016762.jpg', '0', '199', '小米', '阿迪萨斯所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所', '0', null);
+INSERT INTO `goods` VALUES ('34', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128052128660.jpg', '0', '111', '小天鹅', '阿迪萨斯所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所所', '0', null);
+INSERT INTO `goods` VALUES ('35', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128053105556.jpg', '0', '100', '美女', '法撒旦法啥都看见回访记录卡还是贷款计划才看见爱上的框架三大浩丰科技as对话框', '0', null);
+INSERT INTO `goods` VALUES ('36', '106', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128053351985.jpg', '0', '299', '阿迪达斯上衣', '爱上师大所大所大所大所大所大所大所大所大所多', '0', null);
+INSERT INTO `goods` VALUES ('37', '106', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128053577551.jpg', '0', '190', '发的开发', '发生的发生大了空间发挥卡萨丁计划付款计划sad框架好框架第三方来看撒娇电话客服哈市科技 发达房间卡啥都看见', '0', null);
+INSERT INTO `goods` VALUES ('38', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128053958645.jpg', '0', '100', '发到付', '飞洒第六空间浩丰科技四大皆空理发啥都看见和法律框架傻掉了尽快发货昆仑决色导航法律框架好的了', '0', null);
+INSERT INTO `goods` VALUES ('39', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128057379247.jpg', '0', '112', '黑天鹅', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('40', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128058204788.jpg', '0', '111', '黑天鹅', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('41', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128058441737.jpg', '0', '111', '大黑天鹅', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('42', '101', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128058732161.jpg', '0', '3333', '大黑耗子', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('43', '101', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128059284024.jpg', '0', '33', '大黑狗', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('44', '100', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128059872594.jpg', '0', '19922', '电子狗', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('45', '105', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128060114698.jpg', '0', '19922', '电子狗', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('46', '110', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128060114698.jpg', '0', '19922', '牛栏山80年', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('47', '111', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128061021500.jpg', '0', '1992231', '牛栏山810年', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('48', '113', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128061525108.jpg', '0', '1888888', '八成新楠木棺材', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('49', '113', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128062148051.jpg', '0', '1888888', '新款紫檀棺材', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('50', '114', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128062735526.jpg', '0', '1888888', '加15 荒芜太刀', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('51', '114', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128062735526.jpg', '0', '222', '加11 打狗棒', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('52', '114', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128063614789.jpg', '0', '222', '加1 老太太的拐棍', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('53', '116', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128063614789.jpg', '0', '111', '天子二代', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('54', '116', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128063614789.jpg', '0', '1111', '天子二代新款', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('55', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128065168295.jpg', '0', '111111', '超音速电子狗', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('56', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128065168295.jpg', '0', '111111', '超音速电子狗', '中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!', '0', null);
+INSERT INTO `goods` VALUES ('57', '117', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128066709799.jpg', '0', '123123123', '加15 水牛suv', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('58', '117', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128067536047.jpg', '0', '111111', '15马力 四驱车', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('59', '117', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128067536047.jpg', '0', '111111', '8成新三轮子', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('60', '117', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128068262459.jpg', '0', '111111', '8成新三轮子', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('61', '117', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128068684744.jpg', '0', '111111', '80马力 电动驴', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('62', '116', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128068684744.jpg', '0', '111111', '二手兰博基尼', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('63', '116', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128069469466.jpg', '0', '111111', '9成新法拉利', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('64', '111', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128069909014.jpg', '0', '111111', '82年的白开水', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('65', '111', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128070214200.jpg', '0', '1111', '65年的可口可乐', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('66', '110', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128070558522.jpg', '0', '111122', '快过期的干红', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('67', '108', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128070921736.jpg', '2', '2', '2分库', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('68', '108', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128071235438.jpg', '0', '112312312', '绿巨人的裤衩', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('69', '108', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128071235438.jpg', '0', '111', '沙滩裤', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('70', '108', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128072627162.jpg', '0', '111', '贼j*紧的皮裤', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('71', '106', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128073072653.jpg', '0', '11122', '哪吒的肚兜', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('72', '106', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128073527200.jpg', '0', '12', '短袖', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('73', '106', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128074024450.jpg', '0', '12212', '貂皮大衣', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('74', '105', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128074604855.jpg', '0', '123123123', '联想都不要想的电脑', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', null);
+INSERT INTO `goods` VALUES ('75', '105', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128074899946.jpg', '0', '10', '你买不起的电脑', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', '0');
+INSERT INTO `goods` VALUES ('76', '105', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128074899946.jpg', '0', '10', '贼贵的电脑', '中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!', '0', '0');
+INSERT INTO `goods` VALUES ('77', '103', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128076328137.jpg', '0', '10000', '金立2018', '中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!', '0', '0');
+INSERT INTO `goods` VALUES ('78', '103', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077117664.jpg', '0', '100002', '金立2019', '中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!', '0', '0');
+INSERT INTO `goods` VALUES ('79', '103', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077439711.jpg', '0', '100002', '金立se2000', '中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!', '0', '0');
+INSERT INTO `goods` VALUES ('80', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077439711.jpg', '0', '2222', '小米note2', '中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!', '0', '16');
+INSERT INTO `goods` VALUES ('81', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077778110.jpg', '0', '2222', '小米note2', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '16');
+INSERT INTO `goods` VALUES ('82', '102', '11', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128078975326.jpg', '0', '2222', '小米note2', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '15');
+INSERT INTO `goods` VALUES ('83', '102', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128079353458.jpg', '0', '2222', '小米4', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '14');
+INSERT INTO `goods` VALUES ('84', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128079576859.jpg', '0', '2222', '小米6', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '13');
+INSERT INTO `goods` VALUES ('85', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128080003455.jpg', '0', '2222', '小米7', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '12');
+INSERT INTO `goods` VALUES ('86', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128080003455.jpg', '0', '2222', '红米22', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '11');
+INSERT INTO `goods` VALUES ('87', '101', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128080859118.jpg', '0', '2121', '不一定能用的微波炉', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '10');
+INSERT INTO `goods` VALUES ('88', '101', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128081364808.jpg', '0', '222', '漏电的微波炉', ',为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!', '0', '9');
+INSERT INTO `goods` VALUES ('89', '101', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128082311221.jpg', '0', '2', '没有插销的微波炉', ',为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!', '0', '8');
+INSERT INTO `goods` VALUES ('90', '100', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128082758856.jpg', '0', '22231', '会爆炸的电饭锅', ',为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!', '0', '7');
+INSERT INTO `goods` VALUES ('91', '100', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128083135781.jpg', '0', '2121', '貔貅牌电饭锅', ',为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!', '0', '6');
+INSERT INTO `goods` VALUES ('92', '100', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128083625966.jpg', '2', '2121', '蛤蟆牌电饭锅', ',为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!', '0', '5');
+INSERT INTO `goods` VALUES ('93', '100', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128084043129.jpg', '0', '2121', '国美电饭锅', ',为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!', '0', '4');
+INSERT INTO `goods` VALUES ('94', '100', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128084355399.jpg', '0', '2121', '海尔电饭锅', ',为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!', '0', '3');
+INSERT INTO `goods` VALUES ('95', '110', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128086251561.jpg', '0', '12', '葡萄酒', ',为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!', '0', '2');
+INSERT INTO `goods` VALUES ('96', '110', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128086804722.jpg', '0', '12', '拉菲白葡萄酒', ',为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!', '0', '1');
 
 -- ----------------------------
 -- Table structure for goodsdetail
@@ -271,7 +326,7 @@ CREATE TABLE `goodsdetail` (
   `count` int(11) DEFAULT NULL,
   `uid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of goodsdetail
@@ -287,6 +342,69 @@ INSERT INTO `goodsdetail` VALUES ('8', null, null, null, null, '100', '<p><img s
 INSERT INTO `goodsdetail` VALUES ('9', null, null, null, null, '100', '<p><img src=\"/uploads/ueditor/php/upload/image/20171205/1512492995658831.jpeg\" title=\"1512492995658831.jpeg\" alt=\"p_001.jpg\"/>范德萨范德萨发撒的发生地方撒地方的撒&lt;p&gt;发生的发生的发生的</p>', '0', null, null);
 INSERT INTO `goodsdetail` VALUES ('10', null, null, null, null, '100', '<p><img src=\"/uploads/ueditor/php/upload/image/20171205/1512492995658831.jpeg\" title=\"1512492995658831.jpeg\" alt=\"p_001.jpg\"/>范德萨范德萨发撒的发生地方撒地方的撒&lt;p&gt;发生的发生的发生的</p>', '0', null, null);
 INSERT INTO `goodsdetail` VALUES ('12', '3', null, null, null, '100', '<p>从V字形从V字形从V字形从V型注册vdgsdfsvs的个数地方撒打发点告诉vdsfsdfsda割发代首公司打和三大浩丰科技阿萨德&nbsp;</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('13', '25', null, null, null, '15', '<p><img src=\"/uploads/ueditor/php/upload/image/20171208/1512742226780232.jpeg\" title=\"1512742226780232.jpeg\" alt=\"3a92051e5bce451f685797cd55d70ce0.jpg\"/></p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('14', '29', null, null, null, '10', '<p><img src=\"/uploads/ueditor/php/upload/image/20171208/1512745848762554.jpeg\" title=\"1512745848762554.jpeg\" alt=\"2b82fc7aa139610b144728283b4531e1.jpg\"/>防守打法框架哈速度快看 货到付款江安河说的科技时代分开啦</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('15', '30', null, null, null, '10', '<p><img src=\"/uploads/ueditor/php/upload/image/20171208/1512747061177728.jpeg\" title=\"1512747061177728.jpeg\" alt=\"141467111a25e3db0eb0048526065f5a.jpg\"/>khdsfhksdankjvchd lk dskfk sadkjc</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('16', '30', null, null, null, '12', '<p>fasdfasdofjsadkcjsdkjhckjsdacjbsadbcjksdkfcjasf</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('17', '17', null, null, null, '15', '<p>fsadiofhishvxckhzjclkxzvckjghaksjdcjzxkcbZXBChjZBJdffdgsad</p><p>}\r\n &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('18', '32', null, null, null, '11', '<p>大萨达多所阿萨达&nbsp; 阿萨达啊爱上大啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊阿萨达多多多多多多多大奥所多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多&nbsp;</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('19', '33', null, null, null, '11', '<p>撒打算打算的大多是答案复合弓SLHOHGLOHOGHAWOLGHAJLSGHJSKAHGASHOLU</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('20', '34', null, null, null, '1111', '<p>年是哦电脑哦啊好的搜号哈佛案件佛号庵后防洪费后方豆类或发哦是否还哦啊哈佛庵后if侯爱华佛&nbsp;</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('21', '35', null, null, null, '100', '<p>士大夫还是打开了几分哈上看的浩丰科技sad货款发三大浩丰科技sad哈伦裤级发纠纷 贷款是否卡萨丁黑科技</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('22', '36', null, null, null, '10', '<p>挖热水袋套房源股hi进而他的衣服号就哦啊二十多分也就是他的衣服号哈认识他的衣服染色体衣服回家而他的一份更好&nbsp;</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('23', '37', null, null, null, '100', '<p>时东方哈市地方看见啊好当升科技冯老师大客户方科技挥洒的尽快发货啊施蒂利克 速度快级发卡金士顿好</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('24', '38', null, null, null, '10', '<p>法撒旦ofoisad积分换空间 时东方黑科技sad后付款科技货收到了看风景sad看<br/></p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('25', '39', null, null, null, '11', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('26', '40', null, null, null, '5', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('27', '41', null, null, null, '33', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('28', '42', null, null, null, '112', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('29', '43', null, null, null, '10', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('30', '44', null, null, null, '12', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('31', '45', null, null, null, '18', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('32', '46', null, null, null, '112', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('33', '47', null, null, null, '9', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('34', '48', null, null, null, '123', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('35', '49', null, null, null, '11', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('36', '50', null, null, null, '11', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('37', '51', null, null, null, '11', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('38', '52', null, null, null, '123', '<p>1中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('39', '53', null, null, null, '12', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('40', '54', null, null, null, '12', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('41', '55', null, null, null, '11', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('42', '56', null, null, null, '22', '<p>中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!中国共产党万岁!社会主义好!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('43', '57', null, null, null, '22', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('44', '58', null, null, null, '22', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('45', '59', null, null, null, '234', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('46', '60', null, null, null, '11', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('47', '61', null, null, null, '6', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('48', '62', null, null, null, '2', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('49', '63', null, null, null, '11', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('50', '64', null, null, null, '123', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('51', '65', null, null, null, '1', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('52', '66', null, null, null, '12', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('53', '67', null, null, null, '21', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('54', '68', null, null, null, '2', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('55', '69', null, null, null, '11', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('56', '70', null, null, null, '12', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('57', '71', null, null, null, '212', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('58', '72', null, null, null, '21', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('59', '73', null, null, null, '221', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('60', '73', null, null, null, '221', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('61', '75', null, null, null, '2', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('62', '76', null, null, null, '11', '<p>中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!中国共产党万岁!!社会主义万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('63', '77', null, null, null, '1', '<p>中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('64', '78', null, null, null, '2', '<p>中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('65', '79', null, null, null, '2', '<p>中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('66', '80', null, null, null, '3', '<p>中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('67', '81', null, null, null, '7', '<p>为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('68', '82', null, null, null, '9', '<p>为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('69', '83', null, null, null, '21', '<p>,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('70', '85', null, null, null, '2', '<p>,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('71', '91', null, null, null, '2', '<p>,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('72', '93', null, null, null, '2', '<p>,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('73', '94', null, null, null, '21', '<p>,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('74', '95', null, null, null, '5', '<p>,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!</p>', '0', null, null);
+INSERT INTO `goodsdetail` VALUES ('75', '96', null, null, null, '8', '<p>,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!,为什么描述这么长 ,这么长, 这么TM的长!</p>', '0', null, null);
 
 -- ----------------------------
 -- Table structure for goodstype
@@ -313,20 +431,77 @@ CREATE TABLE `gpics` (
   `gpic` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `gid` int(11) DEFAULT NULL COMMENT '商品id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of gpics
 -- ----------------------------
-INSERT INTO `gpics` VALUES ('1', '12131', '1');
-INSERT INTO `gpics` VALUES ('2', '4323', '1');
-INSERT INTO `gpics` VALUES ('3', '23423', '1');
-INSERT INTO `gpics` VALUES ('4', '23423', '1');
 INSERT INTO `gpics` VALUES ('5', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15125544256658.jpg', '3');
 INSERT INTO `gpics` VALUES ('6', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15125544179427.jpg', '3');
 INSERT INTO `gpics` VALUES ('14', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15125544319224.jpg', '3');
 INSERT INTO `gpics` VALUES ('15', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15125535171234.jpg', '3');
 INSERT INTO `gpics` VALUES ('16', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15125544009962.jpg', '3');
+INSERT INTO `gpics` VALUES ('18', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127421928273.jpg', '25');
+INSERT INTO `gpics` VALUES ('19', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127422004530.jpg', '25');
+INSERT INTO `gpics` VALUES ('20', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127422058860.jpg', '25');
+INSERT INTO `gpics` VALUES ('42', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127502968026.jpg', '30');
+INSERT INTO `gpics` VALUES ('47', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127503103616.jpg', '30');
+INSERT INTO `gpics` VALUES ('48', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127556931347.jpg', '29');
+INSERT INTO `gpics` VALUES ('49', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127556842785.jpg', '29');
+INSERT INTO `gpics` VALUES ('50', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15127557087596.jpg', '29');
+INSERT INTO `gpics` VALUES ('51', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128051405564.jpg', '33');
+INSERT INTO `gpics` VALUES ('52', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128052195047.jpg', '34');
+INSERT INTO `gpics` VALUES ('53', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128053559492.jpg', '36');
+INSERT INTO `gpics` VALUES ('54', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128053695751.jpg', '37');
+INSERT INTO `gpics` VALUES ('55', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128054068498.jpg', '38');
+INSERT INTO `gpics` VALUES ('56', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128057909520.jpg', '39');
+INSERT INTO `gpics` VALUES ('57', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128058279363.jpg', '40');
+INSERT INTO `gpics` VALUES ('58', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128058818201.jpg', '42');
+INSERT INTO `gpics` VALUES ('59', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128059359590.jpg', '43');
+INSERT INTO `gpics` VALUES ('60', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128059943116.jpg', '44');
+INSERT INTO `gpics` VALUES ('61', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128060189854.jpg', '45');
+INSERT INTO `gpics` VALUES ('62', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128060759245.jpg', '46');
+INSERT INTO `gpics` VALUES ('63', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128061101898.jpg', '47');
+INSERT INTO `gpics` VALUES ('64', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128061593864.jpg', '48');
+INSERT INTO `gpics` VALUES ('65', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128061632931.jpg', '48');
+INSERT INTO `gpics` VALUES ('66', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128062245205.jpg', '49');
+INSERT INTO `gpics` VALUES ('67', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128062813496.jpg', '50');
+INSERT INTO `gpics` VALUES ('68', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128063193066.jpg', '51');
+INSERT INTO `gpics` VALUES ('69', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128063676164.jpg', '52');
+INSERT INTO `gpics` VALUES ('70', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128064053061.jpg', '53');
+INSERT INTO `gpics` VALUES ('71', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128064356059.jpg', '54');
+INSERT INTO `gpics` VALUES ('72', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128065224812.jpg', '55');
+INSERT INTO `gpics` VALUES ('73', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128065962305.jpg', '56');
+INSERT INTO `gpics` VALUES ('74', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128067133328.jpg', '57');
+INSERT INTO `gpics` VALUES ('75', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128067615408.jpg', '58');
+INSERT INTO `gpics` VALUES ('76', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128068066925.jpg', '59');
+INSERT INTO `gpics` VALUES ('77', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128068766426.jpg', '61');
+INSERT INTO `gpics` VALUES ('78', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128069138128.jpg', '62');
+INSERT INTO `gpics` VALUES ('79', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128069663001.jpg', '63');
+INSERT INTO `gpics` VALUES ('80', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128069963880.jpg', '64');
+INSERT INTO `gpics` VALUES ('81', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128070284569.jpg', '65');
+INSERT INTO `gpics` VALUES ('82', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128070617578.jpg', '66');
+INSERT INTO `gpics` VALUES ('83', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128071002214.jpg', '67');
+INSERT INTO `gpics` VALUES ('84', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128071328770.jpg', '68');
+INSERT INTO `gpics` VALUES ('85', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128072119648.jpg', '69');
+INSERT INTO `gpics` VALUES ('86', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128072696749.jpg', '70');
+INSERT INTO `gpics` VALUES ('87', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128073148616.jpg', '71');
+INSERT INTO `gpics` VALUES ('88', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128073597083.jpg', '72');
+INSERT INTO `gpics` VALUES ('89', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128074307897.jpg', '73');
+INSERT INTO `gpics` VALUES ('90', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128074958638.jpg', '75');
+INSERT INTO `gpics` VALUES ('91', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128075497871.jpg', '76');
+INSERT INTO `gpics` VALUES ('92', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128076937123.jpg', '77');
+INSERT INTO `gpics` VALUES ('93', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077254080.jpg', '78');
+INSERT INTO `gpics` VALUES ('94', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077512663.jpg', '79');
+INSERT INTO `gpics` VALUES ('95', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077866574.jpg', '80');
+INSERT INTO `gpics` VALUES ('96', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128078779126.jpg', '81');
+INSERT INTO `gpics` VALUES ('97', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128079064112.jpg', '82');
+INSERT INTO `gpics` VALUES ('98', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128079416875.jpg', '83');
+INSERT INTO `gpics` VALUES ('99', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128080111089.jpg', '85');
+INSERT INTO `gpics` VALUES ('100', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128083236529.jpg', '91');
+INSERT INTO `gpics` VALUES ('101', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128084131063.jpg', '93');
+INSERT INTO `gpics` VALUES ('102', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128086418846.jpg', '95');
+INSERT INTO `gpics` VALUES ('103', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128086911061.jpg', '96');
 
 -- ----------------------------
 -- Table structure for home_users
@@ -343,17 +518,14 @@ CREATE TABLE `home_users` (
   `identity` int(10) unsigned NOT NULL DEFAULT '1' COMMENT '身份（1:普通用户 2:鱼塘塘主)',
   `avatar` varchar(255) NOT NULL COMMENT '头像',
   `nickname` varchar(255) NOT NULL COMMENT '用户昵称',
-  `is_active` tinyint(4) DEFAULT NULL COMMENT '用户是否激活',
-  `token` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of home_users
 -- ----------------------------
-INSERT INTO `home_users` VALUES ('1', 'admin111', '$2y$10$gcxrk39hW44.irRaXa2ZOuKG7apvHnSI0x6x8OxSu7mtAtTaz4f0O', 'w', '', '', '0', '2', '/uploads/151272516971755a2a5ab11c981.jpg', '啦啦啦1', null, null);
-INSERT INTO `home_users` VALUES ('2', 'admin', '$2y$10$PPPrRdqjALqb37F6fmmOiOg12zjx8zA61wixgeYz/8.CmVIVVqFFC', 'm', '', '', '0', '1', '/uploads/151261375472395a28a77aacbfe.jpg', 'fff', null, null);
-INSERT INTO `home_users` VALUES ('22', '', '$2y$10$tc0OaDH22G3mFUaeKmdtpeDozS9kEJzoYhbkAroWkjE39GICKaVXq', '', '', '630350567@qq.com', '0', '1', '', '', '0', '$2y$10$tc0OaDH22G3mFUaeKmdtpeDozS9kEJzoYhbkAroWkjE39GICKaVXq');
+INSERT INTO `home_users` VALUES ('1', 'admin111', '$2y$10$gcxrk39hW44.irRaXa2ZOuKG7apvHnSI0x6x8OxSu7mtAtTaz4f0O', 'w', '15704619282', '630350567@qq.com', '0', '1', '/uploads/151272516971755a2a5ab11c981.jpg', '啦啦啦1');
+INSERT INTO `home_users` VALUES ('2', 'admin', '$2y$10$PPPrRdqjALqb37F6fmmOiOg12zjx8zA61wixgeYz/8.CmVIVVqFFC', 'm', '15704619287', '630350567@qq.com', '0', '0', '/uploads/151261375472395a28a77aacbfe.jpg', 'fff');
 
 -- ----------------------------
 -- Table structure for links
@@ -365,7 +537,7 @@ CREATE TABLE `links` (
   `lurl` varchar(255) NOT NULL COMMENT '目标地址',
   `limg` varchar(255) NOT NULL COMMENT '链接图片',
   PRIMARY KEY (`lid`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of links
@@ -458,30 +630,19 @@ CREATE TABLE `order` (
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-INSERT INTO `order` VALUES ('15127028095a2a0359', '60.00', '4', '0', '东北', '1', '0000-00-00 00:00:00', '12234567890', '', '', '');
-INSERT INTO `order` VALUES ('15127040305a2a081e', '59.70', '4', '0', '北京天安门壹号', '1', '2017-12-08 03:33:50', '12312312323', '王五', '是的发送到发顺丰', '支付宝');
-INSERT INTO `order` VALUES ('15127040675a2a0843', '59.70', '4', '0', '北京天安门壹号', '1', '2017-12-08 03:34:27', '12312312323', '王五', '是的发送到发顺丰', '支付宝');
-INSERT INTO `order` VALUES ('15127240015a2a5621', '19.90', '1', '0', '11', '1', '2017-12-08 09:06:41', '11', '11', '11', '货到付款');
-INSERT INTO `order` VALUES ('15127240515a2a5653', '19.90', '1', '0', '', '1', '2017-12-08 09:07:31', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127241645a2a56c4', '19.90', '1', '0', '', '1', '2017-12-08 09:09:25', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127242365a2a570c', '19.90', '1', '0', '', '1', '2017-12-08 09:10:36', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127244855a2a5805', '19.90', '1', '0', '', '1', '2017-12-08 09:14:45', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127245665a2a5856', '19.90', '1', '0', '', '1', '2017-12-08 09:16:06', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127246445a2a58a4', '19.90', '1', '0', '', '1', '2017-12-08 09:17:24', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127247085a2a58e4', '19.90', '1', '0', '', '1', '2017-12-08 09:18:28', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127247735a2a5925', '19.90', '1', '0', '', '1', '2017-12-08 09:19:33', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127248025a2a5942', '19.90', '1', '0', '', '1', '2017-12-08 09:20:02', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127248535a2a5975', '19.90', '1', '0', '', '1', '2017-12-08 09:20:54', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127250615a2a5a45', '19.90', '1', '0', '', '1', '2017-12-08 09:24:21', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127312455a2a726d', '19.90', '1', '0', '', '1', '2017-12-08 11:07:25', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127312565a2a7278', '19.90', '1', '0', '', '1', '2017-12-08 11:07:36', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127313425a2a72ce', '19.90', '1', '0', '', '1', '2017-12-08 11:09:02', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127318605a2a74d4', '29.80', '2', '0', '', '1', '2017-12-08 11:17:40', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127319275a2a7517', '29.80', '2', '0', '', '1', '2017-12-08 11:18:48', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127319575a2a7535', '29.80', '2', '0', '', '1', '2017-12-08 11:19:17', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127319965a2a755c', '29.80', '2', '0', '', '1', '2017-12-08 11:19:57', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127324295a2a770d', '29.80', '2', '0', '', '1', '2017-12-08 11:27:10', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127325615a2a7791', '29.80', '2', '0', '', '1', '2017-12-08 11:29:21', '', '', '', '货到付款');
+INSERT INTO `order` VALUES ('15128222695a2bd5fd', '9.90', '1', '0', '北京', '1', '2017-12-09 12:24:29', '123123123', '啦啦', '不要钱', '银行卡');
+INSERT INTO `order` VALUES ('15129042595a2d1643', '29.80', '2', '0', '北京市北京市宣武区天安门', '1', '2017-12-10 11:10:59', '13123131231', '你大爷', '噗噗噗噗噗噗', '支付宝');
+INSERT INTO `order` VALUES ('15129125905a2d36ce', '29.80', '3', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-10 01:29:50', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129172025a2d48d2', '29.80', '5', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-10 02:46:42', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129210825a2d57fa', '29.80', '2', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-10 03:51:22', '15704619282', '宋先生', '送一玩块花花', '支付宝');
+INSERT INTO `order` VALUES ('15129540355a2dd8b3', '9.90', '1', '0', '黑龙江省哈尔滨市南岗区圣*索菲亚大教堂1号', '1', '2017-12-11 01:00:35', '166666666', '宋主席', '', '银行卡');
+INSERT INTO `order` VALUES ('15129542815a2dd9a9', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:04:41', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129543085a2dd9c4', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:05:08', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129544205a2dda34', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:07:00', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129545885a2ddadc', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:09:48', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129610015a2df3e9', '49.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 02:56:42', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129610285a2df404', '49.80', '3', '0', '福建省南平市松源镇巴拉巴拉', '1', '2017-12-11 02:57:08', '15704619282', '宋先生', '', '货到付款');
+
 
 -- ----------------------------
 -- Table structure for orderdetail
@@ -494,7 +655,8 @@ CREATE TABLE `orderdetail` (
   `bprice` decimal(6,2) unsigned NOT NULL COMMENT '成交定价',
   `bcnt` int(255) unsigned NOT NULL COMMENT '购买数量',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 -- ----------------------------
 -- Records of orderdetail
@@ -504,40 +666,13 @@ INSERT INTO `orderdetail` VALUES ('13', '15127028095a2a0359', '1', '9.90', '2');
 INSERT INTO `orderdetail` VALUES ('14', '15127028095a2a0359', '3', '29.90', '1');
 INSERT INTO `orderdetail` VALUES ('15', '15127040085a2a0808', '2', '19.90', '1');
 INSERT INTO `orderdetail` VALUES ('16', '15127040085a2a0808', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('17', '15127040085a2a0808', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('18', '15127040305a2a081e', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('19', '15127040305a2a081e', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('20', '15127040305a2a081e', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('21', '15127040675a2a0843', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('22', '15127040675a2a0843', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('23', '15127040675a2a0843', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('24', '15127240015a2a5621', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('25', '15127240515a2a5653', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('26', '15127241645a2a56c4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('27', '15127242365a2a570c', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('28', '15127244855a2a5805', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('29', '15127245665a2a5856', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('30', '15127246445a2a58a4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('31', '15127247085a2a58e4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('32', '15127247735a2a5925', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('33', '15127248025a2a5942', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('34', '15127248535a2a5975', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('35', '15127250615a2a5a45', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('36', '15127312455a2a726d', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('37', '15127312565a2a7278', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('38', '15127313425a2a72ce', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('39', '15127318605a2a74d4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('40', '15127318605a2a74d4', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('41', '15127319275a2a7517', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('42', '15127319275a2a7517', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('43', '15127319575a2a7535', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('44', '15127319575a2a7535', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('45', '15127319965a2a755c', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('46', '15127319965a2a755c', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('47', '15127324295a2a770d', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('48', '15127324295a2a770d', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('49', '15127325615a2a7791', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('50', '15127325615a2a7791', '1', '9.90', '1');
+INSERT INTO `orderdetail` VALUES ('197', '15129545885a2ddadc', '1', '9.90', '1');
+INSERT INTO `orderdetail` VALUES ('198', '15129545885a2ddadc', '2', '19.90', '1');
+INSERT INTO `orderdetail` VALUES ('199', '15129610015a2df3e9', '2', '19.90', '1');
+INSERT INTO `orderdetail` VALUES ('200', '15129610015a2df3e9', '3', '29.90', '1');
+INSERT INTO `orderdetail` VALUES ('201', '15129610285a2df404', '2', '19.90', '2');
+INSERT INTO `orderdetail` VALUES ('202', '15129610285a2df404', '3', '29.90', '1');
+
 
 -- ----------------------------
 -- Table structure for par
@@ -565,7 +700,7 @@ CREATE TABLE `permissions` (
   `name` varchar(255) DEFAULT NULL COMMENT '权限表',
   `description` varchar(255) DEFAULT NULL COMMENT '描述',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of permissions

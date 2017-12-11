@@ -55,8 +55,6 @@
                             ?>
                     </td>
                     <td class="tc "><img src="{{$user->avatar}}" style="width:80px;height:80px"></td>
-
-                  
                   <td class="statusBtn"> @if($user->status == '1')
                       <button type="button" class="btn bg-purple margin">已禁用</button>
                       @else

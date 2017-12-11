@@ -8,7 +8,7 @@ class OrderDetail extends Model
 {
     //设置表名
     public $table = 'orderdetail';
-
+    public $primaryKey = 'id';
     //设置日期时间格式
     public $dateFormat = 'U';
 

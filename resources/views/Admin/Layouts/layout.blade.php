@@ -31,10 +31,6 @@
     <link rel="stylesheet" href="{{ asset('/Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
 
-
-
-
-
     {{--弹框--}}
 {{--    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">--}}
 
@@ -448,14 +444,14 @@
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-table"></i> <span>Tables</span>
+                        <i class="fa fa-table"></i> <span>分类管理</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                        <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                        <li><a href="{{url('/Admin/Cate/list/create')}}"><i class="fa fa-circle-o"></i> 添加分类</a></li>
+                        <li><a href="{{url('/Admin/Cate/list/')}}"><i class="fa fa-circle-o"></i>分类列表</a></li>
                     </ul>
                 </li>
                 <li>
@@ -776,11 +772,6 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-
-@section('js')
-
-@show
-<script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
 <script>
     $.ajaxSetup({
         headers: {
@@ -789,7 +780,10 @@
     });
 </script>
 
-@yield('ajax');
+@section('js')
+@show
+@yield('myorder')
+@yield('ajax')
 @yield('adstatus')
 @yield('adondblclick')
 @yield('fishpondstatus')
@@ -801,9 +795,6 @@
 @yield('adminuserinfostatus')
 @yield('homeuserinfoidentity')
 @yield('homeuserinfostatus')
-
-
-
 
 </body>
 </html>

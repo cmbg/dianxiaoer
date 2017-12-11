@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Cart;
 
 class PaymentController extends CommonController
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         return view('Home.Home_Payment.payment');
@@ -26,7 +29,8 @@ class PaymentController extends CommonController
      */
     public function create()
     {
-        //
+
+
     }
 
     /**
@@ -37,8 +41,11 @@ class PaymentController extends CommonController
      */
     public function store(Request $request)
     {
-        //
+
+//
+
     }
+
 
     /**
      * Display the specified resource.

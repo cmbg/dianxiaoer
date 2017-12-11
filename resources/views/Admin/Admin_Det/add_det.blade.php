@@ -109,6 +109,7 @@
                                                 var formData = new FormData();
                                                 formData.append('image', $('#file_upload')[0].files[0]);
                                                 formData.append('_token', "{{csrf_token()}}");
+                                                formData.append('gid', "{{$id}}");
                                                 $.ajax({
                                                     type: "POST",
                                                     url: "/Admin/Det/upload",
@@ -122,12 +123,13 @@
                                                         image.attr('src', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/' + data)
                                                         $("#img").append(image);
                                                         image.show();
+                                                        layer.msg('上传成功');
                                                         var pic = $('#art_thumb').clone();
                                                         pic.attr('value','http://cmbgl.oss-cn-beijing.aliyuncs.com/' + data);
                                                         $("#img").append(pic);
                                             },
                                                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                                                        alert("上传失败，请检查网络后重试");
+                                                        layer.msg('上传失败，请检查网络后重试');
                                                     }
                                                 });
                                             }

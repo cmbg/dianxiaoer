@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Home;
 
 
+use App\Http\Controllers\Admin\GoodsController;
 use App\Http\Models\Ad;
 use App\Http\Models\Links;
 use App\Http\Models\Cate;
+use App\Http\Models\good;
 use Illuminate\Http\Request;
 use App\Http\Models\Nav;
 
@@ -26,9 +28,17 @@ class IndexController extends CommonController
         $data3 = Ad::where('posit','3')->where('astatus','0')->take(1)->get();//右一
         $data4 = Ad::where('posit','4')->where('astatus','0')->take(1)->get();//右二
         $cates = Cate::get();
+        $goods = good::take(5)->get();
+//        $goods = good::take(5)->get();
+        $goods1 = good::take(2)->get();
+        $goods2 = good::take(2)->get();
+        $goods3 = good::take(5)->get();
+        $goods4 = good::take(2)->get();
+        $goods5 = good::take(6)->get();
+//        dd($goods2);
         //购物车所有信息
-      
-         $arr = [];
+
+        $arr = [];
         foreach ($cates as $k => $v) {
             //如果是当前遍历的类是一级类
             if ($v->cate_pid == 0) {
@@ -43,7 +53,8 @@ class IndexController extends CommonController
             }
         }
         
-        return view('Home.Index.index',compact('data1','data2','data3','data4','arr','brr'));
+        return view('Home.Index.index',compact('data1','data2','data3','data4','arr','brr','goods','goods1','goods2','goods3','goods4','goods5'));
+
     }
 
     /**

@@ -155,6 +155,7 @@
                                                                                 <script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
                                                                                 <script>
                                                                                     $(function () {
+
                                                                                         var a = $('#gtd').children('img').length;
                                                                                         if (a  == 0) {
                                                                                             layer.msg('请去添加商品');
@@ -163,7 +164,7 @@
                                                                                             $('#image').css('display', 'none');
                                                                                             return;
                                                                                         }
-                                                                                        $('#image').on('click', function () {
+                                                                                        $('#bj').on('click', function () {
 
                                                                                             var a = $('#gtd').children('img').length;
                                                                                             if (a == 5) {
@@ -223,7 +224,7 @@
                                                                                             processData: false,
                                                                                             success: function (data) {
 //                                                    console.log(data);
-                                                                                                location.href = location.href;
+//                                                                                                location.href = location.href;
                                                                                                 layer.msg('添加成功');
 
                                                                                             },

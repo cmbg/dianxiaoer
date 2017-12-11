@@ -27,7 +27,7 @@ class DetailsController extends Controller
         $title = $data[0]->gname . '详情页';//all 是静态
         $data = $data[0];
 //        dd($data);
-        return view('Admin.Admin_Det.good_details', compact('data', 'title'));
+        return view('Admin.Admin_Det.good_details', compact('data', 'title','id'));
 
     }
 
@@ -35,7 +35,7 @@ class DetailsController extends Controller
     {
         $input = $request->input('gid');
         $flag = $request->input('flag');
-        $id = $request -> input('id');
+        $id = $request->input('id');
 
         $file = $request->file('image');
         if ($file->isValid()) {
@@ -46,14 +46,19 @@ class DetailsController extends Controller
         $newName = 'http://cmbgl.oss-cn-beijing.aliyuncs.com/' . $newName;
 
         if ($res && $flag == 1) {
-            gpic::find($id)->update(['gpic' => $newName, 'gid' => $input]);
-            return $newName;
-
-        } else {
-            $pic = gpic::create(['gpic' => $newName, 'gid' => $input]);
-            if ($pic) {
+            $re = gpic::find($id)->update(['gpic' => $newName, 'gid' => $input]);
+            if($re){
                 return $newName;
+                die;
             }
+
+
+        }else{
+            $pic = gpic::create(['gpic' => $newName, 'gid' => $input]);
+                if($pic){
+                    return $newName;
+                }
+
         }
 
     }
@@ -165,40 +170,58 @@ class DetailsController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public
-    function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $data = good::with('fishpond', 'gpicinfo', 'gpic')->where('gid', $id)->get(); //get  是一个集合 $a = $input[0]['gname'];
+        $data = $data[0];
+
+//        dd($data->gpicinfo->content);
+        $title = $data->gname.'修改商品详情页';
+        return view('Admin.Admin_Det.edit_det', compact('data', 'id','title'));
+
     }
 
     /**
-     * Update the specified resource in storage.
+     * 修改商品详情
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
      */
-    public
-    function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public
-    function destroy($id)
+    public function update(Request $request)
     {
-        //
+//
+        $id = $request->input('gid');
+        $data = $request->except('_token');
+
+        $rule = [
+
+            'scl' => 'required|regex:/[0-9]/',//收藏数量
+            'content' => 'required|max:2000|min:50',
+
+
+        ];
+        $mess = [
+
+            'scl.required' => '收藏不能为空',
+            'scl.regex' => '清正确输入',
+            'content.required' => '请填写商品详情',
+            'content.min' => '详情过于简短',
+            'content.max' => '详情过于过长'
+        ];
+
+        $validator = \Validator::make($data, $rule, $mess);//1.数据 2.检验 3,错误信息
+
+        if ($validator->fails()) {
+            return redirect('Admin/')
+                ->withErrors($validator)
+                ->withInput();
+
+        }
+
+        $res = goodsdetail::find($id)->update($data);
+        if ($res) {
+            return redirect('Admin/Goods')->with('msg', '修改成功');
+        } else {
+            return redirect('Admin/Goods')->with('msg', '修改失败');
+        }
     }
 }

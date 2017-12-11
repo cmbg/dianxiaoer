@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Home;
+use App\Http\Models\Address;
 use App\Http\Models\Order;
 use App\Http\Models\OrderDetail;
 use Illuminate\Http\Request;
@@ -8,9 +9,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-
 class OrderController extends CommonController
 {
+
     /**
      * Display a listing of the resource.
      *显示订单页面
@@ -18,8 +19,9 @@ class OrderController extends CommonController
      */
     public function index()
     {
-       
-        return view('Home.Home_order.order');
+        $address = Address::where('isStaAdd','2')->take(1)->get();
+//        dd($address);
+        return view('Home.Home_order.order',compact('address'));
     }
 
     /**
@@ -29,11 +31,11 @@ class OrderController extends CommonController
      */
     public function create()
     {
-        //
+        return view('home/address');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 把生成的订单插入数据库
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -76,9 +78,11 @@ class OrderController extends CommonController
         $order->oprice = $oprice;
         $order->ontime =  date('y-m-d h:i:s',time());
         $res = $order->save();
-//        dd($res);
+//        dd($order);
         if($res){
-            return redirect('/Home/payment');
+
+
+            return redirect('/Home/payment')->with('oid',$oid)->with('name',$or['name'])->with('tel', $or['tel'])->with('add',$or['add'])->with('des',$or['order_comments']);
 
         }
 
@@ -86,7 +90,7 @@ class OrderController extends CommonController
     }
 
     /**
-     * Display the specified resource.
+     * 显示我的订单
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
