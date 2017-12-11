@@ -58,6 +58,7 @@ class LoginController extends CommonController
           if(!$user){
               return redirect('home/login')->with('errors','用户名不存在');
           }
+        
           //判断密码是否正确
           $str = $input['password'];
           if( Hash::check("$str", $user->password)){
@@ -89,6 +90,11 @@ class LoginController extends CommonController
         $user = HomeUser::where('email',$email)->first();
           if(!$user){
               return redirect('home/login')->with('errors','用户名不存在');
+          }
+            //判断用户是否激活邮箱
+       
+           if($user['is_active'] == 0){
+              return redirect('home/login')->with('errors','请登录您的注册邮箱进行激活');
           }
           //判断密码是否正确
           $str = $input['password'];

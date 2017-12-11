@@ -65,7 +65,7 @@
 								    <input type="password" name="re_password" id="passwordRepeat" placeholder="确认密码">
                						  </div>	
 										<div class="am-cf">
-											<input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+											<input type="submit" name="" id="open" onclick="tishi()" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
 										</div>
  								</form	>	
 								</div>
@@ -157,6 +157,19 @@
 
 			})
 		}
+		function tishi(){
+		layer.open({
+			  type: 1
+			  ,offset: 't' //具体配置参考：offset参数项
+			  ,content: '<div style="padding: 20px 80px;">请您进入您注册的邮箱先行进行激活</div>'
+			  ,btn: '关闭全部'
+			  ,btnAlign: 'c' //按钮居中
+			  ,shade: 0 //不显示遮罩
+			  ,yes: function(){
+			    layer.closeAll();
+			  }
+			});
+	}
 	</script>
 	</body>
 

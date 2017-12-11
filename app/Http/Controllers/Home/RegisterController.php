@@ -151,8 +151,9 @@ class RegisterController extends Controller
                $m->to($res->email)->subject('注册邮箱激活!');
            });
 
-
-           return redirect('home/login');
+sleep(200);
+           return redirect('phoneregister',);
+           // setTimeout("location.href = phoneregister;",2000);
 
        }else{
            return back();

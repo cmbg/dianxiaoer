@@ -13,6 +13,7 @@
 		<!-- <link rel="stylesheet" href="{{asset('home/css/amazeui.min.css')}}"/> -->
 		<link rel="stylesheet" href="{{asset('home/css/amazeui.min.css')}}"/>
 		<link href="{{asset('home/css/dlstyle.css')}}" rel="stylesheet" type="text/css">
+		<script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
 	</head>
 
 	<body>
