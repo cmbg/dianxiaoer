@@ -6,13 +6,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 >
-        用户管理
-        <small>列表</small>
+        后台用户管理
+        <small>详细</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li><a href="#">用户管理</a></li>
-        <li class="active">列表</li>
+        <li><a href="{{url('admin/adminuser')}}">后台用户管理</a></li>
+        <li class="active">详细</li>
       </ol>
     </section>       
     <section class="content">
@@ -55,6 +55,7 @@
                             ?>
                     </td>
                     <td class="tc "><img src="{{$user->avatar}}" style="width:80px;height:80px"></td>
+
                   <td class="statusBtn"> @if($user->status == '1')
                       <button type="button" class="btn bg-purple margin">已禁用</button>
                       @else
@@ -67,7 +68,7 @@
                 
 
               </table>
-              <input type="button" class="back " onclick="history.go(-1)" value="返回">
+              <input type="button" class="back " onclick='location.href=("/admin/adminuser")'  value="返回">
             </div>
             <!-- /.box-body -->
 
@@ -113,7 +114,6 @@
         $(".identitybtn").on('click', function () {
             var t = $(this);
             var id = $(this).parent().find('.id').html();
-//            console.log(id);
             $.ajax(
                 {
                     url: '/admin/adminuserindex/ajaxIdentity',
@@ -142,7 +142,6 @@
         $(".statusBtn").on('click', function () {
             var t = $(this);
             var id = $(this).parent().find('.id').html();
-//            console.log(id);
             $.ajax(
                 {
                     url: '/admin/adminuserinfo/ajaxStatus',
@@ -190,7 +189,6 @@
                         $("#info").show();
                     },
                     success: function (data) {
-//                        console.log(data);
                         if (data.code == 0) {
                             t.html(name);
                             $("#info").html('<span class="text-red">用户名已经存在</span>');
@@ -216,7 +214,6 @@
                         alert(XMLHttpRequest.readyState);
                         alert(textStatus);
                     },
-//                    timeout:1000,
                     dataType: 'json'
                 });
             });

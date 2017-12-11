@@ -11,7 +11,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li><a href="#">后台用户管理</a></li>
+        <li><a href="{{url('admin/adminuser')}}">后台用户管理</a></li>
         <li class="active">列表</li>
       </ol>
     </section>       
@@ -78,7 +78,7 @@
                                  echo '保密';
                               }
                             ?>
-                    </td>
+                  </td>
                   <td>
                       <a href="{{url('admin/adminuser'.'/'.$v->uid)}}">详细</a>
                       <a href="{{url('admin/adminuser/'.$v->uid.'/edit')}}">修改</a>

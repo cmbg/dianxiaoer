@@ -20,16 +20,30 @@
                     <div class="col-md-6 ">
                         <div class="box-header with-border" >
                             <div class="box-title" style="margin:10px 0px">
-                                <h3>某某某,您好,申请鱼塘请在这里填写一些信息.</h3>
+                                <h3>{{$uname}}: 您好,申请鱼塘请在这里填写一些信息.</h3>
                             </div>
                         </div>
+                        @if(session('info'))
+                            <div class="alert alert-danger">
+                            <small class="tishi"><span class="text-red">{{session('info')}}</span></small>
+                            </div>
+                        @endif
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form action="/home/sfshop" method="post" role="form" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1" ><h4>鱼塘名称</h4></label>
-                                    <input type="text" name="acustomer" class="form-control" id="exampleInputName1"
-                                           value="" placeholder="">
+                                    <input type="text" name="fishpondname" class="form-control" id="exampleInputName1"
+                                           value="{{old('fishpondname')}}" placeholder="">
                                 </div>
                             </div>
                             <div class="box-footer">

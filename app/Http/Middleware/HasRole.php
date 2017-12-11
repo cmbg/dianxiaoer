@@ -69,30 +69,25 @@ class HasRole
 //        } else {
 //            return redirect('errors/auth');
 //        }
-
-
 //        return $next($request);
-
-
 
         //获取当前的控制器方法
         $aa = \Route::currentRouteAction();
 //        获当前的路由
-        $role = strstr($aa,'@',-1);
+//        $role = strstr($aa,'@',-1);
 //        return $aa;
 //        return $role;
         //获取后台角色ID
-        \Session::put('user',['uid'=>1,'uname'=>'张三']);
-        $id = \Session::get('user')['uid'];
+//        $id = \Session::get('user')['uid'];
 //        $id = \Session::get('user')->uid;
-//        $id = session()->get('user')->uid;
-//        dd($id);
-        $data = AdminUser::find($id)->identity;
+        $uid = \Session::get();
+//        $uid = session()->get('user')->uid;
+        dd($uid);
+        $data = AdminUser::find($uid)->identity;
         dd($data);
         //获取角色权限
         $arr = [];
         foreach($data as $k=>$v){
-
             foreach($v->auth as $kk=>$vv){
                 $arr[] = $vv->adesc;
             }

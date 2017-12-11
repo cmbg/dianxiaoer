@@ -7,15 +7,17 @@
         <h1>分类管理</h1>
     </section>
 
-    <ul>
-        @if(session('msg'))
-            <li style="color:red">{{session('msg')}}</li>
-        @endif
-    </ul>
+
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-xs-12">
+            <ul>
+                @if(session('msg'))
+                    <li style="color:red">{{session('msg')}}</li>
+                @endif
+            </ul>
+        </div>
+            {{--<div class="col-xs-12">--}}
                 <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -34,7 +36,7 @@
                                         <th>ID</th>
                                         <th>分类名称</th>
                                         <th>标题</th>
-                                        <th>查看次数</th>
+                                        <th>关键字</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
@@ -47,10 +49,11 @@
                                         <td>{{$v->cate_id}}</td>
                                         <td>{{$v->cate_names}}</td>
                                         <td>{{$v->cate_title}}</td>
-                                        <td>{{$v->cate_view}}</td>
+                                        <td>{{$v->cate_keywords}}</td>
                                         <td>
-                                            <a href="#">修改</a>
-                                            <a href="javascript:;" onclick="delCate(2)">删除</a>
+                                            <a href="{{url('Admin/Cate/list/'.$v->cate_id.'/edit')}}">修改</a>
+
+                                            <a href="javascript:;"onclick="cateDel({{$v->cate_id}})">删除</a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -61,7 +64,7 @@
                                 </table>
                             </div>
 
-
+                            <input type="button" class="btn btn-primary" value="添加分类" onclick="location='/Admin/Cate/list/create'"/>
                             <!-- /.box-body -->
                         </div>
                         <!-- /.box -->
@@ -98,7 +101,7 @@
 
 @section('ajax');
     <script>
-
+    //排序
         function changeOrder(obj, cate_id){
             var cate_order = $(obj).val();
 //            console.log(cate_order);
@@ -122,6 +125,61 @@
                 }
             })
         }
+
+
+
+        {{--function changeOrder(obj,cate_id){--}}
+            {{--//获取当前需要排序的记录的ID,cate_id--}}
+            {{--//获取当前记录的排序文本框中的值--}}
+            {{--var cate_order = $(obj).val();--}}
+            {{--$.post("{{url('Admin/Cate/changeorder')}}",{'_token':"{{csrf_token()}}","cate_id":cate_id,"cate_order":cate_order},function(data){--}}
+                {{--//如果排序成功，提示排序成功--}}
+                {{--if(data.status == 0){--}}
+
+                    {{--layer.msg(data.msg,{icon: 6});--}}
+                    {{--location.href = location.href;--}}
+                {{--}else{--}}
+                    {{--//如果排序失败，提示排序失败--}}
+                    {{--layer.msg(data.msg,{icon: 5});--}}
+                    {{--location.href = location.href;--}}
+                {{--}--}}
+            {{--})--}}
+
+        {{--}--}}
+
+    function cateDel(cate_id) {
+
+        //询问框
+        layer.confirm('您确认删除吗？', {
+            btn: ['确认','取消'] //按钮
+        }, function(){
+//                如果用户发出删除请求，应该使用ajax向服务器发送删除请求
+//                $.get("请求服务器的路径","携带的参数", 获取执行成功后的额返回数据);
+            //admin/user/1
+            $.post("{{url('Admin/Cate/list')}}/"+cate_id,{"_method":"delete","_token":"{{csrf_token()}}"},function(data){
+//                alert(data);
+//
+//                    删除成功
+                if(data.error == 0){
+
+                    layer.msg(data.msg, {icon: 5});
+//
+                    var t=setTimeout("location.href = location.href;",1000);
+                }else{
+                    layer.msg(data.msg, {icon: 6});
+
+                    var t=setTimeout("location.href = location.href;",1000);
+
+                }
+
+
+            });
+
+
+        }, function(){
+
+        });
+    }
     </script>
 
 @stop

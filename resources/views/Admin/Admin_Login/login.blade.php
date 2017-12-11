@@ -53,7 +53,7 @@
 
 					</li>
 					<li>
-						<input type="submit" value="立即登陆"/>
+						<input type="submit" value="立即登录"/>
 					</li>
 				</ul>
 			</form>

@@ -2,17 +2,17 @@
 
 @section('content')
  
-  
+   <script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 >
         前台用户管理
-        <small>列表</small>
+        <small>详细</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-        <li><a href="#">前台用户管理</a></li>
-        <li class="active">列表</li>
+        <li><a href="{{url('admin/homeuser')}}">前台用户管理</a></li>
+        <li class="active">详细</li>
       </ol>
     </section>       
     <section class="content">
@@ -41,7 +41,7 @@
                 <tbody>   
                            
                 <tr>
-                  <td class="tc">{{$user->uid}}</td>
+                  <td class="tc id">{{$user->uid}}</td>
                   <td class="tc">{{$user->uname}}</td>
                   <td class="tc award-name">{{$user->tel}}</td>
                   <td class="tc ">{{$user->email}}</td>
@@ -55,16 +55,15 @@
                               }
                             ?>
                     </td>
-                    <td class="tc ">{{$user->avatar}}</td>
-                    <td><?php
-                              if ($user->identity == '1'){
-                                 echo '超级管理员';
-                              } else if($user->identity == '2') {
-                                 echo '普通管理员';
-                              } 
-                            ?>
+                     <td class="tc "><img src="{{$user->avatar}}" style="width:80px;height:80px">
+                   <td class="identitybtn">
+                    @if($user->identity == '0')
+                      <button type="button" class="btn bg-purple margin">普通用户</button>
+                      @else
+                      <button type="button" class="btn bg-olive btn-flat margin">鱼塘塘主</button>
+                      @endif
                     </td>
-                  <td> @if($user->status == '1')
+                  <td class="statusBtn"> @if($user->status == '1')
                       <button type="button" class="btn bg-purple margin">已禁用</button>
                       @else
                       <button type="button" class="btn bg-olive btn-flat margin">已启用</button>
@@ -94,34 +93,7 @@
 
                 </style>
                
-          <script>
-        $(".statusBtn").on('click', function () {
-            var t = $(this);
-            var id = $(this).parent().find('.id').html();
-//            console.log(id);
-            $.ajax(
-                {
-                    url: '/admin/ad/ajaxStatus',
-                    data: {id: uid},
-                    type: 'post',
-                    success: function (data) {
-//                        console.log(data);
-                        if (data.astatus == 1) {
-                            t.html('<button type="button" class="btn bg-olive bg-purple margin">已启用\n' +
-                                '                                                        </button>');
-                        } else {
-                            t.html('<button type="button" class="btn bg-olive btn-flat margin">已启用\n' +
-                                '                                                        </button>');
-                        }
-                    },
-                    error: function () {
-
-                    },
-                    dataType: 'json',
-                }
-            );
-        })
-    </script>
+      
        
 @stop
 @section('js')
@@ -142,4 +114,60 @@
 <!-- page script -->
 
 <script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
+@stop
+@section("homeuserinfoidentity")
+    <script>
+        $(".identitybtn").on('click', function () {
+            var t = $(this);
+            var id = $(this).parent().find('.id').html();
+//            console.log(id);
+            $.ajax(
+                {
+                    url: '/admin/homeuserindex/ajaxIdentity',
+                    data: {id: id},
+                    type: 'post',
+                    success: function (data) {
+                       console.log(data);
+                        if (data.identity == 0) {
+                            t.html('<button type="button" class="btn bg-purple margin">普通用户</button>');
+                        } else {
+                            t.html('<button type="button" class="btn bg-olive btn-flat margin">鱼塘塘主</button>');
+                        }
+                    },
+                    error: function () {
+
+                    },
+                    dataType: 'json',
+                }
+            );
+        })
+    </script>
+@stop
+@section("homeuserinfostatus")
+    <script>
+        $(".statusBtn").on('click', function () {
+            var t = $(this);
+            var id = $(this).parent().find('.id').html();
+//            console.log(id);
+            $.ajax(
+                {
+                    url: '/admin/homeuserinfo/ajaxStatus',
+                    data: {id: id},
+                    type: 'post',
+                    success: function (data) {
+                       console.log(data);
+                        if (data.status == 1) {
+                            t.html('<button type="button" class="btn bg-purple margin">已禁用</button>');
+                        } else {
+                            t.html('<button type="button" class="btn bg-olive btn-flat margin">已启用</button>');
+                        }
+                    },
+                    error: function () {
+
+                    },
+                    dataType: 'json',
+                }
+            );
+        })
+    </script>
 @stop

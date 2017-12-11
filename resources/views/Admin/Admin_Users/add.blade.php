@@ -97,7 +97,6 @@
                                                 alert("请选择图片文件");
                                                 return;
                                             }
-                                            // var formData = new FormData($('#art_form')[0]);
                                             
 
                                             var formData = new FormData();

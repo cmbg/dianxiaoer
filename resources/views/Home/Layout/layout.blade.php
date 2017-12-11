@@ -21,7 +21,10 @@
     <link rel="stylesheet" href="{{asset('Home/css/app-orange.css')}}" id="theme_color"/>
     <link rel="stylesheet" href="" id="rtl"/>
     <link rel="stylesheet" href="{{asset('Home/css/app-responsive.css')}}"/>
-    <link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>
+    {{--<link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>--}}
+    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
+    <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
+    {{--<script src="{{asset('Home/layui/layui.js')}}"></script>--}}
 </head>
 @yield('body')
 
@@ -48,13 +51,13 @@
                                             <li>
                                                 <a class="lang_sel_sel icl-en">
                                                     <img class="iclflag" title="English" alt="en"
-                                                         src="images/icons/en.png" width="18" height="12"/> English
+                                                         src="{{url('/Home/images/icons/en.png')}}" width="18" height="12"/> English
                                                 </a>
                                                 <ul>
                                                     <li class="icl-en">
                                                         <a href="#">
                                                             <img class="iclflag" title="English" alt="en"
-                                                                 src="images/icons/en.png" width="18" height="12"/>
+                                                                 src="{{url('/Home/images/icons/en.png')}}" width="18" height="12"/>
                                                             English
                                                         </a>
                                                     </li>
@@ -62,7 +65,7 @@
                                                     <li class="icl-ar">
                                                         <a href="#">
                                                             <img class="iclflag" title="Arabic" alt="ar"
-                                                                 src="images/icons/ar.png" width="18" height="12"/>
+                                                                 src="{{url('/Home/images/icons/ar.png')}}" width="18" height="12"/>
                                                             Arabic
                                                         </a>
                                                     </li>
@@ -107,13 +110,13 @@
                                             </li>
 
                                             <li class="menu-cart">
-                                                <a class="item-link" href="cart.html">
+                                                <a class="item-link" href="{{url('/cart')}}">
                                                     <span class="menu-title">购物车</span>
                                                 </a>
                                             </li>
 
                                             <li class="menu-checkout">
-                                                <a class="item-link" href="checkout.html">
+                                                <a class="item-link" href="{{ url('/order') }}">
                                                     <span class="menu-title">我的订单</span>
                                                 </a>
                                             </li>
@@ -147,7 +150,7 @@
                                 <div class="widget-inner">
                                     <ul id="menu-checkout" class="menu">
                                         <li class="menu-checkout">
-                                            <a class="item-link" href="checkout.html">
+                                            <a class="item-link" href="{{url('/order')}}">
                                                 <span class="menu-title">我的订单</span>
                                             </a>
                                         </li>
@@ -166,7 +169,7 @@
                     <!-- LOGO -->
                     <div class="etrostore-logo pull-left">
                         <a href="#">
-                            <img src="images/icons/logo-orange.png" alt="Shoopy">
+                            <img src="{{url('/Home/images/icons/logo-orange.png')}}" alt="Shoopy">
                         </a>
                     </div>
 
@@ -214,20 +217,21 @@
                                     <div class="top-minicart-icon pull-right">
                                         <i class="fa fa-shopping-cart"></i>
                                         <a class="cart-contents" href="cart.html" title="View your shopping cart">
-                                            <span class="minicart-number">2</span>
+                                            <span class="minicart-number">{{$count}}</span>
                                         </a>
                                     </div>
 
                                     <div class="wrapp-minicart">
                                         <div class="minicart-padding">
                                             <div class="number-item">
-                                                There are <span>items</span> in your cart
+                                                 {{--<span></span>--}}
+                                                你购物车里的物品
                                             </div>
-
+                                            @foreach( $carts as $cart)
                                             <ul class="minicart-content">
                                                 <li>
                                                     <a href="simple_product.html" class="product-image">
-                                                        <img width="100" height="100" src="images/1903/45-150x150.jpg"
+                                                        <img width="100" height="100" src="{{ asset('images/1903/45-150x150.jpg')}}"
                                                              class="attachment-100x100 size-100x100 wp-post-image"
                                                              alt=""
                                                              srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"
@@ -237,61 +241,20 @@
                                                     <div class="detail-item">
                                                         <div class="product-details">
                                                             <h4>
-                                                                <a class="title-item" href="simple_product.html">Veniam
-                                                                    Dolore</a>
+                                                                {{--<a class="title-item" href="simple_product.html">Veniam--}}
+                                                                    {{--Dolore</a>--}}
+                                                                <a href="simple_product.html">{{$cart->name}}</a>
                                                             </h4>
 
                                                             <div class="product-price">
 																	<span class="price">
 																		<span class="woocommerce-Price-amount amount">
-																			<span class="woocommerce-Price-currencySymbol">$</span>190.00
+																			<span class="woocommerce-Price-currencySymbol">$</span>{{$cart->price}}
 																		</span>
 																	</span>
 
                                                                 <div class="qty">
-                                                                    <span class="qty-number">1</span>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-action clearfix">
-                                                                <a href="#" class="btn-remove" title="Remove this item">
-                                                                    <span class="fa fa-trash-o"></span>
-                                                                </a>
-
-                                                                <a class="btn-edit" href="cart.html"
-                                                                   title="View your shopping cart">
-                                                                    <span class="fa fa-pencil"></span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <a href="simple_product.html" class="product-image">
-                                                        <img width="100" height="100" src="images/1903/22-150x150.jpg"
-                                                             class="attachment-100x100 size-100x100 wp-post-image"
-                                                             alt=""
-                                                             srcset="images/1903/22-150x150.jpg 150w, images/1903/22-300x300.jpg 300w, images/1903/22-180x180.jpg 180w, images/1903/22.jpg 600w"
-                                                             sizes="(max-width: 100px) 100vw, 100px"/>
-                                                    </a>
-
-                                                    <div class="detail-item">
-                                                        <div class="product-details">
-                                                            <h4>
-                                                                <a class="title-item" href="simple_product.html">Cleaner
-                                                                    with bag</a>
-                                                            </h4>
-
-                                                            <div class="product-price">
-																	<span class="price">
-																		<span class="woocommerce-Price-amount amount">
-																			<span class="woocommerce-Price-currencySymbol">$</span>350.00
-																		</span>
-																	</span>
-
-                                                                <div class="qty">
-                                                                    <span class="qty-number">1</span>
+                                                                    <span class="qty-number">{{$cart->qty}}</span>
                                                                 </div>
                                                             </div>
 
@@ -309,15 +272,15 @@
                                                     </div>
                                                 </li>
                                             </ul>
-
+                                            @endforeach
                                             <div class="cart-checkout">
                                                 <div class="price-total">
-                                                    <span class="label-price-total">Total</span>
+                                                    <span class="label-price-total">商品总价</span>
 
                                                     <span class="price-total-w">
 															<span class="price">
 																<span class="woocommerce-Price-amount amount">
-																	<span class="woocommerce-Price-currencySymbol">$</span>540.00
+																	<span class="woocommerce-Price-currencySymbol">$</span>{{$total}}
 																</span>
 															</span>
 														</span>
@@ -325,11 +288,11 @@
 
                                                 <div class="cart-links clearfix">
                                                     <div class="cart-link">
-                                                        <a href="cart.html" title="Cart">View Cart</a>
+                                                        <a href="/shop" title="Cart">继续购物</a>
                                                     </div>
 
                                                     <div class="checkout-link">
-                                                        <a href="checkout.html" title="Check Out">Check Out</a>
+                                                        <a href="/del" title="Check Out">清空购物车</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -382,6 +345,7 @@
                                             @foreach($nav as $k=>$v)
                                                 <li><a href="{{asset($v->nlink)}}">{{$v->nname}}</a></li>
                                             @endforeach
+
                                         </ul>
                                     </div>
                                 </div>
@@ -397,129 +361,129 @@
                     </div>
                     <!-- /Primary navbar -->
 
-                    <div class="top-form top-form-minicart etrostore-minicart pull-right">
-                        <div class="top-minicart-icon pull-right">
-                            <i class="fa fa-shopping-cart"></i>
-                            <a class="cart-contents" href="cart.html" title="View your shopping cart">
-                                <span class="minicart-number">2</span>
-                            </a>
-                        </div>
+                    {{--<div class="top-form top-form-minicart etrostore-minicart pull-right">--}}
+                        {{--<div class="top-minicart-icon pull-right">--}}
+                            {{--<i class="fa fa-shopping-cart"></i>--}}
+                            {{--<a class="cart-contents" href="cart.html" title="View your shopping cart">--}}
+                                {{--<span class="minicart-number">2</span>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
 
-                        <div class="wrapp-minicart">
-                            <div class="minicart-padding">
-                                <div class="number-item">
-                                    There are <span>items</span> in your cart
-                                </div>
+                        {{--<div class="wrapp-minicart">--}}
+                            {{--<div class="minicart-padding">--}}
+                                {{--<div class="number-item">--}}
+                                    {{--There are <span>items</span> in your cart--}}
+                                {{--</div>--}}
 
-                                <ul class="minicart-content">
-                                    <li>
-                                        <a href="simple_product.html" class="product-image">
-                                            <img width="100" height="100" src="images/1903/45-150x150.jpg"
-                                                 class="attachment-100x100 size-100x100 wp-post-image" alt=""
-                                                 srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"
-                                                 sizes="(max-width: 100px) 100vw, 100px"/>
-                                        </a>
+                                {{--<ul class="minicart-content">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="simple_product.html" class="product-image">--}}
+                                            {{--<img width="100" height="100" src="images/1903/45-150x150.jpg"--}}
+                                                 {{--class="attachment-100x100 size-100x100 wp-post-image" alt=""--}}
+                                                 {{--srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"--}}
+                                                 {{--sizes="(max-width: 100px) 100vw, 100px"/>--}}
+                                        {{--</a>--}}
 
-                                        <div class="detail-item">
-                                            <div class="product-details">
-                                                <h4>
-                                                    <a class="title-item" href="simple_product.html">Veniam Dolore</a>
-                                                </h4>
+                                        {{--<div class="detail-item">--}}
+                                            {{--<div class="product-details">--}}
+                                                {{--<h4>--}}
+                                                    {{--<a class="title-item" href="simple_product.html">Veniam Dolore</a>--}}
+                                                {{--</h4>--}}
 
-                                                <div class="product-price">
-														<span class="price">
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>190.00
-															</span>
-														</span>
+                                                {{--<div class="product-price">--}}
+														{{--<span class="price">--}}
+															{{--<span class="woocommerce-Price-amount amount">--}}
+																{{--<span class="woocommerce-Price-currencySymbol">$</span>190.00--}}
+															{{--</span>--}}
+														{{--</span>--}}
 
-                                                    <div class="qty">
-                                                        <span class="qty-number">1</span>
-                                                    </div>
-                                                </div>
+                                                    {{--<div class="qty">--}}
+                                                        {{--<span class="qty-number">1</span>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
 
-                                                <div class="product-action clearfix">
-                                                    <a href="#" class="btn-remove" title="Remove this item">
-                                                        <span class="fa fa-trash-o"></span>
-                                                    </a>
+                                                {{--<div class="product-action clearfix">--}}
+                                                    {{--<a href="#" class="btn-remove" title="Remove this item">--}}
+                                                        {{--<span class="fa fa-trash-o"></span>--}}
+                                                    {{--</a>--}}
 
-                                                    <a class="btn-edit" href="cart.html"
-                                                       title="View your shopping cart">
-                                                        <span class="fa fa-pencil"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                                    {{--<a class="btn-edit" href="cart.html"--}}
+                                                       {{--title="View your shopping cart">--}}
+                                                        {{--<span class="fa fa-pencil"></span>--}}
+                                                    {{--</a>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</li>--}}
 
-                                    <li>
-                                        <a href="simple_product.html" class="product-image">
-                                            <img width="100" height="100" src="images/1903/22-150x150.jpg"
-                                                 class="attachment-100x100 size-100x100 wp-post-image" alt=""
-                                                 srcset="images/1903/22-150x150.jpg 150w, images/1903/22-300x300.jpg 300w, images/1903/22-180x180.jpg 180w, images/1903/22.jpg 600w"
-                                                 sizes="(max-width: 100px) 100vw, 100px"/>
-                                        </a>
+                                    {{--<li>--}}
+                                        {{--<a href="simple_product.html" class="product-image">--}}
+                                            {{--<img width="100" height="100" src="images/1903/22-150x150.jpg"--}}
+                                                 {{--class="attachment-100x100 size-100x100 wp-post-image" alt=""--}}
+                                                 {{--srcset="images/1903/22-150x150.jpg 150w, images/1903/22-300x300.jpg 300w, images/1903/22-180x180.jpg 180w, images/1903/22.jpg 600w"--}}
+                                                 {{--sizes="(max-width: 100px) 100vw, 100px"/>--}}
+                                        {{--</a>--}}
 
-                                        <div class="detail-item">
-                                            <div class="product-details">
-                                                <h4>
-                                                    <a class="title-item" href="simple_product.html">Cleaner with
-                                                        bag</a>
-                                                </h4>
+                                        {{--<div class="detail-item">--}}
+                                            {{--<div class="product-details">--}}
+                                                {{--<h4>--}}
+                                                    {{--<a class="title-item" href="simple_product.html">Cleaner with--}}
+                                                        {{--bag</a>--}}
+                                                {{--</h4>--}}
 
-                                                <div class="product-price">
-														<span class="price">
-															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>350.00
-															</span>
-														</span>
+                                                {{--<div class="product-price">--}}
+														{{--<span class="price">--}}
+															{{--<span class="woocommerce-Price-amount amount">--}}
+																{{--<span class="woocommerce-Price-currencySymbol">$</span>350.00--}}
+															{{--</span>--}}
+														{{--</span>--}}
 
-                                                    <div class="qty">
-                                                        <span class="qty-number">1</span>
-                                                    </div>
-                                                </div>
+                                                    {{--<div class="qty">--}}
+                                                        {{--<span class="qty-number">1</span>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
 
-                                                <div class="product-action clearfix">
-                                                    <a href="#" class="btn-remove" title="Remove this item">
-                                                        <span class="fa fa-trash-o"></span>
-                                                    </a>
+                                                {{--<div class="product-action clearfix">--}}
+                                                    {{--<a href="#" class="btn-remove" title="Remove this item">--}}
+                                                        {{--<span class="fa fa-trash-o"></span>--}}
+                                                    {{--</a>--}}
 
-                                                    <a class="btn-edit" href="cart.html"
-                                                       title="View your shopping cart">
-                                                        <span class="fa fa-pencil"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                                    {{--<a class="btn-edit" href="cart.html"--}}
+                                                       {{--title="View your shopping cart">--}}
+                                                        {{--<span class="fa fa-pencil"></span>--}}
+                                                    {{--</a>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
 
-                                <div class="cart-checkout">
-                                    <div class="price-total">
-                                        <span class="label-price-total">Total</span>
+                                {{--<div class="cart-checkout">--}}
+                                    {{--<div class="price-total">--}}
+                                        {{--<span class="label-price-total">Total</span>--}}
 
-                                        <span class="price-total-w">
-												<span class="price">
-													<span class="woocommerce-Price-amount amount">
-														<span class="woocommerce-Price-currencySymbol">$</span>540.00
-													</span>
-												</span>
-											</span>
-                                    </div>
+                                        {{--<span class="price-total-w">--}}
+												{{--<span class="price">--}}
+													{{--<span class="woocommerce-Price-amount amount">--}}
+														{{--<span class="woocommerce-Price-currencySymbol">$</span>540.00--}}
+													{{--</span>--}}
+												{{--</span>--}}
+											{{--</span>--}}
+                                    {{--</div>--}}
 
-                                    <div class="cart-links clearfix">
-                                        <div class="cart-link">
-                                            <a href="cart.html" title="Cart">View Cart</a>
-                                        </div>
+                                    {{--<div class="cart-links clearfix">--}}
+                                        {{--<div class="cart-link">--}}
+                                            {{--<a href="cart.html" title="Cart">View Cart</a>--}}
+                                        {{--</div>--}}
 
-                                        <div class="checkout-link">
-                                            <a href="checkout.html" title="Check Out">Check Out</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                        {{--<div class="checkout-link">--}}
+                                            {{--<a href="checkout.html" title="Check Out">Check Out</a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                     <div class="mid-header pull-right">
                         <div class="widget sw_top">
@@ -567,7 +531,7 @@
                                         <div class="item-inner">
                                             <div class="image-client pull-left">
                                                 <a href="#" title="">
-                                                    <img width="127" height="127" src="images/1903/tm3.jpg"
+                                                    <img width="127" height="127" src="{{ asset('images/1903/tm3.jpg')}}"
                                                          class="attachment-thumbnail size-thumbnail wp-post-image"
                                                          alt=""/>
                                                 </a>
@@ -589,7 +553,7 @@
                                         <div class="item-inner">
                                             <div class="image-client pull-left">
                                                 <a href="#" title="">
-                                                    <img width="127" height="127" src="images/1903/tm1.png"
+                                                    <img width="127" height="127" src="{{ asset('images/1903/tm1.png')}}"
                                                          class="attachment-thumbnail size-thumbnail wp-post-image"
                                                          alt=""/>
                                                 </a>
@@ -616,7 +580,7 @@
                                         <div class="item-inner">
                                             <div class="image-client pull-left">
                                                 <a href="#" title="">
-                                                    <img width="127" height="127" src="images/1903/tm2.png"
+                                                    <img width="127" height="127" src="{{ asset('images/1903/tm2.png')}}"
                                                          class="attachment-thumbnail size-thumbnail wp-post-image"
                                                          alt=""/>
                                                 </a>
@@ -641,7 +605,7 @@
                                         <div class="item-inner">
                                             <div class="image-client pull-left">
                                                 <a href="#" title="">
-                                                    <img width="127" height="127" src="images/1903/tm3.jpg"
+                                                    <img width="127" height="127" src="{{ asset('images/1903/tm3.jpg')}}"
                                                          class="attachment-thumbnail size-thumbnail wp-post-image"
                                                          alt=""/>
                                                 </a>
@@ -831,5 +795,4 @@
         </div>
     </div>
 </div>
-
 @yield('js')

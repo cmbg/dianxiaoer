@@ -7,27 +7,29 @@
         <h1>分类管理</h1>
     </section>
 
-    <ul>
-        @if(session('msg'))
-            <li style="color:red">{{session('msg')}}</li>
-        @endif
-    </ul>
+
     <!-- Main content -->
     <section class="content">
         <div class="row">
+            <ul>
+                @if(session('msg'))
+                    <li style="color:red">{{session('msg')}}</li>
+                @endif
+            </ul>
             <div class="col-xs-12">
                 <div class="box">
                     <!-- /.box-header -->
-                    <div class="box-body">
+                    {{--<div class="box-body">--}}
 
 
                         <div class="box">
-                            <div class="box-header">
-                                <h3 class="box-title">分类信息表</h3>
+                            {{--<div class="box-header">--}}
+                                <h3 class="box-title">分类添加表</h3>
+
                             </div>
-                            <!-- /.box-header -->
+                            {{--<!-- /.box-header -->--}}
                             <div class="result_wrap">
-                                <form action="{{url('Admin/Cate/list')}}" method="post">
+                                <form action="{{url('/Admin/Cate/list/')}}" method="post">
                                     <table class="add_tab">
                                         {{csrf_field()}}
 
@@ -82,8 +84,10 @@
                                             <th></th>
                                             <td>
 
-                                                <input type="submit" value="提交">
-                                                <input type="button" class="back" onclick="history.go(-1)" value="返回">
+                                                {{--<input type="submit" value="提交">--}}
+                                                <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                                <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                                {{--<input type="button" class="back" onclick="history.go(-1)" value="返回">--}}
                                             </td>
 
                                         </tr>
@@ -92,11 +96,13 @@
                                     </table>
 
                                 </form>
-
+                            </div>
+                          </div>
 
                             </div>
+                            </div>
 
-
+                            </section>
 
 
 @endsection

@@ -5,7 +5,13 @@
     <section class="content-header">
         <h1>
             商品管理页
-            <small>商品的详情</small>
+            <small>
+                <small>
+                    @if(session('msg'))
+                        <li style="color:red">{{session('msg')}}</li>
+                    @endif
+                </small>
+            </small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
@@ -65,29 +71,16 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-3">
+                                <div class="col-sm-5">
                                     <div id="example1_filter" class="dataTables_filter"><label>查找 : <input
                                                     type="search" name="gname" class="form-control input-sm"
                                                     placeholder=""
                                                     aria-controls="example1" value="{{$request->gname}}"></label>
                                     </div>
                                 </div>
-                                <button class="col-sm-2">查找</button>
+
+                                        <button class="col-sm-2 bt btn  btn-warning  ">查找</button>
                             </form>
-
-
-                            {{--<div class="col-sm-2">--}}
-                            {{--<div class="dataTables_length" id="px"><label> 排序 <select--}}
-                            {{--name="px" aria-controls="example1"--}}
-                            {{--class="px form-control input-sm">--}}
-
-                            {{--<option value="0" @if($request['sx'] == 0) selected @endif>正序</option>--}}
-
-                            {{--<option value="1" @if($request['sx'] == 1) selected @endif>倒序</option>--}}
-
-
-                            {{--</select>  </label></div>--}}
-                            {{--</div>--}}
                         </div>
                         <div class="row">
 
@@ -98,7 +91,7 @@
                                     <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-sort="ascending"
                                         aria-label="Rendering engine: activate to sort column descending"
-                                        style="width: 182px;">编号:
+                                        style="width: 82px;">编号:
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="Browser: activate to sort column ascending"
@@ -115,19 +108,42 @@
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
-                                        style="width: 112px;">库存:
+                                        style="width: 100px; overflow:hidden;"
+
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
-                                        style="width: 112px;">定价:
+                                        style="width: 80px;">定价:
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
-                                        style="width: 112px;">销量:
+                                        style="width: 80px;">销量:
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
-                                        style="width: 112px;">上架时间:
+                                        style="width: 112px;">
+                                        <form action="{{url('/Admin/Goods')}}" method="get">
+                                        @if($request->type == 1)
+                                            <input style="display: none" type="text" name="type" value="0"></input>
+                                        @else
+                                                <input style="display: none" type="text" name="type" value="1"></input>
+
+                                        @endif
+                                            <button
+                                                    class=" btn btn-block btn-danger ">
+                                                <font><font>
+                                                        @if($request-> type == 1)
+                                                            后台
+                                                            @else
+                                                        鱼塘
+                                                            @endif
+                                                    </font></font>
+                                            </button>
+                                        </form>
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                        colspan="1" aria-label="CSS grade: activate to sort column ascending"
+                                        style="width: 112px; ">详情:
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" aria-label="CSS grade: activate to sort column ascending"
@@ -141,17 +157,36 @@
                                 </thead>
                                 <tfoot>
 
-                                @foreach($goods as $v)
+                                @foreach($data as $v)
                                     <tr>
                                         <td rowspan="1" colspan="1">{{ $v->gid }} {{ $request['sx'] }} </td>
                                         <td rowspan="1" colspan="1">{{$v -> gname}}</td>
-                                        <td rowspan="1" colspan="1"><img src="{{url('/upload').'/'.$v->pic }}">
+                                        <td onclick=" " rowspan="1" colspan="1"><img style="width: 100px;height: 190px"
+                                                                                     src="{{ $v->pic }}"></td>
+                                        <td rowspan="1" colspan="1">{{$v->Cate->cate_name}}</td>
+                                        <td rowspan="1">
+                                            <div style=" width:112px;overflow: hidden;">{{$v ->goodsDes}}</div>
                                         </td>
-                                        <td rowspan="1" colspan="1">{{ $v -> goodsDes }}</td>
-                                        <td rowspan="1" colspan="1">{{$v ->goodsNum}}</td>
                                         <td rowspan="1" colspan="1">{{$v ->price}}</td>
-                                        <td rowspan="1" colspan="1">{{$v-> gid}}</td>
-                                        <td width="100" rowspan="1" colspan="1">{{date('Y-m-d H:i:s')}}</td>
+                                        <td rowspan="1" colspan="1">{{$v->uid}}</td>
+                                        <td rowspan="1" colspan="1">
+                                            <a href="{{url('Admin/Goods/'.$v->uid)}}">
+                                                @if($v->fid != 0)
+                                                    <button type="button"
+                                                            class="cz bt btn btn-block btn-warning mouses">
+                                                        鱼塘详情
+                                                    </button>
+                                                @endif
+
+                                            </a>
+                                        </td>
+                                        <td rowspan="1" colspan="1">
+                                            <a href="{{url('Admin/Det/list'.'/'.$v->gid)}}">
+                                                <button type="button" class="cz bt btn btn-block btn-warning mouses">
+                                                    详情
+                                                </button>
+                                            </a>
+                                        </td>
                                         <td rowspan="1" colspan="1">
                                             <button type="button" value="{{$v->gid}}"
                                                     class="sj @if($v->gstatus == 2)sj btn btn-block btn-danger @elseif($v->gstatus == 1) sj btn btn-block btn-success @elseif($v->gstatus == 0)sj btn btn-block btn-warning @endif) "
@@ -159,47 +194,52 @@
                                                 <font
                                                         style="vertical-align: inherit;"><font
                                                             style="vertical-align: inherit;">
-                                                        @if($v->gstatus == 2) 下架 @elseif($v->gstatus == 1) 上架 @elseif($v->gstatus == 0)新品 @endif
+                                                        @if($v->gstatus == 2) 下架 @elseif($v->gstatus == 1)
+                                                            上架 @elseif($v->gstatus == 0)新品 @endif
                                                     </font></font>
                                             </button>
                                         </td>
-                                        <td style="position:relative"  rowspan="1"
+                                        <td style="position:relative" rowspan="1"
                                             colspan="1">
 
-
-                                            {{--<button type="button"  onclick="yr( this )"  class="cz bt btn btn-block btn-success"><font--}}
-                                            {{--style="vertical-align: inherit;z-index:-1;"><font--}}
-                                            {{--style="vertical-align: inherit; z-index:-1; ">操作</font></font>--}}
-                                            {{--</button>--}}
-
-                                            <div style=" position:absolute;"  >
-                                                <button type="button" class="cz bt btn btn-block btn-warning mouses">
-                                                    <font
-                                                            style="vertical-align: inherit;z-index:-1;"><font
-                                                                style="vertical-align: inherit; z-index:-1; ">操作</font></font>
-                                                </button>
-                                                <div style="width: 100%; display:none; position:absolute;top:0px; " class="mouse">
-                                                    <button type="button" class="cz bt btn btn-block btn-warning mouses">
+                                            <div style=" position:absolute;">
+                                                @if($v-> uid == 0)
+                                                    <button type="button"
+                                                            class="cz bt btn btn-block btn-warning mouses">
                                                         <font
                                                                 style="vertical-align: inherit;z-index:-1;"><font
                                                                     style="vertical-align: inherit; z-index:-1; ">操作</font></font>
                                                     </button>
-                                                    <button type="button"
-                                                            class="cz btn btn-block btn-info margin:0px;"><font
-                                                                style="vertical-align: inherit; z-index:100;"><font
-                                                                    style="vertical-align: inherit;"><a href="{{url('Admin/Goods/'.$v->gid.'/edit')}}"> 修改</a></font></font>
-                                                    </button>
-                                                    <button  type="button"
-                                                            class="cz btn btn-block btn-danger margin:0px;"><font
-                                                                style="vertical-align: inherit; z-index:100;"><font
-                                                                    style="vertical-align: inherit;"><a href="javascript:;" onclick="del({{$v->gid}})" >
-                                                                    删除</a></font></font>
-                                                    </button>
-                                                </div>
+
+                                                    <div style="width: 100%; display:none; position:absolute;top:0px; "
+                                                         class="mouse">
+                                                        <button type="button"
+                                                                class="cz bt btn btn-block btn-warning mouses">
+                                                            <font
+                                                                    style="vertical-align: inherit;z-index:-1;"><font
+                                                                        style="vertical-align: inherit; z-index:-1; ">操作</font></font>
+                                                        </button>
+
+                                                        <button type="button"
+                                                                class="cz btn btn-block btn-info margin:0px;"><font
+                                                                    style="vertical-align: inherit; z-index:100;"><font
+                                                                        style="vertical-align: inherit;"><a
+                                                                            href="{{url('Admin/Goods/'.$v->gid.'/edit')}}">
+                                                                        修改</a></font></font>
+                                                        </button>
+                                                        <button type="button"
+                                                                class="cz btn btn-block btn-danger margin:0px;"><font
+                                                                    style="vertical-align: inherit; z-index:100;"><font
+                                                                        style="vertical-align: inherit;"><a
+                                                                            href="javascript:;"
+                                                                            onclick="del({{$v->gid}})">
+                                                                        删除</a></font></font>
+                                                        </button>
+                                                        @endif
+                                                    </div>
                                             </div>
                                         </td>
                                     </tr>
-
                                 @endforeach
                                 </tfoot>
                             </table>
@@ -208,30 +248,15 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">
-                                Showing 1 to 10 of 57 entries
+                                商品详情展示
                             </div>
                         </div>
                         <div class="col-sm-7">
                             <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
                                 <ul class="pagination">
-                                    <li class="paginate_button previous disabled" id="example1_previous"><a
-                                                href="#" aria-controls="example1" data-dt-idx="0"
-                                                tabindex="0">Previous</a>
-                                    </li>
-                                    <li class="paginate_button active"><a href="#" aria-controls="example1"
-                                                                          data-dt-idx="1" tabindex="0">1</a>
-                                    </li>
-                                    <li class="paginate_button "><a href="#" aria-controls="example1"
-                                                                    data-dt-idx="2" tabindex="0">2</a></li>
-                                    <li class="paginate_button "><a href="#" aria-controls="example1"
-                                                                    data-dt-idx="3" tabindex="0">3</a></li>
-                                    <li class="paginate_button "><a href="#" aria-controls="example1"
-                                                                    data-dt-idx="4" tabindex="0">4</a></li>
-                                    <li class="paginate_button "><a href="#" aria-controls="example1"
-                                                                    data-dt-idx="5" tabindex="0">5</a></li>
-                                    <li class="paginate_button "><a href="#" aria-controls="example1"
-                                                                    data-dt-idx="6" tabindex="0">6</a></li>
-                                    <li class="paginate_button next" id="example1_next"><a href="#"></li>
+
+                                    {!! $data->appends($request->all())->render() !!}
+
                                 </ul>
                             </div>
                         </div>
@@ -286,7 +311,7 @@
             var st = sj.attr('name')
             $.ajax({
                 url: "{{url('Admin/Ajax')}}",
-                data: {'gstatus': st, 'gid': gid},
+                data: {'gstatus': st, 'gid': gid, '_token': '{{csrf_token()}}'},
                 type: 'post',
                 success: function (data) {
                     if (data.err == 1) {
@@ -304,22 +329,46 @@
             })
         })
 
-//=====================================================================
-        function del(gid){
-            $.post("{{url('/Admin/Goods')}}/"+gid ,{"_method" : "delete","_token":"{{csrf_token()}}"})
+        //=====================================================================
+        function del(gid) {
+            layer.confirm('您确定要删除吗？', {
+                btn: ['确定', '取消'] //按钮
+            }, function () {
+                $.post("{{url('/Admin/Goods')}}/" + gid, {
+                    "_method": "delete",
+                    "_token": "{{csrf_token()}}"
+                }, function (data) {
+                    if (data.error == 0) {
+                        //console.log("错误信息"+res.msg);
+                        layer.msg(data.msg, {icon: 6});
+                        var t = setTimeout("location.href = location.href;", 2000);
+                    } else {
+                        layer.msg(data.msg, {icon: 5});
+                        var t = setTimeout("location.href = location.href;", 2000);
+                    }
+                })
+                layer.msg('的确很重要', {icon: 1});
+            }, function () {
+                layer.msg('也可以这样', {
+                    time: 2000, //20s后自动关闭
+                    btn: ['明白了', '知道了']
+                });
+            });
+
 
         }
+
         var v;
         var mouse
-        $('.mouses').on('click',function() {
+        $('.mouses').on('click', function () {
 //            console.log(111);
             mouse = $(this);
-            mouse.parent().find('div').css('display','block');
+            mouse.parent().find('div').css('display', 'block');
             mouse.parent().find('div').css('z-index', 1);
 
         });
 
-        $('.mouse').mouseover(function(){
+        $('.mouse').mouseover(function () {
             $(this).css('display', 'block');
         })
 
@@ -328,6 +377,29 @@
             $(this).css('display', 'none');
 //            $(this).parent().find('div').css('z-index', -1);
         });
+
+        {{--function details(id) {--}}
+        {{--$.ajax({--}}
+        {{--url: '{{asset('Admin/Goods').'/'}} + id',--}}
+        {{--data: {id: id},--}}
+        {{--type: 'get',--}}
+        {{--success: function (data) {--}}
+        {{--console.log(data);--}}
+        {{--layer.open({--}}
+        {{--type: 1,--}}
+        {{--skin: 'layui-layer-rim', //加上边框--}}
+        {{--area: ['520px', '640px'], //宽高--}}
+        {{--content:""--}}
+
+        {{--})--}}
+        {{--},--}}
+        {{--datatype: 'json',--}}
+
+        {{--});--}}
+
+
+        {{--}--}}
+
 
     </script>
 @stop

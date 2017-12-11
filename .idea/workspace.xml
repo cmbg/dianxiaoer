@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3992e3ee-c23f-4ad7-adfa-207aeedf233b" name="默认的" comment="" />
+    <list default="true" id="d090a379-a168-4b5b-b44f-e1921920b037" name="默认" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="AppServiceProvider.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -30,12 +31,61 @@
               <folding>
                 <element signature="e#33#59#0#PHP" expanded="true" />
               </folding>
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="admin_goods.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Goods/admin_goods.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="137" column="56" lean-forward="false" selection-start-line="137" selection-start-column="56" selection-end-line="137" selection-end-column="56" />
+              <folding>
+                <element signature="e#5301#5322#0#HTML" expanded="true" />
+                <element signature="e#6982#7003#0#HTML" expanded="true" />
+                <element signature="e#7214#7235#0#HTML" expanded="true" />
+                <element signature="e#7380#7401#0#HTML" expanded="true" />
+                <element signature="e#8498#8520#0#HTML" expanded="true" />
+                <element signature="e#9714#9748#0#HTML" expanded="true" />
+                <element signature="e#10063#10101#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="add_goods.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Goods/add_goods.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="76" column="67" lean-forward="true" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
+=======
+      <file leaf-file-name="AppServiceProvider.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-135">
+              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+>>>>>>> origin/niechencai
+              <folding />
+>>>>>>> origin/bg
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="Index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Sfshop/Index.blade.php">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="GoodsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+              <folding>
+                <element signature="e#46#71#0#PHP" expanded="true" />
+                <marker date="1512730580311" expanded="true" signature="3664:3764" ph="..." />
+=======
+      <file leaf-file-name="Ad.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Ad/Ad.blade.php">
+>>>>>>> origin/bg
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
               <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
@@ -47,9 +97,30 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="297">
               <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
               <folding />
+=======
+            <state relative-caret-position="649">
+              <caret line="47" column="43" lean-forward="false" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+              <folding>
+                <element signature="e#46#69#0#PHP" expanded="true" />
+                <element signature="e#279#338#0#PHP" expanded="false" />
+                <element signature="e#910#976#0#PHP" expanded="false" />
+                <element signature="e#981#1081#0#PHP" expanded="false" />
+                <element signature="e#1087#1166#0#PHP" expanded="false" />
+                <element signature="e#1171#2649#0#PHP" expanded="false" />
+                <element signature="e#2655#2747#0#PHP" expanded="false" />
+                <element signature="e#2752#2932#0#PHP" expanded="false" />
+                <element signature="e#2938#3065#0#PHP" expanded="false" />
+                <element signature="e#3070#4331#0#PHP" expanded="false" />
+                <element signature="e#3156#3310#0#PHP" expanded="false" />
+                <element signature="e#4338#4423#0#PHP" expanded="false" />
+                <element signature="e#4428#4786#0#PHP" expanded="false" />
+>>>>>>> origin/niechencai
+              </folding>
+>>>>>>> origin/bg
             </state>
           </provider>
         </entry>
@@ -58,6 +129,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
+      <find>&quot;&gt;</find>
+      <find>&lt;td rowspan=&quot;1&quot; colspan=&quot;1&quot;&gt;图片&lt;/td&gt;  &lt;td rowspan=&quot;1&quot; colspan=&quot;1&quot;&gt;图片&lt;/td&gt;</find>
+      <find>$this-&gt;file-&gt;move(dirname($this-&gt;filePath), $this-&gt;fileName);</find>
+      <find>上传失败</find>
+      <find>move</find>
+      <find>上传错误</find>
+      <find>getFileInfo</find>
+      <find>show</find>
+      <find>gitFile</find>
+      <find>primary</find>
+      <find>$data</find>
+      <find>alert</find>
+      <find>fshop</find>
+      <find>goods</find>
+      <find>图片</find>
+      <find>table</find>
+      <find>em</find>
+      <find>row</find>
+      <find>简述</find>
+      <find>layer</find>
+      <find>Admin</find>
+      <find>aja</find>
+      <find>home_Det</find>
+      <find>home</find>
+      <find>src=&quot;</find>
+      <find>td</find>
+      <find>email</find>
+      <find>update</find>
+      <find>scc</find>
+      <find>upload</find>
+=======
       <find>msg</find>
       <find>$errors</find>
       <find>客户信息</find>
@@ -88,11 +191,19 @@
       <find>info</find>
       <find>nav</find>
       <find>data1</find>
+>>>>>>> origin/niechencai
     </findStrings>
     <replaceStrings>
       <replace>.js')}}&quot;&gt;</replace>
       <replace>前台导航栏</replace>
       <replace>鱼塘</replace>
+<<<<<<< HEAD
+      <replace>src=&quot;{{</replace>
+      <replace>home</replace>
+      <replace>Home_Det</replace>
+      <replace>Home</replace>
+      <replace>src=&quot;{{ asser('</replace>
+=======
       <replace>前台友情链接</replace>
       <replace>友情链接</replace>
       <replace>导航栏</replace>
@@ -103,14 +214,71 @@
       <replace>后台用户</replace>
       <replace>授予角色</replace>
       <replace>订单</replace>
+>>>>>>> origin/niechencai
     </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/public/img_upload/control/css/zyUpload.css" />
+        <option value="$PROJECT_DIR$/public/img_upload/control/js/zyUpload.js" />
+        <option value="$PROJECT_DIR$/public/img_upload/core/zyFile.js" />
+        <option value="$PROJECT_DIR$/config/filesystems.php" />
+        <option value="$PROJECT_DIR$/app/servicess/OOS.php" />
+        <option value="$PROJECT_DIR$/app/Servicess/OOS.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/config/alioss.php" />
+        <option value="$PROJECT_DIR$/app/Services/OOS.php" />
+        <option value="$PROJECT_DIR$/public/img_upload/core/jq22.js" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Layouts/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Goods/good_details.blade.php" />
+        <option value="$PROJECT_DIR$/public/ueditor/php/config.json" />
+        <option value="$PROJECT_DIR$/public/ueditor/php/controller.php" />
+        <option value="$PROJECT_DIR$/public/ueditor/php/Fileuplod.php" />
+        <option value="$PROJECT_DIR$/public/ueditor/php/OSS.php" />
+        <option value="$PROJECT_DIR$/public/ueditor/php/Uploader.class.php" />
+        <option value="$PROJECT_DIR$/app/Http/Models/gpic.php" />
+        <option value="$PROJECT_DIR$/app/Http/Models/Fshop.php.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/src/Uploader/oss.php" />
+        <option value="$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/src/Uploader/UploadFile.php" />
+        <option value="$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/src/Uploader/Upload.php" />
+        <option value="$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/config/UEditorUpload.php" />
+        <option value="$PROJECT_DIR$/config/UEditorUpload.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Det/add_det.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Models/Fshop.php" />
+        <option value="$PROJECT_DIR$/app/Http/Models/Fishpond.php" />
+        <option value="$PROJECT_DIR$/app/Http/Models/goodsdetail.php" />
+        <option value="$PROJECT_DIR$/app/Http/Models/good.php" />
+        <option value="$PROJECT_DIR$/app/Http/Models/Cate.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DetailsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Det/good_details.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Goods/edit_goods.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Home_Det/list_det.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Layout/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Home_Fshop/Create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Home_Fshop/Edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Home_Det/edit_det.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Home_List/Good_List.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Home/Good_ListController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Home/FshopController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Home_Det/add_det.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Home/DetController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Home_Det/good_details.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Home_Fshop/List.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Goods/add_goods.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Goods/admin_goods.blade.php" />
+=======
         <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Permission/Index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/Admin_Permission/Edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" />
@@ -160,8 +328,12 @@
         <option value="$PROJECT_DIR$/resources/views/Home/Layout/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/resources/views/Home/Home_Sfshop/Index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/SfshopController.php" />
+=======
+>>>>>>> origin/niechencai
+>>>>>>> origin/bg
       </list>
     </option>
   </component>
@@ -176,12 +348,24 @@
     </gulpfiles>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="7">
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
+    <option name="x" value="482" />
+    <option name="y" value="34" />
+    <option name="width" value="939" />
+    <option name="height" value="728" />
+=======
+>>>>>>> origin/bg
     <option name="x" value="342" />
     <option name="y" value="130" />
     <option name="width" value="842" />
     <option name="height" value="660" />
+>>>>>>> origin/niechencai
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -199,7 +383,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scratches" />
+=======
+<<<<<<< HEAD
+      <pane id="Scratches" />
+=======
+>>>>>>> origin/niechencai
+      <pane id="Scope" />
+>>>>>>> origin/bg
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,6 +404,10 @@
               <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/bg
             <path>
               <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
               <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
@@ -231,6 +427,17 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
+=======
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> origin/bg
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -243,6 +450,16 @@
             <path>
               <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
               <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
+=======
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Requests" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> origin/bg
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -256,6 +473,24 @@
               <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
+=======
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin_Goods" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dianxiaoer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> origin/bg
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -264,7 +499,11 @@
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
               <item name="Home_Fshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+=======
+              <item name="Home_Det" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> origin/bg
             </path>
             <path>
               <item name="dianxiaoer" type="b2602c69:ProjectViewProjectNode" />
@@ -272,19 +511,45 @@
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
               <item name="Home_Sfshop" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+=======
+              <item name="Home_Fshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+=======
+>>>>>>> origin/niechencai
+>>>>>>> origin/bg
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+<<<<<<< HEAD
+=======
+      <pane id="Scratches" />
+>>>>>>> origin/niechencai
+>>>>>>> origin/bg
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="E:/Nodejs/node" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.selected.package.jscs" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\dianxiaoert\dianxiaoer\resources\views\Home\Home_Det" />
+      <recent name="D:\xampp\htdocs\dianxiaoert\dianxiaoer\app\Http\Controllers\Home" />
+      <recent name="D:\xampp\htdocs\dianxiaoert\dianxiaoer\vendor\stevenyangecho\laravel-u-editor\resources\lang\en" />
+      <recent name="D:\xampp\htdocs\dianxiaoert\dianxiaoer\vendor\stevenyangecho\laravel-u-editor\resources\public\Services" />
+      <recent name="D:\xampp\htdocs\dianxiaoert\dianxiaoer\resources\views\Admin\Admin_Det" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -306,7 +571,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3992e3ee-c23f-4ad7-adfa-207aeedf233b" name="默认的" comment="" />
+      <changelist id="d090a379-a168-4b5b-b44f-e1921920b037" name="默认" comment="" />
       <created>1511881561177</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -315,17 +580,55 @@
       <workItem from="1511886763275" duration="3217000" />
       <workItem from="1511917261081" duration="2888000" />
       <workItem from="1511969747789" duration="40105000" />
+<<<<<<< HEAD
+      <workItem from="1512131079619" duration="16148000" />
+      <workItem from="1512194257762" duration="35192000" />
+      <workItem from="1512280594514" duration="33887000" />
+      <workItem from="1512351557427" duration="29682000" />
+      <workItem from="1512435748106" duration="10148000" />
+      <workItem from="1512446055141" duration="34266000" />
+      <workItem from="1512521918632" duration="42921000" />
+      <workItem from="1512608153507" duration="65998000" />
+=======
       <workItem from="1512349483543" duration="4268000" />
       <workItem from="1512354988839" duration="48960000" />
       <workItem from="1512441626942" duration="104506000" />
       <workItem from="1512670070129" duration="30398000" />
+<<<<<<< HEAD
       <workItem from="1512732097550" duration="2567000" />
       <workItem from="1512735495985" duration="1284000" />
+=======
+>>>>>>> origin/niechencai
+>>>>>>> origin/bg
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="243269000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="327861000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23567921" sideWeight="0.5045386" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37806875" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18078668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+    <option name="totallyTimeSpent" value="239418000" />
+>>>>>>> origin/bg
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -342,16 +645,21 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29159802" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+>>>>>>> origin/niechencai
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/niechencai
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -359,6 +667,16 @@
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23567921" sideWeight="0.5045386" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37806875" sideWeight="0.49546143" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20726173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -366,15 +684,20 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29159802" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25416037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22541603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> origin/niechencai
+>>>>>>> origin/bg
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,11 +708,98 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< HEAD
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/public/ueditor/php/Uploader.class.php</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
+=======
       <option name="time" value="10" />
+>>>>>>> origin/niechencai
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/resources/public/third-party/video-js/video.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/resources/public/third-party/video-js/video.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/resources/public/third-party/jquery-1.10.2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2052">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/resources/public/third-party/jquery-1.10.2.min.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="140036" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/resources/public/third-party/xss.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/resources/public/ueditor.all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2508">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/src/Uploader/Upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2470">
+          <caret line="130" column="51" lean-forward="false" selection-start-line="130" selection-start-column="51" selection-end-line="130" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/stevenyangecho/laravel-u-editor/src/ListsQiniu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="61" column="14" lean-forward="true" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/Fshop.php" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/Fishpond.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Links/Add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="62" column="111" lean-forward="false" selection-start-line="62" selection-start-column="111" selection-end-line="62" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> origin/bg
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Links/Edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -445,9 +855,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-307">
           <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="25" />
+<<<<<<< HEAD
+=======
+>>>>>>> origin/niechencai
+          <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Det/add_det.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="66" column="49" lean-forward="true" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+          <folding>
+            <element signature="e#8489#8522#0#HTML" expanded="false" />
+            <marker date="1512529821281" expanded="true" signature="8728:8966" ph="..." />
+            <marker date="1512529821281" expanded="true" signature="8741:8965" ph="..." />
+            <marker date="1512529821281" expanded="true" signature="10781:11057" ph="..." />
+            <marker date="1512529821281" expanded="true" signature="10803:11056" ph="..." />
+            <marker date="1512529821281" expanded="true" signature="10866:10951" ph="..." />
+            <marker date="1512529821281" expanded="true" signature="10959:11037" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/Fshop.php.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Goods/good_details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/../5-一期项目/myshop2/Views/Admin/Order/show.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -459,11 +897,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="786">
           <caret line="85" column="98" lean-forward="false" selection-start-line="85" selection-start-column="98" selection-end-line="85" selection-end-column="98" />
+>>>>>>> origin/niechencai
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../5-一期项目/myshop2/Controllers/Admin/orderController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="73093">
+          <caret line="3883" column="0" lean-forward="false" selection-start-line="3883" selection-start-column="0" selection-end-line="3883" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_User/my_account.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3439">
+          <caret line="181" column="5" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="181" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Login/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+=======
         <state relative-caret-position="233">
           <caret line="166" column="9" lean-forward="true" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
         </state>
@@ -476,13 +935,58 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/Fshop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/niechencai
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/Cate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+=======
+>>>>>>> origin/bg
     <entry file="file://$PROJECT_DIR$/app/Http/Models/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+>>>>>>> origin/niechencai
+          <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/gpic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/goodsdetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -501,23 +1005,120 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+<<<<<<< HEAD
+=======
+>>>>>>> origin/niechencai
+          <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Sfshop/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Models/OrderDetail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+<<<<<<< HEAD
+=======
+>>>>>>> origin/niechencai
+          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/Fishpond.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+>>>>>>> origin/niechencai
+          <folding />
+>>>>>>> origin/bg
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Goods/edit_goods.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-653">
+          <caret line="99" column="61" lean-forward="true" selection-start-line="99" selection-start-column="61" selection-end-line="99" selection-end-column="61" />
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/FishpondController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+<<<<<<< HEAD
+=======
+>>>>>>> origin/niechencai
+          <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DetailsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="156" column="40" lean-forward="true" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Det/list_det.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1634">
+          <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Det/list_det.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layouts/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="755" column="0" lean-forward="false" selection-start-line="755" selection-start-column="0" selection-end-line="755" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Det/good_details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="278" column="18" lean-forward="true" selection-start-line="278" selection-start-column="18" selection-end-line="278" selection-end-column="18" />
+          <folding>
+            <marker date="1512636804082" expanded="true" signature="4117:4302" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="4363:4919" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="4385:4918" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="4538:4735" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="4743:4871" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="4991:5180" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="5004:5179" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="5333:5779" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="5606:5736" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="5619:5735" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="6003:6171" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="6534:6701" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="13641:13950" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="13652:13949" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="13706:13839" ph="..." />
+            <marker date="1512636804082" expanded="true" signature="13727:13838" ph="..." />
+=======
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Fshop/Index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2739">
@@ -532,38 +1133,148 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <element signature="e#214#863#0#PHP" expanded="false" />
+>>>>>>> origin/niechencai
+          </folding>
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Layout/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <marker date="1512661066093" expanded="true" signature="39782:41580" ph="..." />
+            <marker date="1512661066093" expanded="false" signature="41616:41629" ph="..." />
+            <marker date="1512661066093" expanded="false" signature="45440:45487" ph="..." />
+=======
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Links/Index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1353">
           <caret line="319" column="22" lean-forward="false" selection-start-line="319" selection-start-column="22" selection-end-line="319" selection-end-column="22" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <element signature="e#6383#6414#0#HTML" expanded="false" />
+>>>>>>> origin/niechencai
+          </folding>
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Det/edit_det.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="170" column="18" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="170" selection-end-column="18" />
+=======
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Order/Index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1434">
           <caret line="263" column="13" lean-forward="false" selection-start-line="263" selection-start-column="13" selection-end-line="263" selection-end-column="13" />
+<<<<<<< HEAD
+=======
+>>>>>>> origin/niechencai
+          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding />
+>>>>>>> origin/bg
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Fshop/Create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="231" column="0" lean-forward="true" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdAjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdRevController.php" />
+=======
+          <folding>
+            <element signature="e#208#282#0#PHP" expanded="false" />
+            <element signature="e#1454#1529#0#PHP" expanded="false" />
+            <element signature="e#1534#2273#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdRevController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-243">
+          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+>>>>>>> origin/niechencai
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Fshop/Edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="7" column="83" lean-forward="false" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
+=======
+>>>>>>> origin/bg
     <entry file="file://$PROJECT_DIR$/app/Http/Models/Ad.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+<<<<<<< HEAD
+=======
+>>>>>>> origin/niechencai
+          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Fshop/Create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Fshop/Edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="19" />
+          <folding />
+>>>>>>> origin/bg
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_List/Good_List.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/SfshopController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/LinksLimgController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -582,16 +1293,63 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="343" column="40" lean-forward="true" selection-start-line="343" selection-start-column="40" selection-end-line="343" selection-end-column="40" />
+<<<<<<< HEAD
+=======
+>>>>>>> origin/niechencai
+          <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NavAjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
           <caret line="73" column="25" lean-forward="true" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+<<<<<<< HEAD
+=======
+>>>>>>> origin/niechencai
+          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/good.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Models/HomeUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> origin/bg
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Det/edit_det.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="115" column="132" lean-forward="false" selection-start-line="115" selection-start-column="132" selection-end-line="115" selection-end-column="132" />
+          <folding />
+=======
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Nav/Index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -610,11 +1368,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="62" column="118" lean-forward="false" selection-start-line="62" selection-start-column="118" selection-end-line="62" selection-end-column="118" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <element signature="e#0#6634#0#Blade" expanded="false" />
+          </folding>
+>>>>>>> origin/niechencai
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Ad/Add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1038">
+          <caret line="92" column="27" lean-forward="false" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Det/add_det.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="926">
+          <caret line="200" column="98" lean-forward="true" selection-start-line="200" selection-start-column="98" selection-end-line="200" selection-end-column="98" />
+          <folding>
+            <element signature="e#8634#8710#0#HTML" expanded="true" />
+            <element signature="e#15817#15838#0#HTML" expanded="true" />
+=======
         <state relative-caret-position="368">
           <caret line="61" column="117" lean-forward="false" selection-start-line="61" selection-start-column="117" selection-end-line="61" selection-end-column="117" />
         </state>
@@ -622,6 +1402,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Fshop/List.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
@@ -631,6 +1412,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="389" column="35" lean-forward="false" selection-start-line="389" selection-start-column="35" selection-end-line="389" selection-end-column="35" />
+=======
+        <state relative-caret-position="270">
+          <caret line="229" column="70" lean-forward="false" selection-start-line="229" selection-start-column="70" selection-end-line="229" selection-end-column="70" />
+          <folding>
+            <element signature="e#21815#21834#0#HTML" expanded="true" />
+            <element signature="e#0#40394#0#Blade" expanded="false" />
+>>>>>>> origin/niechencai
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Det/good_details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Home_Fshop/List.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-133">
+          <caret line="235" column="133" lean-forward="false" selection-start-line="235" selection-start-column="133" selection-end-line="235" selection-end-column="133" />
+          <folding>
+            <element signature="e#12476#12497#0#HTML" expanded="true" />
+            <element signature="e#13725#13836#0#HTML" expanded="true" />
+            <element signature="e#16293#16314#0#HTML" expanded="true" />
+            <element signature="e#19138#19175#0#HTML" expanded="true" />
+=======
+        <state relative-caret-position="341">
+          <caret line="91" column="54" lean-forward="false" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+          <folding />
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
@@ -653,12 +1468,48 @@
         <state relative-caret-position="243">
           <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="42" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#33#59#0#PHP" expanded="true" />
+=======
+            <marker date="1512726277793" expanded="false" signature="231:242" ph="..." />
+            <marker date="1512726277793" expanded="false" signature="974:989" ph="..." />
+>>>>>>> origin/niechencai
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/DetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-166">
+          <caret line="101" column="17" lean-forward="false" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+          <folding>
+            <element signature="e#45#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/Good_ListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="e#45#70#0#PHP" expanded="true" />
+>>>>>>> origin/bg
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdController.php">
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Goods/add_goods.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="76" column="67" lean-forward="true" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/SfshopController.php">
+>>>>>>> origin/bg
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="47" column="43" lean-forward="false" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
@@ -688,6 +1539,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/FshopController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
@@ -705,6 +1557,71 @@
         <state relative-caret-position="297">
           <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
           <folding />
+=======
+        <state relative-caret-position="378">
+          <caret line="389" column="35" lean-forward="false" selection-start-line="389" selection-start-column="35" selection-end-line="389" selection-end-column="35" />
+>>>>>>> origin/niechencai
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="e#46#71#0#PHP" expanded="true" />
+            <marker date="1512730580311" expanded="true" signature="3664:3764" ph="..." />
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Index/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <element signature="e#9277#9312#0#HTML" expanded="true" />
+            <element signature="e#10849#10882#0#HTML" expanded="true" />
+            <element signature="e#12686#12718#0#HTML" expanded="true" />
+            <element signature="e#13945#13977#0#HTML" expanded="true" />
+            <marker date="1512724540025" expanded="true" signature="331486:331836" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="331591:331733" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="331753:331830" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="331885:331933" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="331898:331932" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="331959:332244" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="331972:332243" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="332006:332236" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="332019:332235" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="332043:332224" ph="..." />
+            <marker date="1512724540025" expanded="true" signature="332065:332223" ph="..." />
+>>>>>>> origin/niechencai
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin_Goods/admin_goods.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="137" column="56" lean-forward="false" selection-start-line="137" selection-start-column="56" selection-end-line="137" selection-end-column="56" />
+          <folding>
+            <element signature="e#5301#5322#0#HTML" expanded="true" />
+            <element signature="e#6982#7003#0#HTML" expanded="true" />
+            <element signature="e#7214#7235#0#HTML" expanded="true" />
+            <element signature="e#7380#7401#0#HTML" expanded="true" />
+            <element signature="e#8498#8520#0#HTML" expanded="true" />
+            <element signature="e#9714#9748#0#HTML" expanded="true" />
+            <element signature="e#10063#10101#0#HTML" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1212">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding>
+            <element signature="e#46#69#0#PHP" expanded="true" />
+>>>>>>> origin/niechencai
+          </folding>
+>>>>>>> origin/bg
         </state>
       </provider>
     </entry>
