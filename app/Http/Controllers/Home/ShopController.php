@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Cart;
 
-class ShopController extends Controller
+class ShopController extends CommonController
 {
     /**
      * Display a listing of the resource.
@@ -112,13 +112,14 @@ class ShopController extends Controller
     {
 //        session(['user'=>1]);
         //购物车所有信息
-        $carts = Cart::content();
-        //总额 不含税
-        $total = Cart::subtotal();
-        //购物车商品数量
-        $count = Cart::count();
+//        $carts = Cart::content();
+//        //总额 不含税
+//        $total = Cart::subtotal();
+//        //购物车商品数量
+//        $count = Cart::count();
 
-        return view('Home.Home_Product.cart',['carts'=>$carts,'total'=>$total,'count'=>$count]);
+        return view('Home.Home_Product.cart');
+//        return view('Home.Home_Product.cart',['carts'=>$carts,'total'=>$total,'count'=>$count]);
     }
 
     /*

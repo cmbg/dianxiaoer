@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class SfshopController extends Controller
+class SfshopController extends CommonController
 {
     /**
      * 引入申请开通鱼塘页面

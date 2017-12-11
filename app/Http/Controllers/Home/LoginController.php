@@ -14,7 +14,7 @@ use App\Http\Controllers\Controller;
 use Gregwar\Captcha\CaptchaBuilder;
 use Gregwar\Captcha\PhraseBuilder;
 
-class LoginController extends Controller
+class LoginController extends CommonController
 {
     /**
      * 作用：后台登录界面

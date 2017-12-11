@@ -13,44 +13,60 @@
                     <div class="page type-page status-publish hentry">
                         <div class="entry-content">
                             <div class="woocommerce">
-                                <div class="woocommerce-info">
-                                    <h3>您已成功付款</h3>
+                                <div class="">
+                                    <h3 style="color: red">您已成功付款</h3>
 
                                 </div>
 
                                 <form name="checkout" method="post" class="checkout woocommerce-checkout"
-                                      action="/home/index" enctype="multipart/form-data">
+                                      action="{{url('/home/index')}}" enctype="multipart/form-data" >
+                                    {{csrf_field()}}
                                     <div id="order_review" class="woocommerce-checkout-review-order">
                                         <div id="payment" class="woocommerce-checkout-payment">
                                             <ul class="wc_payment_methods payment_methods methods">
                                                 <li class="wc_payment_method payment_method_cheque">
-                                                    <th>商品总价: </th>
+                                                    <th>  商品总价: </th>
                                                     <td>
                                                         <strong>
 															<span class="woocommerce-Price-amount amount">
-																<span class="woocommerce-Price-currencySymbol">$</span>{{$total}}
+													    <span class="woocommerce-Price-currencySymbol">$</span>{{$total}}
 															</span>
                                                         </strong>
                                                     </td>
+
+                                                </li>
+                                                <li  class="wc_payment_method payment_method_cheque">
+                                                    <th>商品个数:</th>
+                                                    <td data-title="Subtotal">
+                                                        <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{$count}}</span>
+                                                    </td>
                                                 </li>
                                                 <div class="user-info">
-                                                    <p>收货人：艾迪</p>
-                                                    <p>联系电话：15871145629</p>
-                                                    <p>收货地址：湖北省 武汉市 武昌区 东湖路75号众环大厦</p>
+                                         <tr>
+                                             <p><td>订单号：{{session('oid')}}</td></p>
+                                             <p><td>收货人：{{session('name')}}</td></p>
+                                             <p><td>联系电话：{{session('tel')}}</td></p>
+                                             <p><td>收货地址：{{session('add')}}</td></p>
+                                             <p><td>备注信息：{{session('des')}}</td></p>
+                                         </tr>
+
                                                 </div>
-                                                <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="银行卡" data-order_button_text="确认付款">
+
+                                                <input type="button" class="button alt" value="继续购买" onclick="location='{{url('home/index')}}'"/>
+
 
                                             </ul>
 
                                             <div class="form-row place-order">
-                                                <noscript>
-                                                    Since your browser does not support JavaScript, or it is disabled, please ensure you click the &amp;lt;em&amp;gt;Update Totals&amp;lt;/em&amp;gt; button before placing your order. You may be charged more than the amount stated above if you fail to do so.			&amp;lt;br/&amp;gt;&amp;lt;input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="Update totals" /&amp;gt;
-                                                </noscript>
-                                                <input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="提交">
+
+                                                {{--<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="继续购买">--}}
+
                                             </div>
                                         </div>
                                     </div>
+
                                 </form>
+
                             </div>
                         </div>
                     </div>

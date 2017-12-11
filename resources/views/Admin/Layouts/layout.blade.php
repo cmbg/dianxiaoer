@@ -448,14 +448,14 @@
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-table"></i> <span>Tables</span>
+                        <i class="fa fa-table"></i> <span>分类管理</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                        <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                        <li><a href="{{url('/Admin/Cate/list/create')}}"><i class="fa fa-circle-o"></i> 添加分类</a></li>
+                        <li><a href="{{url('/Admin/Cate/list/')}}"><i class="fa fa-circle-o"></i>分类列表</a></li>
                     </ul>
                 </li>
                 <li>
@@ -801,7 +801,6 @@
 @yield('adminuserinfostatus')
 @yield('homeuserinfoidentity')
 @yield('homeuserinfostatus')
-
 
 </body>
 </html>

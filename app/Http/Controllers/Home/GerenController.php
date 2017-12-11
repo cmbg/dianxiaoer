@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class GerenController extends Controller
+class GerenController extends CommonController
 {
     /**
      * Display a listing of the resource.

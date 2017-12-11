@@ -24,19 +24,20 @@ Route::resource('Admin/Cate/list', 'Admin\Cate\CateController');
 //修改分类排序
 Route::post('Admin/Cate/changeorder', 'Admin\Cate\CateController@changeOrder');
 
-//模块二 购物车相关路由  start
+Route::resource('Admin/Cate/list','Admin\Cate\CateController'); //分类路由
+Route::post('Admin/Cate/changeorder','Admin\Cate\CateController@changeOrder');//修改分类排序
 
-Route::resource('shop', 'Home\ShopController');
-//Route::controller('shop', 'Home\ShopController');
-Route::get('/addcart/{id}', 'Home\ShopController@addcart');
-Route::get('/cart', 'Home\ShopController@cart')->name('cart');
-Route::get('/shop/removecart/{id}', 'Home\ShopController@getRemovecart');
-Route::get('/del', 'Home\ShopController@destroy');
+// 购物车相关路由  start
+Route::resource('shop', 'Home\ShopController');//购物车控制器
+Route::get('/addcart/{id}', 'Home\ShopController@addcart');//添加购物车
+Route::get('/cart', 'Home\ShopController@cart')->name('cart');//跳转到购物车列表
+Route::get('/shop/removecart/{id}', 'Home\ShopController@getRemovecart');//删除商品
+Route::get('/del', 'Home\ShopController@destroy');//清空购物车路由
 
-//订单路由
-Route::resource('order', 'Home\OrderController');
-//底单成功路由
-Route::resource('Home/payment', 'Home\PaymentController');
+
+Route::resource('order','Home\OrderController');//订单路由
+Route::resource('Home/payment','Home\PaymentController');//订单成功路由
+Route::post('home/index','Home\PaymentController@fanhui'); //订单成功页面
 
 Route::resource('Admin/Goods', 'Admin\GoodsController');
 
@@ -103,10 +104,17 @@ Route::get('home/goods/det/{id}','Home\Good_ListController@show');
 
 //后台登录中间件,请把所有后台的路由放在这里!注意删除路径里的admin 和命名空间里的Admin
 //Route::group(['middleware'=>'islogin','prefix'=>'admin','namespace'=>'Admin'],function (){
+<<<<<<< HEAD
 //后台的后台用户管理
 Route::resource('admin/adminuser', 'Admin\AdminUserController');
 //后台的前台用户管理
 Route::resource('homeuser', 'HomeUserController');
+=======
+    //后台的后台用户管理
+    Route::resource('admin/adminuser','Admin\AdminUserController');
+    //后台的前台用户管理
+    Route::resource('homeuser','HomeUserController');
+>>>>>>> origin/xiaonan
 Route::post('/admin/adminuserinfo/ajaxStatus', 'Admin\AdminUserInfoAjaxController@ajaxStatus');
 Route::post('/admin/homeuserinfo/ajaxStatus', 'Admin\HomeUserInfoAjaxController@ajaxStatus');
 Route::post('/admin/homeuserindex/ajaxIdentity', 'Admin\HomeUserInfoAjaxController@ajaxIdentity');

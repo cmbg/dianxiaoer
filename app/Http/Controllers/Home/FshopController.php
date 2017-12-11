@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
-class FshopController extends Controller
+class FshopController extends CommonController
 {
     /**
      * 塘主查看鱼塘列表内的商品页面

@@ -13,99 +13,77 @@
                     <div class="page type-page status-publish hentry">
                         <div class="entry-content">
                             <div class="woocommerce">
-                                <div class="woocommerce-info">
-                                    是否登录
-                                    <a href="#" class="showlogin">点击此处登录</a>
+                                <div class="">
                                 </div>
 
-                                <form method="post" class="login" style="display:none;">
-                                    <p>如果您未登录请先登录,如果您是新用户请先注册!</p>
+                                {{--<form method="post" class="login" style="display:none;">--}}
+                                    {{--<p>如果您未登录请先登录,如果您是新用户请先注册!</p>--}}
 
-                                    <p class="form-row form-row-first">
-                                        <label for="username">
-                                            用户账户或邮箱
-                                            <span class="required">*</span>
-                                        </label>
+                                    {{--<p class="form-row form-row-first">--}}
+                                        {{--<label for="username">--}}
+                                            {{--用户账户或邮箱--}}
+                                            {{--<span class="required">*</span>--}}
+                                        {{--</label>--}}
 
-                                        <input type="text" class="input-text" name="username" id="username">
-                                    </p>
+                                        {{--<input type="text" class="input-text" name="username" id="username">--}}
+                                    {{--</p>--}}
 
-                                    <p class="form-row form-row-last">
-                                        <label for="password">
-                                            密码 <span class="required">*</span>
-                                        </label>
+                                    {{--<p class="form-row form-row-last">--}}
+                                        {{--<label for="password">--}}
+                                            {{--密码 <span class="required">*</span>--}}
+                                        {{--</label>--}}
 
-                                        <input class="input-text" type="password" name="password" id="password">
-                                    </p>
+                                        {{--<input class="input-text" type="password" name="password" id="password">--}}
+                                    {{--</p>--}}
 
-                                    <div class="clear"></div>
+                                    {{--<div class="clear"></div>--}}
 
-                                    <p class="form-row">
-                                        <input type="submit" class="button" name="login" value="登录">
+                                    {{--<p class="form-row">--}}
+                                        {{--<input type="submit" class="button" name="login" value="登录">--}}
 
                                         {{--<label for="rememberme" class="inline">--}}
                                             {{--<input name="rememberme" type="checkbox" id="rememberme" value="forever">--}}
                                             {{--记住我--}}
                                         {{--</label>--}}
-                                    </p>
+                                    {{--</p>--}}
 
-                                    <p class="lost_password">
-                                        <a href="#">前往注册</a>
-                                    </p>
+                                    {{--<p class="lost_password">--}}
+                                        {{--<a href="#">前往注册</a>--}}
+                                    {{--</p>--}}
 
-                                    <div class="clear"></div>
-                                </form>
+                                    {{--<div class="clear"></div>--}}
+                                {{--</form>--}}
 
-                                <div class="woocommerce-info">有优惠券吗? <a href="#" class="showcoupon">点击这里输入您的代码</a></div>
-                                <form class="checkout_coupon" method="post" style="display:none">
-                                    <p class="form-row form-row-first">
-                                        <input type="text" name="coupon_code" class="input-text" placeholder="代码" id="coupon_code" value="">
-                                    </p>
 
-                                    <p class="form-row form-row-last">
-                                        <input type="submit" class="button" name="apply_coupon" value="使用">
-                                    </p>
-
-                                    <div class="clear"></div>
-                                </form>
-
-                                <form name="checkout" method="post" class="checkout woocommerce-checkout" action="/order" enctype="multipart/form-data">
+                                <form name="checkout" method="post" class="checkout woocommerce-checkout" action="{{url('/order')}}" enctype="multipart/form-data">
                                     <div class="col2-set" id="customer_details">
                                         <div class="col-1">
+                                            @foreach($address as  $k=>$v)
+
                                             <div class="woocommerce-billing-fields">
-                                                <h3>结算明细</h3>
+                                                   <h3>结算页面</h3>
+
                                             {{csrf_field()}}
                                                 <p class="form-row form-row-first validate-required" id="billing_first_name_field">
                                                     <label for="billing_first_name" class="">
-                                                        用户名 :
+                                                         收货人:
                                                         <abbr class="required" title="required"></abbr>
                                                     </label>
-                                                    <input type="text" class="input-text " name="name" id="billing_first_name" placeholder="" autocomplete="given-name" value="">
+                                                    <input type="text" class="input-text " name="name" id="billing_first_name" placeholder="" autocomplete="given-name" value="{{$v->name}}">
 {{--                                                    <input type="hidden" name="uid" id="billing_first_name"  value="{{session()->get('user')->uid}}">--}}
                                                 </p>
 
                                                 <p class="form-row form-row-last validate-required" id="billing_last_name_field">
                                                     <label for="billing_last_name" class="">
-                                                       手机号 :
+                                                       收货电话 :
                                                         <abbr class="required" title="required"></abbr>
                                                     </label>
-                                                    <input type="text" class="input-text " name="tel" id="billing_last_name" placeholder="" autocomplete="family-name" value="">
+                                                    <input type="text" class="input-text " name="tel" id="billing_last_name" placeholder="" autocomplete="family-name" value="{{$v->phone}}">
                                                 </p>
 
                                                 <div class="clear"></div>
 
-                                                {{--<p class="form-row form-row-wide" id="billing_company_field">--}}
-                                                    {{--<label for="billing_company" class="">邮箱 :</label>--}}
-                                                    {{--<input type="text" class="input-text " name="billing_company" id="billing_company" placeholder="" autocomplete="organization" value="">--}}
-                                                {{--</p>--}}
 
-                                                {{--<p class="form-row form-row-first validate-required validate-email" id="billing_email_field">--}}
-                                                    {{--<label for="billing_email" class="">--}}
-                                                        {{--QQ号 :--}}
-                                                        {{--<abbr class="required" title="required"></abbr>--}}
-                                                    {{--</label>--}}
-                                                    {{--<input type="email" class="input-text " name="billing_email" id="billing_email" placeholder="" autocomplete="email" value="">--}}
-                                                {{--</p>--}}
 
                                                 <div class="clear"></div>
 
@@ -115,17 +93,23 @@
                                                 <p class="form-row form-row form-row-wide address-field validate-required" id="billing_address_1_field">
                                                     <label for="billing_address_1" class="">
                                                       收货地址 :
+                     <input type="button" class="am-btn am-btn-default am-btn-success"value="设置收货地址"onclick="location='/home/address'"/>
+                                                        <abbr class="required" title="required"></abbr>
+
+                                                        <input type="button" class="am-btn am-btn-default am-btn-success"value="添加地址"onclick="location='/home/address/create'"/>
                                                         <abbr class="required" title="required"></abbr>
                                                     </label>
-                                                    <input type="text" class="input-text " name="add" id="billing_address_1" placeholder="请填写收货地址!" autocomplete="address-line1" value="">
+                                                    <input type="text" class="input-text " name="add" id="billing_address_1" placeholder="请填写收货地址!" autocomplete="address-line1" value="{{$v->address}}">
                                                 </p>
 
                                                 {{--<p class="form-row form-row form-row-wide address-field" id="billing_address_2_field" style="display: none;">--}}
                                                     {{--<input type="text" class="input-text " name="billing_address_2" id="billing_address_2" placeholder="Apartment, suite, unit etc. (optional)" autocomplete="address-line2" value="">--}}
                                                 {{--</p>--}}
 
-                                                <h3 id="order_review_heading">你的订单</h3>
+                                                <h3 id="order_review_heading">你的商品</h3>
                                             </div>
+
+                                           @endforeach
                                         </div>
 
                                         <div class="col-2">
@@ -219,7 +203,7 @@
                                                 </li>
 
                                                 <li class="wc_payment_method payment_method_paypal">
-                                                    <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="银行卡" data-order_button_text="确认付款">
+                                                    <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="银行卡" data-order_button_text="">
 
                                                     <label for="payment_method_paypal">
                                                        银行卡<img src="Home/images/2003/AM_mc_vs_dc_ae.jpg" alt="PayPal Acceptance Mark">

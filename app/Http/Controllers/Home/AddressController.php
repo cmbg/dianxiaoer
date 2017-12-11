@@ -11,7 +11,7 @@ use App\Http\Requests;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-class AddressController extends Controller
+class AddressController extends CommonController
 {
     /**
      * [moren description]默认地址为1,普通地址为2,点击页面的设置默认地址,传入id,修改默认状态
