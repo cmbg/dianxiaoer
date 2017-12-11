@@ -1,7 +1,7 @@
 @extends('Home.Layout.layout')
 @section('body')
     <body class="page woocommerce-account woocommerce-page">
-
+    <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
     @stop
     @section('content')
         <script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
@@ -151,14 +151,14 @@
                                                                 // 判断是否有选择上传文件
                                                                 var imgPath = $("#file_upload").val();
                                                                 if (imgPath == "") {
-                                                                    alert("请选择上传图片！");
+                                                                    layer.msg('请选择上传图片！', {icon: 5});
                                                                     return;
                                                                 }
                                                                 //判断上传文件的后缀名
                                                                 var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
                                                                 if (strExtension != 'jpg' && strExtension != 'gif'
                                                                     && strExtension != 'png' && strExtension != 'bmp') {
-                                                                    alert("请选择图片文件");
+                                                                    layer.msg('请选择上传图片！', {icon: 5});
                                                                     return;
                                                                 }
 //                                                var formData = new FormData($('#art_form')[0]);
@@ -181,7 +181,8 @@
                                                                         $('#art_thumb').val('http://cmbgl.oss-cn-beijing.aliyuncs.com/' + data);
                                                                     },
                                                                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                                                                        alert("上传失败，请检查网络后重试");
+                                                                        layer.msg("上传失败，请检查网络后重试", {icon: 5});
+
                                                                     }
                                                                 });
                                                             }

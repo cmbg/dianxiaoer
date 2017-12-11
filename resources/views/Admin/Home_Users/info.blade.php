@@ -128,7 +128,7 @@
                     type: 'post',
                     success: function (data) {
                        console.log(data);
-                        if (data.identity == 0) {
+                        if (data.identity == 1) {
                             t.html('<button type="button" class="btn bg-purple margin">普通用户</button>');
                         } else {
                             t.html('<button type="button" class="btn bg-olive btn-flat margin">鱼塘塘主</button>');

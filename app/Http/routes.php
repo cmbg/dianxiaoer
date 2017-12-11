@@ -16,11 +16,13 @@ Route::get('/', function () {
 });
 
 
-Route::get('Admin/index','Admin\IndexController@index');
+Route::get('Admin/index', 'Admin\IndexController@index');
 
 
-
-
+//分类路由
+Route::resource('Admin/Cate/list', 'Admin\Cate\CateController');
+//修改分类排序
+Route::post('Admin/Cate/changeorder', 'Admin\Cate\CateController@changeOrder');
 
 Route::resource('Admin/Cate/list','Admin\Cate\CateController'); //分类路由
 Route::post('Admin/Cate/changeorder','Admin\Cate\CateController@changeOrder');//修改分类排序
@@ -32,10 +34,16 @@ Route::get('/cart', 'Home\ShopController@cart')->name('cart');//跳转到购物�
 Route::get('/shop/removecart/{id}', 'Home\ShopController@getRemovecart');//删除商品
 Route::get('/del', 'Home\ShopController@destroy');//清空购物车路由
 
-//订单路由
+
 Route::resource('order','Home\OrderController');//订单路由
 Route::resource('Home/payment','Home\PaymentController');//订单成功路由
 Route::post('home/index','Home\PaymentController@fanhui'); //订单成功页面
+Route::get('home/myorder/{id?}','Home\MyOrderController@myorder');//用户查看我的订单
+Route::post('home/myorder','Home\MyOrderController@myorder');//用户搜索我的订单
+Route::post('home/myorder/status','Home\MyOrderController@status');//用户查看我的订单的状态
+Route::post('home/myorder/delete','Home\MyOrderController@delete');//用户删除已完成的我的订单
+
+
 
 Route::resource('Admin/Goods', 'Admin\GoodsController');
 
@@ -44,70 +52,95 @@ Route::get('admin/login', 'Admin\LoginController@login');
 Route::post('admin/dologin', 'Admin\LoginController@doLogin');
 Route::get('admin/yzm', 'Admin\LoginController@yzm');
 Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
-Route::post('Admin/Ajax','Admin\GoodsController@ajax');
+Route::post('Admin/Ajax', 'Admin\GoodsController@ajax');
 
 //前台登录界面
 Route::get('home/login', 'Home\LoginController@login');
 Route::post('home/dologin', 'Home\LoginController@doLogin');
+
+//前台注册界面
 Route::get('home/register','Home\LoginController@register');
-// Route::get('home/doregister','Home\LoginController@doregister');
 Route::post('home/doregister','Home\LoginController@doregister');
+
+//注册模块，发送短信和邮件
+Route::get('phoneregister','Home\RegisterController@PhoneRegister');
+Route::post('sendcode','Home\RegisterController@sendCode');
+Route::post('phoneregisters','Home\RegisterController@doPhoneRegister');
+
+//使用邮箱注册的路由
+Route::get('emailregister','Home\RegisterController@EmailRegister');
+Route::post('emailregister','Home\RegisterController@doEmailRegister');
+//邮件注册激活路由
+Route::get('active','Home\RegisterController@active');
+
+//忘记密码
+Route::get('forget','Home\RegisterController@forget');
+//发送忘记密码邮件
+Route::post('doforget','Home\RegisterController@doforget');
+
+
+//找回密码页面
+Route::get('reset','Home\RegisterController@reset');
+//重置密码
+Route::post('doreset','Home\RegisterController@doreset');
+
 //===========================================================================
 //商品管理路由
 Route::resource('Admin/Goods', 'Admin\GoodsController');
-Route::post('Admin/Ajax','Admin\GoodsController@ajax');//点击上架下架状态
+Route::post('Admin/Ajax', 'Admin\GoodsController@ajax');//点击上架下架状态
 //商品详情
 //Route::get('Admin/Goods/Details','Admin\DetailsController\sho');
 
 
 // 商品图片上传
-Route::post('Admin/Goods/upload', 'Admin\GoodsController@upload');//商品图片添加路由
-Route::get('Admin/Det/create/{id}', 'Admin\DetailsController@create');//添加详情页面
-Route::post('Admin/Det/upload', 'Admin\DetailsController@upload');//详情图片添加路由
-Route::post('Admin/Det/store/{id}', 'Admin\DetailsController@store');// 添加路由
-Route::get('Admin/Det/list/{id}', 'Admin\DetailsController@index'); // 浏览详情页浏览详情页
-Route::post('Admin/Det/uploadpic', 'Admin\DetailsController@uploadpic'); // 浏览详图片修改
-//
+Route::post('/Admin/Goods/upload', 'Admin\GoodsController@upload');//商品图片添加路由
+Route::get('/Admin/Det/create/{id}', 'Admin\DetailsController@create');//添加详情页面
+Route::post('/Admin/Det/upload', 'Admin\DetailsController@upload');//详情图片添加路由
+Route::post('/Admin/Det/store/{id}', 'Admin\DetailsController@store');// 添加路由
+Route::get('/Admin/Det/list/{id}', 'Admin\DetailsController@index'); // 浏览详情页浏览详情页
+Route::post('/Admin/Det/uploadpic', 'Admin\DetailsController@uploadpic'); // 浏览详图片修改
+Route::post('/Admin/Det/update', 'Admin\DetailsController@update'); // 浏览详图片修改
+Route::get('/Admin/Det/edit/{id}', 'Admin\DetailsController@edit');
 
-////鱼塘添加商品
-//
+//鱼塘添加商品
 Route::resource('/home/fshop', 'Home\FshopController');
 //前台申请开通鱼塘
 Route::get('/home/sfshop', 'Home\SfshopController@index');
 Route::post('/home/sfshop', 'Home\SfshopController@add');
 //前台塘主对鱼塘商品管理
-Route::post('home/fshop/upload', 'Home\FshopController@upload');
-Route::post('home/Ajax','Home\FshopController@ajax');//点击上架下架状态
-Route::get('home/Det/create/{id}', 'Home\DetController@create');//添加详情页面
-Route::post('home/Det/upload', 'home\DetController@upload');//详情图片添加路由
-Route::post('home/Det/store/{id}', 'Home\DetController@store');// 添加路由
-Route::get('home/Det/list/{id}', 'Home\DetController@index'); // 浏览详情页浏览详情页
-Route::post('home/Det/uploadpic', 'Home\DetController@uploadpic'); // 浏览详图片修改
-Route::post('home/Det/update', 'Home\DetController@update'); // 浏览详图片修改
-Route::get('home/Det/edit/{id}', 'Home\DetController@edit'); // 修改商品详情页面
-
-//==============================================================================
+Route::post('/home/fshop/upload', 'Home\FshopController@upload');
+Route::post('/home/Ajax', 'Home\FshopController@ajax');//点击上架下架状态
+Route::get('/home/Det/create/{id}', 'Home\DetController@create');//添加详情页面
+Route::post('/home/Det/upload', 'home\DetController@upload');//详情图片添加路由
+Route::post('/home/Det/store/{id}', 'Home\DetController@store');// 添加路由
+Route::get('/home/Det/list/{id}', 'Home\DetController@index'); // 浏览详情页浏览详情页
+Route::post('/home/Det/uploadpic', 'Home\DetController@uploadpic'); // 浏览详图片修改
+Route::post('/home/Det/update', 'Home\DetController@update'); // 浏览详图片修改
+Route::get('/home/Det/edit/{id}', 'Home\DetController@edit'); // 修改商品详情页面
 
 
+//前台商品展示
+Route::get('home/goods/list/{id?}', 'Home\Good_ListController@index');
+Route::get('home/goods/ajax', 'Home\Good_ListController@ajax');
+//商品详情展示页
+Route::get('home/goods/det/{id}','Home\Good_ListController@show');
 
-//===============================
-    //前台商品展示
-Route::get('home/goods/list', 'Home\Good_ListController@index');
-
-//=================================
 
 
 
 //后台登录中间件,请把所有后台的路由放在这里!注意删除路径里的admin 和命名空间里的Admin
 //Route::group(['middleware'=>'islogin','prefix'=>'admin','namespace'=>'Admin'],function (){
-    //后台的后台用户管理
-    Route::resource('admin/adminuser','Admin\AdminUserController');
-    //后台的前台用户管理
-    Route::resource('homeuser','HomeUserController');
+
+//后台的后台用户管理
+Route::resource('admin/adminuser', 'Admin\AdminUserController');
+//后台的前台用户管理
+Route::resource('homeuser', 'HomeUserController');
+Route::resource('admin/homeuser','Admin\HomeUserController');
 Route::post('/admin/adminuserinfo/ajaxStatus', 'Admin\AdminUserInfoAjaxController@ajaxStatus');
 Route::post('/admin/homeuserinfo/ajaxStatus', 'Admin\HomeUserInfoAjaxController@ajaxStatus');
 Route::post('/admin/homeuserindex/ajaxIdentity', 'Admin\HomeUserInfoAjaxController@ajaxIdentity');
 Route::post('/admin/adminuserindex/ajaxIdentity', 'Admin\AdminUserInfoAjaxController@ajaxIdentity');
+
 //});
 
 
@@ -154,31 +187,25 @@ Route::get('/admin/order/give/{id}', 'Admin\OrderController@give');
 Route::resource('/home/index', 'Home\IndexController');
 Route::get('/home/order', 'Home\OrderController@index');
 
-//前台申请开通鱼塘
-Route::get('/home/sfshop', 'Home\SfshopController@index');
-Route::post('/home/sfshop', 'Home\SfshopController@add');
-//前台塘主对鱼塘商品管理
-Route::resource('/home/fshop', 'Home\FshopController');
-
 //角色管理
 Route::resource('/admin/role', 'Admin\RoleController');
-
 
 //前台首页
 Route::resource('/home/index', 'Home\IndexController');
 //前台个人中心
-Route::get('/home/my_account','Home\UserController@index');
-Route::post('/home/my_account','Home\UserController@update');
+Route::get('/home/my_account', 'Home\UserController@index');
+Route::post('/home/my_account', 'Home\UserController@update');
 //前台退出
-Route::get('home/logout','Home\UserController@logout');
+Route::get('home/logout', 'Home\UserController@logout');
 //前台个人中心的地址
-Route::get('home/address/moren/{id}','Home\AddressController@moren');
-Route::resource('home/address','Home\AddressController');
+Route::get('home/address/moren/{id}', 'Home\AddressController@moren');
+Route::resource('home/address', 'Home\AddressController');
 //前台个人中心的修改密码
-Route::get('/home/my_password','Home\UserController@password');
-Route::post('/home/domy_password','Home\UserController@dopassword');
+Route::get('/home/my_password', 'Home\UserController@password');
+Route::post('/home/domy_password', 'Home\UserController@dopassword');
 // 前台个人中心的上传头像
-Route::post('/home/upload','Home\UserController@upload');
+Route::post('/home/upload', 'Home\UserController@upload');
 //前台申请开通鱼塘
 Route::get('/home/sfshop', 'Home\SfshopController@index');
 Route::post('/home/sfshop', 'Home\SfshopController@add');
+

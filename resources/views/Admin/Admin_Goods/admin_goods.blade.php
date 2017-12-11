@@ -5,12 +5,32 @@
     <section class="content-header">
         <h1>
             商品管理页
-            <small>
+
                 <small>
                     @if(session('msg'))
                         <li style="color:red">{{session('msg')}}</li>
                     @endif
+                            @if(count($errors) > 0)
+                                @if(is_object($errors))
+                                    @foreach($errors -> all() as $error)
+                                        {{$error}}
+                                    @endforeach
+                                @elseif (is_string($errors))
+                                    {{$error}}
+                                @endif
+                            @endif
+
+                                @if(session('msg'))
+                                    <li style="color:red">{{session('msg')}}</li>
+                                @endif
+
+
+
                 </small>
+            <small>
+                @if(session('msg'))
+                    <li style="color:red">{{session('msg')}}</li>
+                @endif
             </small>
         </h1>
         <ol class="breadcrumb">
@@ -133,9 +153,9 @@
                                                     class=" btn btn-block btn-danger ">
                                                 <font><font>
                                                         @if($request-> type == 1)
-                                                            后台
+                                                            鱼塘
                                                             @else
-                                                        鱼塘
+                                                            后台
                                                             @endif
                                                     </font></font>
                                             </button>
@@ -170,15 +190,22 @@
                                         <td rowspan="1" colspan="1">{{$v ->price}}</td>
                                         <td rowspan="1" colspan="1">{{$v->uid}}</td>
                                         <td rowspan="1" colspan="1">
-                                            <a href="{{url('Admin/Goods/'.$v->uid)}}">
-                                                @if($v->fid != 0)
+
+                                                @if($v->fid == 0)
                                                     <button type="button"
                                                             class="cz bt btn btn-block btn-warning mouses">
-                                                        鱼塘详情
+                                                        后台商品
                                                     </button>
+                                                @else
+                                                <a href="{{url('Admin/Goods/'.$v->uid)}}">
+                                                    <button type="button"
+                                                            class="cz bt btn btn-block btn-warning mouses">
+                                                        鱼塘商品
+                                                    </button>
+                                                </a>
                                                 @endif
 
-                                            </a>
+
                                         </td>
                                         <td rowspan="1" colspan="1">
                                             <a href="{{url('Admin/Det/list'.'/'.$v->gid)}}">
@@ -203,7 +230,7 @@
                                             colspan="1">
 
                                             <div style=" position:absolute;">
-                                                @if($v-> uid == 0)
+                                                @if($v-> fid == 0)
                                                     <button type="button"
                                                             class="cz bt btn btn-block btn-warning mouses">
                                                         <font
@@ -376,7 +403,7 @@
 
             $(this).css('display', 'none');
 //            $(this).parent().find('div').css('z-index', -1);
-        });
+        })
 
         {{--function details(id) {--}}
         {{--$.ajax({--}}

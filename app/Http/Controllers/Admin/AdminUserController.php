@@ -57,7 +57,6 @@ class AdminUserController extends Controller
                 //检测关键字
                 $uname = $request->input('keywords1');
                 $tel = $request->input('keywords2');
-
                 //如果用户名不为空
                 if(!empty($uname)) {
                     $query->where('uname','like','%'.$uname.'%');
@@ -65,7 +64,6 @@ class AdminUserController extends Controller
                 if(!empty($tel)) {
                     $query->where('tel','like','%'.$tel.'%');
                 }
-
             })->paginate($request->input('num', 5));
 
         return view('Admin.Admin_Users.index',['title'=>'后台用户列表页','user'=>$user, 'request'=> $request]);

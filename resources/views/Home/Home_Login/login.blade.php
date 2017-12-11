@@ -13,6 +13,7 @@
 		<!-- <link rel="stylesheet" href="{{asset('home/css/amazeui.min.css')}}"/> -->
 		<link rel="stylesheet" href="{{asset('home/css/amazeui.min.css')}}"/>
 		<link href="{{asset('home/css/dlstyle.css')}}" rel="stylesheet" type="text/css">
+		<script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
 	</head>
 
 	<body>
@@ -48,7 +49,7 @@
 								@endif
 							   <div class="user-name">
 								    <label for="user"><i class="am-icon-user"></i></label>
-								    <input type="text" name="uname" id="user" placeholder="用户名">
+								    <input type="text" name="login" id="user" value="" placeholder="用户名|邮箱|手机号">
                 		 		</div>
      							<div class="user-pass">
 								    <label for="password"><i class="am-icon-lock"></i></label>
@@ -59,8 +60,8 @@
             
             <div class="login-links">
                 <label for="remember-me"><input id="remember-me" type="checkbox">记住密码</label>
-								<a href="#" class="am-fr">忘记密码</a>
-								<a href="{{asset('home/register')}}" class="zcnext am-fr am-btn-default">注册</a>
+								<a href="{{asset('forget')}}" class="am-fr">忘记密码</a>
+								<a href="{{asset('phoneregister')}}" class="zcnext am-fr am-btn-default">注册</a>
 								<br />
             </div>
 								<div class="am-cf">

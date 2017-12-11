@@ -23,4 +23,15 @@ class Order extends Model
     {
         return $this->belongsTo('App\Http\Models\Adminuser','uid','uid');
     }
+
+    //找关联详情表模型
+    public function orderdetail()
+    {
+        return $this->belongsTo('App\Http\Models\OrderDetail','oid','oid');
+    }
+    public function goods()
+    {
+        return $this->hasManyThrough('App\Http\Models\good','App\Http\Models\OrderDetail','oid','gid','oid');
+    }
+
 }

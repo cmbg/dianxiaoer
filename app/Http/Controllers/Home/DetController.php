@@ -52,6 +52,7 @@ class DetController extends CommonController
             $re = gpic::find($id)->update(['gpic' => $newName, 'gid' => $input]);
             if ($res) {
                 return $newName;
+                die;
             }
 
 

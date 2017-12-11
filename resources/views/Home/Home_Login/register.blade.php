@@ -14,6 +14,7 @@
 		<link href="{{asset('home/css/dlstyle.css')}}" rel="stylesheet" type="text/css">
 		<script src="{{asset('home/js/jquery.min.js')}}"></script>
 		<script src="{{asset('home/js/amazeui.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
 
 	</head>
 
@@ -36,7 +37,7 @@
 
 							<div class="am-tabs-bd">
 								<div class="am-tab-panel am-active">
-						<form method="post" action="{{url('home/doregister')}}">
+						<form method="post" action="{{url('emailregister')}}">
 										{{csrf_field()}}
 											@if (count($errors) > 0)
 									<div class="alert alert-danger">
@@ -53,7 +54,7 @@
 								@endif
 							   <div class="user-email">
 										<label for="email"><i class="am-icon-envelope-o"></i></label>
-										<input type="text" name="uname" id="email" placeholder="请输入用户名">
+										<input type="text" name="email" id="email" placeholder="请输入邮箱">
                					</div>										
             					<div class="user-pass">
 								    <label for="password"><i class="am-icon-lock"></i></label>
@@ -64,41 +65,38 @@
 								    <input type="password" name="re_password" id="passwordRepeat" placeholder="确认密码">
                						  </div>	
 										<div class="am-cf">
-											<input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+											<input type="submit" name="" id="open" onclick="tishi()" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
 										</div>
  								</form	>	
 								</div>
 
 								<div class="am-tab-panel">
-									<form method="post">
+									<form method="post" action="{{url('phoneregisters')}}">
+									{{csrf_field()}}
                  <div class="user-phone">
 								    <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
-								    <input type="tel" name="" id="phone" placeholder="请输入手机号">
+								    <input type="tel" name="tel" id="phone" placeholder="请输入手机号">
                  </div>																			
 										<div class="verification">
 											<label for="code"><i class="am-icon-code-fork"></i></label>
-											<input type="tel" name="" id="code" placeholder="请输入验证码">
-											<a class="btn" href="javascript:void(0);" onclick="sendMobileCode();" id="sendMobileCode">
-												<span id="dyMobileButton">获取</span></a>
+											<input type="text" name="code" id="code" placeholder="请输入验证码">
+											<a class="btn" href="javascript:;" onclick="sendcode();" id="sendMobileCode">
+												<span id="dyMobileButton">获取验证码</span></a>
 										</div>
                  <div class="user-pass">
 								    <label for="password"><i class="am-icon-lock"></i></label>
-								    <input type="password" name="" id="password" placeholder="设置密码">
+								    <input type="password" name="user_pass" id="password" placeholder="设置密码">
                  </div>										
                  <div class="user-pass">
 								    <label for="passwordRepeat"><i class="am-icon-lock"></i></label>
-								    <input type="password" name="" id="passwordRepeat" placeholder="确认密码">
+								    <input type="password" name="repassword" id="passwordRepeat" placeholder="确认密码">
                  </div>	
-									</form>
-								 <div class="login-links">
-										<label for="reader-me">
-											<input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
-										</label>
-							  	</div>
+									
+								 
 										<div class="am-cf">
-											<input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+											<input type="submit" name="" value="手机注册" class="am-btn am-btn-primary am-btn-sm am-fl">
 										</div>
-								
+								</form>
 									<hr>
 								</div>
 
@@ -136,6 +134,43 @@
 							</p>
 						</div>
 					</div>
+					<script>
+		function sendcode(){
+//		    1. 获取要发送的手机号
+			$phone = $('[name="tel"]').val();
+			// alert($phone);
+
+//			2. 向服务器的发送短信的接口发送ajax请求
+
+			$.post("{{url('sendcode')}}",{'phone':$phone,'_token':'{{csrf_token()}}'},function(data){
+				console.log(data);
+
+				var obj = JSON.parse(data);
+				if(obj.status == 0){
+					// dd(1111);
+                    layer.msg(obj.message, {icon: 6,area: ['100px', '80px']});
+
+				}else{
+                    layer.msg(obj.message, {icon: 5,area: ['100px', '80px']});
+				}
+
+
+			})
+		}
+		function tishi(){
+		layer.open({
+			  type: 1
+			  ,offset: 't' //具体配置参考：offset参数项
+			  ,content: '<div style="padding: 20px 80px;">请您进入您注册的邮箱先行进行激活</div>'
+			  ,btn: '关闭全部'
+			  ,btnAlign: 'c' //按钮居中
+			  ,shade: 0 //不显示遮罩
+			  ,yes: function(){
+			    layer.closeAll();
+			  }
+			});
+	}
+	</script>
 	</body>
 
 </html>

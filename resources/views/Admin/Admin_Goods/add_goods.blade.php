@@ -87,7 +87,7 @@
                                     <th>缩略图：</th>
                                     <td>
                                         <script src="{{ asset('/Admin/bower_components/jquery/dist/jquery.min.js') }}"></script>
-                                        <input type="text" size="50" id="art_thumb" name="pic">
+                                        <input style="display: none" type="text" size="50" id="art_thumb" name="pic">
                                         <input id="file_upload" name="file_upload" type="file" multiple >
                                         <br>
                                         <img src="" id="img1" alt="" style="width:80px;height:80px">

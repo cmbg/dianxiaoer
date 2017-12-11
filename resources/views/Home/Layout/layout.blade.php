@@ -21,8 +21,10 @@
     <link rel="stylesheet" href="{{asset('Home/css/app-orange.css')}}" id="theme_color"/>
     <link rel="stylesheet" href="" id="rtl"/>
     <link rel="stylesheet" href="{{asset('Home/css/app-responsive.css')}}"/>
-    <link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>
-    <script src="{{asset('Home/layui/layui.js')}}"></script>
+    {{--<link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>--}}
+    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
+    <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
+    {{--<script src="{{asset('Home/layui/layui.js')}}"></script>--}}
 </head>
 @yield('body')
 
@@ -102,7 +104,7 @@
                                     <div class="widget-inner">
                                         <ul id="menu-my-account" class="menu">
                                             <li class="menu-my-account">
-                                                <a class="item-link" href="my_account.html">
+                                                <a class="item-link" href="{{url('/home/my_account')}}">
                                                     <span class="menu-title">我的账户</span>
                                                 </a>
                                             </li>
@@ -118,28 +120,16 @@
                                                     <span class="menu-title">我的订单</span>
                                                 </a>
                                             </li>
-
+                                            <li>
+                                                <a class="item-link" href="{{url('/home/login')}}" >
+                                                     <span class="menu-title">登录</span>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <div class="widget-2 widget-last widget sw_top-4 sw_top">
-                                    <div class="widget-inner">
-                                        <div class="top-login">
-                                            <div class="div-logined">
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0);" data-toggle="modal"
-                                                           data-target="#login_form">
-                                                            <span>登录</span>
-                                                        </a>
-                                                        <span class="wg">Welcome Guest</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
 
@@ -176,26 +166,20 @@
                             <div class="widget-inner">
                                 <div class="top-form top-search">
                                     <div class="topsearch-entry">
-                                        <form method="get" action="">
+                                        <form action="{{url('home/goods/list')}}" method="get" action="">
                                             <div>
-                                                <input type="text" value="" name="s"
-                                                       placeholder="Enter your keyword...">
+                                                <input type="text" value="" name="gname"
+                                                       placeholder="商品名...">
                                                 <div class="cat-wrapper">
                                                     <label class="label-search">
-                                                        <select name="search_category" class="s1_option">
-                                                            <option value="">All Categories</option>
-                                                            <option value="8">Computers & Laptops</option>
-                                                            <option value="13">Computers & Networking</option>
-                                                            <option value="14">Smartphones & Tablet</option>
-                                                            <option value="15">Home Furniture</option>
-                                                            <option value="16">Home Appliances</option>
-                                                            <option value="17">Electronic Component</option>
-                                                            <option value="18">Household Goods</option>
-                                                            <option value="32">Appliances</option>
-                                                            <option value="49">Accessories</option>
-                                                            <option value="51">Electronics</option>
-                                                            <option value="78">Televisions</option>
-                                                            <option value="80">Cameras & Accessories</option>
+                                                        <select name="cate" class="s1_option">
+                                                            <option value="">|---请选择---|</option>
+                                                            @foreach($data as $v)
+                                                                @if($v->cate_pid != 0)
+                                                            <option value="{{$v->cate_id}}">{{$v->cate_keywords}}</option>
+                                                                @endif
+                                                                @endforeach
+
                                                         </select>
                                                     </label>
                                                 </div>

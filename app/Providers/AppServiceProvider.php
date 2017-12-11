@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Models\Cate;
 use App\Http\Models\Links;
 use App\Http\Models\Nav;
 use Illuminate\Support\ServiceProvider;
@@ -16,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+    
+        $data = Cate::tree();
+        view()->share('data', $data);
+        
 //        $carts = Cart::content();//购物车所有信息
 //        $total = Cart::subtotal();//总额 不含税
 //        $count = Cart::count();//购物车商品数量
@@ -26,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
 //        view()->share('carts', $carts);
 //        view()->share('total', $total);
 //        view()->share('count', $count);
+
     }
 
     /**

@@ -82,8 +82,11 @@
                                         <img src="" id="image" alt=""
                                              style="Float:left; margin-left: 10px; width:80px;height:80px">
                                     </td>
-
                                     <script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+                                    @if($data->fid == 0)
+
+
+
                                     <script>
                                         $(function () {
                                             var a = $('#gtd').children('img').length;
@@ -94,7 +97,7 @@
                                                 $('#image').css('display', 'none');
                                                 return;
                                             }
-                                            $('#image').on('click', function () {
+                                            $('#bj').on('click', function () {
 
                                                 var a = $('#gtd').children('img').length;
                                                 if (a == 5) {
@@ -103,13 +106,14 @@
                                                 } else {
                                                     $('#file_upload').click();
                                                 }
+                                                $('#file_upload').change(function () {
+                                                    var flag = 0;
+                                                    var id = $('#oldimage').attr('name');
+                                                    uploadImage(flag,id);
 
+                                                })
                                             });
-                                            $('#file_upload').change(function () {
-                                                var flag = 0;
-                                                uploadImage(flag);
 
-                                            })
                                         })
 
                                         //双击函数
@@ -118,7 +122,7 @@
                                             var flag = 1;
                                             var id = $(obj).attr('name');
                                             $('#file_upload').change(function () {
-                                                uploadImage(flag, id);
+                                                uploadImage(flag,id);
                                             });
                                         }
 
@@ -137,16 +141,16 @@
                                                 return;
                                             }
                                             var formData = new FormData();
-                                            var gid = $('#pid').val()
                                             formData.append('image', $('#file_upload')[0].files[0]);
                                             formData.append('_token', "{{csrf_token()}}");
-                                            formData.append('gid', gid);
+                                            formData.append('gid', '{{$id}}');
                                             formData.append('flag', flag);
                                             formData.append('id', id);
+                                            console.log(formData);
 
                                             $.ajax({
-                                                type: "POST",
-                                                url: "/Admin/Det/uploadpic",
+                                                type: "post",
+                                                url: "{{url('Admin/Det/uploadpic')}}",
                                                 data: formData,
                                                 async: true,
                                                 cache: false,
@@ -165,7 +169,7 @@
                                             });
                                         }
                                     </script>
-
+                                    @endif
                                 </tr>
                                 <tr>
                                     <th>专家名称</th>
@@ -240,7 +244,7 @@
                                     <th>操作</th>
 
                                     <td colspan="2">
-                                        @if(empty($data->fid))
+                                        @if(!empty($data->fid))
                                             <button  type="button" id="yut" class="sj btn btn-block btn-danger btn-success btn-warning">
                                                 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                                                         小店鱼塘
@@ -249,7 +253,7 @@
                                             </button>
 
                                         @else
-                                            <a href="{{url('Admin/Det/create').'/'.$data->gid}}"> <button type="button" class="sj btn btn-block btn-danger btn-success btn-warning"
+                                            <a href="{{url('Admin/Det/edit').'/'.$data->gid}}"> <button type="button" class="sj btn btn-block btn-danger btn-success btn-warning"
                                                     name="">
                                                 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                                                         添加修改详情
