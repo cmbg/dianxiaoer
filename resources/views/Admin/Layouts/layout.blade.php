@@ -282,15 +282,15 @@
                     </li>
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('/Admin/dist/img/user2-160x160.jpg') }}" class="user-image"
+                        <a href="{{url('admin/adminuser')}}" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src='{{ asset("$avatar") }}' class="user-image"
                                  alt="User Image">
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs">{{$uname}}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="{{ asset('/Admin/dist/img/user2-160x160.jpg') }}" class="img-circle"
+                                <img src='{{ asset("$avatar") }}' class="img-circle"
                                      alt="User Image">
 
                                 <p>
@@ -339,7 +339,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="{{ asset('/Admin/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                    <img src='{{ asset("$avatar") }}' style="width:45px;height:45px" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left ">
                     <p>Alexander Pierce</p>
@@ -770,7 +770,8 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
+@section('js')
+@show
 <!-- jQuery 3 -->
 <script>
     $.ajaxSetup({
@@ -780,8 +781,7 @@
     });
 </script>
 
-@section('js')
-@show
+
 @yield('myorder')
 @yield('ajax')
 @yield('adstatus')

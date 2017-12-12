@@ -10,7 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
-class CateController extends Controller
+class CateController extends CommonController
 {
     /**
      * 修改排序

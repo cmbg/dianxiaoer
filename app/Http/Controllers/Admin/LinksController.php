@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class LinksController extends Controller
+class LinksController extends CommonController
 {
     /**
      * 查看友情链接列表页面

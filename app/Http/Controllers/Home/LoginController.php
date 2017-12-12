@@ -35,6 +35,21 @@ class LoginController extends CommonController
         $input = $request->except('_token');
         
         $str = $input['login'];
+        $rule = [
+            'login'=>'required',
+            "password"=>'required|between:6,20'
+        ];
+        $mess = [
+            'login.required'=>'必须输入用户名或者邮箱或者手机号',
+            'password.required'=>'必须输入密码',
+            'password.between'=>'密码必须在6到20位之间'
+        ];
+        $validator =  Validator::make($input,$rule,$mess);
+        if ($validator->fails()) {
+            return redirect('home/login')
+                ->withErrors($validator)
+                ->withInput();
+        }
        // dd($str);
       if(preg_match_all('/^((13[0-9])|(15[^4,\\D])|(18[0,0-9])|(17[0,0-9]))\\d{8}$/', $str, $phone)){
           if(!empty($phone)){

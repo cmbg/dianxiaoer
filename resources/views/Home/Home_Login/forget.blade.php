@@ -57,11 +57,12 @@
             
             <div class="login-links">
           
-								<a href="{{asset('home/login')}}" class="zcnext am-fr am-btn-default">返回</a>
+								
 								<br />
             </div>
 								<div class="am-cf">
 									<input type="submit" name="" value="立即找回" onclick="tishi()" class="am-btn am-btn-primary am-btn-sm">
+									<input type="button" class="am-btn am-btn am-btn-sm am-fl back " onclick="history.go(-1)" value="返回">
 								</div>
 								</form>
 					
@@ -99,7 +100,7 @@
 		layer.open({
 			  type: 1
 			  ,offset: 't' //具体配置参考：offset参数项
-			  ,content: '<div style="padding: 20px 80px;">请您进入您的登录邮箱进行验证</div>'
+			  ,content: '<div style="padding: 20px 80px;">请您进入您的登录邮箱进行确认</div>'
 			  ,btn: '关闭全部'
 			  ,btnAlign: 'c' //按钮居中
 			  ,shade: 0 //不显示遮罩

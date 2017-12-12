@@ -65,7 +65,12 @@
 								    <input type="password" name="re_password" id="passwordRepeat" placeholder="确认密码">
                						  </div>	
 										<div class="am-cf">
-											<input type="submit" name="" id="open" onclick="tishi()" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+											<input type="submit" name=""  id="open"
+
+											value="邮箱注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+											
+
+											<input type="button" class="am-btn am-btn am-btn-sm am-fl back " onclick="history.go(-1)" value="返回">
 										</div>
  								</form	>	
 								</div>
@@ -73,15 +78,19 @@
 								<div class="am-tab-panel">
 									<form method="post" action="{{url('phoneregisters')}}">
 									{{csrf_field()}}
-                 <div class="user-phone">
+								
+
+								
+                				 <div class="user-phone">
 								    <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
 								    <input type="tel" name="tel" id="phone" placeholder="请输入手机号">
-                 </div>																			
+               					  </div>																			
 										<div class="verification">
 											<label for="code"><i class="am-icon-code-fork"></i></label>
 											<input type="text" name="code" id="code" placeholder="请输入验证码">
+
 											<a class="btn" href="javascript:;" onclick="sendcode();" id="sendMobileCode">
-												<span id="dyMobileButton">获取验证码</span></a>
+												<span id="dyMobileButton">获取</span></a>
 										</div>
                  <div class="user-pass">
 								    <label for="password"><i class="am-icon-lock"></i></label>
@@ -95,6 +104,7 @@
 								 
 										<div class="am-cf">
 											<input type="submit" name="" value="手机注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+										<input type="button" class="am-btn am-btn am-btn-sm am-fl back " onclick="history.go(-1)" value="返回">
 										</div>
 								</form>
 									<hr>
@@ -102,7 +112,7 @@
 
 								<script>
 									$(function() {
-									    $('#doc-my-tabs').tabs();
+									    $('#doc-my-tabs').tabs('open',$('.am-tab-panel').eq({{session('id')}}) );
 									  })
 								</script>
 
@@ -157,19 +167,7 @@
 
 			})
 		}
-		function tishi(){
-		layer.open({
-			  type: 1
-			  ,offset: 't' //具体配置参考：offset参数项
-			  ,content: '<div style="padding: 20px 80px;">请您进入您注册的邮箱进行找回密码链接</div>'
-			  ,btn: '关闭全部'
-			  ,btnAlign: 'c' //按钮居中
-			  ,shade: 0 //不显示遮罩
-			  ,yes: function(){
-			    layer.closeAll();
-			  }
-			});
-	}
+	
 	</script>
 	</body>
 

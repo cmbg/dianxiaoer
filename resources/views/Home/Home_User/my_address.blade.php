@@ -4,7 +4,6 @@
 @stop
 @section('content')
 
- <script src="{{asset('/Admin//bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<div class="body-wrapper theme-clearfix">
 		<div class="listings-title">
 			<div class="container">
@@ -65,16 +64,12 @@
 										</nav>
 									  
 										<div class="woocommerce-MyAccount-content">
-											<!-- <p>
-												以下地址默认会在结帐页面上使用。
-											</p>
- -->										
 											<div class="u-column1 col-1 woocommerce-Address addresses">
 												<header class="woocommerce-Address-title title">
 													<h3>收货地址</h3>
-													<a href="{{url('home/address/create')}}" class="edit">添加</a>
-													<br>
-													<a href="{{url('home/address/'.$arr['id'].'/edit')}}" class="edit">编辑</a>
+													<a href="{{url('home/address/create')}}" class="layui-btn layui-btn-xs edit">添加</a>
+													
+													<a href="{{url('home/address/'.$arr['id'].'/edit')}}" class=" layui-btn layui-btn-xs layui-btn-normal edit">编辑</a>
 												</header>
 												
 												<address>
@@ -88,10 +83,15 @@
 											<div class="u-column1 col-1 woocommerce-Address addresses">
 												<header class="woocommerce-Address-title title">
 													<h3>邮寄地址</h3>
-													<a href="{{url('home/address/'.$v['id'].'/edit')}}" class="edit">编辑</a>
-													<br>
-													<a href="javascript:;" onclick="userDel({{$v['id']}})" class="edit">删除</a>
-													<a href="{{url('home/address/moren/'.$v['id'])}}" class="edit">设为默认地址</a>
+													<a href="{{url('home/address/'.$v['id'].'/edit')}}" class=" layui-btn layui-btn-xs layui-btn-normal edit">编辑</a>
+												
+													<a href="javascript:;" onclick="userDel({{$v['id']}})" 	class="layui-btn layui-btn-xs edit">删除</a>
+													
+
+													<button class="layui-btn layui-btn-sm edit"><a href="{{url('home/address/moren/'.$v['id'])}}" >设为默认地址</a></button>
+		
+
+
 												</header>
 												
 												<address>
@@ -112,10 +112,31 @@
 				</div>
 			</div>
 		</div>
+@stop
+@section('js')
+		 
+<script type="text/javascript" src="{{asset('Home/js/jquery/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/jquery/jquery-migrate.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/jquery/js.cookie.min.js')}}"></script>
 
-<script type="text/javascript" src="{{asset('layer/layer.js')}}"></script>
-		 <script>
-        
+<!-- OPEN LIBS JS -->
+<script type="text/javascript" src="{{asset('Home/js/owl-carousel/owl.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/slick-1.6.0/slick.min.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('Home/js/yith-woocommerce-compare/jquery.colorbox-min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/sw_core/isotope.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/sw_core/jquery.fancybox.pack.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/sw_woocommerce/category-ajax.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/sw_woocommerce/jquery.countdown.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/js_composer/js_composer_front.min.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('Home/js/plugins.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/megamenu.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('Home/js/main.min.js')}}"></script>
+<script src="{{asset('Home/layui/layui.js')}}"></script>
+<script src="{{asset('layer/layer.js')}}"></script>
+<script>
         function userDel(id) {
 
             //询问框
@@ -143,5 +164,5 @@
             });
         }
         
-    </script>
+</script>
 @stop

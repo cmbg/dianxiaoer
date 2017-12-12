@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class FishpondAjaxcontroller extends Controller
+class FishpondAjaxcontroller extends CommonController
 {
     /**
      * ajax修改修改鱼塘的状态,启用还是禁用

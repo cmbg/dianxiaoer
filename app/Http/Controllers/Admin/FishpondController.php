@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class FishpondController extends Controller
+class FishpondController extends CommonController
 {
     /**
      * 管理员查看鱼塘的列表显示页面

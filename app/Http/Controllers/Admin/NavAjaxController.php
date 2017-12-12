@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class NavAjaxController extends Controller
+class NavAjaxController extends CommonController
 {
     public function ajaxName(Request $request)
     {

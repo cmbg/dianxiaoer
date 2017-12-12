@@ -58,9 +58,6 @@ Route::post('Admin/Ajax', 'Admin\GoodsController@ajax');
 Route::get('home/login', 'Home\LoginController@login');
 Route::post('home/dologin', 'Home\LoginController@doLogin');
 
-//前台注册界面
-Route::get('home/register','Home\LoginController@register');
-Route::post('home/doregister','Home\LoginController@doregister');
 
 //注册模块，发送短信和邮件
 Route::get('phoneregister','Home\RegisterController@PhoneRegister');
@@ -70,6 +67,7 @@ Route::post('phoneregisters','Home\RegisterController@doPhoneRegister');
 //使用邮箱注册的路由
 Route::get('emailregister','Home\RegisterController@EmailRegister');
 Route::post('emailregister','Home\RegisterController@doEmailRegister');
+Route::get('errorphone','Home\RegisterController@errorphone');
 //邮件注册激活路由
 Route::get('active','Home\RegisterController@active');
 
@@ -140,7 +138,8 @@ Route::post('/admin/adminuserinfo/ajaxStatus', 'Admin\AdminUserInfoAjaxControlle
 Route::post('/admin/homeuserinfo/ajaxStatus', 'Admin\HomeUserInfoAjaxController@ajaxStatus');
 Route::post('/admin/homeuserindex/ajaxIdentity', 'Admin\HomeUserInfoAjaxController@ajaxIdentity');
 Route::post('/admin/adminuserindex/ajaxIdentity', 'Admin\AdminUserInfoAjaxController@ajaxIdentity');
-
+//后台上传头像
+Route::post('admin/upload','Admin\AdminUserController@upload');
 //});
 
 

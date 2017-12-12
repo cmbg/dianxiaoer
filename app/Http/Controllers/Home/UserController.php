@@ -124,7 +124,7 @@ class UserController extends CommonController
         return view('Home/Home_User/my_account');
     }
 
- 
+    
 
     /**
      * Store a newly created resource in storage.
@@ -134,10 +134,44 @@ class UserController extends CommonController
      */
     public function update(Request $request)
     {
-         $input = Input::except('_token');
+         // $input = Input::except('_token');
+
           $input = $request->except('_token','_method','file_upload','save_account_details');
+          // dd($input);
+          $uid = session()->get('user')->uid;
+          // dd($uid);
+          // $id = $this->route('user');
+           $rule = [
+             'uname'=>'required|unique:home_users,uname,'.$uid.',uid',
+             'nickname'=>'required|unique:home_users,nickname,'.$uid.',uid',
+            'tel'=>'required|size:11',
+            'tel' => 'unique:home_users,tel,'.$uid.',uid',
+            'email'=>'required|email|unique:home_users,email,'.$uid.',uid',
+          ];
+          $message = [
+          'uname.required' => '必须填写用户名',
+          'uname.unique' => '用户名已存在',
+          'nickname.required' => '必须填写昵称',
+          'nickname.unique' => '昵称已存在',
+            'tel.required'=>'必须输入手机号',
+            'tel.size' => '手机长度不正确',
+            'tel.unique' => '手机号已被注册',
+            'email.required'=>'必须输入邮箱',
+            'email.email' => '邮箱格式不正确',
+            'email.unique' => '此邮箱已被注册',
+           
+        ];
+        $validators =  Validator::make($input,$rule,$message);
+        // dd(1111);
+        if ($validators->fails()) {
+            // dd(1111);
+            return redirect('/home/my_account')
+                ->withErrors($validators)
+                ->withInput()->with('id',1);
+}
          $uid = session()->get('user')->uid;
          $user = HomeUser::find($uid);
+         // dd(1111);
          $res = $user->update($input);
         if($res){
             Session::put('user',$user);
@@ -147,3 +181,4 @@ class UserController extends CommonController
         }
     }
 }
+

@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 
-class RoleController extends Controller
+class RoleController extends CommonController
 {
     /**
      * 显示角色列表页面
