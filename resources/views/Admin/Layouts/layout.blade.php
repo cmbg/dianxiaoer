@@ -770,7 +770,8 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
+@section('js')
+@show
 <!-- jQuery 3 -->
 <script>
     $.ajaxSetup({
@@ -780,8 +781,7 @@
     });
 </script>
 
-@section('js')
-@show
+
 @yield('myorder')
 @yield('ajax')
 @yield('adstatus')

@@ -19,6 +19,7 @@ class PaymentController extends CommonController
 
     public function index()
     {
+
         return view('Home.Home_Payment.payment');
     }
 

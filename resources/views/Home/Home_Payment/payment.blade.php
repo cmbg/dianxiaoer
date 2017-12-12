@@ -52,7 +52,7 @@
 
                                                 </div>
 
-                                                <input type="button" class="button alt" value="继续购买" onclick="location='{{url('home/index')}}'"/>
+                                                <input type="button" class="button alt" value="继续购买" onclick="location='{{url('home/goods/list')}}'"/>
 
 
                                             </ul>

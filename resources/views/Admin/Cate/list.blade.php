@@ -97,6 +97,7 @@
 
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('/Admin/dist/js/demo.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
 @stop
 
 @section('ajax');

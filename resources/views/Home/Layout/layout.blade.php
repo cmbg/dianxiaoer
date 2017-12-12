@@ -110,7 +110,7 @@
                                             </li>
 
                                             <li class="menu-cart">
-                                                <a class="item-link" href="{{url('/cart')}}">
+                                                <a class="item-link" href="{{url('home/goods/list')}}">
                                                     <span class="menu-title">购物车</span>
                                                 </a>
                                             </li>
@@ -193,6 +193,7 @@
                             </div>
                         </div>
 
+                    {{--购物车--}}
                         <div class="widget sw_top-3 sw_top pull-left">
                             <div class="widget-inner">
                                 <div class="top-form top-form-minicart etrostore-minicart pull-right">
@@ -212,20 +213,20 @@
                                             @foreach( $carts as $cart)
                                             <ul class="minicart-content">
                                                 <li>
-                                                    <a href="simple_product.html" class="product-image">
-                                                        <img width="100" height="100" src="{{ asset('images/1903/45-150x150.jpg')}}"
-                                                             class="attachment-100x100 size-100x100 wp-post-image"
-                                                             alt=""
-                                                             srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"
-                                                             sizes="(max-width: 100px) 100vw, 100px"/>
-                                                    </a>
+                                                    {{--<a href="simple_product.html" class="product-image">--}}
+                                                        {{--<img width="100" height="100" src="{{ asset('images/1903/45-150x150.jpg')}}"--}}
+                                                             {{--class="attachment-100x100 size-100x100 wp-post-image"--}}
+                                                             {{--alt=""--}}
+                                                             {{--srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"--}}
+                                                             {{--sizes="(max-width: 100px) 100vw, 100px"/>--}}
+                                                    {{--</a>--}}
 
                                                     <div class="detail-item">
                                                         <div class="product-details">
                                                             <h4>
                                                                 {{--<a class="title-item" href="simple_product.html">Veniam--}}
                                                                     {{--Dolore</a>--}}
-                                                                <a href="simple_product.html">{{$cart->name}}</a>
+                                                                <a href="{{url('home/cart')}}">{{$cart->name}}</a>
                                                             </h4>
 
                                                             <div class="product-price">
@@ -241,12 +242,12 @@
                                                             </div>
 
                                                             <div class="product-action clearfix">
-                                                                <a href="#" class="btn-remove" title="Remove this item">
+                                                                <a href="{{url('home/removecart/'.$cart->rowId)}}" class="btn-remove" title="删除商品">
                                                                     <span class="fa fa-trash-o"></span>
                                                                 </a>
 
-                                                                <a class="btn-edit" href="cart.html"
-                                                                   title="View your shopping cart">
+                                                                <a class="btn-edit" href="{{url('home/order')}}"
+                                                                   title="前往结算">
                                                                     <span class="fa fa-pencil"></span>
                                                                 </a>
                                                             </div>
@@ -270,11 +271,11 @@
 
                                                 <div class="cart-links clearfix">
                                                     <div class="cart-link">
-                                                        <a href="/shop" title="Cart">继续购物</a>
+                                                        <a href="{{url('home/goods/list')}}" title="Cart">继续购物</a>
                                                     </div>
 
                                                     <div class="checkout-link">
-                                                        <a href="/del" title="Check Out">清空购物车</a>
+                                                        <a href="{{url('home/cart/del')}}" title="Check Out">清空购物车</a>
                                                     </div>
                                                 </div>
                                             </div>

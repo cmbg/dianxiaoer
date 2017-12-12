@@ -65,12 +65,13 @@
                     <span>
             </div>
 
+
             <li id="item" style="display: none;">
                 <img onclick="det(this)" name="" src="./uploads/0ab3067d0a45fb4efb3d4ed1f4160523.jpg">
                 <h3>秋天小碎花裙子</h3>
                 <div>惊爆价：￥<span class="price">78</span>元</div>
                 <div><span style="color:red" class="yt"> </span></div>
-                <div class="focus">1273</div>
+                <div class="focus">1273</div>     {{csrf_field()}}
                 <div><span><button type="button" class="btn btn-block btn-warning btn-sm"><font
                                     style="vertical-align: inherit;"><font style="vertical-align: inherit;">加入购物车</font></font></button></span>
                 </div>
