@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Models\Links;
-class LinksAjaxController extends Controller
+class LinksAjaxController extends CommonController
 {
     public function ajaxName(Request $request)
     {

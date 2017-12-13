@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Providers;
-
+use Illuminate\Support\Facades\Session;
 use App\Http\Models\Cate;
+use App\Http\Models\AdminUser;
 use App\Http\Models\Links;
 use App\Http\Models\Nav;
 use Illuminate\Support\ServiceProvider;
 use Cart;
-
+// use AdminUser;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -20,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
     
         $data = Cate::tree();
         view()->share('data', $data);
-        
+      
 //        $carts = Cart::content();//购物车所有信息
 //        $total = Cart::subtotal();//总额 不含税
 //        $count = Cart::count();//购物车商品数量

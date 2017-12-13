@@ -70,6 +70,26 @@
 									<form class="edit-account" action="{{ url('/home/my_account') }}" method="post" enctype="multipart/form-data">
 									
 									      {{csrf_field()}}
+									      @if (count($errors) > 0)
+									<div class="alert alert-danger">
+										<ul>
+										@if(is_object($errors))
+										@foreach ($errors->all() as $error)
+											<li style="color:red">{{ $error }}</li>
+										@endforeach
+										@else
+											<li style="color:red">{{ $errors }}</li>
+										@endif
+										</ul>
+									</div>
+								@endif
+									      <p class="form-row form-row-first">
+											<label for="account_first_name">
+												用户名: 
+												<span class="required">*</span>
+											</label>
+											<input type="text" class="input-text" name="uname" id="account_first_name" value="{{ Session::get('user')['uname'] }}"  placeholder="您登录时使用的用户名"/>
+										</p>
 										<p class="form-row form-row-first">
 											<label for="account_first_name">
 												用户昵称: 

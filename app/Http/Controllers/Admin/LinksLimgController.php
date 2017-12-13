@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Services\OSS;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class LinksLimgController extends Controller
+class LinksLimgController extends CommonController
 {
     /**
      * 处理客户端传过来的图片

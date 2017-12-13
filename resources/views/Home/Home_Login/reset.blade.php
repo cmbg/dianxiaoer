@@ -62,7 +62,7 @@
             
             <div class="login-links">
           
-								<a href="{{asset('home/login')}}" class="zcnext am-fr am-btn-default">返回</a>
+								
 								<br />
             </div>
 								<div class="am-cf">

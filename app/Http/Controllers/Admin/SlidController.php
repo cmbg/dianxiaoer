@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class SlidController extends Controller
+class SlidController extends CommonController
 {
     /**
      * Display a listing of the resource.

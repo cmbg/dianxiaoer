@@ -7,7 +7,7 @@ use App\Http\Models\Ad;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdAjaxController extends Controller
+class AdAjaxController extends CommonController
 {
     /**
      * 修改广告的状态

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class NavController extends Controller
+class NavController extends CommonController
 {
     /**
      * 查看广告列表页面

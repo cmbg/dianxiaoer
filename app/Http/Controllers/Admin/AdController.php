@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Services\OSS;
 
 
-class AdController extends Controller
+class AdController extends CommonController
 {
     /**
      * 查看广告列表页面

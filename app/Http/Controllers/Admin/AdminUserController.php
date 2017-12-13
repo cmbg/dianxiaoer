@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Services\OSS;
 use DB;
-class AdminUserController extends Controller
+class AdminUserController extends CommonController
 {
     /**
      * 图片上传处理(头像)
@@ -51,7 +51,9 @@ class AdminUserController extends Controller
      */
     public function index(Request $request)
     {
-        
+        // $uid = session()->all();
+        // dd($uid);
+        // dd(session('user')->avatar);
         $user = AdminUser::orderBy('uid','asc')
             ->where(function($query) use($request){
                 //检测关键字

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Jobs\SendReminderEmail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use App\SMS\SendTemplateSMS;
 use App\SMS\M3Result;
@@ -83,22 +83,45 @@ class RegisterController extends Controller
          // \Session::put('phone',11111);
         // dd($input);
 //        2 表单验证
+        $rule = [
+            'tel'=>'required|unique:home_users,tel',
+            "password"=>'required|between:6,20',
+            're_password' => 'same:password',
+            'code' => 'required'
+        ];
+        $message = [
+            'tel.required'=>'请正确输入手机号',
+            'tel.unique' => '手机号已被注册',
+            'password.required'=>'必须输入密码',
+            'password.between'=>'密码必须在6到20位之间',
+            're_password.same'=>'两次密码输入不一致',
+            'code.required' =>'必须输入验证码' 
+        ];
+        $validators =  Validator::make($input,$rule,$message);
+        // dd($validators->withErrors);
+        if ($validators->fails()) {
+            return redirect('errorphone')
+                ->withErrors($validators)
+                ->withInput()->with('id',1);
+ // dd(session('errors'));
+        }
 //        3 验证验证码
        if($input['code'] != session('phone')){
        	// dd(1111);
-           return redirect('phoneregister');
+           return redirect('errorphone')->with('errors','验证码错误');
        }
 
 //        4 向用户表添加注册用户
        $arr['tel'] = $input['tel'];
-        $arr['password'] = Hash::make($input['user_pass']);
+        $arr['password'] = Hash::make($input['password']);
         $arr['is_active'] = 1;
 //        给token字段赋值
-        $arr['token'] = $input['user_pass'];
+        $arr['token'] = $input['password'];
 
 
         // dd($input);
         $res = HomeUser::create($arr);
+        // dd($res);
         if($res){
             return redirect('home/login');
         }else{
@@ -127,7 +150,25 @@ class RegisterController extends Controller
          $input = $request->except('_token');
 //        2. 表单验证
          // dd($input);
-
+        $rule = [
+            'email'=>'required|email|unique:home_users,email',
+            "password"=>'required|between:6,20',
+            're_password' => 'same:password',
+        ];
+        $mess = [
+            'email.required'=>'必须输入邮箱',
+            'email.email' => '邮箱格式不正确',
+            'email.unique' => '此邮箱已被注册',
+            'password.required'=>'必须输入密码',
+            'password.between'=>'密码必须在6到20位之间',
+            're_password.same'=>'两次密码输入不一致'
+        ];
+        $validator =  Validator::make($input,$rule,$mess);
+        if ($validator->fails()) {
+            return redirect('phoneregister')
+                ->withErrors($validator)
+                ->withInput();
+        }
         // 3. 向用户表中添加注册记录
         $arr['email'] = $input['email'];
 
@@ -151,8 +192,8 @@ class RegisterController extends Controller
                $m->to($res->email)->subject('注册邮箱激活!');
            });
 
-				sleep(5000);
-           return redirect('/phoneregister');
+				// sleep(5);
+           return redirect('/phoneregister')->with('errors','请激活邮箱');
           
 
        }else{
@@ -161,6 +202,10 @@ class RegisterController extends Controller
 
     }
 
+    public function  errorphone()
+    {
+        return view('Home/Home_Login/errorphone');
+    }
 
     /**
      * 邮箱激活方法
@@ -199,10 +244,24 @@ class RegisterController extends Controller
 //    发送找回密码的邮件
     public function doforget(Request $request)
     {
+          $input = $request->except('_token');
         //要发送的邮箱
         $email = $request['email'];
         // dd($email);
 //        根据邮箱获取收件人信息
+        $rule = [
+            'email'=>'required',
+            
+        ];
+        $mess = [
+            'email.required'=>'必须输入注册邮箱',
+        ];
+        $validator =  Validator::make($input,$rule,$mess);
+        if ($validator->fails()) {
+            return redirect('forget')
+                ->withErrors($validator)
+                ->withInput();
+        }
 
         $res = HomeUser::where('email',$email)->first();
 
