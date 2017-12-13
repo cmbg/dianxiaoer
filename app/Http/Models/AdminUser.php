@@ -20,10 +20,10 @@ class AdminUser extends Model
         return $this->belongsToMany('App\Http\Models\Role','role_user','user_id','role_id');
     }
 
-//    public function permission()
-//    {
-//        return $this->belongsToMany(Permission::class,'role_permission','role_id','permission_id');
-//    }
+    public function permission()
+    {
+        return $this->belongsToMany(Permission::class,'role_permission','role_id','permission_id');
+    }
     //关联用户详情模型
     public function userifo()
     {

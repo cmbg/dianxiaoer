@@ -17,7 +17,7 @@ class PermissionController extends Controller
     public function index()
     {
         //获取所有的权限
-        $permissions = Permission::paginate(10);
+        $permissions = Permission::paginate(20);
         return view('Admin.Admin_Permission.Index', ['title' => '权限管理','permissions'=>$permissions]);
     }
 

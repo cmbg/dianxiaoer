@@ -10,7 +10,7 @@
             <div class="listings-title">
                 <div class="container">
                     <div class="wrap-title">
-                        <h1>我的账户</h1>
+                        <h1>我的鱼塘</h1>
                         <div class="bread">
                             <div class="breadcrumbs theme-clearfix">
                                 <div class="container">
@@ -21,7 +21,7 @@
                                         </li>
 
                                         <li class="active">
-                                            <span>我的账户</span>
+                                            <span>我的鱼塘</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -37,35 +37,9 @@
                         <div class="post-6 page type-page status-publish hentry">
                             <div class="entry">
                                 <div class="entry-content">
-                                    <header>
-                                        <h2 class="entry-title">我的账户</h2>
-                                    </header>
 
                                     <div class="entry-content">
                                         <div class="woocommerce">
-                                            <nav class="woocommerce-MyAccount-navigation">
-                                                <ul>
-                                                    <li class="is-active">
-                                                        <a href="{{url('home/my_account')}}">我的鱼塘</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="{{url('home/my_password')}}">修改密码</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="{{url('home/my_address')}}">地址</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="http://demo.smartaddons.com/templates/html/etrostore/account_details.html">账户详细资料</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="create_account.html">退出</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
 
                                             <div class="woocommerce-MyAccount-content">
 
@@ -78,6 +52,7 @@
                                                         <label for="account_first_name">
                                                             <span>
                                                                 @if(count($errors) > 0)
+                                                                    <div class="alert alert-danger">
                                                                     @if(is_object($errors))
                                                                         @foreach($errors -> all() as $error)
                                                                             {{$error}}
@@ -85,6 +60,7 @@
                                                                     @elseif (is_string($errors))
                                                                         {{$error}}
                                                                     @endif
+                                                                    </div>
                                                                 @endif
                                                             </span>
                                                             <small>@if(session('editmsg'))

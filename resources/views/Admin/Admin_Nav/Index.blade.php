@@ -131,13 +131,12 @@
                                                 </td>
                                             </form>
                                         </tr>
-
                                         @foreach($data1 as $k=>$v)
                                             <tr role="row" class="odd">
                                                 <td class="paixu">{{$v->paixu}}</td>
                                                 <td class="nid">{{$v->nid}}</td>
                                                 <td class="nname">{{$v->nname}}</td>
-                                                <td class="nlink">{{$v->nlink}}</td>
+                                                <td class="nlink" >{{$v->nlink}}</td>
                                                 <td class="navedit">
                                                     <button type="button" onclick="sendBtn({{$v->nid}});"
                                                             class="btn btn-primary">删除
@@ -146,45 +145,6 @@
                                             </tr>
                                         @endforeach
                                         </tbody>
-                                        <script>
-                                            function add() {
-                                                $('.form').show();
-                                            }
-                                            function sendBtn(node) {
-                                                //询问框
-                                                layer.confirm('您确认删除吗？', {
-                                                    btn: ['确认', '取消'] //按钮
-                                                }, function () {
-                                                    //如果用户发出删除请求，应该使用ajax向服务器发送删除请求
-                                                    //$.get("请求服务器的路径","携带的参数", 获取执行成功后的额返回数据);
-                                                    //admin/user/1
-                                                    $.post("{{url('admin/nav')}}/" + node, {
-                                                        "_method": "delete",
-                                                        {{--"_token": "{{csrf_token()}}"--}}
-                                                    }, function (data) {
-//                                                        console.log(data);
-                                                        //data是json格式的字符串，在js中如何将一个json字符串变成json对象
-                                                        //var res =  JSON.parse(data);
-                                                        //删除成功
-                                                        if (data.error == 0) {
-                                                            //console.log("错误号"+res.error);
-                                                            //console.log("错误信息"+res.msg);
-                                                            layer.msg(data.msg, {icon: 6});
-                                                            var t = setTimeout("location.href = location.href;", 1000);
-//                                                            location.href = location.href;
-                                                        } else {
-                                                            layer.msg(data.msg, {icon: 5});
-                                                            var t = setTimeout("location.href = location.href;", 1000);
-//                                                            location.href = location.href;
-                                                        }
-                                                    });
-                                                }, function () {
-
-                                                });
-                                            }
-                                        </script>
-
-
                                     </table>
                                 </div>
                             </div>
@@ -212,15 +172,12 @@
                     <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
-
             </div>
             <!-- /.col -->
         </div>
         <!-- /.row -->
     </section>
     <!-- /.content -->
-
-
 @stop
 
 @section('js')
@@ -257,8 +214,7 @@
     <script src="{{ asset('/Admin/bower_components/fastclick/lib/fastclick.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/Admin/dist/js/adminlte.min.js') }}"></script>
-    {{--<!-- AdminLTE dashboard demo (This is only for demo purposes) -->--}}
-    {{--<script src="{{ asset('/Admin/dist/js/pages/dashboard.js') }}"></script>--}}
+    <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/Admin/dist/js/demo.js') }}"></script>
 @stop
@@ -269,23 +225,61 @@
         $(".tishi   ").fadeOut(3000);
     </script>
     <script>
+        function add() {
+            $('.form').show();
+        }
+        function sendBtn(node) {
+            //询问框
+            layer.confirm('您确认删除吗？', {
+                btn: ['确认', '取消'] //按钮
+            }, function () {
+                //如果用户发出删除请求，应该使用ajax向服务器发送删除请求
+                //$.get("请求服务器的路径","携带的参数", 获取执行成功后的额返回数据);
+                //admin/user/1
+                $.post("{{url('admin/nav')}}/" + node, {
+                    "_method": "delete",
+                    {{--"_token": "{{csrf_token()}}"--}}
+                }, function (data) {
+//                                                        console.log(data);
+                    //data是json格式的字符串，在js中如何将一个json字符串变成json对象
+                    //var res =  JSON.parse(data);
+                    //删除成功
+                    if (data.error == 0) {
+                        //console.log("错误号"+res.error);
+                        //console.log("错误信息"+res.msg);
+                        layer.msg(data.msg, {icon: 6});
+                        var t = setTimeout("location.href = location.href;", 1000);
+//                                                            location.href = location.href;
+                    } else {
+                        layer.msg(data.msg, {icon: 5});
+                        var t = setTimeout("location.href = location.href;", 1000);
+//                                                            location.href = location.href;
+                    }
+                });
+            }, function () {
+
+            });
+        }
+    </script>
+
+    <script>
         $(".nname").on('dblclick', fn1);
 
         function fn1() {
-            var t = $(this);
-            var id = t.parent().find('.nid').html();
-            var name = t.html();
-            var inp = $('<input type="text">');
-            inp.val(name);
-            t.html(inp);
-            inp.select();
-            t.unbind('dblclick');
-            inp.on('blur', function () {
-                var newName = $(this).val();
+            var t1 = $(this);
+            var id1 = t1.parent().find('.nid').html();
+            var name = t1.html();
+            var inp1 = $('<input type="text">');
+            inp1.val(name);
+            t1.html(inp1);
+            inp1.select();
+            t1.unbind('dblclick');
+            inp1.on('blur', function () {
+                var newName1 = $(this).val();
                 $.ajax({
                     url: "{{ url('/admin/nav/ajaxName') }}",
                     type: 'post',
-                    data: {id: id, name: newName},
+                    data: {id1: id1, name1: newName1},
                     beforeSend: function () {
                         $("#info").html('<span class="text-red"><i class="fa fa-fw fa-spin fa-circle-o-notch"></i>正在修改中...</span>');
                         $("#info").show();
@@ -293,24 +287,23 @@
                     success: function (data) {
 //                        console.log(data);
                         if (data.code == 0) {
-                            t.html(name);
+                            t1.html(name);
                             $("#info").html('<span class="text-red">名字已经存在</span>');
                             $("#info").show();
                             $("#info").fadeOut(2000);
                         } else if (data.code == 1) {
-                            t.html(newName);
+                            t1.html(newName);
                             $("#info").html('<span class="text-red">修改成功</span>');
                             $("#info").show();
                             $("#info").fadeOut(2000);
                         } else {
-                            t.html(name);
+                            t1.html(name);
                             $("#info").html('<span class="text-red">修改失败</span>');
                             $("#info").show();
                             $("#info").fadeOut(2000);
-                        }
-                        ;
+                        };
                         //添加事件。
-                        t.on('dblclick', fn1);
+                        t1.on('dblclick', fn1);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert(XMLHttpRequest.status);
@@ -326,9 +319,9 @@
     </script>
 
     <script>
-        $(".nlink").on('dblclick', fn2);
+        $(".nlink").on('dblclick', f2);
 
-        function fn2() {
+        function f2() {
             var t = $(this);
             var id = t.parent().find('.nid').html();
             var name = t.html();
@@ -348,7 +341,7 @@
                         $("#info").show();
                     },
                     success: function (data) {
-//                        console.log(data);
+                        console.log(data);
                         if (data.code == 0) {
                             t.html(name);
                             $("#info").html('<span class="text-red">目标地址已经存在</span>');
@@ -365,9 +358,8 @@
                             $("#info").show();
                             $("#info").fadeOut(2000);
                         }
-                        ;
                         //添加事件。
-                        t.on('dblclick', fn1);
+                        t.on('dblclick', f2);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert(XMLHttpRequest.status);
@@ -382,10 +374,11 @@
 
     </script>
 
-    <script>
-        $(".paixu").on('dblclick', fn3);
 
-        function fn3() {
+    <script>
+        $(".paixu").on('dblclick', paixu);
+
+        function paixu() {
             var t = $(this);
             var id = t.parent().find('.nid').html();
             var name = t.html();
@@ -416,7 +409,7 @@
                         }
                         ;
                         //添加事件。
-                        t.on('dblclick', fn1);
+                        t.on('dblclick', paixu);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert(XMLHttpRequest.status);

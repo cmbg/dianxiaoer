@@ -11,7 +11,7 @@
             <div class="listings-title">
                 <div class="container">
                     <div class="wrap-title">
-                        <h1>我的账户</h1>
+                        <h1>我的鱼塘</h1>
                         <div class="bread">
                             <div class="breadcrumbs theme-clearfix">
                                 <div class="container">
@@ -22,7 +22,7 @@
                                         </li>
 
                                         <li class="active">
-                                            <span>我的账户</span>
+                                            <span>添加商品详情</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -38,38 +38,10 @@
                         <div class="post-6 page type-page status-publish hentry">
                             <div class="entry">
                                 <div class="entry-content">
-                                    <header>
-                                        <h2 class="entry-title">我的账户</h2>
-                                    </header>
 
                                     <div class="entry-content">
                                         <div class="woocommerce">
-                                            <nav class="woocommerce-MyAccount-navigation">
-                                                <ul>
-                                                    <li class="is-active">
-                                                        <a href="{{url('home/my_account')}}">个人信息</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="{{url('home/my_password')}}">修改密码</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="{{url('home/my_address')}}">地址</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="http://demo.smartaddons.com/templates/html/etrostore/account_details.html">账户详细资料</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="create_account.html">退出</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-
                                             <div class="woocommerce-MyAccount-content">
-
 
 
                                                 <section class="content-header">
@@ -89,6 +61,7 @@
                                                                 <h3 class="box-title"></h3>
                                                                 <small>
                                                                     @if(count($errors) > 0)
+                                                                        <div class="alert alert-danger">
                                                                         @if(is_object($errors))
                                                                             @foreach($errors -> all() as $error)
                                                                                 {{$error}}
@@ -96,14 +69,13 @@
                                                                         @elseif (is_string($errors))
                                                                             {{$error}}
                                                                         @endif
+                                                                        </div>
                                                                     @endif
                                                                         <small>
                                                                             @if(session('msg'))
                                                                                 <li style="color:red">{{session('msg')}}</li>
                                                                             @endif
                                                                         </small>
-
-
                                                                 </small>
                                                             </div>
                                                             <script src="{{ asset('/Admin/bower_components/jquery/dist/jquery.min.js') }}"></script>
@@ -128,14 +100,11 @@
                                                                                     <input style="display: none;"  type="file" id="file_upload" name="file_upload"  multiple>
                                                                                     <br>
 
-
                                                                                     <div id="img">
                                                                                     </div>
                                                                                     <img src="{{asset('/Images/ajax-loader.gif')}}" id="oldimage" alt="" style="Float:left; display: none; margin-left: 10px; width:80px;height:80px">
                                                                                     <script type="text/javascript">
-
-
-                                                                                        //                                            var image = $('#image').clone();
+                                                                                        //  var image = $('#image').clone();
                                                                                         $(function () {
                                                                                             $('#btn').on('click', function () {
                                                                                                 var count = $('#img').children('img').length;
@@ -149,7 +118,6 @@
                                                                                                 uploadImage();
                                                                                             });
                                                                                         });
-
                                                                                         function uploadImage() {
 
                                                                                             var imgPath = $("#file_upload").val();
@@ -197,7 +165,6 @@
                                                                             <tr>
                                                                                 <th><i class="require-red">*</i>有无验证：</th>
                                                                                 <td>
-
                                                                                     <input style="display: none" class="common-text1 required" id="title" name="scc" size="50" value="0" type="text">
                                                                                     <button onclick="but()" id="c" type="button"
                                                                                             class="btn btn-block btn-default"><font
@@ -210,7 +177,6 @@
                                                                                         }
 
                                                                                     </script>
-
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -223,7 +189,8 @@
                                                                                 <td>
 
                                                                                     <script id="ueditor" name="content" type="text/plain"
-                                                                                            style="width:800px;height:300px;">{!! old('content') !!}</script>
+                                                                                            style="width:800px;height:300px;">{!! old('content') !!}
+                                                                                    </script>
                                                                                     <script >
                                                                                     var ue = UE.getEditor("ueditor");
                                                                                     ue.ready(function () {

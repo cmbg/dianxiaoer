@@ -31,9 +31,6 @@
     <link rel="stylesheet" href="{{ asset('/Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
 
-    {{--弹框--}}
-{{--    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">--}}
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -770,7 +767,8 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
+@section('js')
+@show
 <!-- jQuery 3 -->
 <script>
     $.ajaxSetup({
@@ -780,8 +778,7 @@
     });
 </script>
 
-@section('js')
-@show
+
 @yield('myorder')
 @yield('ajax')
 @yield('adstatus')

@@ -29,7 +29,7 @@ class OrderController extends Controller
 //            $query->where('status',$status);
             $query->where('status', 'like', '%' . $status . '%');
 //            $query->whereBetween('ontime', [0, 0]);
-        })->paginate($request->input('num', 5));
+        })->paginate($request->input('num', 20));
 //        dd($data);
 //        dd($data[0]->oid);
 //        dd($data[2]->adminuser->uname);
@@ -67,19 +67,19 @@ class OrderController extends Controller
      */
     public function show($id)
     {
+//        $data = Order::where('oid','15129610285a2df404')->first()->goods;
+//        $data = Order::find('15129610285a2df404')->goods;
+//        $data = Order::where('oid','15129610285a2df404')->get()->goods;
+//        dd($data);
         $data = OrderDetail::where('oid', $id)->with('good')->paginate(10);
+//        dd($data);
+//        echo '<pre>';
 //        foreach($data as $k=>$v) {
-//                echo $v->good->gid;
-//                echo '<br>';
-//                echo $v->good->gname;
-//                echo '<br>';
-//                echo $v->good->pic;
-//                echo '<br>';
-//                echo $v->bprice;
-//                echo '<br>';
-//                echo $v->bcnt;
+//                echo $v.id;
+//                echo $v['good']['gid'];
+//                echo $v->good['gid'];
+//                echo $v->good->gid;//
 //        }
-//        dd( $data[0]->good->tid);
         return view('Admin.Admin_Order.Show', ['title' => '订单详情', 'data' => $data]);
     }
 

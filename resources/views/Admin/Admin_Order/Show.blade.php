@@ -82,8 +82,8 @@
                                         @foreach($data as $k=>$v)
                                             <tr role="row" class="odd">
                                                 <td >{{$v->gid}}</td>
-                                                <td>{{$v->good->gname}}</td>
-                                                <td><img src="{{$v->good->pic}}" style="width:80px"/></td>
+                                                <td>{{$v->good['gname']}}</td>
+                                                <td><img src="{{$v->good['pic']}}" style="width:80px"/></td>
                                                 <td>{{$v->bprice}}</td>
                                                 <td>{{$v->bcnt}}</td>
                                                 <td>{{$v->bprice*$v->bcnt}}</td>

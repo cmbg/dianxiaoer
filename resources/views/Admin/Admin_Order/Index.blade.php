@@ -45,13 +45,13 @@
                                                 <th>
                                                     每页条数：
                                                     <select name="num">
-                                                        <option value="5"
-                                                                @if($request['num'] == 5)  selected  @endif
-                                                        >5
-                                                        </option>
                                                         <option value="10"
                                                                 @if($request['num'] == 10)  selected  @endif
                                                         >10
+                                                        </option>
+                                                        <option value="20"
+                                                                @if($request['num'] == 20)  selected  @endif
+                                                        >20
                                                         </option>
                                                     </select>
                                                 </th>
@@ -72,7 +72,9 @@
                                                 {{--<td>--</td>--}}
                                                 {{--<td><input class="common-text" size='15' name="actime" value="" id=""--}}
                                                            {{--type="datetime-local"></td>--}}
-                                                <td><input class="btn btn-primary btn2" value="查询" type="submit"></td>
+                                                <td><button class="btn btn-primary btn2">查询</button></td>
+                                                <td width="50px"></td>
+                                                <td><a href="{{url('/admin/order')}}"><button type="button" class="btn btn-primary btn2">清除条件</button></a></td>
                                             </tr>
                                         </table>
                                     </form>
@@ -159,12 +161,12 @@
                                                     @if($v->status == 1)
                                                         <span class="text-red">未发货<span>
                                                     @elseif($v->status == 2)
-                                                                    <span class="text-yellow">未收货</span>
-                                                                @elseif($v->status == 3)
-                                                                    <span>已收货</span>
+                                                        <span class="text-yellow">未收货</span>
+                                                    @elseif($v->status == 3)
+                                                        <span>已收货</span>
                                                     @endif
                                                 </td>
-                                                <td>
+                                                <td >
                                                     <a href="{{url('admin/order/'.$v->oid)}}">详情</a>
                                                     <a href="{{url('admin/order/'.$v->oid.'/edit')}}">编辑</a>
                                                     @if($v->status == 1)
@@ -261,33 +263,5 @@
 @section("adstatus")
     <script>
         $(".tishi   ").fadeOut(3000);
-    </script>
-    <script>
-        $(".statusBtn").on('click', function () {
-            var t = $(this);
-            var id = $(this).parent().find('.id').html();
-//            console.log(id);
-            $.ajax(
-                {
-                    url: '/admin/ad/ajaxStatus',
-                    data: {id: id},
-                    type: 'post',
-                    success: function (data) {
-//                        console.log(data);
-                        if (data.astatus == 1) {
-                            t.html('<button type="button" class="btn bg-olive bg-purple margin">已禁用\n' +
-                                '                                                        </button>');
-                        } else {
-                            t.html('<button type="button" class="btn bg-olive btn-flat margin">已启用\n' +
-                                '                                                        </button>');
-                        }
-                    },
-                    error: function () {
-
-                    },
-                    dataType: 'json',
-                }
-            );
-        })
     </script>
 @stop

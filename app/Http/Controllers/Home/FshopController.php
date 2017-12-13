@@ -21,16 +21,15 @@ class FshopController extends CommonController
      */
     public function index(Request $request)
     {
-
         $gname = $request->input('gname');
         $user = Session::get('user');
         $uid = $user->uid;
         //查询数据库 获取
         //======================================================
-        $data = good::where('uid', $uid)->with('Cate', 'gpicinfo', 'fishpond')
+        $data = good::where('uid', 2)->with('Cate', 'gpicinfo', 'fishpond')
             ->where('gname', 'like', '%' . $gname . '%')
-            ->paginate($request->input('num'));
-        $title = '商品列表页';
+            ->paginate($request->input('num',10));
+        $title = '鱼塘商品';
         //========================================================
 //        dd($data);
         return view('Home.Home_Fshop.List', compact('title', 'request', 'data'));
@@ -43,7 +42,7 @@ class FshopController extends CommonController
      */
     public function create()
     {
-        $title = '鱼塘商品添加页';
+        $title = '添加鱼塘商品';
         $data = Cate::tree();
         return view('Home.Home_Fshop.Create', compact('title', 'data'));
     }
@@ -58,7 +57,7 @@ class FshopController extends CommonController
     {
         $user = Session::get('user');
         $data = $request->except('_token', 'file_upload', 'save_account_details');
-
+//        dd($data);
         $rule = [
             'tid' => 'required',
             'gname' => 'required',
@@ -66,8 +65,6 @@ class FshopController extends CommonController
             'goodsDes' => 'required|between:20,200',
             'gstatus' => 'required',
             'pic' => 'required',
-
-
         ];
         $mess = [
             'tid.required' => '请选择类别',
@@ -86,7 +83,6 @@ class FshopController extends CommonController
             return redirect('/home/fshop/create')
                 ->withErrors($validator)
                 ->withInput();
-
         }
         $data['uid'] = $user->uid;
         $res = good::create($data);
@@ -237,12 +233,7 @@ class FshopController extends CommonController
     }
 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+    /**删除一个商品*/
     public function destroy($id)
     {
         //
@@ -261,8 +252,6 @@ class FshopController extends CommonController
             $data['error'] = 1;
             $data['msg'] = '删除失败';
         }
-
-
         return $data;
     }
 

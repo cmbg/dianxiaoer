@@ -9,18 +9,18 @@
             <div class="listings-title">
                 <div class="container">
                     <div class="wrap-title">
-                        <h1>我的账户</h1>
+                        <h1>我的鱼塘</h1>
                         <div class="bread">
                             <div class="breadcrumbs theme-clearfix">
                                 <div class="container">
                                     <ul class="breadcrumb">
                                         <li>
-                                            <a href="#">主页</a>
+                                            <a href="{{url('/home/fshop')}}">返回商品列表</a>
                                             <span class="go-page"></span>
                                         </li>
 
                                         <li class="active">
-                                            <span>我的账户</span>
+                                            <span>添加商品</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -36,45 +36,18 @@
                         <div class="post-6 page type-page status-publish hentry">
                             <div class="entry">
                                 <div class="entry-content">
-                                    <header>
-                                        <h2 class="entry-title">我的账户</h2>
-                                    </header>
-
                                     <div class="entry-content">
                                         <div class="woocommerce">
-                                            <nav class="woocommerce-MyAccount-navigation">
-                                                <ul>
-                                                    <li class="is-active">
-                                                        <a href="{{url('home/my_account')}}">个人信息</a>
-                                                    </li>
 
-                                                    <li>
-                                                        <a href="{{url('home/my_password')}}">修改密码</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="{{url('home/my_address')}}">地址</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="http://demo.smartaddons.com/templates/html/etrostore/account_details.html">账户详细资料</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="create_account.html">退出</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-
-                                            <div class="woocommerce-MyAccount-content">
+                                            <div class="woocommerce-MyAccount-content" style="margin:0px 100px;">
 
                                                 <form class="edit-account" action="{{ url('/home/fshop') }}"
                                                       method="post" enctype="multipart/form-data">
-
                                                     {{csrf_field()}}
                                                     <p class="form-row form-row-first">
                                                         <small>
                                                             @if(count($errors) > 0)
+                                                                    <div class="alert alert-danger">
                                                                 @if(is_object($errors))
                                                                     @foreach($errors -> all() as $error)
                                                                         {{$error}}
@@ -82,6 +55,7 @@
                                                                 @elseif (is_string($errors))
                                                                     {{$error}}
                                                                 @endif
+                                                                    </div>
                                                             @endif
                                                             <small>
                                                                 @if(session('msg'))
@@ -92,7 +66,7 @@
                                                         </small>
                                                     </p>
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">性别：</label>
+                                                        <label for="exampleInputEmail1">商品类别：</label>
                                                         <select name="tid" id="catid" class="required">
                                                             @foreach($data as $k => $v)
                                                                 @if($v->cate_pid == 0)
@@ -123,7 +97,6 @@
                                                             定价 :
                                                             <span class="required">*</span>
                                                         </label>
-
                                                         <input type="text" class="input-text" name="price"
                                                                id="account_email" value="{{old('price') }}"/>
                                                     </p>
@@ -208,8 +181,6 @@
                                                             状态 ：
                                                             <span class="required">*</span>
                                                         </label>
-
-
                                                         <input style="display: none;" class="common-text" name="gstatus" size="50"
                                                                checked="" value="0">
                                                         <button id="a" type="button" onclick="$('.common-text').attr('value','0');"
@@ -221,18 +192,15 @@
                                                                 class="btn btn-block btn-default "><font
                                                                     style="vertical-align: inherit;"><font
                                                                         style="vertical-align: inherit;">上架</font></font></button>
-
                                                         <button id="c" type="button" onclick="$('.common-text').attr('value','2');"
                                                                 class="btn btn-block btn-default"><font
                                                                     style="vertical-align: inherit;"><font
                                                                         style="vertical-align: inherit;">下架</font></font></button>
-
                                                     </p>
-
 
                                                     <div class="clear"></div>
                                                     <p>
-                                                        <input type="submit" class="button" name="save_account_details"
+                                                        <input type="submit" class="btn btn-primary" name="save_account_details"
                                                                value="确认添加"/>
                                                     </p>
                                                 </form>

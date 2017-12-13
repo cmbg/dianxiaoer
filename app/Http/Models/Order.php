@@ -8,6 +8,7 @@ class Order extends Model
 {
     //设置表名
     public $table = 'order';
+    public $primaryKey = 'oid';
 
     //设置日期时间格式
     public $dateFormat = 'U';
@@ -31,7 +32,9 @@ class Order extends Model
     }
     public function goods()
     {
-        return $this->hasManyThrough('App\Http\Models\good','App\Http\Models\OrderDetail','oid','gid','oid');
+        //return 1111;
+        return $this->belongsToMany('App\Http\Models\good','orderdetail','oid','gid');
+//        return $this->hasManyThrough('App\Http\Models\good','orderdetail','oid','gid');
     }
 
 }

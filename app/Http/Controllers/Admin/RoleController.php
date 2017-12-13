@@ -19,7 +19,7 @@ class RoleController extends Controller
     {
         //获取所有的角色
 //        $roles = Role::get();
-        $data = Role::paginate(3);
+        $data = Role::paginate(10);
 //        dd($data);
         return view('Admin.Admin_Role.Index', ['title' => '角色管理','data'=>$data]);
     }

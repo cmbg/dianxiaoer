@@ -26,11 +26,10 @@ class DetController extends CommonController
         if(!$this -> yz($id)){
             return redirect('home/fshop')->with('msg', '请您正确操作');
         }
-
         $data = good::with('fishpond', 'gpicinfo', 'gpic')->where('gid', $id)->get(); //get  是一个集合 $a = $input[0]['gname'];
         $data = $data[0];
 //        dd($data);
-        return view('home.home_Det.good_details', compact('data', 'id'));
+        return view('Home.Home_Det.good_details', compact('data', 'id'));
 
     }
 
@@ -66,7 +65,7 @@ class DetController extends CommonController
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 给商品添加商品详情
      *
      * @return \Illuminate\Http\Response
      */
@@ -151,8 +150,7 @@ class DetController extends CommonController
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public
-    function show($id)
+    public function show($id)
     {
         //
     }
@@ -214,8 +212,6 @@ class DetController extends CommonController
             'scc' => 'required',
             'scl' => 'required|regex:/[0-9]/',//收藏数量
             'content' => 'required|max:200|min:50',
-
-
         ];
         $mess = [
             'scc.required' => '不能为空',
@@ -232,10 +228,9 @@ class DetController extends CommonController
             return redirect('home/fshop')
                 ->withErrors($validator)
                 ->withInput();
-
         }
 
-       $res =  goodsdetail::find($id)->update($data);
+        $res =  goodsdetail::find($id)->update($data);
         if($res){
             return redirect('home/fshop')->whih('msg','修改成功');
         }else{
@@ -244,7 +239,7 @@ class DetController extends CommonController
     }
 
     /**
-     * @判断商品是不是属于 用户
+     * @判断商品是不是属于用户
      * @ return true 和false 用于其他方法掉调用
      */
     public function yz($gid)

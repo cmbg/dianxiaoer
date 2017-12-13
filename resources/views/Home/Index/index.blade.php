@@ -658,7 +658,7 @@
 <script type="text/javascript" src="{{asset('Home/js/plugins.js')}}"></script>
 <script type="text/javascript" src="{{asset('Home/js/megamenu.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('Home/js/main.min.js')}}"></script>
-<script src="{{asset('Home/layui/layui.js')}}"></script>
+<script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
 <script type="text/javascript">
     var sticky_navigation_offset_top = $("#header .header-bottom").offset().top;
     var sticky_navigation = function () {

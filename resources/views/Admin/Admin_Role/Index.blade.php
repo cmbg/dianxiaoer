@@ -83,41 +83,6 @@
                                             </tr>
                                         @endforeach
                                         </tbody>
-                                        <script>
-                                            function sendBtn(node) {
-                                                //询问框
-                                                layer.confirm('您确认删除吗？', {
-                                                    btn: ['确认', '取消'] //按钮
-                                                }, function () {
-                                                    //如果用户发出删除请求，应该使用ajax向服务器发送删除请求
-                                                    //$.get("请求服务器的路径","携带的参数", 获取执行成功后的额返回数据);
-                                                    //admin/user/1
-                                                    $.post("{{url('admin/role')}}/" + node, {
-                                                        "_method": "delete",
-                                                        {{--"_token": "{{csrf_token()}}"--}}
-                                                    }, function (data) {
-//                                                        console.log(data);
-                                                        //data是json格式的字符串，在js中如何将一个json字符串变成json对象
-                                                        //var res =  JSON.parse(data);
-                                                        //删除成功
-                                                        if (data.error == 0) {
-                                                            //console.log("错误号"+res.error);
-                                                            //console.log("错误信息"+res.msg);
-                                                            layer.msg(data.msg, {icon: 6});
-                                                            var t = setTimeout("location.href = location.href;", 1000);
-//                                                            location.href = location.href;
-                                                        } else {
-                                                            layer.msg(data.msg, {icon: 5});
-                                                            var t = setTimeout("location.href = location.href;", 1000);
-//                                                            location.href = location.href;
-                                                        }
-                                                    });
-                                                }, function () {
-
-                                                });
-                                            }
-                                        </script>
-
 
                                     </table>
                                 </div>
@@ -191,14 +156,46 @@
     <script src="{{ asset('/Admin/bower_components/fastclick/lib/fastclick.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/Admin/dist/js/adminlte.min.js') }}"></script>
-    {{--<!-- AdminLTE dashboard demo (This is only for demo purposes) -->--}}
-    {{--<script src="{{ asset('/Admin/dist/js/pages/dashboard.js') }}"></script>--}}
-    <!-- AdminLTE for demo purposes -->
+    <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
     <script src="{{ asset('/Admin/dist/js/demo.js') }}"></script>
 @stop
 
 @section("adondblclick")
     <script>
         $(".tishi   ").fadeOut(2000);
+    </script>
+    <script>
+        function sendBtn(node) {
+            //询问框
+            layer.confirm('您确认删除吗？', {
+                btn: ['确认', '取消'] //按钮
+            }, function () {
+                //如果用户发出删除请求，应该使用ajax向服务器发送删除请求
+                //$.get("请求服务器的路径","携带的参数", 获取执行成功后的额返回数据);
+                //admin/user/1
+                $.post("{{url('admin/role')}}/" + node, {
+                    "_method": "delete",
+                    {{--"_token": "{{csrf_token()}}"--}}
+                }, function (data) {
+//                                                        console.log(data);
+                    //data是json格式的字符串，在js中如何将一个json字符串变成json对象
+                    //var res =  JSON.parse(data);
+                    //删除成功
+                    if (data.error == 0) {
+                        //console.log("错误号"+res.error);
+                        //console.log("错误信息"+res.msg);
+                        layer.msg(data.msg, {icon: 6});
+                        var t = setTimeout("location.href = location.href;", 1000);
+//                                                            location.href = location.href;
+                    } else {
+                        layer.msg(data.msg, {icon: 5});
+                        var t = setTimeout("location.href = location.href;", 1000);
+//                                                            location.href = location.href;
+                    }
+                });
+            }, function () {
+
+            });
+        }
     </script>
 @stop
