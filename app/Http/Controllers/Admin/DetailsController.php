@@ -12,7 +12,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
-class DetailsController extends Controller
+class DetailsController extends CommonController
 {
     /**
      * Display a listing of the resource.

@@ -8,7 +8,7 @@ use App\Http\Models\OrderDetail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class OrderController extends Controller
+class OrderController extends CommonController
 {
     /**
      * 查看订单列表页面

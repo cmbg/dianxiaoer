@@ -21,10 +21,8 @@
     <link rel="stylesheet" href="{{asset('Home/css/app-orange.css')}}" id="theme_color"/>
     <link rel="stylesheet" href="" id="rtl"/>
     <link rel="stylesheet" href="{{asset('Home/css/app-responsive.css')}}"/>
-    {{--<link rel="stylesheet" href="{{asset('Home/layui/css/layui.css')}}"/>--}}
-    <link rel="stylesheet" href="{{ asset('/layer/skin/layer.css') }}">
-    <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
-    {{--<script src="{{asset('Home/layui/layui.js')}}"></script>--}}
+    <link rel="stylesheet" href="{{asset('layer/skin/layer.css') }}">
+      <link rel="stylesheet" href="{{asset('layui/css/layui.css')}}">
 </head>
 @yield('body')
 
@@ -121,9 +119,21 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="item-link" href="{{url('/home/login')}}" >
-                                                     <span class="menu-title">登录</span>
+                                            @if (!empty(session()->get('user')))
+                                                <a class="item-link" href="{{url('/home/logout')}}" >
+                                                     <span class="menu-title">
+                                                     
+                                                   退出    </span>
                                                 </a>
+                                         @else
+                                                    <a class="item-link" href="{{url('/home/login')}}" >
+                                                     <span class="menu-title">
+                                                     登录
+                                                    
+
+                                                     </span>
+                                                </a>
+                                                 @endif
                                             </li>
                                         </ul>
                                     </div>

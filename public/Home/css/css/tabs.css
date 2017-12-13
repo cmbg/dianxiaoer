@@ -1,0 +1,30 @@
+.tabs div{
+    display: none;
+    clear: both;
+    border: solid 2px #0099FF;
+    min-height: 500px;
+}
+.tabs .horizontal{
+    margin: 0px;
+    padding: 0px;
+}
+.tabs .horizontal li{
+    float: left;
+    list-style: none;
+    height: 50px;
+    line-height: 50px;
+    background-color: #DDDDDD;
+    width:150px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+.tabs .horizontal li:not(:first-child){
+    margin-left: 5px;
+}
+
+.tabs .horizontal li.selectActive{
+    border-bottom: solid 2px #0099FF;
+    background-color: #0099FF;
+    color: white;
+}

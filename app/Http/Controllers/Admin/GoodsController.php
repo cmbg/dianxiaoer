@@ -15,7 +15,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class GoodsController extends Controller
+class GoodsController extends CommonController
 {
     /**
      * Display a listing of the resource.

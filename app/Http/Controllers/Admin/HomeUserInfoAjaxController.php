@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class HomeUserInfoAjaxController extends Controller
+class HomeUserInfoAjaxController extends CommonController
 {
     /**
      * 切换普通管理员和超级管理员状态的按钮,0为普通用户,1为鱼塘塘主

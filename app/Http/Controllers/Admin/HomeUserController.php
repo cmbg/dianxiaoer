@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-class HomeUserController extends Controller
+class HomeUserController extends CommonController
 {
      /**
      * 图片上传处理(头像)
