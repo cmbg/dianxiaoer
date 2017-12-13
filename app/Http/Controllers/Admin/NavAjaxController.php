@@ -14,19 +14,21 @@ class NavAjaxController extends CommonController
     {
 //        return 111;
 //        sleep(2);
-        $id = $request->input('id');
-        $name = $request->input('name');
-        $res = Nav::where('nname', $name)->first();
+        $id1 = $request->input('id1');
+//        return $id1;
+        $name1 = $request->input('name1');
+        $res1 = Nav::where('nname', $name1)->first();
 //        return $res;
-        if ($res) {
+        if ($res1) {
 ////            用户名已经存在 。
             return response()->json(['code' => 0]);
 ////            return ['code'=>0];
         } else {
-            $data = Nav::find($id);
-            $res = $data->update(['nname' => $name]);
+//            return 111;
+            $data = Nav::find($id1);
+            $res1 = $data->update(['nname' => $name1]);
 //            echo $res;
-            if ($res) {
+            if ($res1) {
 //////                1.表示成功。
                 return response()->json(['code' => 1]);
             } else {
@@ -38,7 +40,7 @@ class NavAjaxController extends CommonController
 
     public function ajaxLinks(Request $request)
     {
-//        return 111;
+        //return 111;
 //        sleep(2);
         $id = $request->input('id');
         $name = $request->input('name');

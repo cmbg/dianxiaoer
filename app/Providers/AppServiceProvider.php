@@ -19,9 +19,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
     
-        $data = Cate::tree();
-        view()->share('data', $data);
-      
+
+//        $data = Cate::tree();
+//        view()->share('data', $data);
+       
 //        $carts = Cart::content();//购物车所有信息
 //        $total = Cart::subtotal();//总额 不含税
 //        $count = Cart::count();//购物车商品数量

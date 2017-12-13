@@ -156,6 +156,20 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="pull-left top2">
+                            <div class="widget-1 widget-first widget nav_menu-2 widget_nav_menu">
+                                <div class="widget-inner">
+                                    <ul id="menu-checkout" class="menu">
+                                        <li class="menu-checkout">
+                                            <a class="item-link" href="{{url('/admin/login')}}">
+                                                <span class="menu-title">后台管理</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -182,15 +196,15 @@
                                                        placeholder="商品名...">
                                                 <div class="cat-wrapper">
                                                     <label class="label-search">
-                                                        <select name="cate" class="s1_option">
-                                                            <option value="">|---请选择---|</option>
-                                                            @foreach($data as $v)
-                                                                @if($v->cate_pid != 0)
-                                                            <option value="{{$v->cate_id}}">{{$v->cate_keywords}}</option>
-                                                                @endif
-                                                                @endforeach
+                                                        {{--<select name="cate" class="s1_option">--}}
+                                                            {{--<option value="">|---请选择---|</option>--}}
+                                                            {{--@foreach($data as $v)--}}
+                                                                {{--@if($v->cate_pid != 0)--}}
+                                                            {{--<option value="{{$v->cate_id}}">{{$v->cate_keywords}}</option>--}}
+                                                                {{--@endif--}}
+                                                                {{--@endforeach--}}
 
-                                                        </select>
+                                                        {{--</select>--}}
                                                     </label>
                                                 </div>
 

@@ -248,7 +248,7 @@ class AdminUserController extends CommonController
     }
 
     /**
-     * 返回给角色授权的页面
+     * 返回给用户授予角色的页面
      */
 
     public function auth($id)
