@@ -216,7 +216,9 @@
                             @if(empty($input->gpicinfo)||empty($input->gpic->content))主人很懒@else{!! $input->gpicinfo->content !!}@endif
                         </div>
                         <div class="det tab-pane fade in  " id="product-reviews">
-                            DFLKJASDHFKJASHDLKF
+                            <!-- UY BEGIN -->
+                            @include('Home.Home_List.Good_Comment')
+                            <!-- UY END -->
                         </div>
                     </div>
                 </div>

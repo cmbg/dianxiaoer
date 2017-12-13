@@ -152,7 +152,7 @@ class RegisterController extends Controller
            });
 
 sleep(200);
-           return redirect('phoneregister',);
+           return redirect('phoneregister');
            // setTimeout("location.href = phoneregister;",2000);
 
        }else{

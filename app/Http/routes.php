@@ -119,9 +119,13 @@ Route::post('/home/Det/update', 'Home\DetController@update'); // 浏览详图片
 Route::get('/home/Det/edit/{id}', 'Home\DetController@edit'); // 修改商品详情页面
 
 
+
 //前台商品展示
 Route::get('home/goods/list/{id?}', 'Home\Good_ListController@index');
 Route::get('home/goods/ajax', 'Home\Good_ListController@ajax');
+Route::post('home/com/ajax','Home\Good_ListController@store');//留言
+Route::get('home/com/reply','Home\Good_ListController@reply');//留言
+Route::post('home/com/comment','Home\Good_ListController@comment');//留言
 //商品详情展示页
 Route::get('home/goods/det/{id}','Home\Good_ListController@show');
 
