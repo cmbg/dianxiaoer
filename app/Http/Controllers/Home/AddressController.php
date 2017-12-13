@@ -100,7 +100,7 @@ class AddressController extends CommonController
         $mraddress = Address::get()->where('uid',$uid)->where('isStaAdd',2);
         // dd($mraddress->isEmpty());
         if($mraddress->isEmpty()){
-             $data->isStaAdd = 2;
+             $data->isStaAdd =  2;
         }else{
              $data->isStaAdd = 1;
         }
