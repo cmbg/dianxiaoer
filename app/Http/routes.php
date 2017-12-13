@@ -28,11 +28,10 @@ Route::resource('Admin/Cate/list','Admin\Cate\CateController'); //分类路由
 Route::post('Admin/Cate/changeorder','Admin\Cate\CateController@changeOrder');//修改分类排序
 
 // 购物车相关路由  start
-Route::resource('shop', 'Home\ShopController');//购物车控制器
-Route::get('/addcart/{id}', 'Home\ShopController@addcart');//添加购物车
-Route::get('/cart', 'Home\ShopController@cart')->name('cart');//跳转到购物车列表
-Route::get('/shop/removecart/{id}', 'Home\ShopController@getRemovecart');//删除商品
-Route::get('/del', 'Home\ShopController@destroy');//清空购物车路由
+Route::post('home/addcart/{gid}', 'Home\ShopController@addcart');//添加购物车
+Route::get('home/cart', 'Home\ShopController@cart');//跳转到购物车列表
+Route::get('home/removecart/{gid}', 'Home\ShopController@getRemovecart');//删除商品
+Route::get('home/cart/del', 'Home\ShopController@destroy');//清空购物车路由
 
 
 Route::resource('order','Home\OrderController');//订单路由

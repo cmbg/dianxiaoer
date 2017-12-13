@@ -66,7 +66,7 @@
                                                                             @foreach($arr as  $k=>$v)
 
                                                                             <li class="fix-menu dropdown menu-smartphones-tablet etrostore-mega-menu level1">
-                                                                                <a href="" class="item-link dropdown-toggle">
+                                                                                <a href="{{url('home/goods/list')}}" class="item-link dropdown-toggle">
 																					<span class="have-title">
 																						<span class="menu-color" data-color="#efc73a"></span>
 
@@ -84,9 +84,116 @@
 
                                                                                         <ul class="dropdown-sub nav-level2">
                                                                                             <li class="menu-laptop-desktop-accessories">
-                                                                                                <a href="">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li> <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li> <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li> <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
 																									<span class="have-title">
 																										<span class="menu-title">{{$n['cate_name']}}</span>
+																									</span>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li>
+
+                                                                                            <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li> <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li> <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li> <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
+																									</span>
+                                                                                                </a>
+                                                                                            </li> <li class="menu-laptop-desktop-accessories">
+                                                                                                <a href="{{url('home/goods/list')}}">
+
+																									<span class="have-title">
+
 																									</span>
                                                                                                 </a>
                                                                                             </li>
@@ -265,7 +372,7 @@
                                                 <div class="resp-slider-container">
                                                     <div class="box-title clearfix">
                                                         <h3>今日特价</h3>
-                                                        <a href="deals.html">查看全部</a>
+                                                        <a href="{{url('home/goods/list')}}">查看全部</a>
                                                     </div>
 
                                                     <div class="banner-content clearfix">
@@ -283,18 +390,18 @@
                                                                 <div class="item-detail">
                                                                     <div class="item-image-countdown">
                                                                         <span class="onsale">Sale!</span>
-                                                                            <a href="#" target="_self"
+                                                                            <a href="{{url('home/goods/det/'.$v->gid)}}" target="_self"
                                                                                class="vc_single_image-wrapper vc_box_border_grey">
                                                                                 <img class="vc_single_image-img"
                                                                                      src="{{$v->pic}}"
                                                                                      style="width:300px;height:320px" alt="banner1"
-                                                                                     title="banner1"/>
+                                                                                     title="{{$v->gname}}"/>
                                                                             </a>
                                                                         <!-- add to cart, wishlist, compare -->
                                                                         <div class="item-bottom clearfix">
                                                                             <a rel="nofollow" href="#"
                                                                                class="button product_type_simple add_to_cart_button ajax_add_to_cart"
-                                                                               title="Add to Cart">Add to cart</a>
+                                                                               title="Add to Cart">{{$v->gname}}</a>
 
                                                                             <a href="javascript:void(0)"
                                                                                class="compare button" rel="nofollow"
@@ -357,7 +464,7 @@
                                         <div class="wpb_wrapper">
                                             <div class="wpb_single_image wpb_content_element vc_align_center">
                                                 <figure class="wpb_wrapper vc_figure">
-                                                    <a href="#" target="_self"
+                                                    <a href="{{url('home/goods/list')}}" target="_self"
                                                        class="vc_single_image-wrapper vc_box_border_grey">
                                                         <img class="vc_single_image-img" src="images/1903/banner6-1.jpg"
                                                              width="570" height="220" alt="banner6" title="banner6"/>
@@ -373,7 +480,7 @@
                                         <div class="wpb_wrapper">
                                             <div class="wpb_single_image wpb_content_element vc_align_center banner-none">
                                                 <figure class="wpb_wrapper vc_figure">
-                                                    <a href="#" target="_self"
+                                                    <a href="{{url('home/goods/list')}}" target="_self"
                                                        class="vc_single_image-wrapper vc_box_border_grey">
                                                         <img class="vc_single_image-img" src="images/1903/banner7-1.jpg"
                                                              width="570" height="220" alt="banner7" title="banner7"/>
@@ -434,7 +541,8 @@
                                                             <div class="item-brand">
                                                                 <a href="#">
                                                                     <img width="170" height="87"
-                                                                         src="images/1903/Brand_1.jpg"
+                                                                         src="images/1903/naike_1.jpg"
+
                                                                          class="attachment-170x90 size-170x90" alt=""/>
                                                                 </a>
                                                             </div>
@@ -442,7 +550,7 @@
                                                             <div class="item-brand">
                                                                 <a href="#">
                                                                     <img width="170" height="90"
-                                                                         src="images/1903/br5.jpg"
+                                                                         src="images/1903/jinli_1.jpg"
                                                                          class="attachment-170x90 size-170x90" alt=""/>
                                                                 </a>
                                                             </div>
@@ -450,15 +558,30 @@
                                                             <div class="item-brand">
                                                                 <a href="#">
                                                                     <img width="170" height="90"
-                                                                         src="images/1903/br2.jpg"
+                                                                         src="images/1903/lianxiang_1.jpg"
                                                                          class="attachment-170x90 size-170x90" alt=""/>
                                                                 </a>
                                                             </div>
 
                                                             <div class="item-brand">
+                                                                {{--左侧品牌图片--}}
                                                                 <a href="#">
                                                                     <img width="170" height="90"
-                                                                         src="images/1903/br3.jpg"
+                                                                         src="images/1903/masha_1.jpg"
+                                                                         class="attachment-170x90 size-170x90" alt=""/>
+                                                                </a>
+                                                            </div>
+                                                            <div class="item-brand">
+                                                                <a href="#">
+                                                                    <img width="170" height="90"
+                                                                         src="images/1903/sanxing_1.jpg"
+                                                                         class="attachment-170x90 size-170x90" alt=""/>
+                                                                </a>
+                                                            </div>
+                                                            <div class="item-brand">
+                                                                <a href="#">
+                                                                    <img width="170" height="90"
+                                                                         src="images/1903/meibang_1.jpg"
                                                                          class="attachment-170x90 size-170x90" alt=""/>
                                                                 </a>
                                                             </div>
@@ -467,7 +590,7 @@
                                                         <!-- slider content -->
 
                                                         <div class="resp-slider-container">
-
+                                                            {{--六张图--}}
                                                             <div class="slider responsive">
                                                                 @for($i=1;$i<=3;$i++)
                                                                 <div class="item product">
@@ -486,28 +609,28 @@
 
                                                                                 <h4>
                                                                                     <a href="simple_product.html"
-                                                                                       title="voluptate ipsum">Voluptate
-                                                                                        ipsum</a>
+                                                                                       title="">{{$v->gname}}
+                                                                                        </a>
                                                                                 </h4>
 
                                                                                 <!-- Price -->
                                                                                 <div class="item-price">
 																						<span>
 																							<span class="woocommerce-Price-amount amount">
-																								<span class="woocommerce-Price-currencySymbol">$</span>550.00
+																								<span class="woocommerce-Price-currencySymbol">$</span>{{$v->price}}
 																							</span>
 																						</span>
                                                                                 </div>
                                                                             </div>
 
                                                                             <div class="item-img products-thumb">
-                                                                                {{--@foreach($goods1 as $k=>$v)--}}
-                                                                                    <a href="#" target="_self"
+
+                                                                                    <a href="{{url('home/goods/det/'.$v->gid)}}" target="_self"
                                                                                        class="vc_single_image-wrapper vc_box_border_grey">
                                                                                         <img class="vc_single_image-img"
                                                                                              src="{{$v->pic}}"
                                                                                              style="width:182px;height:182px" alt="banner1"
-                                                                                             title="banner1"/>
+                                                                                             title="{{$v->gname}}"/>
                                                                                     </a>
                                                                             {{--@endforeach--}}
 
@@ -573,9 +696,10 @@
                                                         </div>
                                                     </div>
 
+                                                    {{--右侧六张商品图--}}
                                                     <div class="best-seller-product">
                                                         <div class="box-slider-title">
-                                                            <h2 class="page-title-slider">Best sellers</h2>
+                                                            <h2 class="page-title-slider">最畅销产品</h2>
                                                         </div>
 
                                                         <div class="wrap-content">
@@ -583,12 +707,12 @@
                                                             <div class="item">
                                                                 <div class="item-inner">
                                                                     <div class="item-img">
-                                                                            <a href="#" target="_self"
+                                                                            <a href={{url('home/goods/list')}} target="_self"
                                                                                class="vc_single_image-wrapper vc_box_border_grey">
                                                                                 <img class="vc_single_image-img"
                                                                                      src="{{$v->pic}}"
                                                                                      style="width:70px;height:70px" alt="banner1"
-                                                                                     title="banner1"/>
+                                                                                     title="{{$v->gname}}"/>
                                                                             </a>
                                                                     </div>
 
@@ -597,7 +721,8 @@
                                                                     <div class="item-content">
                                                                         <!-- rating  -->
                                                                         <div class="reviews-content">
-                                                                            <div class="star">{{$k+1}}</div>
+                                                                            <div>{{$k+1}}</div>
+                                                                            <div class="star"></div>
                                                                             <div class="item-number-rating">
                                                                                 Review(s)
                                                                             </div>
@@ -606,12 +731,12 @@
 
                                                                         <h4>
                                                                             <a href="simple_product.html"
-                                                                               title="Sony BRAVIA 4K">Sony BRAVIA 4K</a>
+                                                                               title="">{{$v->gname}}</a>
                                                                         </h4>
 
                                                                         <div class="item-price">
 																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">$</span>600.00
+																					<span class="woocommerce-Price-currencySymbol">$</span>{{$v->price}}
 																				</span>
                                                                         </div>
                                                                     </div>

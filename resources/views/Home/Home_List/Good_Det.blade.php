@@ -32,22 +32,19 @@
                         <ul class="thumbs unstyled clearfix">
                             @foreach($input->gpic as $v)
                                 <li><a href="javascript:;">
-                                        <img  onclick="gpic(this)" src="{{$v->gpic}}" >
+                                        <img onclick="gpic(this)" src="{{$v->gpic}}">
                                     </a>
                                 </li>
                             @endforeach
                         </ul>
                     </div>
                     <script>
+                        function gpic(obj) {
+                            var gpic = $(obj).attr('src');
+                            console.log(gpic);
+                            $('#pic').attr('src', gpic);
 
-                                function gpic(obj) {
-                                    var gpic = $(obj).attr('src');
-                                    console.log(gpic);
-                                    $('#pic').attr('src',gpic);
-
-                                }
-
-
+                        }
                     </script>
 
                 </div>
@@ -85,7 +82,8 @@
                                     </li>
                                     <li>
                                         <span class="key">有无验证:</span>
-                                        <span class="value">@if(empty($input->gpicinfo)||empty($input->gpicinfo->zid )) 无验证 @else
+                                        <span class="value">@if(empty($input->gpicinfo)||empty($input->gpicinfo->zid ))
+                                                无验证 @else
                                                 已验证@endif</span>
                                     </li>
                                     <li>
@@ -95,7 +93,8 @@
                                     </li>
                                     <li>
                                         <span class="key">商品收藏量:</span>
-                                        <span id="scl" class="value">@if(empty($input->gpicinfo)||empty($input->gpicinfo->scl)) 0 @else {{$input->gpicinfo->scl}} @endif</span>
+                                        <span id="scl" class="value">@if(empty($input->gpicinfo)||empty($input->gpicinfo->scl))
+                                                0 @else {{$input->gpicinfo->scl}} @endif</span>
                                     </li>
                                 </ul>
                                 <figcaption class="m-b-sm">
@@ -108,16 +107,19 @@
                                     <div class="col-xs-12 col-sm-6">
                                         <li>
                                             <span class="key">小二来自 :</span>
-                                            <span style="color:red;" class="value">  @if($input->fid == 0)
+                                            <span style="color:red;" class="value">  @if(!isset($input->fid))
                                                     店小二商品 @else{{$input->fishpond->fishpondname}} 鱼塘 @endif</span>
                                         </li>
-
-
                                     </div>
                                 </div>
+
+
+                                <form action="{{url('home/addcart/'.$input->gid)}}" method="post">
+                                    {{csrf_field()}}
                                 <li>
                                     <span class="key">购买数量:</span>
-                                    <span class="value"><style>
+                                    <span class="value">
+                                        <style>
                                         #p-m-8-1 {
                                             width: 56px;
                                             height: 36px;
@@ -149,50 +151,62 @@
                                             float: right;
                                         }
                                     </style>
-                                    <span><div id="p-m-8-1">
-    				<input id="p-cnt" type="text" name="cnt" value="1">
-                                            <button type="button" id="pn-add">+</button>
-                                            <button type="button" id="pn-dec">-</button>
-                    <script>
-                        var jia = document.getElementById('pn-add');
-                        var jian = document.getElementById('pn-dec');
-                        var num = document.getElementById('p-cnt');
+                                        <span>
+                                            <div id="p-m-8-1">
+                                                <input id="p-cnt" type="text" name="cnt" value="1">
+                                                <input type="hidden" name="gname" value="{{$input->gname}}">
+                                                <input type="hidden" name="price" value="{{$input->price}}">
 
-                        var scl = $('#scl').html();
+                                                <button type="button" id="pn-add">+</button>
+                                                <button type="button" id="pn-dec">-</button>
+                                                <script>
+                                                    var jia = document.getElementById('pn-add');
+                                                    var jian = document.getElementById('pn-dec');
+                                                    var num = document.getElementById('p-cnt');
 
-                        jia.onclick = function () {
-                            //alert(num.value);
-                            if (num.value >= scl) {
-                                return;
-                            }
-                            num.value++;
+                                                    var scl = $('#scl').html();
 
-                        };
-                        jian.onclick = function () {
+                                                    jia.onclick = function () {
+                                                        //alert(num.value);
+                                                        if (num.value >= scl) {
+                                                            return;
+                                                        }
+                                                        num.value++;
 
-                            num.value--;
-                            if (num.value <= 1) {
-                                num.value = 1;
-                            }
-                        }
+                                                    };
+                                                    jian.onclick = function () {
+                                                        num.value--;
+                                                        if (num.value <= 1) {
+                                                            num.value = 1;
+                                                        }
+                                                    }
 
-                    </script>
-    				<div style="clear:both;"></div>
-    			</div></span>
-
-                                    <div class="clearfix"></div>
-</span>
+                                                </script>
+                                                <div style="clear:both;"></div>
+                                            </div>
+                                        </span>
+                                        <div class="clearfix"></div>
+                                    </span>
                                 </li>
                                 <ul class="inline-li li-m-r-l m-t-lg">
                                     <li>
-                                        <a href="#" class="btn btn-default btn-lg btn-round add-to-cart">
-                                            加入购物车>></a>
+                                        <button
+                                           class="btn btn-default btn-lg btn-round add-to-cart">
+                                            加入购物车></button>
+                                        {{--<a href=""--}}
+                                           {{--class="btn btn-default btn-lg btn-round add-to-cart">--}}
+                                            {{--加入购物车></a>--}}
                                     </li>
                                     <li>
-                                        <a href="#" class="btn btn-default btn-lg btn-round add-to-cart">
-                                            立即购买>></a>
+                                        {{--<a href="#" class="btn btn-default btn-lg btn-round add-to-cart">--}}
+                                            {{--立即购买></a>--}}
+                                        <button
+                                                class="btn btn-default btn-lg btn-round add-to-cart">
+                                            立即购买></button>
                                     </li>
                                 </ul>
+                                </form>
+
 
                             </figure>
                         </article>
@@ -213,7 +227,8 @@
 
                     <div class="tab-content">
                         <div class="det tab-pane fade in active " id="product-description">
-                            @if(empty($input->gpicinfo)||empty($input->gpic->content))主人很懒@else{!! $input->gpicinfo->content !!}@endif
+                            @if(empty($input->gpicinfo)||empty($input->gpic->content))
+                                主人很懒@else{!! $input->gpicinfo->content !!}@endif
                         </div>
                         <div class="det tab-pane fade in  " id="product-reviews">
                             <!-- UY BEGIN -->
@@ -223,8 +238,5 @@
                     </div>
                 </div>
             </div>
-
-
-
 
 @stop

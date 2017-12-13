@@ -54,10 +54,16 @@
                                     @foreach( $carts as $cart)
                                         <tr class="cart_item">
 
-
+                                            {{--<td class="col-sm-8 col-md-6">--}}
+                                                {{--<div class="media">--}}
+                                                    {{--<a class="thumbnail pull-left" href="#"> <img class="media-object" src="/photoes/p{{$cart->id}}.jpg" style="width: 100px; height: 72px;"> </a>--}}
+                                                    {{--<div class="media-body">--}}
+                                                        {{--<h4 class="media-heading"><a href="#">{{$cart->name}}</a></h4>--}}
+                                                    {{--</div>--}}
+                                                {{--</div></td>--}}
                                             <td class="product-thumbnail">
                                                 <a href="simple_product.html">
-                                                    {{--<img width="180" height="180" src="/photoes/p{{$cart->id}}.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="images/1903/56-180x180.jpg 180w, images/1903/56-150x150.jpg 150w, images/1903/56-300x300.jpg 300w, images/1903/56.jpg 600w" >--}}
+                                                    <img width="180" height="180" src="{{$cart->id}}" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="images/1903/56-180x180.jpg 180w, images/1903/56-150x150.jpg 150w, images/1903/56-300x300.jpg 300w, images/1903/56.jpg 600w" >
                                                 </a>
                                             </td>
 
@@ -71,26 +77,32 @@
 
                                             <td class="product-quantity" data-title="Quantity">
                                                 {{$cart->qty}}
-                                                {{--<div class="quantity">--}}
-                                                {{--<input type="number" step="1" min="0" max="" name="" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">--}}
-                                                {{--</div>--}}
                                             </td>
-
-                                            {{--<td class="product-subtotal" data-title="Total">--}}
-                                            {{--<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">${{$total}}</span></span>--}}
-                                            {{--</td>--}}
                                             <td class="product-remove">
-                                                <a href="/shop/removecart/{{$cart->rowId}}" class="remove" title="Remove this item"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                                <a href="{{url('home/removecart/'.$cart->rowId)}}" class="remove" title="Remove this item"><i class="fa fa-times" aria-hidden="true"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
                                     <tr>
                                         <td>
-                                            <a href="/shop"> <button type="button" class="btn btn-default">
+                                            <a href="{{url('home/goods/list')}}"> <button type="button" class="btn btn-default">
                                                     <span class="fa fa-shopping-cart"></span> 继续购物
                                                 </button>
                                             </a></td>
-                                        <td>   <a href="/del"> <button type="button" class="btn  btn-danger">
+
+                                        <td>   <a href="{{url('home/cart/del')}}">
+                                            </a> </td>
+
+
+                                        <td>   <a href="{{url('home/cart/del')}}">
+
+                                            </a> </td>
+
+                                        <td>   <a href="{{url('home/cart/del')}}">
+                                            </a> </td>
+
+
+                                        <td>   <a href="{{url('home/cart/del')}}"> <button type="button" class="btn  btn-danger">
                                                     <span class="fa fa-shopping-cart"></span> 清空购物车
                                                 </button>
                                             </a> </td>

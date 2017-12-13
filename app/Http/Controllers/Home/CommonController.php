@@ -19,6 +19,7 @@ class CommonController extends Controller
         $count = Cart::count();//购物车商品数量
         $links = Links::get();//友情链接
         $nav = Nav::orderBy('paixu','asc')->get();//导航栏
+//        dd($carts);
         view()->share('links', $links);
         view()->share('nav', $nav);
         view()->share('carts', $carts);

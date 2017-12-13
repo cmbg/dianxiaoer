@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : liubaogen
+Source Server         : localhost_3306
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : dianxiaoer
@@ -27,15 +27,16 @@ CREATE TABLE `address` (
   `isStaAdd` tinyint(5) NOT NULL DEFAULT '1' COMMENT '是否默认地址  2为默认地址',
   `uid` int(11) unsigned NOT NULL COMMENT '前台用户id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of address
 -- ----------------------------
-INSERT INTO `address` VALUES ('1', '宋寿强', '15704619282', '江西省抚州市资溪县巴拉巴拉', '1', '2');
 INSERT INTO `address` VALUES ('3', '宋先生', '15704619282', '福建省南平市松源镇巴拉巴拉', '1', '2');
 INSERT INTO `address` VALUES ('4', '王先生', '15704619282', '江苏省盐城市合德镇哔哩哔哩', '1', '2');
-INSERT INTO `address` VALUES ('12', '宋先生', '15704619282', '河南省平顶山市鲁山县略略略', '2', '2');
+INSERT INTO `address` VALUES ('12', '宋先生', '15704619282', '河南省平顶山市鲁山县略略略', '1', '2');
+INSERT INTO `address` VALUES ('14', '吴主席', '188888888', '黑龙江省哈尔滨市香坊区中央大街6号', '2', '2');
+INSERT INTO `address` VALUES ('15', '宋主席', '166666666', '黑龙江省哈尔滨市南岗区圣*索菲亚大教堂1号', '1', '2');
 
 -- ----------------------------
 -- Table structure for admin_users
@@ -126,7 +127,7 @@ CREATE TABLE `category` (
   `cate_order` int(255) NOT NULL,
   `cate_pid` int(11) NOT NULL,
   PRIMARY KEY (`cate_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of category
@@ -137,7 +138,7 @@ INSERT INTO `category` VALUES ('98', '电脑', '电脑', '电脑', '电脑', '0'
 INSERT INTO `category` VALUES ('99', '衣服', '衣服', '衣服', '衣服', '0', '0', '0');
 INSERT INTO `category` VALUES ('100', '电饭锅', '电饭锅', '电饭锅', '电饭锅', '0', '0', '96');
 INSERT INTO `category` VALUES ('101', '微波炉', '微波炉', '微波炉', '微波炉', '0', '0', '96');
-INSERT INTO `category` VALUES ('102', '小米手机', '小米手机', '小米手机', '小米手机', '0', '0', '97');
+INSERT INTO `category` VALUES ('102', '小米手机', '小米手机', '小米手机', '小米手机', '0', '11', '97');
 INSERT INTO `category` VALUES ('103', '金立手机', '金立手机', '金立手机', '金立手机', '0', '0', '97');
 INSERT INTO `category` VALUES ('104', '戴尔电脑', '戴尔电脑', '戴尔电脑', '戴尔电脑', '0', '0', '98');
 INSERT INTO `category` VALUES ('105', '联想电脑', '联想电脑', '联想电脑', '联想电脑', '0', '0', '98');
@@ -152,6 +153,15 @@ INSERT INTO `category` VALUES ('114', '实木厨具', '实木厨具', '实木厨
 INSERT INTO `category` VALUES ('115', '二手汽车', '二手汽车', '二手汽车', '二手汽车', '0', '0', '0');
 INSERT INTO `category` VALUES ('116', '二手跑车', '二手跑车', '二手跑车', '二手跑车', '0', '0', '115');
 INSERT INTO `category` VALUES ('117', '二手SUV', '二手SUV', '二手SUV', '二手SUV', '0', '0', '115');
+INSERT INTO `category` VALUES ('119', '零食', '零食', '零食', '零食', '0', '0', '0');
+INSERT INTO `category` VALUES ('120', '休闲零食', '休闲零食', '休闲零食', '休闲零食', '0', '0', '119');
+INSERT INTO `category` VALUES ('121', '糕点饼干', '糕点饼干', '糕点饼干', '糕点饼干', '0', '1', '119');
+INSERT INTO `category` VALUES ('122', '游戏', '游戏', '游戏', '游戏', '0', '0', '0');
+INSERT INTO `category` VALUES ('123', '游戏账号', '游戏账号', '游戏账号', '游戏账号', '0', '0', '122');
+INSERT INTO `category` VALUES ('124', '游戏点卡', '游戏点卡', '游戏点卡', '游戏点卡', '0', '0', '122');
+INSERT INTO `category` VALUES ('125', '美妆', '美妆', '美妆', '美妆', '0', '0', '0');
+INSERT INTO `category` VALUES ('126', '护肤', '护肤', '护肤', '护肤', '0', '0', '125');
+INSERT INTO `category` VALUES ('127', '美发', '美发', '美发', '美发', '0', '0', '125');
 
 -- ----------------------------
 -- Table structure for cid
@@ -292,7 +302,7 @@ INSERT INTO `goods` VALUES ('78', '103', '1', 'http://cmbgl.oss-cn-beijing.aliyu
 INSERT INTO `goods` VALUES ('79', '103', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077439711.jpg', '0', '100002', '金立se2000', '中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!', '0', '0');
 INSERT INTO `goods` VALUES ('80', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077439711.jpg', '0', '2222', '小米note2', '中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!中国社会主义好,中国共产党万岁,中国万岁!', '0', '16');
 INSERT INTO `goods` VALUES ('81', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128077778110.jpg', '0', '2222', '小米note2', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '16');
-INSERT INTO `goods` VALUES ('82', '102', '11', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128078975326.jpg', '0', '2222', '小米note2', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '15');
+INSERT INTO `goods` VALUES ('82', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128078975326.jpg', '0', '2222', '小米note2', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '15');
 INSERT INTO `goods` VALUES ('83', '102', '0', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128079353458.jpg', '0', '2222', '小米4', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '14');
 INSERT INTO `goods` VALUES ('84', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128079576859.jpg', '0', '2222', '小米6', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '13');
 INSERT INTO `goods` VALUES ('85', '102', '1', 'http://cmbgl.oss-cn-beijing.aliyuncs.com/15128080003455.jpg', '0', '2222', '小米7', '为什么要有描述,看了你能信吗,你是不是傻,为什么描述这么长 ,这么长, 这么TM的长!', '0', '12');
@@ -517,7 +527,7 @@ CREATE TABLE `home_users` (
   `avatar` varchar(255) NOT NULL COMMENT '头像',
   `nickname` varchar(255) NOT NULL COMMENT '用户昵称',
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of home_users
@@ -535,7 +545,7 @@ CREATE TABLE `links` (
   `lurl` varchar(255) NOT NULL COMMENT '目标地址',
   `limg` varchar(255) NOT NULL COMMENT '链接图片',
   PRIMARY KEY (`lid`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of links
@@ -655,30 +665,32 @@ CREATE TABLE `order` (
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-INSERT INTO `order` VALUES ('15127028095a2a0359', '60.00', '4', '0', '东北', '1', '0000-00-00 00:00:00', '12234567890', '', '', '');
-INSERT INTO `order` VALUES ('15127040305a2a081e', '59.70', '4', '0', '北京天安门壹号', '1', '2017-12-08 03:33:50', '12312312323', '王五', '是的发送到发顺丰', '支付宝');
-INSERT INTO `order` VALUES ('15127040675a2a0843', '59.70', '4', '0', '北京天安门壹号', '1', '2017-12-08 03:34:27', '12312312323', '王五', '是的发送到发顺丰', '支付宝');
-INSERT INTO `order` VALUES ('15127240015a2a5621', '19.90', '1', '0', '11', '1', '2017-12-08 09:06:41', '11', '11', '11', '货到付款');
-INSERT INTO `order` VALUES ('15127240515a2a5653', '19.90', '1', '0', '', '2', '2017-12-08 09:07:31', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127241645a2a56c4', '19.90', '1', '0', '', '1', '2017-12-08 09:09:25', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127242365a2a570c', '19.90', '1', '0', '', '1', '2017-12-08 09:10:36', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127244855a2a5805', '19.90', '1', '0', '', '1', '2017-12-08 09:14:45', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127245665a2a5856', '19.90', '1', '0', '', '1', '2017-12-08 09:16:06', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127246445a2a58a4', '19.90', '1', '0', '', '1', '2017-12-08 09:17:24', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127247085a2a58e4', '19.90', '1', '0', '', '1', '2017-12-08 09:18:28', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127247735a2a5925', '19.90', '1', '0', '', '1', '2017-12-08 09:19:33', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127248025a2a5942', '19.90', '1', '0', '', '1', '2017-12-08 09:20:02', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127248535a2a5975', '19.90', '1', '0', '', '1', '2017-12-08 09:20:54', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127250615a2a5a45', '19.90', '1', '0', '', '1', '2017-12-08 09:24:21', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127312455a2a726d', '19.90', '1', '0', '', '1', '2017-12-08 11:07:25', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127312565a2a7278', '19.90', '1', '0', '', '1', '2017-12-08 11:07:36', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127313425a2a72ce', '19.90', '1', '0', '', '1', '2017-12-08 11:09:02', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127318605a2a74d4', '29.80', '2', '0', '', '1', '2017-12-08 11:17:40', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127319275a2a7517', '29.80', '2', '0', '', '1', '2017-12-08 11:18:48', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127319575a2a7535', '29.80', '2', '0', '', '1', '2017-12-08 11:19:17', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127319965a2a755c', '29.80', '2', '0', '', '1', '2017-12-08 11:19:57', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127324295a2a770d', '29.80', '2', '0', '', '1', '2017-12-08 11:27:10', '', '', '', '货到付款');
-INSERT INTO `order` VALUES ('15127325615a2a7791', '29.80', '2', '0', '', '1', '2017-12-08 11:29:21', '', '', '', '货到付款');
+INSERT INTO `order` VALUES ('15128222695a2bd5fd', '9.90', '1', '0', '北京', '1', '2017-12-09 12:24:29', '123123123', '啦啦', '不要钱', '银行卡');
+INSERT INTO `order` VALUES ('15129042595a2d1643', '29.80', '2', '0', '北京市北京市宣武区天安门', '1', '2017-12-10 11:10:59', '13123131231', '你大爷', '噗噗噗噗噗噗', '支付宝');
+INSERT INTO `order` VALUES ('15129125905a2d36ce', '29.80', '3', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-10 01:29:50', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129172025a2d48d2', '29.80', '5', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-10 02:46:42', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129210825a2d57fa', '29.80', '2', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-10 03:51:22', '15704619282', '宋先生', '送一玩块花花', '支付宝');
+INSERT INTO `order` VALUES ('15129540355a2dd8b3', '9.90', '1', '0', '黑龙江省哈尔滨市南岗区圣*索菲亚大教堂1号', '1', '2017-12-11 01:00:35', '166666666', '宋主席', '', '银行卡');
+INSERT INTO `order` VALUES ('15129542815a2dd9a9', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:04:41', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129543085a2dd9c4', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:05:08', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129544205a2dda34', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:07:00', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129545885a2ddadc', '29.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 01:09:48', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129610015a2df3e9', '49.80', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-11 02:56:42', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129610285a2df404', '49.80', '3', '0', '福建省南平市松源镇巴拉巴拉', '1', '2017-12-11 02:57:08', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129629395a2dfb7b', '59.70', '4', '0', '福建省南平市松源镇巴拉巴拉', '1', '2017-12-11 03:28:59', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15129638835a2dff2b', '59.70', '4', '0', '福建省南平市松源镇巴拉巴拉', '1', '2017-12-11 03:44:43', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15130086135a2eade5', '26675.00', '4', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-11 04:10:14', '15704619282', '宋先生', '1231', '货到付款');
+INSERT INTO `order` VALUES ('15130089055a2eaf09', '26675.00', '4', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-11 04:15:06', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15130105155a2eb553', '26675.00', '3', '0', '黑龙江省哈尔滨市香坊区中央大街6号', '1', '2017-12-11 04:41:55', '188888888', '吴主席', '666', '银行卡');
+INSERT INTO `order` VALUES ('15130418535a2f2fbd', '8787.00', '4', '0', '黑龙江省哈尔滨市香坊区中央大街6号', '1', '2017-12-12 01:24:13', '188888888', '吴主席', '', '支付宝');
+INSERT INTO `order` VALUES ('15130679975a2f95dd', '200.00', '2', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-12 08:39:58', '15704619282', '王先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15130764095a2fb6b9', '4444.00', '2', '0', '河南省平顶山市鲁山县略略略', '1', '2017-12-12 11:00:09', '15704619282', '宋先生', '', '货到付款');
+INSERT INTO `order` VALUES ('15130771015a2fb96d', '4644.00', '3', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-12 11:11:42', '15704619282', '王先生', '', '银行卡');
+INSERT INTO `order` VALUES ('15130771825a2fb9be', '4644.00', '3', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-12 11:13:02', '15704619282', '王先生', '', '银行卡');
+INSERT INTO `order` VALUES ('15130772735a2fba19', '4644.00', '3', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-12 11:14:33', '15704619282', '王先生', '123123', '银行卡');
+INSERT INTO `order` VALUES ('15130773215a2fba49', '4644.00', '3', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-12 11:15:21', '15704619282', '王先生', '123123', '银行卡');
+INSERT INTO `order` VALUES ('15130774465a2fbac6', '4644.00', '3', '0', '江苏省盐城市合德镇哔哩哔哩', '1', '2017-12-12 11:17:26', '15704619282', '王先生', '', '支付宝');
+INSERT INTO `order` VALUES ('15130842695a2fd56d', '10200.00', '2', '0', '黑龙江省哈尔滨市香坊区中央大街6号', '1', '2017-12-12 01:11:09', '188888888', '吴主席', '送手机外壳', '支付宝');
 
 -- ----------------------------
 -- Table structure for orderdetail
@@ -691,50 +703,13 @@ CREATE TABLE `orderdetail` (
   `bprice` decimal(6,2) unsigned NOT NULL COMMENT '成交定价',
   `bcnt` int(255) unsigned NOT NULL COMMENT '购买数量',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 -- ----------------------------
 -- Records of orderdetail
 -- ----------------------------
-INSERT INTO `orderdetail` VALUES ('12', '15127028095a2a0359', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('13', '15127028095a2a0359', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('14', '15127028095a2a0359', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('15', '15127040085a2a0808', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('16', '15127040085a2a0808', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('17', '15127040085a2a0808', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('18', '15127040305a2a081e', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('19', '15127040305a2a081e', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('20', '15127040305a2a081e', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('21', '15127040675a2a0843', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('22', '15127040675a2a0843', '1', '9.90', '2');
-INSERT INTO `orderdetail` VALUES ('23', '15127040675a2a0843', '3', '29.90', '1');
-INSERT INTO `orderdetail` VALUES ('24', '15127240015a2a5621', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('25', '15127240515a2a5653', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('26', '15127241645a2a56c4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('27', '15127242365a2a570c', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('28', '15127244855a2a5805', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('29', '15127245665a2a5856', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('30', '15127246445a2a58a4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('31', '15127247085a2a58e4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('32', '15127247735a2a5925', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('33', '15127248025a2a5942', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('34', '15127248535a2a5975', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('35', '15127250615a2a5a45', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('36', '15127312455a2a726d', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('37', '15127312565a2a7278', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('38', '15127313425a2a72ce', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('39', '15127318605a2a74d4', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('40', '15127318605a2a74d4', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('41', '15127319275a2a7517', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('42', '15127319275a2a7517', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('43', '15127319575a2a7535', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('44', '15127319575a2a7535', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('45', '15127319965a2a755c', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('46', '15127319965a2a755c', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('47', '15127324295a2a770d', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('48', '15127324295a2a770d', '1', '9.90', '1');
-INSERT INTO `orderdetail` VALUES ('49', '15127325615a2a7791', '2', '19.90', '1');
-INSERT INTO `orderdetail` VALUES ('50', '15127325615a2a7791', '1', '9.90', '1');
+INSERT INTO `orderdetail` VALUES ('1', '15127028095a2a0359', '2', '19.90', '1');
 
 -- ----------------------------
 -- Table structure for par
@@ -762,7 +737,7 @@ CREATE TABLE `permissions` (
   `name` varchar(255) DEFAULT NULL COMMENT '权限表',
   `description` varchar(255) DEFAULT NULL COMMENT '描述',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of permissions
